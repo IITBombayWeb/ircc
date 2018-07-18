@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+
+<{{ outer_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix', 'container') }}>
+
+  {{ title_suffix.contextual_links }}
+
+  <{{ ds_content_wrapper }}{{ ds_content_attributes }}>
+  <div class="row">
+    <div class="col-xs-12 col-md-9 col-lg-9">
+     {{ ds_content.body }}
+     {{ ds_content.field_pdf_file }}
+    </div>
+    <div class="col-xs-12 col-md-3 col-lg-3">
+        <div class="row wow fadeInLeft delay-03s">
+          <div class="col-sm-12">
+            {{ ds_content.field_category_ref }}
+          </div>
+        </div>
+        <div class="row wow fadeInLeft delay-04s">
+          <div class="col-sm-12">
+             {{ ds_content.field_faculty_name_ref }}
+          </div>
+        </div>
+        <div class="row wow fadeInLeft delay-05s">
+          <div class="col-sm-12">
+             {{ ds_content.field_name_of_inventor }}
+          </div>
+        </div>
+         <div class="row wow fadeInLeft delay-06s">
+          <div class="col-sm-12">
+             {{ ds_content.field_patent_application_no }}
+          </div>
+        </div>
+         <div class="row wow fadeInLeft delay-06s">
+          <div class="col-sm-12">
+             {{ ds_content.field_patent_grant_no }}
+          </div>
+        </div>
+    </div>
+  </div>
+  
+  </{{ ds_content_wrapper }}>
+</{{ outer_wrapper }}>
+

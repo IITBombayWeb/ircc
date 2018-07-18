@@ -1,0 +1,40 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: 'ircc_bs (IRCC Bootstrap 3 subtheme)'
+description: 'Uses the jsDelivr CDN for all CSS and JavaScript. No source files or compiling is necessary and is recommended for simple sites or beginners.'
+package: 'custom'
+
+regions:
+  navigation: 'Navigation'
+  navigation_collapsible: 'Navigation (Collapsible)'
+  primary_menu: 'primary_menu'
+  highlighted: 'Highlighted'
+  help: 'Help'
+  top_head: 'Top Head region'
+  top1: 'Top1'
+  top2: 'Top2'
+  top3: 'Top3'
+  top4: 'Top4'
+  research_highlights: 'Research Highlights'
+  news: 'News'
+  events: 'Events'
+  content_top: 'Content Top'
+  breadcrumb: 'Breadcrumb'
+  content: 'Content'
+  sidebar_first: 'Primary'
+  sidebar_second: 'Secondary'
+  footer1: 'Footer1'
+  footer2: 'Footer2'
+  footer3: 'Footer3'
+  footer4: 'Footer4'
+  footer_bar_left: 'Footer bar left'
+  footer_bar_right: 'Footer bar right'
+
+libraries:
+  - ircc_bs/global-styling
+  - ircc_bs/font-awesome
+  - ircc_bs/webfonts
+  - ircc_bs/additional-library
+  - ircc_bs/custom-scrollbar

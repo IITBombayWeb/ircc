@@ -1,0 +1,30 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix','top_box_bg') }}>
+
+  {{ title_suffix.contextual_links }}
+  <h2 class="top-box-title capitalize text-center">
+    {{ ds_content.field_title_box }}
+  </h2>
+    <div class="box-container">
+      {{ ds_content.field_image_box }}
+      
+      <div class="link-overlay">
+        {{ ds_content.field_link_box }}
+      </div>
+      <div class="box-summary">
+        {{ ds_content.field_summary_action_box }}
+      </div>
+    </div>
+
+
+</{{ ds_content_wrapper }}>

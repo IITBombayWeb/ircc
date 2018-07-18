@@ -1,0 +1,48 @@
+global-styling:
+  css:
+    theme:
+      css/custom.css: {}
+      css/main.css: {}
+      css/animate.css: {}
+  js:
+    js/custom.js: {}
+    js/SmoothScroll.min.js: {}
+    js/wow.js: {}
+    js/wow_custom.js: {}
+    js/jquery.font-accessibility.min.js: {}
+  dependencies:
+    - core/jquery
+
+font-awesome:
+  version: 4.3.0
+  css:
+    theme:
+      includes/font-awesome/css/font-awesome.min.css: {}
+
+webfonts:
+  version: VERSION
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Oswald|Roboto|Roboto+Condensed: { type: external }
+      //fonts.googleapis.com/css?family=Merriweather|Open+Sans: { type: external }
+      //fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Oswald: {type: external }
+
+additional-library:
+  css:
+    theme:
+      includes/bootstrap-dropdownhover.min.css: {}
+  js:
+    includes/bootstrap-dropdownhover.min.js: {}
+  dependencies:
+    - core/jquery
+
+custom-scrollbar:
+  css:
+    theme:
+      includes/custom-scrollbar/jquery.mCustomScrollbar.css: {}
+  js:
+    includes/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js: {}
+    includes/custom-scrollbar/jquery.mCustomScrollbar.min.js: {}
+    includes/custom-scrollbar/scrollelement.js: {}
+  dependencies:
+    - core/jquery
