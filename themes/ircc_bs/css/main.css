@@ -1087,7 +1087,7 @@ font-family: "Open Sans", sans-serif;
 
 
 .footer1 {
-    /* background:#e0edef; */
+  /*background:#e0edef;*/
   background: #002139;
   color: #aeaeae;
   padding-top: 2em;
@@ -1118,7 +1118,7 @@ font-family: "Open Sans", sans-serif;
   margin-top: 0px;
 }
 
-/* .title-widget::before {
+/* .title-widget::before{
     background-color: #ea5644;
     content: "";
     height: 22px;
@@ -1154,8 +1154,8 @@ font-family: "Open Sans", sans-serif;
 
 
 .footer-bottom {
-    /* background-color: #006699; */
-    background-color: #1ba74d;
+    background-color: #006699;
+    /*background-color: #1ba74d;*/
     min-height: 30px;
     width: 100%;
 }
