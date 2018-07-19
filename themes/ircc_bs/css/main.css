@@ -1154,8 +1154,8 @@ font-family: "Open Sans", sans-serif;
 
 
 .footer-bottom {
-    background-color: #006699;
-    /*background-color: #1ba74d;*/
+   /* background-color: #006699;*/
+    background-color: #1ba74d;
     min-height: 30px;
     width: 100%;
 }
