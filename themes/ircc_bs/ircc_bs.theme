@@ -17,7 +17,7 @@ function ircc_bs_preprocess_block(&$variables) {
         $variables['site_logo'] = str_replace('.svg', '.png', $variables['content']['site_logo']['#uri']);
       }
       break;
-
+      $variables['site_logo_2'] = $base_url . $base_path . drupal_get_path('theme','ircc_bs') . '/img/iitb-dj_trans.png';
   }
 }
 

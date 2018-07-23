@@ -54,9 +54,10 @@
 	  }
 
 	  (function() {
-		$("#views-exposed-form-solr-search-content-page-1 input").addClass('').attr("placeholder", "Enter search terms...");
+		$("#views-exposed-form-solr-search-content-page-1 input").attr("placeholder", "Enter search terms...");
 
 		$(".open-form").click(function(){
+			$("#views-exposed-form-solr-search-content-page-1").addClass('animated fadeIn delay-01s');
 			$(".open-form").hide();
 			$(".close-form").css("display","block");
 			$(".search-block-form").show();
@@ -71,8 +72,7 @@
 		});
 
 	})();
-
-
+	
 
 
 	
