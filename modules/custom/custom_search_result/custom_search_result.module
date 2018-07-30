@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * @file
+ * Contains custom_search_result.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_help().
+ */
+function custom_search_result_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the custom_search_result module.
+    case 'help.page.custom_search_result':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('custom module to sort search result by content types') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function custom_search_result_theme() {
+  return [
+    'custom_search_result' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+
+
+function custom_search_result_views_pre_render(ViewExecutable $view) {
+
+	if ($view->id() == "solr_search_content" && $view->current_display == 'page_1') {
+
+    // Get array of results from view object.
+    	$results = $view->result;
+
+    // Initialize empty array that we will use to save results
+    // grouped by content type.
+    	$grouped_results = array();
+
+    // Each $result is an object within the $results array.
+    foreach ($results as $result) {
+      $content_type = $result->bundle();
+
+      // Rank content types in order to be sorted.
+      // Ranking closest to 1 will be listed first.
+      // Ranking with highest number will be listed last.
+      switch ($content_type) {
+        case 'page':
+          $ranking = 1;
+          break;
+        case 'article':
+          $ranking = 10;
+          break;
+        case 'technology':
+          $ranking = 20;
+          break;
+        case 'faculty_profiles':
+          $ranking = 30;
+          break;
+        case 'research_glimpses':
+          $ranking = 40;
+          break;
+        case 'research_facility':
+          $ranking = 50;
+          break;
+        default:
+          $ranking = 200;
+      }
+
+      // Add result to new array where results are grouped by ranking.
+      $grouped_results[$ranking][] = $result;
+    }
+
+    // Sort results by ranking.
+    ksort($grouped_results);
+
+    // Now initialize new array that will save search results in order per ranking
+    // but without results being grouped by ranking.
+    $ranked_results = array();
+
+    // Reorganize $grouped_results so $results are no longer grouped
+    // just listed in order of ranking.
+    foreach ($grouped_results as $ranking) {
+
+      foreach ($ranking as $result) {
+        $ranked_results[] = $result;
+      }
+    }
+
+    // Set views results array to new ranked results array.
+    $view->result = $ranked_results;
+
+	}
+}
