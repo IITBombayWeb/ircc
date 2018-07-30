@@ -828,7 +828,9 @@ text-decoration: none;
 padding-left: 5px;
 padding-right: 5px;
 }
-
+.slick__arrow{
+  left: 1%;
+}
 .slide__content,
 .grid__content {
   width: 100%;
