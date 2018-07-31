@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - iitb_jobs
+name: 'Job Category'
+vid: job_category
+description: ''
+hierarchy: 0
+weight: 0

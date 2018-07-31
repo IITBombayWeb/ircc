@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - iitb_jobs
+id: drona_job_designations
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: drona_content_import
+label: 'Drona Job Designations Import'
+source:
+  plugin: drona_job_designations
+process:
+  type:
+    plugin: default_value
+    default_value: job_designations
+  title: title
+  body/format:
+    plugin: default_value
+    default_value: basic_html
+  body/value: body
+  field_recruitment_sr_no: RecruitmentSrNo
+  field_project_sr_no: ProjectSrNo
+  field_desg_sr_no: DesgSrNo
+  field_desg_code: DesgCode
+  field_qualification_experience: QualificationExperience
+  field_no_of_posts: NoOfPosts
+  field_appt_period: ApptPeriod
+  field_salary: Salary
+  field_level: Level
+  field_specialization: Specialization
+  field_norms: Norms
+  field_norms_remarks: NormsRemarks
+  field_rpd_pro_code: ProCode
+  field_rpd_title: RPDTitle
+  field_rpd_adv_job_code: AdvJobCode
+  field_rpd_project_description: ProjectDescription
+  field_pd_category: 
+    plugin: entity_generate
+    source: PD_Category
+    entity_type: taxonomy_term
+    bundle: job_category
+  field_pd_erp_long_description: PD_ERPLongDescription
+  field_pd_erp_short_description: PD_ERPShortDescription
+  field_pd_faculty: PD_Faculty
+  field_pd_functional_area: PD_FunctionalArea
+  field_pd_level: PD_Level
+  field_pd_permtemp: PD_Permtemp
+  field_pd_postname: 
+    plugin: entity_generate
+    source: PD_Postname
+    entity_type: taxonomy_term
+    bundle: job_position
+  field_pd_project_post: PD_ProjectPost
+  field_pd_salcode: PD_Salcode
+  field_pd_short_code: PD_ShortCode
+    field_pd_short_code:
+  langcode:
+    plugin: default_value
+    default_value: en
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+  bundle: job_designations
+migration_dependencies: null
