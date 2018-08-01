@@ -1,0 +1,7 @@
+name: IITB Jobs
+type: module
+description: IITB Job Listings
+core: 8.x
+package: Custom
+dependencies:
+  - migrate_tools

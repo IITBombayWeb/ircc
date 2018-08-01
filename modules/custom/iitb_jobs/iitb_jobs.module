@@ -1,0 +1,67 @@
+<?php
+
+/**
+ * @file
+ * Contains iitb_jobs.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function iitb_jobs_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the iitb_jobs module.
+    case 'help.page.iitb_jobs':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('IITB Job Listings') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function iitb_jobs_theme() {
+  return [
+    'iitb_jobs' => [
+      'render element' => 'children',
+    ],
+  ];
+}
+
+
+use Drupal\migrate_tools\MigrateExecutable;
+//use Drupal\migrate_tools\MigrateBatchExecutable;
+use Drupal\migrate\MigrateMessage;
+
+/**
+ * Implements hook_cron().
+ */
+function iitb_jobs_cron() {
+
+  $manager = \Drupal::service('plugin.manager.migration');
+  $migration_ids = ['drona_job_designations','drona_job_circulars']; 
+
+  foreach ($migration_ids as $migration_id) {
+    $limit=0;
+    $update=1;
+    $force=0; //Ignore dependencies
+    $options = [
+      'limit' => $limit,
+      'update' => $update,
+      'force' => $force,
+    ];
+    $migrateMessage = new MigrateMessage();
+    $migration = $manager->createInstance($migration_id);
+    //$executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
+    //$executable->batchImport();
+
+    $executable = new MigrateExecutable($migration, $migrateMessage, $options);
+    $executable->import();
+  }
+}

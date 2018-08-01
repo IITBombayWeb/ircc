@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appt_period
+    - node.type.job_designations
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_designations.field_appt_period
+field_name: field_appt_period
+entity_type: node
+bundle: job_designations
+label: 'Appt Period'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

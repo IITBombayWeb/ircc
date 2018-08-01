@@ -1,0 +1,14 @@
+{
+  "name": "drupal/iitb_jobs",
+  "type": "drupal-module",
+  "description": "IITB Job Listings",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/iitb_jobs",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/iitb_jobs",
+    "source": "http://cgit.drupalcode.org/iitb_jobs"
+  },
+  "require": { }
+}

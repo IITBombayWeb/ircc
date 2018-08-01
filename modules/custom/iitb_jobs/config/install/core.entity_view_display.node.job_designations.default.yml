@@ -1,0 +1,264 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_designations.body
+    - field.field.node.job_designations.field_appt_period
+    - field.field.node.job_designations.field_desg_code
+    - field.field.node.job_designations.field_desg_sr_no
+    - field.field.node.job_designations.field_level
+    - field.field.node.job_designations.field_no_of_posts
+    - field.field.node.job_designations.field_norms
+    - field.field.node.job_designations.field_norms_remarks
+    - field.field.node.job_designations.field_pd_category
+    - field.field.node.job_designations.field_pd_erp_long_description
+    - field.field.node.job_designations.field_pd_erp_short_description
+    - field.field.node.job_designations.field_pd_faculty
+    - field.field.node.job_designations.field_pd_functional_area
+    - field.field.node.job_designations.field_pd_level
+    - field.field.node.job_designations.field_pd_permtemp
+    - field.field.node.job_designations.field_pd_postname
+    - field.field.node.job_designations.field_pd_project_post
+    - field.field.node.job_designations.field_pd_salcode
+    - field.field.node.job_designations.field_pd_short_code
+    - field.field.node.job_designations.field_project_sr_no
+    - field.field.node.job_designations.field_qualification_experience
+    - field.field.node.job_designations.field_recruitment_sr_no
+    - field.field.node.job_designations.field_rpd_adv_job_code
+    - field.field.node.job_designations.field_rpd_pro_code
+    - field.field.node.job_designations.field_rpd_project_description
+    - field.field.node.job_designations.field_rpd_title
+    - field.field.node.job_designations.field_salary
+    - field.field.node.job_designations.field_specialization
+    - node.type.job_designations
+  module:
+    - text
+    - user
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_designations.default
+targetEntityType: node
+bundle: job_designations
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_appt_period:
+    weight: 111
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_desg_code:
+    weight: 107
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_desg_sr_no:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_level:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_no_of_posts:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_norms:
+    weight: 115
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_norms_remarks:
+    weight: 116
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pd_category:
+    weight: 127
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_pd_erp_long_description:
+    weight: 130
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pd_erp_short_description:
+    weight: 131
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pd_faculty:
+    weight: 124
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pd_functional_area:
+    weight: 129
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_pd_level:
+    weight: 128
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pd_permtemp:
+    weight: 122
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pd_postname:
+    weight: 121
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_pd_project_post:
+    weight: 123
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pd_salcode:
+    weight: 125
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_pd_short_code:
+    weight: 126
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_project_sr_no:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_qualification_experience:
+    weight: 108
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_recruitment_sr_no:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rpd_adv_job_code:
+    weight: 118
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rpd_pro_code:
+    weight: 117
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_rpd_project_description:
+    weight: 120
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_rpd_title:
+    weight: 119
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_salary:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_specialization:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  links:
+    weight: 100
+    region: content
+hidden: {  }

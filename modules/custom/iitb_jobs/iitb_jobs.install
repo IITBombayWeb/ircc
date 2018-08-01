@@ -1,0 +1,44 @@
+<?php
+
+/**
+* Implements hook_uninstall().
+*/
+function iitb_jobs_uninstall() {
+  // Load services.
+  $queryFactory = \Drupal::service('entity.query');
+  $nodeStorage  = \Drupal::entityManager()->getStorage('node');
+
+  // Query all entity.
+  $query = $queryFactory->get('node')
+    ->condition('type', 'job_circulars'); // <-- Change the type here for yours.
+  $nids = $query->execute();
+
+  // Delete entities.
+  if (!empty($nids)) {
+    $entities = $nodeStorage->loadMultiple($nids);
+    $nodeStorage->delete($entities);
+  }
+
+  // Load services.
+  $queryFactory1 = \Drupal::service('entity.query');
+  $nodeStorage1  = \Drupal::entityManager()->getStorage('node');
+
+  // Query all entity.
+  $query1 = $queryFactory1->get('node')
+    ->condition('type', 'job_designations'); // <-- Change the type here for yours.
+  $nids1 = $query1->execute();
+
+  // Delete entities.
+  if (!empty($nids1)) {
+    $entities1 = $nodeStorage1->loadMultiple($nids1);
+    $nodeStorage1->delete($entities1);
+  }
+
+  $con = \Drupal\Core\Database\Database::getConnection();
+  $con->schema()->dropTable('migrate_map_drona_job_circulars');
+  $con->schema()->dropTable('migrate_map_drona_job_designations');
+
+  $con->schema()->dropTable('migrate_message_drona_job_circulars');
+  $con->schema()->dropTable('migrate_message_drona_job_designations');
+  
+}

@@ -1,0 +1,12 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - iitb_jobs
+id: drona_content_import
+label: 'Drona Content Import'
+description: ''
+source_type: 'Drona Database'
+module: iitbcontent
+shared_configuration: null
