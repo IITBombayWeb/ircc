@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_status
+    - node.type.job_circulars
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_circulars.field_job_status
+field_name: field_job_status
+entity_type: node
+bundle: job_circulars
+label: 'Job Status'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,5 @@
+name: 'Custom Search Result'
+type: module
+description: 'custom module to sort search result by content types'
+core: 8.x
+package: 'Custom'

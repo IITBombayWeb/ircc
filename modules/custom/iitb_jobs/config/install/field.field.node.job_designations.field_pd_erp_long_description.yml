@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pd_erp_long_description
+    - node.type.job_designations
+  module:
+    - text
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_designations.field_pd_erp_long_description
+field_name: field_pd_erp_long_description
+entity_type: node
+bundle: job_designations
+label: 'PD ERP Long Description'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

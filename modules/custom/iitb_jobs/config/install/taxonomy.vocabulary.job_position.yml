@@ -1,0 +1,11 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - iitb_jobs
+name: 'Job Positions'
+vid: job_position
+description: ''
+hierarchy: 0
+weight: 0
