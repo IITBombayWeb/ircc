@@ -1,6 +1,5 @@
 drushrc.php
 settings.php
-local.settings.php
 files/
 private/
 services.yml
