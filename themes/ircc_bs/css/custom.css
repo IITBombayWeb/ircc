@@ -640,4 +640,31 @@ transition: all .5s ease-in-out;
     -webkit-transition-property: box-shadow, transform;
     transition-property: box-shadow, transform;
 }
+
+.job-wrap:hover{
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5), 0 -10px 10px -10px rgba(0, 0, 0, 0.5);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.job-wrap .job-field-label{
+  width: 130px;
+  padding: 5px 0;
+  font-family: 'Ek Mukta', sans-serif;
+  font-weight: 700;
+}
+
+.job-wrap .job-field{
+  padding: 5px 0;
+  margin-left: 130px;
+}
+
+@media only screen and (min-width: 640px){
+.job-wrap .job-field-label{
+margin-left: 180px;
+}
+.job-wrap .job-field{
+  margin-left: 180px;
+  }
+}
 /* job display block */
