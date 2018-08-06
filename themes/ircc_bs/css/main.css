@@ -81,14 +81,20 @@ color: #002139;
 .black{
   color: #130c11;
 }
+
 /* align item */
 .pos-y_center {
   position: relative;
   width: 100%;
   top: 50%;
   bottom: auto;
-  transform: translateY(-50%); }
+  transform: translateY(-50%); 
+}
 
+.item-inline
+{
+  display: inline;
+}
 /* image */
 img {
   max-width: 100%;
