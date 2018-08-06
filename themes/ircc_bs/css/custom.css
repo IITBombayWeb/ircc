@@ -658,10 +658,13 @@ transition: all .5s ease-in-out;
   padding: 5px 0;
   margin-left: 130px;
 }
+.job-wrap .job-field p{
+  display: inherit;
+}
 
 @media only screen and (min-width: 640px){
 .job-wrap .job-field-label{
-width:180;
+width:180px;
 }
 .job-wrap .job-field{
   margin-left: 180px;
