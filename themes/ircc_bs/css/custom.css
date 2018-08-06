@@ -653,9 +653,6 @@ transition: all .5s ease-in-out;
   font-weight: 700;
 }
 
-.job-wrap .job-field{
-  margin-left: 130px;
-}
 .job-wrap .job-field p{
   display: inherit;
 }
