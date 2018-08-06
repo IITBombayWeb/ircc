@@ -657,6 +657,19 @@ transition: all .5s ease-in-out;
   display: inherit;
 }
 
+.job-apply-link{
+  font-family: 'Ek Mukta', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    z-index: 0;
+    text-decoration: none;
+    float: none;
+    text-align: center;
+    color: #fff;
+}
+
 @media only screen and (min-width: 640px){
 .job-wrap .job-field-label{
 width:180px;
