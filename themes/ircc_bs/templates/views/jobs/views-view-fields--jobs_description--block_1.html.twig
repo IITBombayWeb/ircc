@@ -35,11 +35,12 @@
     set field_label_classes = [
       'job-field-label',
     ]
-     set field_classes = [
+%}
+{%
+  set field_classes = [
       'job-field',
     ]
 %}
-
 {% for field in fields -%}
   {{ field.separator }}
   {%- if field.wrapper_element -%}
