@@ -61,7 +61,7 @@
   {%- if field.element_type -%}
     <{{ field.element_type }}{{ field.element_attributes.addClass(field_classes) }}>{{ field.content }}</{{ field.element_type }}>
   {%- else -%}
-    {{ field.field_pd_postname.content }}
+    {{ field.field_pd_postname }}
 
     {{ field.content }}
 
@@ -72,7 +72,7 @@
   {%- endif %}
 {%- endfor %}
 
-
+<h2>  {{ fields.field_pd_postname.content }}</h2>
 
 
 {# 
