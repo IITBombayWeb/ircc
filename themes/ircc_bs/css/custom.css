@@ -662,6 +662,9 @@ transition: all .5s ease-in-out;
   font-weight: 700;
 }
 
+.job-wrap .job-field {
+  margin-left: 130px;
+}
 .job-apply-link{
   font-family: 'Ek Mukta', sans-serif;
     font-weight: 700;
