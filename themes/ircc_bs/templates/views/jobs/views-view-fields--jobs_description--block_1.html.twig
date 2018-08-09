@@ -43,38 +43,28 @@
 %}
 {% for field in fields -%}
   {{ field.separator }}
-  
   {%- if field.wrapper_element -%}
     <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
   {%- endif %}
-  
   {%- if field.label -%}
     {%- if field.label_element -%}
-      <{{ field.label_element }}{{ field.label_attributes.addClass(field_label_classes) }}>
-      {{ field.label }}{{ field.label_suffix }}
-      </{{ field.label_element }}>
+      <{{ field.label_element }}{{ field.label_attributes.addClass(field_label_classes) }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
     {%- else -%}
       {{ field.label }}{{ field.label_suffix }}
     {%- endif %}
   {%- endif %}
-
   {%- if field.element_type -%}
-    <{{ field.element_type }}{{ field.element_attributes.addClass(field_classes) }}>
-      {{ field.field_pd_postname.content }}
-      {{ field.field_rpd_title.content  }}
-      {{ field.field_salary.content }}
-      {{ field.field_job_end_date.content }}
-      {{ field.field_job_dept_code_ref.content }}
-       <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">More Details </button>
-      <div id="demo" class="collapse">
-         {{ field.body.content }}
-          {{ field.field_qualification_experience.content }}
-      </div>
-    </{{ field.element_type }}>
-  {%- else -%} 
+    <{{ field.element_type }}{{ field.element_attributes.addClass(field_classes) }}>{{ field.content }}</{{ field.element_type }}>
+  {%- else -%}
+    {{ field.content }}
+
+
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+  <div id="demo" class="collapse">
+    
+  </div>
   {%- endif %}
   {%- if field.wrapper_element -%}
     </{{ field.wrapper_element }}>
   {%- endif %}
 {%- endfor %}
-
