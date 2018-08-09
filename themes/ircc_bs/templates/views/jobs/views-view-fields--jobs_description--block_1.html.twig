@@ -57,6 +57,12 @@
     <{{ field.element_type }}{{ field.element_attributes.addClass(field_classes) }}>{{ field.content }}</{{ field.element_type }}>
   {%- else -%}
     {{ field.content }}
+
+
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+  <div id="demo" class="collapse">
+    
+  </div>
   {%- endif %}
   {%- if field.wrapper_element -%}
     </{{ field.wrapper_element }}>
