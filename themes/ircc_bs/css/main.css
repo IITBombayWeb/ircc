@@ -968,7 +968,7 @@ left: 20%;
     text-align: justify;
     font-family: "Open Sans", sans-serif;
     font-size: 0.80rem;
-    background: -webkit-linear-gradient(#ffffff, #111111);
+    background: -webkit-linear-gradient(#ffffff, #01010101);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
