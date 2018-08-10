@@ -411,9 +411,8 @@
   
     {% endif %}
 
-  <div class="footer-bottom">
       <div class="{{ container }}">
-          <div class="row">
+          <div class="row footer-bottom">
             {% if page.footer_bar_left %}
               {% block footer_bar_left %}
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
@@ -434,6 +433,5 @@
             {% endif %}
           </div>
       </div>
-    </div>
   </footer>
 {% endif %} 
