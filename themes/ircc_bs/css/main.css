@@ -488,7 +488,8 @@ left: 100%;
     font-size: 2rem;
     font-weight: bold;
     line-height: 2;
-    color: #1ba74d!important;
+    /*color: #1ba74d!important;*/
+    color: #468684!important;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -1096,7 +1097,7 @@ font-family: "Open Sans", sans-serif;
   background:#234645;
   /* background: #002139; */
   color: #aeaeae;
-  padding-top: 2em;
+  padding-top: 2em;s
   font-size:  0.85rem;
 }
 
