@@ -1097,7 +1097,6 @@ font-family: "Open Sans", sans-serif;
   /* background: #002139; */
   color: #aeaeae;
   padding-top: 2em;
-  padding-bottom: 2em;
   font-size:  0.85rem;
 }
 
@@ -1161,9 +1160,10 @@ font-family: "Open Sans", sans-serif;
 
 .footer-bottom {
    /* background-color: #006699;*/
-    background-color: #1ba74d;
+  /*  background-color: #1ba74d;*/
     min-height: 30px;
     width: 100%;
+    border-top: 1px solid #666;
 }
 .copyright {
     color: #fff;
