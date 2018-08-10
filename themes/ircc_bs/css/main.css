@@ -1168,11 +1168,11 @@ font-family: "Open Sans", sans-serif;
 .copyright {
     color: #fff;
     min-height: 30px;
-    /* padding: 7px 0; */
+     padding: 0.5em 0; 
 }
 .footer-bootom-nav {
     color: #fff;
-    padding: 6px 0; 
+    padding: 0.5em 0; 
     text-align: right;
 }
 .footer-bootom-nav a {
