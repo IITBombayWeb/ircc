@@ -914,14 +914,15 @@ left: 20%;
 }
 
 #news-wrap{
-  background: #002139;
-  /* padding-bottom: 40px; */
+ /* background: #002139;*/
+  background: #234645;
   }
   
   .news-head{
     width: 100%;
     /* background: #d6d7d9; */
-    background: #345474;
+  /*  background: #345474;*/
+    background: #2a8da2;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
