@@ -593,7 +593,8 @@ left: 100%;
 
 
 .top-head{
-  background: #062d3e;
+  /*background: #062d3e;*/
+  background: #275454;
 }
 .top-head p {
   font-size: 1.2rem;
@@ -922,7 +923,7 @@ left: 20%;
     width: 100%;
     /* background: #d6d7d9; */
   /*  background: #345474;*/
-    background: #2a8da2;
+    background: #4ba9a9;
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
