@@ -99,14 +99,13 @@ $(document).ready(function() {
  /*Scroll to top when arrow up clicked END*/
 
 
-	// if(screen.width >= 768) {
-	// 	$('.navbar').addClass('navbar-fixed-top');
-	// 	$('body').css("margin-top", 0);
-	// } else {
-	// 	$('.navbar').removeClass('navbar-fixed-top navbar-fixed').addClass("navbar-static-top");
-	// 	$('body').css({"padding-top": 0, "margin-top": 0});
-	// }
-
+// top box responsive js
+$(window).resize(function () {
+    var viewportWidth = $(window).width();
+    if (viewportWidth < 600) {
+            $(".top-wrapper").removeClass("col-xs-6").addClass("col-xs-12");
+    }
+});
 	
 
 }(jQuery);
