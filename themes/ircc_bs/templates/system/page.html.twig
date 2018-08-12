@@ -142,7 +142,7 @@
                     <div class="row clearfix">
                       {% if page.top1 %}
                         {% if page.top2 and page.top3 and page.top4 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 top-wrapper">
                           {% elseif page.top2 and page.top3 %}
                             <div class="col-lg-4 col-md-4 top-wrapper">
                           {% elseif page.top2 and page.top4 %}
@@ -160,7 +160,7 @@
 
                       {% if page.top2 %}
                         {% if page.top1 and page.top3 and page.top4 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 top-wrapper">
                           {% elseif page.top1 and page.top3 %}
                             <div class="col-lg-4 col-md-4 top-wrapper">
                           {% elseif page.top1 and page.top4 %}
@@ -178,7 +178,7 @@
 
                       {% if page.top3 %}
                         {% if page.top1 and page.top2 and page.top4 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 top-wrapper">
                           {% elseif page.top1 and page.top2 %}
                             <div class="col-lg-4 col-md-4 top-wrapper">
                           {% elseif page.top1 and page.top4 %}
@@ -196,7 +196,7 @@
 
                       {% if page.top4 %}
                         {% if page.top1 and page.top2 and page.top3 %}
-                          <div class="col-lg-3 col-md-3 col-sm-6 top-wrapper">
+                          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 top-wrapper">
                           {% elseif page.top1 and page.top2 %}
                             <div class="col-lg-4 col-md-4 top-wrapper">
                           {% elseif page.top1 and page.top3 %}
@@ -408,12 +408,11 @@
 
         </div>
       </div>
-  </footer>
+  
     {% endif %}
 
-  <div class="footer-bottom">
       <div class="{{ container }}">
-          <div class="row">
+          <div class="row footer-bottom">
             {% if page.footer_bar_left %}
               {% block footer_bar_left %}
                 <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
@@ -434,6 +433,5 @@
             {% endif %}
           </div>
       </div>
-    </div>
-
+  </footer>
 {% endif %} 
