@@ -1383,8 +1383,12 @@ nav#block-searchsidebar ul li a:hover"{
  background: transparent;
 }
 
-nav#block-searchsidebar .hvr-bounce-to-right:before {
-  background: #4ba5a2;
+
+ #block-searchsidebar .nav > li > a:hover, #block-searchsidebar .nav > li > a:focus {
+  background: transparent;
+}
+#block-searchsidebar .nav .hvr-sweep-to-right:before {
+  background: #4ba5a2!important;
 }
 
 #block-searchsidebar-menu{

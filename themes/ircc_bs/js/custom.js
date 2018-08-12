@@ -58,7 +58,7 @@
 
 	  (function() {
 		$("#views-exposed-form-solr-search-content-page-1 input").attr("placeholder", "Enter search terms...");
-    $("#block-searchsidebar .nav > li > a").addClass('hvr-bounce-to-right');
+    $("#block-searchsidebar .nav > li > a").addClass('hvr-sweep-to-right');
 
 		$(".open-form").click(function(){
 			$("#views-exposed-form-solr-search-content-page-1").addClass('animated fadeIn delay-01s');
