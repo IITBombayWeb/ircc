@@ -105,6 +105,9 @@ $(window).resize(function () {
     if (viewportWidth < 600) {
             $(".top-wrapper").removeClass("col-xs-6").addClass("col-xs-12");
     }
+    else{
+      $(".top-wrapper").removeClass("col-xs-12").addClass("col-xs-6");
+    }
 });
 	
 
