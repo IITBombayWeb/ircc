@@ -1380,9 +1380,6 @@ nav#block-searchsidebar nav li > a:hover, nav#block-searchsidebar nav li > a:foc
   /* color: #e78710; */
 }
 
-nav#block-searchsidebar ul li a {
-  padding: 5px 10px;
-}
 
 nav#block-searchsidebar ul li a {
   padding: 5px 10px;
@@ -1666,7 +1663,7 @@ transition: all .5s ease-in-out;
 
 .job-wrap{
   position: relative;
-    margin: -10px 0 35px;
+    margin: 15px 0 35px;
     padding: 15px;
     border: 1px solid #e6e6e6;
     border-radius: 5px;
