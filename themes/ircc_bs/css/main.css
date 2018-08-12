@@ -1375,14 +1375,12 @@ nav#block-searchsidebar{
   text-align: center;
 }
 
-nav#block-searchsidebar nav li > a:hover, nav#block-searchsidebar nav li > a:focus{
-  background: transparent;
-  /* color: #e78710; */
-}
-
-
 nav#block-searchsidebar ul li a {
   padding: 5px 10px;
+}
+
+nav#block-searchsidebar ul li a:hover"{
+ background: transparent;
 }
 
 nav#block-searchsidebar .hvr-bounce-to-right:before {
