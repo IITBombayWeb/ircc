@@ -1375,23 +1375,13 @@ nav#block-searchsidebar{
   text-align: center;
 }
 
-nav#block-searchsidebar > li > a {
+nav#block-searchsidebar ul li a {
   padding: 5px 10px;
-      -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
 
-nav#block-searchsidebar > li > a:hover, nav#block-searchsidebar > li > a:hover{
-  background-color: #4ba5a2;
-  color: #ffffff;
-     -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
 
+nav#block-searchsidebar .hvr-bounce-to-right:before {
+  background: #4ba5a2;
+}
 
 #block-searchsidebar-menu{
   font-size: 1rem;
