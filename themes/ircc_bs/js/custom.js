@@ -58,6 +58,7 @@
 
 	  (function() {
 		$("#views-exposed-form-solr-search-content-page-1 input").attr("placeholder", "Enter search terms...");
+    $("#block-searchsidebar .nav > li > a").addClass('hvr-sweep-to-right');
 
 		$(".open-form").click(function(){
 			$("#views-exposed-form-solr-search-content-page-1").addClass('animated fadeIn delay-01s');
@@ -102,7 +103,7 @@ $(document).ready(function() {
 // top box responsive js
 $(window).resize(function () {
     var viewportWidth = $(window).width();
-    if (viewportWidth < 600) {
+    if (viewportWidth < 450) {
             $(".top-wrapper").removeClass("col-xs-6").addClass("col-xs-12");
     }
     else{

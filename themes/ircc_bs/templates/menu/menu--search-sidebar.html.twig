@@ -33,8 +33,7 @@
         <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <span class="caret"></span></a>
       {% else %}
         <li{{ item.attributes.addClass(item_classes) }}>
-        {# {{ link(item.title, item.url) }} #}
-        <a href="{{ item.url }}"><i class="fa fa-angle-double-right"></i>{{ item.title }} </a>
+        {{ link(item.title, item.url) }}
       {% endif %}
       {% if item.below %}
         {{ _self.menu_links(item.below, attributes.removeClass(classes), menu_level + 1, classes) }}
@@ -50,4 +49,4 @@
   This allows the template to be extended without having to also duplicate the
   code above. @see http://twig.sensiolabs.org/doc/tags/macro.html
 #}
-{{ _self.menu_links(items, attributes, 0, classes ? classes : ['menu', 'menu--' ~ menu_name|clean_class, 'nav', 'widget_nav_menu', 'wow fadeInDown delay-03s']) }}
+{{ _self.menu_links(items, attributes, 0, classes ? classes : ['menu', 'menu--' ~ menu_name|clean_class, 'nav']) }}
