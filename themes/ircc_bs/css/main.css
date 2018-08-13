@@ -1194,7 +1194,7 @@ border-bottom: 1px solid #c4c3cc;
 
 h2.page-title{
   color:#5d5454;
-  font-size: 2rem;
+  font-size: 1.6rem;
   margin-bottom: 0px;
 }
 
@@ -1260,6 +1260,10 @@ text-decoration: none;
   color: #615a5a;
   font-family: 'Merriweather',serif;
   text-decoration: underline;
+}
+
+table#past-deans-info td{
+   text-align: center;   
 }
 
 /*nodepage end*/
