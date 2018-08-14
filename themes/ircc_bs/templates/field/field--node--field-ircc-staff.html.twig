@@ -56,22 +56,26 @@
 {% if label_hidden %}
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field--items') }}>
-      {% for item in items %}
-        <div{{ item.attributes.addClass('field--item') }}>
-        
-         <section class="team">
+     <section class="team">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <div class="col-lg-12">
+                  <div class="row pt-md">
+                      {% for item in items %}
+                        <div{{ item.attributes.addClass('field--item') }}>
 
-                  <div class="col-md-10 col-md-offset-1">
-                    <div class="col-lg-12">
-                      <div class="row pt-md">
-                        {{ item.content }}
-                      </div>
-                    </div>
+                          {{ item.content }}
+
+                        </div>
+                      {% endfor %}
                   </div>
-          </section>
-
+              </div>
+            </div>
+          </div>
         </div>
-      {% endfor %}
+      </section>
+
     </div>
   {% else %}
     {% for item in items %}

@@ -58,27 +58,27 @@ field_ircc_team_work_involved
   <div{{ attributes.addClass(classes) }}>
    
                
-                {% block content %}
-     <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+  {% block content %}
+      <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
                   
-      <div class="img-box">
-        {{ content.field_ircc_team_image }}
-        {#
-        <ul class="text-center">
-          <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-          <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-          <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-        </ul>
-        #}
-      </div>
-      <h1>{{ content.field_ircc_team_name }}</h1>
-      <h2>{{ content.field_ircc_team_designation }}</h2>
-      <i class="fa fa-envelope-square"></i>{{ content.field_ircc_team_email }}
-      <i class="fa fa-phone-square"></i>{{ content.field_ircc_team_contact_no }}
-      <p>{{ content.field_ircc_team_work_involved }}</p>
+        <div class="img-box">
+          {{ content.field_ircc_team_image }}
+          {#
+          <ul class="text-center">
+            <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+            <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+            <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+          </ul>
+          #}
+        </div>
+        <h1>{{ content.field_ircc_team_name }}</h1>
+        <h2>{{ content.field_ircc_team_designation }}</h2>
+        <i class="fa fa-envelope-square"></i>{{ content.field_ircc_team_email }}
+        <i class="fa fa-phone-square"></i>{{ content.field_ircc_team_contact_no }}
+        <p>{{ content.field_ircc_team_work_involved }}</p>
       </div>  
                
-                {% endblock %}
+  {% endblock %}
 
              
   </div>
