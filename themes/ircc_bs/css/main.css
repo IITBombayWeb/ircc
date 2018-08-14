@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  position: initial;
+  position: initial!important;
   overflow-x: hidden;
   /* font-family: "Open Sans", sans-serif; */
   font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -595,12 +595,12 @@ left: 100%;
 .top-head{
   /*background: #062d3e;*/
   background: #275454;
+  padding: 1em;
 }
 .top-head p {
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
   width: 100%;
-  margin: 20px auto;
   text-align: center;
   color: white;
 }

@@ -1,6 +1,7 @@
 global-styling:
   css:
     theme:
+      css/overrides.min.css: {}
       css/animate.css: {}
       css/hover.css: {}
       css/custom.css: {}
