@@ -55,30 +55,31 @@ field_ircc_team_work_involved
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block content %}
-    
     <section class="team">
       <div class="container">
         <div class="row">
           <div class="col-md-10 col-md-offset-1">
             <div class="col-lg-12">
               <div class="row pt-md">
-
-                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
-                  <div class="img-box">
-                    {{ content.field_ircc_team_image }}
-                    <ul class="text-center">
-                      <a href="#"><li><i class="fa fa-facebook"></i></li></a>
-                      <a href="#"><li><i class="fa fa-twitter"></i></li></a>
-                      <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
-                    </ul>
+                {% block content %}
+    
+                  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12 profile">
+                    <div class="img-box">
+                      {{ content.field_ircc_team_image }}
+                      <ul class="text-center">
+                        <a href="#"><li><i class="fa fa-facebook"></i></li></a>
+                        <a href="#"><li><i class="fa fa-twitter"></i></li></a>
+                        <a href="#"><li><i class="fa fa-linkedin"></i></li></a>
+                      </ul>
+                    </div>
+                    <h1>{{ content.field_ircc_team_name }}</h1>
+                    <h2>{{ content.field_ircc_team_designation }}</h2>
+                    <p><i class="fa fa-envelope-square"></i>{{ content.field_ircc_team_email }}</p>
+                    <p><i class="fa fa-phone-square"></i>{{ content.field_ircc_team_contact_no }}</p>
+                    <p>{{ content.field_ircc_team_work_involved }}</p>
                   </div>
-                  <h1>{{ content.field_ircc_team_name }}</h1>
-                  <h2>{{ content.field_ircc_team_designation }}</h2>
-                  <p>{{ content.field_ircc_team_email }}</p>
-                  <p>{{ content.field_ircc_team_contact_no }}</p>
-                  <p>{{ content.field_ircc_team_work_involved }}</p>
-                </div>
+               
+                {% endblock %}
 
               </div>
             </div>
@@ -86,7 +87,5 @@ field_ircc_team_work_involved
         </div>
       </div>
     </section>
-
-    {% endblock %}
   </div>
 {% endblock paragraph %}
