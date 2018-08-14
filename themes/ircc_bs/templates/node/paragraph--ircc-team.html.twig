@@ -43,6 +43,8 @@ field_ircc_team_email
 field_ircc_team_name
 field_ircc_team_image
 field_ircc_team_work_involved
+<i class="fa fa-envelope-square"></i>
+<i class="fa fa-phone-square"></i>
 #}
  {{ attach_library('ircc_bs/cuddly-slider') }}
 {%
@@ -73,8 +75,8 @@ field_ircc_team_work_involved
         </div>
         <h1>{{ content.field_ircc_team_name }}</h1>
         <h2>{{ content.field_ircc_team_designation }}</h2>
-        <i class="fa fa-envelope-square"></i>{{ content.field_ircc_team_email }}
-        <i class="fa fa-phone-square"></i>{{ content.field_ircc_team_contact_no }}
+        <p>{{ content.field_ircc_team_email }}</p>
+        <p>{{ content.field_ircc_team_contact_no }}</p>
         <p>{{ content.field_ircc_team_work_involved }}</p>
       </div>  
                
