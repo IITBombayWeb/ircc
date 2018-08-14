@@ -6,7 +6,6 @@ global-styling:
       css/hover.css: {}
       css/custom.css: {}
       css/main.css: {}
-      css/ircc_team.css: {}
   js:
     js/SmoothScroll.min.js: {}
     js/wow.js: {}
@@ -49,3 +48,8 @@ custom-scrollbar:
     includes/custom-scrollbar/scrollelement.js: {}
   dependencies:
     - core/jquery
+
+ircc-staff:
+  css:
+    theme:
+      css/ircc_team.css: {}
