@@ -57,7 +57,11 @@ process:
   field_pd_project_post: PD_ProjectPost
   field_pd_salcode: PD_Salcode
   field_pd_short_code: PD_ShortCode
-    field_pd_short_code:
+  field_job_desig_to_circular_ref:
+    plugin: entity_generate
+    source: RecruitmentSrNo
+    entity_type: node
+    bundle: job_circulars
   langcode:
     plugin: default_value
     default_value: en

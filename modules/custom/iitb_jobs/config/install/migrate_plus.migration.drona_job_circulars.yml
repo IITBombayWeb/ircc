@@ -17,6 +17,7 @@ process:
   type:
     plugin: default_value
     default_value: job_circulars
+  nid: nid
   title: title
   body/format:
     plugin: default_value
