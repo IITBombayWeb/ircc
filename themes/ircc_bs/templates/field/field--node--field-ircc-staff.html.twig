@@ -57,7 +57,20 @@
   {% if multiple %}
     <div{{ attributes.addClass(classes, 'field--items') }}>
       {% for item in items %}
-        <div{{ item.attributes.addClass('field--item') }}>{{ item.content }}</div>
+        <div{{ item.attributes.addClass('field--item') }}>
+         <section class="team">
+
+                  <div class="col-md-10 col-md-offset-1">
+                    <div class="col-lg-12">
+                      <div class="row pt-md">
+                        {{ item.content }}
+                      </div>
+                    </div>
+                  </div>
+          </section>
+
+
+        </div>
       {% endfor %}
     </div>
   {% else %}
@@ -65,6 +78,7 @@
       <div{{ attributes.addClass(classes, 'field--item') }}>{{ item.content }}</div>
     {% endfor %}
   {% endif %}
+
 {% else %}
   <div{{ attributes.addClass(classes) }}>
     <div{{ title_attributes.addClass(title_classes) }}>{{ label }}</div>
