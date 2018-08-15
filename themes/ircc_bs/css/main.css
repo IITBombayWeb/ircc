@@ -544,13 +544,13 @@ left: 100%;
     /* padding-top: 20px; */
   }
 
-  .form-control:focus {
+/*  .form-control:focus {
     border-color: #0478d6;
     outline: 0;
     -webkit-box-shadow: inset 0 1px 1px rgba(74, 65, 65, 0.075), 0 0 8px #277dd6;
     box-shadow: inset 0 1px 1px rgba(74, 65, 65, 0.075), 0 0 8px #277dd6;
   }
- 
+ */
   
    
   /*header end*/
@@ -1500,18 +1500,64 @@ nav#block-searchsidebar ul li a:hover"{
   display: none;
 }
 
-@media (max-width: 767px) {
-  .navbar-search .search-block-form {
-    display: block;
-  }
+.navbar-search .form-item {
+      border-top: 3px solid #3f9b7e;
+    /* margin-top: .5em; */
+    /* background: #e8e8e4; */
+    position: absolute;
+    right: 1em;
+    top: 4.6em;
+    /* width: 18rem; */
+    z-index: 3;
+ 
 }
 
-.navbar-search form {
+.navbar-search .form-item:before {
+content: "";
+position: absolute;
+top: -2em;
+right: 1em;
+border-left: 12px solid transparent;
+border-right: 12px solid transparent;
+border-top: 14px solid transparent;
+border-bottom: 14px solid #3f9b7e;
+}
+
+
+/*.navbar-search form {
   position: absolute;
   right: 4rem;
   top: 0.6rem;
   width: 18rem;
   z-index: 3;
+}
+*/
+.navbar-search .form-control {
+  color: #4f4c4c;
+  border-radius: 0;
+      -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.input-group-addon{
+  display: none;
+}
+
+a.open-form{
+  font-size: 1.5rem;
+  color: #3f9b7e;
+}
+a.close-form{
+  font-size: 1.5rem;
+  color: #3f9b7e;
+}
+
+@media (max-width: 767px) {
+  .navbar-search .search-block-form {
+    display: block;
+  }
 }
 
 
@@ -1528,9 +1574,6 @@ nav#block-searchsidebar ul li a:hover"{
     width: 100%;
   }
 }
-.navbar-search .form-item {
-  margin-top: .5em;
-}
 
 
 @media (max-width: 767px){
@@ -1538,10 +1581,7 @@ nav#block-searchsidebar ul li a:hover"{
     margin-top: 0;
   }
 }
-.navbar-search .form-control {
-  color: #4f4c4c;
-  border-radius: 0;
-}
+
 
 
 @media (min-width: 767px) {
@@ -1550,16 +1590,7 @@ nav#block-searchsidebar ul li a:hover"{
   }
 }
 
-.input-group-addon{
-  display: none;
-}
 
-a.open-form{
-  font-size: 20px;
-}
-a.close-form{
-  font-size: 20px;
-}
 /* search-box */
 
 
