@@ -11,6 +11,7 @@ global-styling:
     js/wow.js: {}
     js/wow_custom.js: {}
     js/jquery.font-accessibility.min.js: {}
+    js/imageMapResizer.min.js: {}
     js/custom.js: {}
   dependencies:
     - core/jquery

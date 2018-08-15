@@ -631,7 +631,8 @@ left: 100%;
 }
 .box-container{
   position: relative;
-  background: #002139;
+ /* background: #002139;*/
+  background: #234645;
 
 }
 /* .block-content--type-top-box div:nth-child(even){
@@ -710,10 +711,18 @@ left: 100%;
   padding-top: 5px;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
+      -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .link-overlay a:hover{
 color: #ffffff;
 text-decoration: none;
+    -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 .box-container:hover .link-overlay {
   bottom: 0;
@@ -878,18 +887,26 @@ left: 20%;
 }
 
 .rh-img{
-  background: #002139;
+ /* background: #002139;*/
+  background: #234645;
 }
 .research-highlights img{
     width: 100% !important;
     max-height: 15em!important;
-    opacity: 0.6;
+    opacity: 0.8;
     -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
   } 
 
+.research-highlights img:hover{
+ opacity: 1;
+    -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
 
 
   p.rh-page-cont-title{
@@ -1698,13 +1715,13 @@ transition: all .5s ease-in-out;
  transition: all 0.5s;
 }
 
-.job-wrap .job-field-label{
+.job-field-label{
   width: 130px;
   font-family: 'Ek Mukta', sans-serif;
   font-weight: 700;
 }
 
-.job-wrap .job-field {
+.job-field {
   margin-left: 130px;
 }
 .job-apply-link{
@@ -1721,10 +1738,12 @@ transition: all .5s ease-in-out;
 }
 
 @media only screen and (min-width: 640px){
-.job-wrap .job-field-label{
+
+.job-field-label{
 width:180px;
 }
-.job-wrap .job-field {
+
+.job-field {
   margin-left: 180px;
 }
 }
@@ -1797,10 +1816,18 @@ width:180px;
 .widget_nav_menu li a{
   padding:0px;
   color: #aeaeae;
+      -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .widget_nav_menu li a:hover {
   color:#ffffff;
+      -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 
@@ -1849,10 +1876,18 @@ ul.menu--account li{
 .footer-bottom nav li a{
   display: inline;
   padding: 5px 5px;
+      -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .footer-bottom nav li a:hover{
   color: #a0ebea;
+      -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 

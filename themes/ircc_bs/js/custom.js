@@ -112,6 +112,8 @@ $(window).resize(function () {
     }
 });
 	
+$(document).ready(function(e){
+  $("map").imageMapResize();
+});
 
 }(jQuery);
-
