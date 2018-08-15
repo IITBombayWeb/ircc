@@ -45,6 +45,21 @@ class DronaJobCirculars extends SourcePluginBase {
         // associative arrays and not stdClass objects. 
         //$row = json_decode(file_get_contents($filename), true); // sets the title, body, etc. 
         //$row['json_filename'] = $filename;
+
+      //Check if this circular has already been created manually or by Job designation migration. If it is then find and assign the nid to the current row so that only remaining fields are updated.
+      $queryCheckExistingCircular = \Drupal::entityQuery('node')
+      ->condition('type', 'job_circulars')
+      ->condition('title', '2015052', '=');
+      $nidsExistingCircular = $queryCheckExistingCircular->execute();
+      if($nidsExistingCircular) {
+        //If nid found then assign it.
+        //print_r(reset($nids));
+        $row['nid']=reset($nidsExistingCircular);
+      } else {
+        //If nid is not found then set value to 0 so that new circular is created.
+        $row['nid']=0;
+      }
+      
         
       $row['title']=$result1->RecruitmentSrNo;
       $row['body']='Description';
@@ -128,6 +143,7 @@ class DronaJobCirculars extends SourcePluginBase {
    */
   public function fields() {
     return array( 
+      'nid' => $this->t('nid'),
       'title' => $this->t('RecruitmentSrNo'),
       'body' => $this->t('body'),
       'RecruitmentSrNo' => $this->t('RecruitmentSrNo'),

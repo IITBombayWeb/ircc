@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_desig_to_circular_ref
+    - node.type.job_circulars
+    - node.type.job_designations
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_designations.field_job_desig_to_circular_ref
+field_name: field_job_desig_to_circular_ref
+entity_type: node
+bundle: job_designations
+label: 'Job Desig To Circular Ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      job_circulars: job_circulars
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
+
