@@ -1,6 +1,7 @@
 global-styling:
   css:
     theme:
+      css/overrides.min.css: {}
       css/animate.css: {}
       css/hover.css: {}
       css/custom.css: {}
@@ -10,6 +11,7 @@ global-styling:
     js/wow.js: {}
     js/wow_custom.js: {}
     js/jquery.font-accessibility.min.js: {}
+    js/imageMapResizer.min.js: {}
     js/custom.js: {}
   dependencies:
     - core/jquery
@@ -47,3 +49,8 @@ custom-scrollbar:
     includes/custom-scrollbar/scrollelement.js: {}
   dependencies:
     - core/jquery
+
+ircc-staff:
+  css:
+    theme:
+      css/ircc_team.css: {}
