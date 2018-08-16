@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.job_designations.body
     - field.field.node.job_designations.field_appt_period
     - field.field.node.job_designations.field_desg_code
@@ -88,13 +89,13 @@ third_party_settings:
         - field_pd_erp_long_description
         - field_pd_erp_short_description
         - field_job_desig_to_circular_ref
-id: node.job_designations.default
+id: node.job_designations.full
 targetEntityType: node
 bundle: job_designations
-mode: default
+mode: full
 content:
   body:
-    label: hidden
+    label: above
     type: text_default
     weight: 1
     settings: {  }
@@ -217,7 +218,7 @@ content:
             lbw-cl: 'job-field-label pull-left'
             lbw-at: ''
             ow: true
-            ow-el: div`
+            ow-el: div
             ow-cl: mb-10
             ow-at: ''
             fis-el: ''
@@ -243,7 +244,35 @@ content:
     label: above
     settings:
       link: true
-    third_party_settings: {  }
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw: true
+            lbw-el: div
+            lbw-cl: 'job-field-label pull-left'
+            lbw-at: ''
+            ow: true
+            ow-el: div
+            ow-cl: mb-10
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: job-field
+            fi-at: ''
+            suffix: ''
+            lb-col: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
   field_level:
     weight: 10
     label: above
@@ -264,7 +293,7 @@ content:
             ow-el: div
             ow-cl: mb-10
             ow-at: ''
-            fis-el: div
+            fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
@@ -340,7 +369,7 @@ content:
             fis-cl: ''
             fis-at: ''
             fi: true
-            fi-el: div
+            fi-el: 'div '
             fi-cl: job-field
             fi-at: ''
             suffix: ''
@@ -397,7 +426,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: Category
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -432,7 +461,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
+            lb: 'ERP Long Desc'
             prefix: ''
             lbw: true
             lbw-el: div
@@ -467,7 +496,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
+            lb: 'ERP Short Desc'
             prefix: ''
             lbw: true
             lbw-el: div
@@ -538,7 +567,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: 'Functional Area'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -610,7 +639,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: 'Appointment Type'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -646,7 +675,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: Post
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -825,7 +854,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: Experience
+            lb: Qualification
             prefix: ''
             lbw: true
             lbw-el: div
@@ -861,7 +890,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: 'Recruitment Sr No.'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -933,7 +962,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: 'Project Code'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -968,7 +997,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: 'Project Description'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -1003,7 +1032,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: 'Project Title'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -1031,7 +1060,7 @@ content:
     region: ds_content
   field_salary:
     weight: 9
-    label: above
+    label: inline
     settings:
       link_to_entity: false
     third_party_settings:

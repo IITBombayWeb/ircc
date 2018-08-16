@@ -18,13 +18,13 @@ dependencies:
     - field.field.node.job_circulars.field_job_ta
     - field.field.node.job_circulars.field_job_url
     - node.type.job_circulars
+  enforced:
+    module:
+      - iitb_jobs
   module:
     - datetime
     - path
     - text
-  enforced:
-    module:
-      - iitb_jobs
 id: node.job_circulars.default
 targetEntityType: node
 bundle: job_circulars
@@ -162,6 +162,13 @@ content:
     settings:
       display_label: true
     weight: 15
+    region: content
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    settings:
+      display_label: true
+    weight: 120
     region: content
     third_party_settings: {  }
   sticky:

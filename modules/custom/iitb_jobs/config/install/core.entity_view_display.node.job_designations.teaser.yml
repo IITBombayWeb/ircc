@@ -4,13 +4,41 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.job_designations.body
+    - field.field.node.job_designations.field_appt_period
+    - field.field.node.job_designations.field_desg_code
+    - field.field.node.job_designations.field_desg_sr_no
+    - field.field.node.job_designations.field_job_desig_to_circular_ref
+    - field.field.node.job_designations.field_level
+    - field.field.node.job_designations.field_no_of_posts
+    - field.field.node.job_designations.field_norms
+    - field.field.node.job_designations.field_norms_remarks
+    - field.field.node.job_designations.field_pd_category
+    - field.field.node.job_designations.field_pd_erp_long_description
+    - field.field.node.job_designations.field_pd_erp_short_description
+    - field.field.node.job_designations.field_pd_faculty
+    - field.field.node.job_designations.field_pd_functional_area
+    - field.field.node.job_designations.field_pd_level
+    - field.field.node.job_designations.field_pd_permtemp
+    - field.field.node.job_designations.field_pd_postname
+    - field.field.node.job_designations.field_pd_project_post
+    - field.field.node.job_designations.field_pd_salcode
+    - field.field.node.job_designations.field_pd_short_code
+    - field.field.node.job_designations.field_project_sr_no
+    - field.field.node.job_designations.field_qualification_experience
+    - field.field.node.job_designations.field_recruitment_sr_no
+    - field.field.node.job_designations.field_rpd_adv_job_code
+    - field.field.node.job_designations.field_rpd_pro_code
+    - field.field.node.job_designations.field_rpd_project_description
+    - field.field.node.job_designations.field_rpd_title
+    - field.field.node.job_designations.field_salary
+    - field.field.node.job_designations.field_specialization
     - node.type.job_designations
-  module:
-    - text
-    - user
   enforced:
     module:
       - iitb_jobs
+  module:
+    - text
+    - user
 id: node.job_designations.teaser
 targetEntityType: node
 bundle: job_designations
@@ -27,4 +55,32 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_appt_period: true
+  field_desg_code: true
+  field_desg_sr_no: true
+  field_job_desig_to_circular_ref: true
+  field_level: true
+  field_no_of_posts: true
+  field_norms: true
+  field_norms_remarks: true
+  field_pd_category: true
+  field_pd_erp_long_description: true
+  field_pd_erp_short_description: true
+  field_pd_faculty: true
+  field_pd_functional_area: true
+  field_pd_level: true
+  field_pd_permtemp: true
+  field_pd_postname: true
+  field_pd_project_post: true
+  field_pd_salcode: true
+  field_pd_short_code: true
+  field_project_sr_no: true
+  field_qualification_experience: true
+  field_recruitment_sr_no: true
+  field_rpd_adv_job_code: true
+  field_rpd_pro_code: true
+  field_rpd_project_description: true
+  field_rpd_title: true
+  field_salary: true
+  field_specialization: true
