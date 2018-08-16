@@ -58,7 +58,7 @@ process:
   field_pd_salcode: PD_Salcode
   field_pd_short_code: PD_ShortCode
   field_job_desig_to_circular_ref:
-    plugin: entity_generate
+    plugin: entity_lookup
     source: RecruitmentSrNo
     entity_type: node
     bundle: job_circulars
