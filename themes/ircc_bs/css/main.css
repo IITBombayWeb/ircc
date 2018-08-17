@@ -843,10 +843,10 @@ text-decoration: none;
   bottom: -35px;
 }
 
-/*.slick__slide{
+.slick__slide{
 padding-left: 5px;
 padding-right: 5px;
-}*/
+}
 
 .slide__content,
 .grid__content {
