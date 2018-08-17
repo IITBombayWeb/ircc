@@ -976,7 +976,6 @@ left: 20%;
   .news-title a{
   /* color:#130c11; */
   color:#ffffff;
-  font-family: 'Merriweather', serif;
   font-size: 0.95rem;
   font-weight: bold;
   text-align: center;
@@ -1089,7 +1088,6 @@ content: "";
 .event-title a{
 /* color: #ffffff; */
 color:#130c11;
-font-family: 'Merriweather', serif;
 font-size: 0.95rem;
 font-weight: bold;
 }
@@ -1813,7 +1811,6 @@ width:180px;
   font-size: 1rem;
   font-weight: 600;
   text-transform: capitalize;
-  font-family: 'Merriweather', serif;
   margin-top: 0px;
 }
 
