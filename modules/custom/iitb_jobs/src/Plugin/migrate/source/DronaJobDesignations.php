@@ -32,7 +32,7 @@ class DronaJobDesignations extends SourcePluginBase {
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo','DesgCode','QualificationExperience','JobProfile','NoOfPosts','ApptPeriod','Salary','Level','Specialization','Norms','NormsRemarks'));
     $query->fields('rpd',array('ProCode','Title','AdvJobCode','ProjectDescription'));
     
-    $query->condition('rdd.RecruitmentSrNo', "2015052", "=");
+    //$query->condition('rdd.RecruitmentSrNo', "2015052", "=");
     //$query->range(0, 10);
     
     $result = $query->execute()->fetchAll();

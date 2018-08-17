@@ -36,7 +36,7 @@ function iitb_jobs_theme() {
 
 
 use Drupal\migrate_tools\MigrateExecutable;
-//use Drupal\migrate_tools\MigrateBatchExecutable;
+use Drupal\migrate_tools\MigrateBatchExecutable;
 use Drupal\migrate\MigrateMessage;
 
 /**
@@ -45,7 +45,7 @@ use Drupal\migrate\MigrateMessage;
 function iitb_jobs_cron() {
 
   $manager = \Drupal::service('plugin.manager.migration');
-  $migration_ids = ['drona_job_designations','drona_job_circulars']; 
+  $migration_ids = ['drona_job_circulars','drona_job_designations']; 
 
   foreach ($migration_ids as $migration_id) {
     $limit=0;
@@ -58,10 +58,10 @@ function iitb_jobs_cron() {
     ];
     $migrateMessage = new MigrateMessage();
     $migration = $manager->createInstance($migration_id);
-    //$executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
-    //$executable->batchImport();
+    $executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
+    $executable->batchImport();
 
-    $executable = new MigrateExecutable($migration, $migrateMessage, $options);
-    $executable->import();
+    // $executable = new MigrateExecutable($migration, $migrateMessage, $options);
+    // $executable->import();
   }
 }

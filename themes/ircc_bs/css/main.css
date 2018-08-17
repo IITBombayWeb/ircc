@@ -1471,7 +1471,7 @@ nav#block-searchsidebar ul li a:hover"{
     display: inline-flex;
   }
 }
-
+@media screen and (min-width: 767px){
 .navbar-search .search-icons a {
   position: absolute;
   right: 0;
@@ -1535,10 +1535,6 @@ border-bottom: 14px solid #3f9b7e;
 .navbar-search .form-control {
   color: #4f4c4c;
   border-radius: 0;
-      -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-  transition: all 0.5s;
 }
 
 .input-group-addon{
@@ -1552,6 +1548,7 @@ a.open-form{
 a.close-form{
   font-size: 1.5rem;
   color: #3f9b7e;
+}
 }
 
 @media (max-width: 767px) {

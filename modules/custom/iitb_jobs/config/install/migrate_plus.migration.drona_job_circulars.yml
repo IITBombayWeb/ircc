@@ -35,20 +35,34 @@ process:
   field_job_ta: TA
   field_job_ad_date_chosen: AdDateChosen
   field_job_url: URL
+  # field_job_designations_ref:
+  #   plugin: sub_process
+  #   source: designation_list
+  #   process:
+  #     field_job_designations_ref:
+  #       plugin: migration_lookup
+  #       migration: drona_job_designations
+  #       no_stub: true
+  #       source: DescNewTitle
+  #     target_id: '@field_job_designations_ref'
+  #     bar:
+  #       plugin: log
+  #       source: '@target_id'
+  #       message: '@target_id'
   field_job_designations_ref:
     plugin: sub_process
     source: designation_list
     process:
       field_job_designations_ref:
-        plugin: migration_lookup
-        migration: drona_job_designations
-        no_stub: true
+        plugin: entity_lookup
         source: DescNewTitle
+        entity_type: node
+        bundle: job_designations
       target_id: '@field_job_designations_ref'
-      bar:
-        plugin: log
-        source: '@target_id'
-        message: '@target_id'
+      # bar:
+      #   plugin: log
+      #   source: '@target_id'
+      #   message: '@target_id'
   field_job_dept_code_ref:
     plugin: entity_lookup
     source: DeptCodeRef
@@ -77,6 +91,7 @@ process:
 destination:
   plugin: 'entity:node'
   bundle: job_circulars
-migration_dependencies:
-  required:
-    - drona_job_designations
+# migration_dependencies:
+#   required:
+#     - drona_job_designations
+migration_dependencies: null

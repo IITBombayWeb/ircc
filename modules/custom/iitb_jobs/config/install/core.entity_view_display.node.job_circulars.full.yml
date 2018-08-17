@@ -2,6 +2,7 @@ langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.full
     - field.field.node.job_circulars.body
     - field.field.node.job_circulars.field_job_ad_date_chosen
     - field.field.node.job_circulars.field_job_adv_cir_no
@@ -61,10 +62,10 @@ third_party_settings:
         - field_job_ad_date_chosen
         - field_job_designations_ref
         - field_job_dept_code_ref
-id: node.job_circulars.default
+id: node.job_circulars.full
 targetEntityType: node
 bundle: job_circulars
-mode: default
+mode: full
 content:
   body:
     label: hidden
@@ -130,7 +131,6 @@ content:
             ow-el: div
             ow-cl: mb-10
             ow-at: ''
-            fis: true
             fis-el: ''
             fis-cl: ''
             fis-at: ''
@@ -142,6 +142,7 @@ content:
             lb-col: false
             ow-def-at: false
             ow-def-cl: false
+            fis: false
             fis-def-at: false
             fi-def-at: false
     type: string
@@ -230,7 +231,7 @@ content:
         ft:
           id: expert
           settings:
-            lb: Department
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
@@ -240,10 +241,10 @@ content:
             ow-el: div
             ow-cl: mb-10
             ow-at: ''
-            fis: true
-            fis-el: div
-            fis-cl: job-field
+            fis-el: ''
+            fis-cl: ''
             fis-at: ''
+            fi: true
             fi-el: div
             fi-cl: job-field
             fi-at: ''
@@ -251,8 +252,8 @@ content:
             lb-col: false
             ow-def-at: false
             ow-def-cl: false
+            fis: false
             fis-def-at: false
-            fi: false
             fi-def-at: false
     type: entity_reference_label
     region: ds_content
@@ -298,13 +299,13 @@ content:
     label: above
     settings:
       timezone_override: ''
-      format_type: short
+      format_type: medium
     third_party_settings:
       ds:
         ft:
           id: expert
           settings:
-            lb: 'Last Date to Apply'
+            lb: ''
             prefix: ''
             lbw: true
             lbw-el: div
