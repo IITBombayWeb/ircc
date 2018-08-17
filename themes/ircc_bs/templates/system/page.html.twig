@@ -125,8 +125,8 @@
       
     {% if is_front %}
           {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
-              <div id="main-wrap">
-                <div class="container-fluid">
+              <div class="container">
+                <div id="main-wrap">
                   {% if page.top_head %}
                     <div class="row clearfix">
                       <div class="col-md-12 top-head animated fadeInDown delay-03s">
@@ -213,14 +213,18 @@
                       {% endif %}
                     </div>
                   {% endif %}
-                </div> {# container-fluid #}
-              </div>
+                </div>
+              </div> {# container #}
             {% endif %}
 
         <!-- news start -->
         {% if page.news %}
-          <div id = "news-wrap">
-                  {{ page.news }}
+          <div class="container">
+            <div class="row clearfix">
+                <div id = "news-wrap">
+                    {{ page.news }}
+                </div>
+            </div>
           </div>
         {% endif %}
         <!-- news end -->
@@ -229,12 +233,10 @@
             <!-- Research Begin-->
             {% if page.research_highlights %}
               <section id="research-wrap">
-                  <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-12">                    
-                        {{ page.research_highlights }}
+                  <div class="container">
+                    <div class="row clearfix">                  
+                          {{ page.research_highlights }}
                     </div>
-                  </div>
                   </div>
               </section>
             {% endif %}
@@ -242,8 +244,12 @@
       
 
         {% if page.events %}
-          <div id = "events-wrap">
-              {{ page.events }}
+          <div class="container">
+            <div class="row clearfix">
+                <div id = "events-wrap">
+                    {{ page.events }}
+                </div>
+            </div>
           </div>
         {% endif %}
 
