@@ -66,7 +66,7 @@
       {% if not navbar_attributes.hasClass(container) %}
         <div class="{{ container }}">
       {% endif %}
-          <div class="row">
+          <div class="row clearfix">
               {% if page.primary_menu %}  
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
                         <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
@@ -125,8 +125,8 @@
       
     {% if is_front %}
           {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
-              <div class="container">
-                <div id="main-wrap">
+              <section id="main-wrap">
+                <div class="container">
                   {% if page.top_head %}
                     <div class="row clearfix">
                       <div class="col-md-12 top-head animated fadeInDown delay-03s">
@@ -213,19 +213,21 @@
                       {% endif %}
                     </div>
                   {% endif %}
-                </div>
-              </div> {# container #}
+                </div> {# container #}
+              </section> {# main-wrap #}
             {% endif %}
 
         <!-- news start -->
         {% if page.news %}
+        <section id="news-outer-wrap">
           <div class="container">
             <div class="row clearfix">
-                <div id = "news-wrap">
+                <div class="col-md-12" id="news-wrap">
                     {{ page.news }}
                 </div>
             </div>
           </div>
+        </section>
         {% endif %}
         <!-- news end -->
 
@@ -234,8 +236,10 @@
             {% if page.research_highlights %}
               <section id="research-wrap">
                   <div class="container">
-                    <div class="row clearfix">                  
+                    <div class="row clearfix">
+                      <div class="col-md-12">                   
                           {{ page.research_highlights }}
+                      </div>
                     </div>
                   </div>
               </section>
@@ -244,13 +248,15 @@
       
 
         {% if page.events %}
+        <section id = "event-wrap">
           <div class="container">
             <div class="row clearfix">
-                <div id = "events-wrap">
+                <div class="col-md-12">
                     {{ page.events }}
                 </div>
             </div>
           </div>
+        </section>
         {% endif %}
 
         

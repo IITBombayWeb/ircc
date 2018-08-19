@@ -581,13 +581,14 @@ left: 100%;
 /* top box front page */
 
 #main-wrap {
-  padding-top: 0.5em;
-  width: 100%;
-  height:100%;
-  /* background: url(../img/research.jpg) fixed; */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+     padding-top: 0.5em;
+    width: 100%;
+    height: 100%;
+    background: url(../img/event-4.jpg) fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 4em;
 }
 
 
@@ -609,7 +610,7 @@ left: 100%;
 .top-wrapper{
   padding-left: 0px;
   padding-right: 0px;
-  border: 1px solid #5c5c5c;
+  border: 0.5px solid #0000008c;
 
 }
 .top-box-title{
@@ -726,11 +727,11 @@ text-decoration: none;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-.box-container:hover .link-overlay {
+.top-wrapper:hover .link-overlay {
   bottom: 0;
   height: 100%;
 }
-.box-container:hover .box-summary {
+.top-wrapper:hover .box-summary {
  display: none;
   -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -765,7 +766,7 @@ text-decoration: none;
   #research-wrap {
     padding-top: 0px;
     width: 100%;
-    /* background: url(../img/event_bg.jpg) fixed; */
+     background: url(../img/event_bg.jpg) fixed; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -778,10 +779,10 @@ text-decoration: none;
     font-weight: bold;
     color: #130c11;
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    margin-bottom: 0px;
     margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
     /* text-shadow: 1px 2px 6px grey; */
   }
 
@@ -801,10 +802,10 @@ text-decoration: none;
 
 .research-highlights{
   border: 1px solid #aeaeae;
+  background: #ffffff;
   border-radius: 5px;
   font-size: 0.85rem;
   min-height: 28em;
-  border: 1px solid #aeaeae;
   transition: all .5s ease-in-out;
   -webkit-transition: all .5s ease-in-out;
    -moz-transition: all .5s ease-in-out;
@@ -932,6 +933,15 @@ left: 20%;
   position: relative;
 }
 
+#news-outer-wrap{
+     padding-top: 0px;
+    width: 100%;
+    background: #234645; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 #news-wrap{
  /* background: #002139;*/
   background: #234645;
@@ -941,7 +951,7 @@ left: 20%;
     width: 100%;
     /* background: #d6d7d9; */
   /*  background: #345474;*/
-    background: #4ba9a9;
+    /*background: #4ba9a9;*/
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
@@ -949,9 +959,9 @@ left: 20%;
     /* color: #130c11; */
     color: #ffffff;
     margin-top: 0px;
-    margin-bottom: 30px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
   }
   
   
@@ -982,7 +992,7 @@ left: 20%;
   }
   
   .news-info{
-    height:100px;
+   height: 10em;
     text-align: justify;
     font-size: 0.85rem;
     padding: 1em;
@@ -1023,21 +1033,29 @@ left: 20%;
   }
 
 
+#event-wrap{
+   padding-top: 0px;
+    width: 100%;
+    background: aliceblue;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 .events-head{
   width: 100%;
   /* background: #345474; */
-  background: #d6d7d9;
+  /*background: #d6d7d9;*/
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   font-family: 'Merriweather', serif;
   /* color: #ffffff; */
   color: #130c11;
-  margin-top: 0px;
-  margin-bottom: 30px;
-  padding-top: 10px;
-  padding-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 
@@ -1098,7 +1116,6 @@ text-decoration: underline;
 .event-info{
 color: #130c11;
 font-size: 0.85rem;
-
 }
 
 
@@ -1122,7 +1139,7 @@ font-size: 0.85rem;
 
 .more-link a{
   float: right;
-  color: #9b9797;
+  color: #f7f7f7;
   font-size: 16px;
   font-weight: bold;
   -webkit-transition: all 0.5s;
@@ -2069,7 +2086,7 @@ transition: all 0.5s;
   }
   .sec-logo {
     display: inline;
-    max-width: 4.5em;
+    max-width: 5em;
   }
   .navbar-brand {
     max-width: 11em;
@@ -2166,7 +2183,7 @@ transition: all 0.5s;
     max-width: 11em;
     padding: 1.1em;
     margin-left: 0px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
  
   }
   .sec-logo {
@@ -2218,6 +2235,7 @@ transition: all 0.5s;
     padding-right: 4em;
   }
   .region-research-highlights .slick-arrow{
+    background-color: #e3e3ed;
     border: 1px solid black;
     border-radius: 5px;
     -webkit-transition: all 0.5s;
