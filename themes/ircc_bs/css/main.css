@@ -1232,9 +1232,7 @@ h2.page-title{
 }
 
 @media screen and (max-width: 700px ){
-h2.page-title{
-  font-size: 14px;
-  }
+
   .main-container {
     padding-top: 10px;
   }
@@ -1253,7 +1251,7 @@ h2.page-title{
 
 @media screen and (max-width: 767px){
   .region-content .slick img{
-    height:260px;
+    height:15em;
   }
   ul.tabs--primary li a{
     font-size: 12px;
@@ -1263,7 +1261,7 @@ h2.page-title{
 
 @media screen and (max-width: 500px){
   .region-content .slick img{
-    height:200px;
+    height:12em;
   }
   }
 
@@ -2034,9 +2032,7 @@ transition: all 0.5s;
     margin-left: 28px;
     padding-right: 100px;
   }
-  .region-content{
-    font-size: 14px;
-  }
+
   .node-field-label{
     font-size: 16px;
   }
@@ -2050,15 +2046,10 @@ transition: all 0.5s;
   .navbar-brand {
     padding: 30px;
   }
-  .region-content{
-    font-size: 14px;
-  }
 }
 
 @media screen and (max-width: 992px){
-  .region-content{
-    font-size: 13px;
-  }
+  
   .node-field-label{
     font-size: 14px;
   }
@@ -2072,6 +2063,7 @@ transition: all 0.5s;
 }
 
 @media screen and (max-width: 768px){
+  
   .navbar-brand{
     font-size: 14pt;
     padding: 10pt;
@@ -2091,13 +2083,17 @@ transition: all 0.5s;
   .navbar-brand {
     max-width: 11em;
   }
-  .region-content{
-      font-size: 13px;
-  }
+
 }
 
 
 @media screen and (max-width:768px){
+  h2.page-title{
+  font-size: 1.2rem;
+  }
+  .region-content{
+    font-size: 0.9rem;
+  }
   .top-head p{
     font-size: 1rem;
     font-weight: normal;
@@ -2122,6 +2118,7 @@ transition: all 0.5s;
 }
 
 @media screen and (max-width:767px){
+
 .footer-bootom-nav a {
   font-size: 0.75rem;
   }
@@ -2156,6 +2153,9 @@ transition: all 0.5s;
 
 
 @media screen and (max-width: 600px) {
+   h2.page-title{
+  font-size: 1rem;
+  }
   .navbar-text{
     display: none;
   }
@@ -2198,9 +2198,7 @@ transition: all 0.5s;
   img.sec-logo{
     display: inline;
   }
-  .region-content{
-    font-size: 12px;
-  }
+  
   .top-head p {
     font-size: 10pt;
   }
