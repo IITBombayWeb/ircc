@@ -49,7 +49,7 @@ class DronaJobCirculars extends SourcePluginBase {
       //Check if this circular has already been created manually or by Job designation migration. If it is then find and assign the nid to the current row so that only remaining fields are updated.
       $queryCheckExistingCircular = \Drupal::entityQuery('node')
       ->condition('type', 'job_circulars')
-      ->condition('title', '2015052', '=');
+      ->condition('title', $result1->RecruitmentSrNo, '=');
       $nidsExistingCircular = $queryCheckExistingCircular->execute();
       if($nidsExistingCircular) {
         //If nid found then assign it.
