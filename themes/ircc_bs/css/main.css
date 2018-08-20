@@ -594,10 +594,12 @@ left: 100%;
 
 
 .top-head{
-  /*background: #062d3e;*/
-  background: #275454;
-  padding: 1em;
+     background: #275454;
+    padding: 1em;
+    margin-bottom: 3em;
+    border-radius: 5px;
 }
+
 .top-head p {
   font-size: 1.2rem;
   font-family: "Open Sans", sans-serif;
@@ -608,51 +610,29 @@ left: 100%;
 
 
 .top-wrapper{
-  padding-left: 0px;
-  padding-right: 0px;
-  border: 1px solid #0000008c;
-
+  padding-left: 0.4em;
+  padding-right: 0.4em;
+  margin-bottom: 1em;
+  
 }
+
+
 .top-box-title{
   font-family: 'Merriweather', serif;
   font-size: 1.3rem;
 }
 
-/*.top-box-title:after{
-  background-color: #9d9090;
-  content: "";
-  height: 50px;
-  left: 0px;
-  position: absolute;
-  width: 2px;
-  top: 5px;
-}*/
 
-.top_box_bg{
-  background-color: #ffffff;
-  /* border-radius: 8px; */
-}
 .box-container{
   position: relative;
  /* background: #002139;*/
   background: #234645;
 
 }
-/* .block-content--type-top-box div:nth-child(even){
-  background: #1ba74d;
+.top{
+  border: 1px solid #aeaeae;
+  border-radius: 5px;
 }
-.block-content--type-top-box div:nth-child(even){
-  background: #002139;
-} */
-
-
-/* .box-container:nth-child(1){
-  background: #1ba74d;
-}
-
-.box-container:nth-child(2){
-  background: #002139;
-} */
 
 .box-container img{
   height: 15em;
@@ -934,29 +914,27 @@ left: 20%;
 }
 
 #news-outer-wrap{
-     padding-top: 4em;
+    margin-top: 1em;
     width: 100%; 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-#news-wrap{
- /* background: #002139;*/
+.news-inner-wrap{
   background: #234645;
+  padding: 1em;
+  border-radius: 5px;
   }
   
   .news-head{
+  
     width: 100%;
-    /* background: #d6d7d9; */
-  /*  background: #345474;*/
-    /*background: #4ba9a9;*/
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
     font-family: 'Merriweather', serif;
-    /* color: #130c11; */
-    color: #ffffff;
+    color: #130c11;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-top: 1em;
@@ -1141,7 +1119,7 @@ font-size: 0.85rem;
 
 .more-link a{
   float: right;
-  color: #f7f7f7;
+  color: #aeaeae;
   font-size: 16px;
   font-weight: bold;
   -webkit-transition: all 0.5s;
@@ -1150,6 +1128,7 @@ font-size: 0.85rem;
   transition: all 0.5s;
 }
 .more-link a:hover{
+  color: #234645;
   -webkit-transition: all 0.5s;
    -moz-transition: all 0.5s;
    -o-transition: all 0.5s;
@@ -1927,7 +1906,9 @@ width:180px;
   transition: all 0.5s;
 }
 
-
+.widget_nav_menu li a i.fa{
+  margin-right: 0.5em;
+}
 
 .footer-bottom {
    /* background-color: #006699;*/
