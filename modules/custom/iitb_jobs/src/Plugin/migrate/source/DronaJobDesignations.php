@@ -47,24 +47,24 @@ class DronaJobDesignations extends SourcePluginBase {
       $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo;
       $row['DescNewTitle']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo;
       
-      $row['body']=iconv(mb_detect_encoding($result1->JobProfile, mb_detect_order(), true), "UTF-8", $result1->JobProfile);
+      $row['body']=iconv(mb_detect_encoding($result1->JobProfile, mb_detect_order(), true), "UTF-8//IGNORE", $result1->JobProfile);
 
       $row['RecruitmentSrNo']=$result1->RecruitmentSrNo;
       $row['ProjectSrNo']=$result1->ProjectSrNo;
       $row['DesgSrNo']=$result1->DesgSrNo;
       $row['DesgCode']=$result1->DesgCode;
-      $row['QualificationExperience']=iconv(mb_detect_encoding($result1->QualificationExperience, mb_detect_order(), true), "UTF-8", $result1->QualificationExperience);
+      $row['QualificationExperience']=iconv(mb_detect_encoding($result1->QualificationExperience, mb_detect_order(), true), "UTF-8//IGNORE", $result1->QualificationExperience);
       $row['NoOfPosts']=$result1->NoOfPosts;
       $row['ApptPeriod']=$result1->ApptPeriod;
       $row['Salary']=$result1->Salary;
       $row['Level']=$result1->Level;
-      $row['Specialization']=iconv(mb_detect_encoding($result1->Specialization, mb_detect_order(), true), "UTF-8", $result1->Specialization);
+      $row['Specialization']=iconv(mb_detect_encoding($result1->Specialization, mb_detect_order(), true), "UTF-8//IGNORE", $result1->Specialization);
       $row['Norms']=$result1->Norms;
-      $row['NormsRemarks']=iconv(mb_detect_encoding($result1->NormsRemarks, mb_detect_order(), true), "UTF-8", $result1->NormsRemarks);
+      $row['NormsRemarks']=iconv(mb_detect_encoding($result1->NormsRemarks, mb_detect_order(), true), "UTF-8//IGNORE", $result1->NormsRemarks);
       $row['ProCode']=$result1->ProCode;
-      $row['RPDTitle']=iconv(mb_detect_encoding($result1->Title, mb_detect_order(), true), "UTF-8", $result1->Title);
+      $row['RPDTitle']=iconv(mb_detect_encoding($result1->Title, mb_detect_order(), true), "UTF-8//IGNORE", $result1->Title);
       $row['AdvJobCode']=$result1->AdvJobCode;
-      $row['ProjectDescription']=iconv(mb_detect_encoding($result1->ProjectDescription, mb_detect_order(), true), "UTF-8", $result1->ProjectDescription);
+      $row['ProjectDescription']=iconv(mb_detect_encoding($result1->ProjectDescription, mb_detect_order(), true), "UTF-8//IGNORE", $result1->ProjectDescription);
 
       $queryPostdt = $con->select('Postdtls', 'pd');
       $queryPostdt->condition('pd.Postcode', $result1->DesgCode, "=");
@@ -117,12 +117,12 @@ class DronaJobDesignations extends SourcePluginBase {
         $row['PD_FunctionalArea']='';
       }
       if(isset($resultPostdt[0]->ERPLongDescription)) {
-        $row['PD_ERPLongDescription']=iconv(mb_detect_encoding($resultPostdt[0]->ERPLongDescription, mb_detect_order(), true), "UTF-8", $resultPostdt[0]->ERPLongDescription);
+        $row['PD_ERPLongDescription']=iconv(mb_detect_encoding($resultPostdt[0]->ERPLongDescription, mb_detect_order(), true), "UTF-8//IGNORE", $resultPostdt[0]->ERPLongDescription);
       } else {
         $row['PD_ERPLongDescription']='';
       }
       if(isset($resultPostdt[0]->ERPShortDescription)) {
-        $row['PD_ERPShortDescription']=iconv(mb_detect_encoding($resultPostdt[0]->ERPShortDescription, mb_detect_order(), true), "UTF-8", $resultPostdt[0]->ERPShortDescription);
+        $row['PD_ERPShortDescription']=iconv(mb_detect_encoding($resultPostdt[0]->ERPShortDescription, mb_detect_order(), true), "UTF-8//IGNORE", $resultPostdt[0]->ERPShortDescription);
       } else {
         $row['PD_ERPShortDescription']='';
       }
