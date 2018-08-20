@@ -66,7 +66,7 @@
       {% if not navbar_attributes.hasClass(container) %}
         <div class="{{ container }}">
       {% endif %}
-          <div class="row">
+          <div class="row clearfix">
               {% if page.primary_menu %}  
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
                         <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
@@ -125,8 +125,8 @@
       
     {% if is_front %}
           {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
-              <div id="main-wrap">
-                <div class="container-fluid">
+              <section id="main-wrap">
+                <div class="container">
                   {% if page.top_head %}
                     <div class="row clearfix">
                       <div class="col-md-12 top-head animated fadeInDown delay-03s">
@@ -213,15 +213,21 @@
                       {% endif %}
                     </div>
                   {% endif %}
-                </div> {# container-fluid #}
-              </div>
+                </div> {# container #}
+              </section> {# main-wrap #}
             {% endif %}
 
         <!-- news start -->
         {% if page.news %}
-          <div id = "news-wrap">
-                  {{ page.news }}
+        <section id="news-outer-wrap">
+          <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12" id="news-wrap">
+                    {{ page.news }}
+                </div>
+            </div>
           </div>
+        </section>
         {% endif %}
         <!-- news end -->
 
@@ -229,12 +235,12 @@
             <!-- Research Begin-->
             {% if page.research_highlights %}
               <section id="research-wrap">
-                  <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-md-12">                    
-                        {{ page.research_highlights }}
+                  <div class="container">
+                    <div class="row clearfix">
+                      <div class="col-md-12">                   
+                          {{ page.research_highlights }}
+                      </div>
                     </div>
-                  </div>
                   </div>
               </section>
             {% endif %}
@@ -242,9 +248,15 @@
       
 
         {% if page.events %}
-          <div id = "events-wrap">
-              {{ page.events }}
+        <section id = "event-wrap">
+          <div class="container">
+            <div class="row clearfix">
+                <div class="col-md-12">
+                    {{ page.events }}
+                </div>
+            </div>
           </div>
+        </section>
         {% endif %}
 
         
