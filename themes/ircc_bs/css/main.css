@@ -1039,7 +1039,7 @@ left: 20%;
 
 
 #event-wrap{
-   padding-top: 0px;
+     margin-top: 1em;
     width: 100%;
     background: aliceblue;
     background-position: center;
