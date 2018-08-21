@@ -1366,59 +1366,13 @@ table#past-deans-info td{
 
 
 /* award page */
-#block-exposedformall-awardspage-1 a.bef-link-active{
-  color: #ffffff!important;
-  background: #4a5c68d1;
-  font-weight: bold;
-  padding: 4px;
-  border-radius: 5px;
+.form-item-field-award-name-ref-target-id .select-wrapper .form-control{
+  border: none;
+    box-shadow: none;
 }
-
-#block-exposedformall-awardspage-1 a.bef-link-active:hover{
-  text-decoration: none;
+.form-item-field-award-name-ref-target-id .select-wrapper:after{
+  content: '';
 }
-#block-exposedformall-awardspage-1 .js-form-item-term-node-tid-depth a{
-  color: #3b4145;
-}
-
-.js-form-item-field-award-year-target-id .chosen-container-single{
-  padding: 0px;
-  height: 27px!important;
-}
-
-.js-form-item-field-award-year-target-id .chosen-container-single .chosen-single{
-border :none;
-}
-
-.js-form-item-field-award-year-target-id{
-  margin-bottom: 15px!important;
-}
-
-.js-form-item-field-award-year-target-id .control-label{
-  color: #4a6568;
-  font-size: 16px;
-}
-
-.js-form-item-term-node-tid-depth .control-label{
-  color: #4a6568;
-  font-size: 16px;
-}
-
-.js-form-item-field-award-year-target-id .select-wrapper:after{
-  display: none!important;
-}
-
-
-section.block-views-exposed-filter-blockall-awards-page-1 {
-border: 1px solid #25138b;
-background-color: white;
-border-radius: 5px;
-padding: 10px;
-margin-bottom: 20px;
-
-box-shadow: #4a6568 3px 6px;
-}
-
 /* award page */
 
 
