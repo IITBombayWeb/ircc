@@ -656,16 +656,13 @@ left: 100%;
 
 
 .link-overlay-inner{
-  /* background-color: #103e65; */
     height: 100%;
     width: 100%;
-    /* margin: auto; */
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-    /* font-size: 9vh; */
     text-align: center;
 }
 
@@ -699,6 +696,8 @@ left: 100%;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+
 .link-overlay a:hover{
 color: #ffffff;
 text-decoration: none;
@@ -719,25 +718,54 @@ text-decoration: none;
   transition: all 0.5s;
 }
 
-
-
-
+.top-wrapper:hover .click-info {
+ display: none;
+  -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
 .box-summary{
-    /* background-color: rgba(0,0,0,0.3); */
     position: absolute;
-    bottom: 40%;
+    top: 40%;
     width: 100%;
     text-align: center;
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: bold;
-    /* text-shadow: 4px 3px 3px black; */
-    color: white;
-    /* padding: 65px; */
+    color: #ffffff;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
   transition: all 0.5s;
 }
+
+.click-info{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+  .box-summary{
+    top: 10%;
+  }
+  .click-info{
+    display: block;
+    position: absolute;
+    border: 1px solid #ffffff;
+    top: 45%;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+    background: #808080;
+    color: #ffffff;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}
+
+
 /* top box front page */
 
   
@@ -746,10 +774,6 @@ text-decoration: none;
   #research-wrap {
     padding-top: 0px;
     width: 100%;
- /*    background: url(../img/event_bg.jpg) fixed; 
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;*/
     }
 
 
@@ -2153,6 +2177,10 @@ transition: all 0.5s;
   .footer-widget{
     margin-bottom: 2rem;
   }
+
+  .box-summary{
+    top:10%;
+  }
 }
 
 @media screen and (max-width:767px){
@@ -2169,7 +2197,7 @@ transition: all 0.5s;
   }
 
   #main-wrap{
-    padding-top: 0px;
+    padding-top: 0.5em;
   }
   .navbar-text{
     margin: 1em;
@@ -2180,14 +2208,6 @@ transition: all 0.5s;
 
     
 }
-
-@media screen and (max-width:700px){
-  #main-wrap{
-    padding-top: 0px;
-  }
-}
-
-
 
 
 @media screen and (max-width: 600px) {
@@ -2203,6 +2223,10 @@ transition: all 0.5s;
     font-size: 1rem;
     padding: 0.5em;
     line-height: 1.5;
+  }
+
+  .research-highlights img{
+    max-height: 15em!important;
   }
 
 }
