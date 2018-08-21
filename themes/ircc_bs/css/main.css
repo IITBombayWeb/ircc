@@ -1367,8 +1367,9 @@ table#past-deans-info td{
 
 /* award page */
 .form-item-field-award-name-ref-target-id .select-wrapper .form-control{
-  border: none;
+    border: none;
     box-shadow: none;
+    width: 20em;
 }
 .form-item-field-award-name-ref-target-id .select-wrapper:after{
   content: '';
