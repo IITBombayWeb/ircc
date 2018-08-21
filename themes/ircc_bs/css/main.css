@@ -752,16 +752,16 @@ text-decoration: none;
   .click-info{
     display: block;
     position: absolute;
-    top: 45%;
-    left: 30%;
-    right: 30%;
+    bottom: 5%;
+    left: 35%;
+    right: 35%;
     text-align: center;
-    font-size: 1rem;
+    font-size: 0.80rem;
     font-weight: bold;
-   /* background: #1ba74d;*/
-    background: #386548;
-    color: #ffffff;
-    padding: 0.3em;
+    background: #234645bd;
+
+    color: #1ba74d;
+    padding: 3px;
     border: 2px solid #1ba74d;
     border-radius: 5px;
     -webkit-transition: all 0.5s;
