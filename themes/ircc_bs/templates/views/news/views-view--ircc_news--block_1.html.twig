@@ -41,6 +41,10 @@
     dom_id ? 'js-view-dom-id-' ~ dom_id,
   ]
 %}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
 <div{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {% if title %}
@@ -64,11 +68,9 @@
   {% endif %}
 
   {% if rows %}
-  <div class="container">
     <div class="view-content row wow fadeInDown delay-05s">
       {{ rows }}
-    </div>
-  </div>
+   </div>
   {% elseif empty %}
     <div class="view-empty">
       {{ empty }}

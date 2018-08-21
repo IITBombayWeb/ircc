@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.job_post_facets
+  module:
+    - facets
+    - system
+  theme:
+    - ircc_bs
+  enforced:
+    module:
+      - iitb_jobs
+id: jobpostfacets
+theme: ircc_bs
+region: sidebar_first
+weight: -18
+provider: null
+plugin: 'facet_block:job_post_facets'
+settings:
+  id: 'facet_block:job_post_facets'
+  label: Positions
+  provider: facets
+  label_display: visible
+  block_id: jobpostfacets
+visibility:
+  request_path:
+    id: request_path
+    pages: /search/jobs
+    negate: false
+    context_mapping: {  }

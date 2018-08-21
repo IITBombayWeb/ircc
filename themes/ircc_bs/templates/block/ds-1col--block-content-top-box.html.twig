@@ -9,7 +9,7 @@
  * - ds_content: content region
  */
 #}
-<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix','top_box_bg') }}>
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
 
   {{ title_suffix.contextual_links }}
   <h2 class="top-box-title capitalize text-center">
@@ -23,6 +23,9 @@
       </div>
       <div class="box-summary">
         {{ ds_content.field_summary_action_box }}
+      </div>
+      <div class="click-info">
+      Reveal
       </div>
     </div>
 
