@@ -217,6 +217,21 @@
               </section> {# main-wrap #}
             {% endif %}
 
+
+        <!-- Research Begin-->
+        {% if page.research_highlights %}
+          <section id="research-wrap">
+              <div class="container">
+                <div class="row clearfix">
+                  <div class="col-md-12">                   
+                      {{ page.research_highlights }}
+                  </div>
+                </div>
+              </div>
+          </section>
+        {% endif %}
+          <!-- Research End-->
+              
         <!-- news start -->
         {% if page.news %}
         <section id="news-outer-wrap">
@@ -232,19 +247,6 @@
         <!-- news end -->
 
 
-            <!-- Research Begin-->
-            {% if page.research_highlights %}
-              <section id="research-wrap">
-                  <div class="container">
-                    <div class="row clearfix">
-                      <div class="col-md-12">                   
-                          {{ page.research_highlights }}
-                      </div>
-                    </div>
-                  </div>
-              </section>
-            {% endif %}
-              <!-- Research End-->
       
 
         {% if page.events %}
