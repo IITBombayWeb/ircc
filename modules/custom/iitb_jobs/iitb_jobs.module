@@ -72,5 +72,14 @@ function iitb_jobs_cron() {
     } else {
       drupal_set_message('is logged in');
     }
+    if (php_sapi_name() == 'cli') {   
+       if (isset($_SERVER['TERM'])) {   
+          echo "The script was run from a manual invocation on a shell";   
+       } else {   
+          echo "The script was run from the crontab entry";   
+       }   
+    } else { 
+       echo "The script was run from a webserver, or something else";   
+    }
   }
 }
