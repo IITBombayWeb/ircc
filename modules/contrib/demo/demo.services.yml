@@ -1,3 +1,0 @@
-services:
-    demo.demo_service:
-        class: Drupal\demo\DemoService
