@@ -64,8 +64,7 @@ function iitb_jobs_cron() {
     // $executable = new MigrateExecutable($migration, $migrateMessage, $options);
     // $executable->import();
 
-    $current= \Drupal::currentUser();
-    if (!$current->id()) {
+    if (\Drupal::currentUser()->isAnonymous()) {
       drupal_set_message('is visitor');
     } else {
       drupal_set_message('is logged in');
