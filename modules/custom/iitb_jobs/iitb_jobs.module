@@ -39,6 +39,9 @@ use Drupal\migrate_tools\MigrateExecutable;
 use Drupal\migrate_tools\MigrateBatchExecutable;
 use Drupal\migrate\MigrateMessage;
 
+use Drupal\Core\Session\AccountInterface;
+
+
 /**
  * Implements hook_cron().
  */
