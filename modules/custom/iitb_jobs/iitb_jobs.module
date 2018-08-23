@@ -58,10 +58,17 @@ function iitb_jobs_cron() {
     ];
     $migrateMessage = new MigrateMessage();
     $migration = $manager->createInstance($migration_id);
-    $executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
-    $executable->batchImport();
+    //$executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
+    //$executable->batchImport();
 
     // $executable = new MigrateExecutable($migration, $migrateMessage, $options);
     // $executable->import();
+
+    $current= \Drupal::currentUser();
+    if (!$current->id()) {
+      drupal_set_message('is visitor');
+    } else {
+      drupal_set_message('is logged in');
+    }
   }
 }
