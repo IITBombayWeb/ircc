@@ -39,6 +39,9 @@ use Drupal\migrate_tools\MigrateExecutable;
 use Drupal\migrate_tools\MigrateBatchExecutable;
 use Drupal\migrate\MigrateMessage;
 
+use Drupal\Core\Session\AccountInterface;
+
+
 /**
  * Implements hook_cron().
  */
@@ -58,10 +61,26 @@ function iitb_jobs_cron() {
     ];
     $migrateMessage = new MigrateMessage();
     $migration = $manager->createInstance($migration_id);
-    $executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
-    $executable->batchImport();
-
-    // $executable = new MigrateExecutable($migration, $migrateMessage, $options);
-    // $executable->import();
+    
+    // if (\Drupal::currentUser()->isAnonymous()) {
+    //   drupal_set_message('is visitor');
+    // } else {
+    //   drupal_set_message('is logged in');
+    // }
+    if (php_sapi_name() == 'cli') {   
+      if (isset($_SERVER['TERM'])) {   
+        drupal_set_message("The script was run from a manual invocation on a shell");
+        $executable = new MigrateExecutable($migration, $migrateMessage, $options);
+        $executable->import();
+      } else {   
+        drupal_set_message("The script was run from the crontab entry");
+        $executable = new MigrateExecutable($migration, $migrateMessage, $options);
+        $executable->import();
+      }   
+    } else { 
+      drupal_set_message("The script was run from a webserver, or something else");
+      $executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
+      $executable->batchImport();
+    }
   }
 }
