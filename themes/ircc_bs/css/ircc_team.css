@@ -1,7 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand:400,300);
-body{
-    font-family: 'Quicksand', sans-serif;
-}
 /*.team{
     padding:75px 0;
 }*/
@@ -14,6 +11,7 @@ h6.description{
 }
 .profile{
 	margin-top: 25px;
+  font-family: 'Quicksand', sans-serif;
 }
 .profile h1{
 	font-weight: normal;
