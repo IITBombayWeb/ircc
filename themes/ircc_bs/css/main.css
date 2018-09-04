@@ -1265,6 +1265,9 @@ select#edit-field-award-year-value:after{
 .form-item-field-award-year-value .select-wrapper:after{
   content: "";
 }
+.form-item-field-award-year-value .select-wrapper .form-control a.chosen-single{
+  width: 8em;
+}
 /* award page */
 
   /* facets & sidebar */
