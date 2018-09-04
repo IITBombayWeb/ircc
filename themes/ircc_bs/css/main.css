@@ -1235,8 +1235,10 @@ color: #444;
 text-decoration: none;
 white-space: nowrap;
 }
-
 .select-wrapper:after{
+  content: "";
+}
+select#edit-field-award-year-value:after{
   -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
     content:"\e252"!important;
