@@ -1223,7 +1223,6 @@ select#edit-field-award-year-value{
   position: relative;
 display: block;
 overflow: hidden;
-padding: 0 0 0 8px;
 height: 25px;
 border: 1px solid #aaa;
 border-radius: 5px;
@@ -1235,9 +1234,7 @@ color: #444;
 text-decoration: none;
 white-space: nowrap;
 }
-.select-wrapper:after{
-  content: "";
-}
+
 select#edit-field-award-year-value:after{
   -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
