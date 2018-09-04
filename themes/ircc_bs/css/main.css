@@ -1236,7 +1236,7 @@ text-decoration: none;
 white-space: nowrap;
 }
 
-select#edit-field-award-year-value:after{
+.select-wrapper:after{
   -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
     content:"\e252"!important;
