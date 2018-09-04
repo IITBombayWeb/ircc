@@ -1239,9 +1239,9 @@ white-space: nowrap;
 select#edit-field-award-year-value:after{
   -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
-    content:"\e252";
-    color:#949494;
-    font-size: 0.6rem;
+    content:"\e252"!important;
+    color:#949494!important;
+    font-size: 0.6rem!important;
     display: inline-block;
     font-family: 'Glyphicons Halflings';
 }
