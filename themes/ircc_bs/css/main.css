@@ -1259,10 +1259,8 @@ select#edit-field-award-year-value:after{
 }
 
 .form-item-field-award-year-value .select-wrapper .form-control{
-    border: none;
-    box-shadow: none;
-    padding-left: 0;
-    max-width: 20em;
+    border: none!important;
+    box-shadow: none!important;
 }
 .form-item-field-award-year-value .select-wrapper:after{
   content: "";
