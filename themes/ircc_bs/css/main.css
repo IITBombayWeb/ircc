@@ -1163,7 +1163,7 @@ font-size: 0.85rem;
 }
 
 
-/* facets */
+/* facets & sidebar */
 
 section.block-facet-blockdepartment-technologies .facets-widget-checkbox{
   border-bottom: 1px solid #aeaeae;
@@ -1217,7 +1217,57 @@ section.block-facet-blockdepartment-fa .facets-widget-checkbox {
     height: 13px;
   }
 
-  /* facets */
+/* award page */
+
+select#edit-field-award-year-value{
+  position: relative;
+display: block;
+overflow: hidden;
+height: 25px;
+border: 1px solid #aaa;
+border-radius: 5px;
+background-color: #fff;
+background: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+background-clip: padding-box;
+box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+color: #444;
+text-decoration: none;
+white-space: nowrap;
+}
+
+select#edit-field-award-year-value:after{
+  -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    content:"\e252"!important;
+    color:#949494!important;
+    font-size: 0.6rem!important;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+}
+
+.form-item-field-award-name-ref-target-id{
+  margin-top: 2em;
+}
+.form-item-field-award-name-ref-target-id .select-wrapper .form-control{
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    max-width: 20em;
+}
+.form-item-field-award-name-ref-target-id .select-wrapper:after{
+  content: '';
+}
+
+.form-item-field-award-year-value .select-wrapper .form-control{
+    border: none!important;
+    box-shadow: none!important;
+}
+.form-item-field-award-year-value .select-wrapper:after{
+  content: "";
+}
+/* award page */
+
+  /* facets & sidebar */
 
 
 /*node page*/
@@ -1364,16 +1414,7 @@ table#past-deans-info td{
 
 
 
-/* award page */
-.form-item-field-award-name-ref-target-id .select-wrapper .form-control{
-    border: none;
-    box-shadow: none;
-    width: 20em;
-}
-.form-item-field-award-name-ref-target-id .select-wrapper:after{
-  content: '';
-}
-/* award page */
+
 
 
 /* search page */
