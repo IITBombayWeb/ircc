@@ -1257,6 +1257,16 @@ select#edit-field-award-year-value:after{
 .form-item-field-award-name-ref-target-id .select-wrapper:after{
   content: '';
 }
+
+.form-item-field-award-year-value .select-wrapper .form-control{
+    border: none;
+    box-shadow: none;
+    padding-left: 0;
+    max-width: 20em;
+}
+.form-item-field-award-year-value .select-wrapper:after{
+  content: "";
+}
 /* award page */
 
   /* facets & sidebar */
