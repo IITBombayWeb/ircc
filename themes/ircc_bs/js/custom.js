@@ -143,7 +143,7 @@ $(document).ready(function(){
 
   $('[item="front_office"]').click(function(){
       $(".display").hide();
-      $("#pa-dean").show();
+      $("#front_office").show();
       return false;
   });
 
