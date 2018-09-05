@@ -141,6 +141,43 @@ $(document).ready(function(){
       return false;
   });
 
+  $('[item="front_office"]').click(function(){
+      $(".display").hide();
+      $("#pa-dean").show();
+      return false;
+  });
+
+  $('[item="accounts"]').click(function(){
+      $(".display").hide();
+      $("#accounts").show();
+      return false;
+  });
+
+  $('[item="admin1"]').click(function(){
+      $(".display").hide();
+      $("#admin1").show();
+      return false;
+  });
+
+  $('[item="admin2"]').click(function(){
+      $(".display").hide();
+      $("#admin2").show();
+      return false;
+  });
+
+  $('[item="software"]').click(function(){
+      $(".display").hide();
+      $("#software").show();
+      return false;
+  });
+
+  $('[item="technical"]').click(function(){
+      $(".display").hide();
+      $("#technical").show();
+      return false;
+  });
+
+
 });
 
 }(jQuery);
