@@ -691,6 +691,7 @@ left: 100%;
   margin: 0 auto;
   position: relative;
   top: 50%;
+  padding-left: 0;
   transform: translateY(-50%);
 }
 
