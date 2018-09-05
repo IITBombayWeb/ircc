@@ -48,7 +48,7 @@
 			if (previousTop - currentTop > scrollDelta) {
 				//if scrolling up...
 				mainHeader.removeClass('is-hidden');
-			} 
+			}
 			else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
 				//if scrolling down...
 				mainHeader.addClass('is-hidden');
@@ -63,7 +63,7 @@
     $("#views-exposed-form-solr-search-content-page-1").addClass('animated fadeInDown delay-01s');
 
 		$(".open-form").click(function(){
-			
+
 			$(".open-form").hide();
 			$(".close-form").css("display","block");
 			$(".search-block-form").show();
@@ -73,15 +73,24 @@
 		$(".close-form").click(function(){
 			$(".close-form").hide();
 			$(".open-form").css("display","block");
-			$(".search-block-form").fadeOut();
+			$(".search-block-form").fadeO$('[item="texas"]').click(function(){
+    $(".display").hide();
+    $("#texas").show();
+    return false;
+});
+$('[item="florida"]').click(function(){
+    $(".display").hide();
+    $("#florida").show();
+    return false;
+});ut();
 			return false;
 		});
 
 	})();
-	
 
 
-	
+
+
 	/*Scroll to top when arrow up clicked BEGIN*/
 $(window).scroll(function() {
     var height = $(window).scrollTop();
@@ -112,9 +121,26 @@ $(window).resize(function () {
       $(".top-wrapper").removeClass("col-xs-12").addClass("col-xs-6");
     }
 });
-	
+
 // $(document).ready(function(e){
 //   $("map").imageMapResize();
 // });
+
+$(document).ready(function(){
+  $(".display").hide();
+
+  $('[item="dean-adean"]').click(function(){
+      $(".display").hide();
+      $("#dean-adean").show();
+      return false;
+  });
+
+  $('[item="pa-dean"]').click(function(){
+      $(".display").hide();
+      $("#pa-dean").show();
+      return false;
+  });
+
+});
 
 }(jQuery);

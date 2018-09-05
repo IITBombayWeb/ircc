@@ -54,3 +54,7 @@ ircc-staff:
   css:
     theme:
       css/ircc_team.css: {}
+    js:
+      js/ircc_staff.js: {}
+    dependencies:
+      - core/jquery
