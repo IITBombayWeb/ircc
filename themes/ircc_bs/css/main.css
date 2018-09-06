@@ -1414,6 +1414,11 @@ table#past-deans-info td{
    text-align: center;
 }
 
+
+.form-item-field-faculty-name-0-title .select-wrapper:after{
+  left: 7em;
+  top: 38%;
+}
 /*nodepage end*/
 
 

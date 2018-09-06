@@ -64,27 +64,26 @@ field_ircc_team_work_involved
 
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-   
-               
+
+
   {% block content %}
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 profile">
-                  
+
         <div class="img-box">
           {{ content.field_ircc_team_image }}
-          
-       
-      
+
+
+
         </div>
         <h1>{{ content.field_ircc_team_name }}</h1>
         <h2>{{ content.field_ircc_team_designation }}</h2>
         <p>{{ content.field_ircc_team_email }}</p>
         <p>{{ content.field_ircc_team_contact_no }}</p>
         <p>{{ content.field_ircc_team_work_involved }}</p>
-      </div>  
-               
+      </div>
+
   {% endblock %}
 
-             
+
   </div>
 {% endblock paragraph %}
-
