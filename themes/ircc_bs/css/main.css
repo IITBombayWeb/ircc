@@ -1717,14 +1717,14 @@ transition: all .5s ease-in-out;
 /* custom checkbox */
 /* Hide the checkbox */
 section.block-facets [type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+section.block-facets [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
 /* Prepare the label */
 section.block-facets [type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
+section.block-facets [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -1733,7 +1733,7 @@ section.block-facets [type="checkbox"]:not(:checked) + label,
 /* Checkboxes aspect */
 /* :before is for the box */
 section.block-facets [type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+section.block-facets [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
   left:0; top: 2px;
@@ -1746,7 +1746,7 @@ section.block-facets [type="checkbox"]:not(:checked) + label:before,
 
 /* Check symbol aspect */
 section.block-facets [type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+section.block-facets [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
   top: 4px;
@@ -1769,7 +1769,7 @@ section.block-facets [type="checkbox"]:checked + label:after {
 
 /* Disabled aspect */
 section.block-facets [type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
+section.block-facets [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
@@ -1785,7 +1785,7 @@ section.block-facets [type="checkbox"]:disabled + label {
 
 /* Focused item */
 section.block-facets [type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
+section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   border: 1px dotted blue;
 }
 /* custom checkbox */
