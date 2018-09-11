@@ -1276,7 +1276,7 @@ select#edit-field-award-year-value:after{
 }
 
 .shs-select{
-  width: 18em;
+  width: 18em!important;
 }
 
 /* award page */
