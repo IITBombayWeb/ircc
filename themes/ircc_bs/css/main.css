@@ -1288,6 +1288,10 @@ select#edit-field-award-year-value:after{
 .field .nav-pills > li.active > a, .field .nav-pills > li.active > a:hover, .field .nav-pills > li.active > a:focus {
     color: #fff;
     background-color: #076b66!important;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+   transition: all 0.5s;
 }
 .field .nav > li > a {
     padding: 3px 12px;
@@ -1295,6 +1299,10 @@ select#edit-field-award-year-value:after{
 .field .nav > li > a:hover {
   color: #fff;
   background-color: #076b66!important;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+ transition: all 0.5s;
 }
 
 .fields-wrap{
