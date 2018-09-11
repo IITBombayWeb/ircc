@@ -1723,7 +1723,7 @@ section.block-facets [type="checkbox"]:not(:checked),
 }
 
 /* Prepare the label */
-[type="checkbox"]:not(:checked) + label,
+section.block-facets [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 25px;
@@ -1732,7 +1732,7 @@ section.block-facets [type="checkbox"]:not(:checked),
 
 /* Checkboxes aspect */
 /* :before is for the box */
-[type="checkbox"]:not(:checked) + label:before,
+section.block-facets [type="checkbox"]:not(:checked) + label:before,
 [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
@@ -1745,7 +1745,7 @@ section.block-facets [type="checkbox"]:not(:checked),
 }
 
 /* Check symbol aspect */
-[type="checkbox"]:not(:checked) + label:after,
+section.block-facets [type="checkbox"]:not(:checked) + label:after,
 [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
@@ -1756,35 +1756,35 @@ section.block-facets [type="checkbox"]:not(:checked),
   transition: all .2s; /* animation incoming :p */
 }
 /* if "not checked" */
-[type="checkbox"]:not(:checked) + label:after {
+section.block-facets [type="checkbox"]:not(:checked) + label:after {
   opacity: 0; /* invisible */
   transform: scale(0); /* scaled down to 0 */
 }
 /* If "checked" */
-[type="checkbox"]:checked + label:after {
+section.block-facets [type="checkbox"]:checked + label:after {
   opacity: 1; /* visible */
   transform: scale(1); /* scaled up to normal */
 }
 
 
 /* Disabled aspect */
-[type="checkbox"]:disabled:not(:checked) + label:before,
+section.block-facets [type="checkbox"]:disabled:not(:checked) + label:before,
 [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 /* Disabled checked aspect */
-[type="checkbox"]:disabled:checked + label:after {
+section.block-facets [type="checkbox"]:disabled:checked + label:after {
   color: #999;
 }
 /* Styling label when disabled? :p */
-[type="checkbox"]:disabled + label {
+section.block-facets [type="checkbox"]:disabled + label {
   color: #aaa;
 }
 
 /* Focused item */
-[type="checkbox"]:checked:focus + label:before,
+section.block-facets [type="checkbox"]:checked:focus + label:before,
 [type="checkbox"]:not(:checked):focus + label:before {
   border: 1px dotted blue;
 }
