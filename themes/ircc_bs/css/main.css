@@ -1716,24 +1716,24 @@ transition: all .5s ease-in-out;
 
 /* custom checkbox */
 /* Hide the checkbox */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+section.block-facets [type="checkbox"]:not(:checked),
+section.block-facets [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
 /* Prepare the label */
-[type="checkbox"]:not(:checked) + label,
-[type="checkbox"]:checked + label {
-  position: relative; /* permet de positionner les pseudo-éléments */
-  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
-  cursor: pointer;    /* affiche un curseur adapté */
+section.block-facets [type="checkbox"]:not(:checked) + label,
+section.block-facets [type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
 }
 
 /* Checkboxes aspect */
 /* :before is for the box */
-[type="checkbox"]:not(:checked) + label:before,
-[type="checkbox"]:checked + label:before {
+section.block-facets [type="checkbox"]:not(:checked) + label:before,
+section.block-facets [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
   left:0; top: 2px;
@@ -1745,8 +1745,8 @@ transition: all .5s ease-in-out;
 }
 
 /* Check symbol aspect */
-[type="checkbox"]:not(:checked) + label:after,
-[type="checkbox"]:checked + label:after {
+section.block-facets [type="checkbox"]:not(:checked) + label:after,
+section.block-facets [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
   top: 4px;
@@ -1756,36 +1756,36 @@ transition: all .5s ease-in-out;
   transition: all .2s; /* animation incoming :p */
 }
 /* if "not checked" */
-[type="checkbox"]:not(:checked) + label:after {
+section.block-facets [type="checkbox"]:not(:checked) + label:after {
   opacity: 0; /* invisible */
   transform: scale(0); /* scaled down to 0 */
 }
 /* If "checked" */
-[type="checkbox"]:checked + label:after {
+section.block-facets [type="checkbox"]:checked + label:after {
   opacity: 1; /* visible */
   transform: scale(1); /* scaled up to normal */
 }
 
 
 /* Disabled aspect */
-[type="checkbox"]:disabled:not(:checked) + label:before,
-[type="checkbox"]:disabled:checked + label:before {
+section.block-facets [type="checkbox"]:disabled:not(:checked) + label:before,
+section.block-facets [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 /* Disabled checked aspect */
-[type="checkbox"]:disabled:checked + label:after {
+section.block-facets [type="checkbox"]:disabled:checked + label:after {
   color: #999;
 }
 /* Styling label when disabled? :p */
-[type="checkbox"]:disabled + label {
+section.block-facets [type="checkbox"]:disabled + label {
   color: #aaa;
 }
 
 /* Focused item */
-[type="checkbox"]:checked:focus + label:before,
-[type="checkbox"]:not(:checked):focus + label:before {
+section.block-facets [type="checkbox"]:checked:focus + label:before,
+section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   border: 1px dotted blue;
 }
 /* custom checkbox */
