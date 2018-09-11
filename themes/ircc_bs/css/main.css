@@ -1285,7 +1285,14 @@ select#edit-field-award-year-value:after{
 
 
 /*node page*/
-
+.field .nav-pills > li.active > a, .field .nav-pills > li.active > a:hover, .field .nav-pills > li.active > a:focus {
+    color: #fff;
+    background-color: #337ab7;
+    background: #076b66!important;
+}
+.field .nav > li > a {
+    padding: 3px 12px;
+}
 
 .fields-wrap{
   position: relative;
