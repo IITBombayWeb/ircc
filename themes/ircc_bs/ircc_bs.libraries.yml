@@ -4,8 +4,8 @@ global-styling:
       css/overrides.min.css: {}
       css/animate.css: {}
       css/hover.css: {}
-      css/custom.css: {}
       css/main.css: {}
+      css/custom.css: {}
   js:
     js/SmoothScroll.min.js: {}
     js/wow.js: {}
