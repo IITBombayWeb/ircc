@@ -1716,7 +1716,7 @@ transition: all .5s ease-in-out;
 
 /* custom checkbox */
 /* Hide the checkbox */
-[type="checkbox"]:not(:checked),
+section.block-facets [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
@@ -1725,9 +1725,9 @@ transition: all .5s ease-in-out;
 /* Prepare the label */
 [type="checkbox"]:not(:checked) + label,
 [type="checkbox"]:checked + label {
-  position: relative; /* permet de positionner les pseudo-éléments */
-  padding-left: 25px; /* fait un peu d'espace pour notre case à venir */
-  cursor: pointer;    /* affiche un curseur adapté */
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
 }
 
 /* Checkboxes aspect */
