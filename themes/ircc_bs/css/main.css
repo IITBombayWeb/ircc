@@ -1285,7 +1285,7 @@ select#edit-field-award-year-value:after{
 
 
 /*node page*/
-.field .nav-pills > li.active > a, .field .nav-pills > li.active > a:hover, .field .nav-pills > li.active > a:focus {
+.region-content .nav-pills > li.active > a, .region-content .nav-pills > li.active > a:hover, .region-content .nav-pills > li.active > a:focus {
     color: #3c763d;
     background-color: #d0e9c6!important;
     background-color: #a1da8a!important;
@@ -1294,7 +1294,7 @@ select#edit-field-award-year-value:after{
     -o-transition: all 0.5s;
    transition: all 0.5s;
 }
-.field .nav > li > a {
+.region-content .nav > li > a {
   background-color: #dff0d8;
   color: #3c763d;
   border: 1px solid #ddd;
@@ -1305,7 +1305,7 @@ select#edit-field-award-year-value:after{
   transition: all 0.5s;
 }
 
-.field .nav > li > a:hover{
+.region-content .nav > li > a:hover{
     background-color: #d0e9c6!important;
 }
 
