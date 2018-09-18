@@ -14,7 +14,7 @@
   position: fixed;
   bottom: 50px;
   right: 10px;
-  background-color: #0b730e;
+  background-color: #234645;
   color: #ffffff;
   text-align: center;
   font-size: 30px;
@@ -26,7 +26,6 @@
   transition: all 0.5s;
 }
 #back2Top:hover {
-  background-color: #1ba74d;
   color: #ffffff;
   -webkit-transition: all 0.5s;
    -moz-transition: all 0.5s;
@@ -60,5 +59,3 @@
   visibility: visible;
   transform: scaleX(1);
 } */
-
-
