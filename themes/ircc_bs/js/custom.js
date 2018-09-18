@@ -73,18 +73,9 @@
 		$(".close-form").click(function(){
 			$(".close-form").hide();
 			$(".open-form").css("display","block");
-			$(".search-block-form").fadeO$('[item="texas"]').click(function(){
-    $(".display").hide();
-    $("#texas").show();
-    return false;
-});
-$('[item="florida"]').click(function(){
-    $(".display").hide();
-    $("#florida").show();
-    return false;
-});ut();
-			return false;
-		});
+			$(".search-block-form").fadeOut();
+      return false;
+    });
 
 	})();
 
@@ -120,64 +111,6 @@ $(window).resize(function () {
     else{
       $(".top-wrapper").removeClass("col-xs-12").addClass("col-xs-6");
     }
-});
-
-// $(document).ready(function(e){
-//   $("map").imageMapResize();
-// });
-
-$(document).ready(function(){
-  $(".display").hide();
-
-  $('[item="dean-adean"]').click(function(){
-      $(".display").hide();
-      $("#dean-adean").show();
-      return false;
-  });
-
-  $('[item="pa-dean"]').click(function(){
-      $(".display").hide();
-      $("#pa-dean").show();
-      return false;
-  });
-
-  $('[item="front_office"]').click(function(){
-      $(".display").hide();
-      $("#front_office").show();
-      return false;
-  });
-
-  $('[item="accounts"]').click(function(){
-      $(".display").hide();
-      $("#accounts").show();
-      return false;
-  });
-
-  $('[item="admin1"]').click(function(){
-      $(".display").hide();
-      $("#admin1").show();
-      return false;
-  });
-
-  $('[item="admin2"]').click(function(){
-      $(".display").hide();
-      $("#admin2").show();
-      return false;
-  });
-
-  $('[item="software"]').click(function(){
-      $(".display").hide();
-      $("#software").show();
-      return false;
-  });
-
-  $('[item="technical"]').click(function(){
-      $(".display").hide();
-      $("#technical").show();
-      return false;
-  });
-
-
 });
 
 }(jQuery);
