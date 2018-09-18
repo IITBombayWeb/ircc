@@ -1288,7 +1288,7 @@ select#edit-field-award-year-value:after{
 .region-content .nav-pills > li.active > a, .region-content .nav-pills > li.active > a:hover, .region-content .nav-pills > li.active > a:focus {
     /* background-color: #a1da8a!important; */
     background-color: #234645!important;
-    color: #ffffff;
+    color: #ffffff!important;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
