@@ -1617,7 +1617,7 @@ nav#block-searchsidebar ul li a:hover"{
 }
 
 .navbar-search .form-item {
-      border-top: 3px solid #3f9b7e;
+      border-top: 3px solid #234645;
     /* margin-top: .5em; */
     /* background: #e8e8e4; */
     position: absolute;
@@ -1636,7 +1636,7 @@ right: 1em;
 border-left: 12px solid transparent;
 border-right: 12px solid transparent;
 border-top: 14px solid transparent;
-border-bottom: 14px solid #3f9b7e;
+border-bottom: 14px solid #234645;
 }
 
 
