@@ -9,13 +9,8 @@
 7. Footer
 */
 
-
-html {
-  height: 100%;
+html,body {
   font-size: 100%;
-}
-
-body {
   position: initial!important;
   overflow-x: hidden;
   /* font-family: "Open Sans", sans-serif; */
