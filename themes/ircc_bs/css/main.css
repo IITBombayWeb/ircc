@@ -950,6 +950,7 @@ left: 20%;
   background: #234645;
   padding: 1em;
   border-radius: 5px;
+  background-image: linear-gradient(to bottom, #234645, transparent);
   }
 
   .news-head{
@@ -999,9 +1000,9 @@ left: 20%;
      font-size: 0.85rem;
      padding: 1em;
      color: #fefefe;
-     /* background: -webkit-linear-gradient(#ffffff, #01010101);
+     background: -webkit-linear-gradient(#ffffff, #01010101);
      -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent; */
+     -webkit-text-fill-color: transparent;
    }
 
   .news-read-more{
@@ -1036,9 +1037,9 @@ left: 20%;
 
 
 #event-wrap{
-     margin-top: 1em;
+    margin-top: 1em;
     width: 100%;
-    background: aliceblue;
+    background: #f0f8ff;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1285,17 +1286,17 @@ select#edit-field-award-year-value:after{
 
 /*node page*/
 .region-content .nav-pills > li.active > a, .region-content .nav-pills > li.active > a:hover, .region-content .nav-pills > li.active > a:focus {
-    color: #3c763d;
-    background-color: #d0e9c6!important;
-    background-color: #a1da8a!important;
+    /* background-color: #a1da8a!important; */
+    background-color: #234645!important;
+    color: #ffffff;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
    transition: all 0.5s;
 }
 .region-content .nav > li > a {
-  background-color: #dff0d8;
-  color: #3c763d;
+  background-color: #f0f8ff;
+  color: #234645!important;
   border: 1px solid #ddd;
   padding: 3px 12px;
   -webkit-transition: all 0.5s;
