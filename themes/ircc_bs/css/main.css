@@ -1285,15 +1285,7 @@ select#edit-field-award-year-value:after{
 
 
 /*node page*/
-.region-content .nav-pills > li.active > a, .region-content .nav-pills > li.active > a:hover, .region-content .nav-pills > li.active > a:focus {
-    /* background-color: #a1da8a!important; */
-    background-color: #234645!important;
-    color: #ffffff!important;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-   transition: all 0.5s;
-}
+
 .region-content .nav > li > a {
   background-color: #f0f8ff;
   color: #234645!important;
@@ -1303,6 +1295,15 @@ select#edit-field-award-year-value:after{
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
+}
+.region-content .nav-pills > li.active > a, .region-content .nav-pills > li.active > a:hover, .region-content .nav-pills > li.active > a:focus {
+    /* background-color: #a1da8a!important; */
+    background-color: #234645!important;
+    color: #ffffff!important;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+   transition: all 0.5s;
 }
 
 .region-content .nav > li > a:hover{
