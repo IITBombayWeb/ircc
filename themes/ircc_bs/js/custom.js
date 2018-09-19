@@ -63,13 +63,13 @@
     $("#views-exposed-form-solr-search-content-page-1").addClass('animated fadeInDown delay-01s');
 
 		$(".open-form").click(function(){
-
 			$(".open-form").hide();
 			$(".close-form").css("display","block");
 			$(".search-block-form").show();
 			$(".search-block-form input").focus();
 			return false;
 		});
+
 		$(".close-form").click(function(){
 			$(".close-form").hide();
 			$(".open-form").css("display","block");
