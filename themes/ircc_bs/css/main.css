@@ -283,14 +283,31 @@ body .lh_20{
   font-size: 16px;
   font-size: 1rem; } */
 
-.btn-outline {
-  background: transparent;
-  background-image: none;
-  border-color: #257ab8;
-  box-shadow: none;
-  outline: none; }
+.btn-primary{
+  background-color: #3a6564;
+  border-color: #3a6564;
 
+}
+.btn-primary:hover{
+  background-color: #234645;
+  border-color: #234645;
+}
 
+  .pagination > li > a{
+    color: #234645;
+  }
+  .pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+    background-color: #3a6564;
+    border-color: #3a6564;
+  }
+
+  .btn-outline {
+    background: transparent;
+    background-image: none;
+    border-color: #257ab8;
+    box-shadow: none;
+    outline: none;
+  }
 
 .read-more {
   text-decoration: underline; }
@@ -1455,20 +1472,24 @@ table#past-deans-info td{
   left: 7em;
   top: 38%;
 }
+
+
 /*nodepage end*/
 
 
 
 
-
-
 /* search page */
+
+
+.view-solr-search-content h3{
+  font-size: 1.1rem;
+  font-family: 'merriweather',serif;
+}
 .search-row{
   padding-bottom: 3px;
   font-size: 1.6rem;
 }
-
-
 
 .search-item{
   margin-left: 30px;
