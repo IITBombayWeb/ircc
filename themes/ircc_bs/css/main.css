@@ -27,7 +27,8 @@ html,body {
 }
 
 a {
-  color: #046ab8;
+  /* color: #046ab8; */
+  color: #234645;
   text-decoration: none;
 }
 a:focus{
@@ -1526,7 +1527,7 @@ nav#block-searchsidebar ul li a:hover"{
   background: transparent;
 }
 #block-searchsidebar .nav .hvr-sweep-to-right:before {
-  background: #4ba5a2!important;
+  background: #234645!important;
 }
 
 #block-searchsidebar-menu{
