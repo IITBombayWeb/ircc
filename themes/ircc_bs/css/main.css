@@ -293,6 +293,12 @@ body .lh_20{
   border-color: #234645;
 }
 
+.btn a{
+color: #fff;
+}
+.btn a:hover{
+text-decoration: none;
+}
   .pagination > li > a{
     color: #234645;
   }
@@ -1442,6 +1448,10 @@ h2.page-title{
     padding-left: 0.5em !important;
 }
 
+.btn-sccess{
+  background-color: #3a6564;
+  border-color: #3a6564;
+}
 
 .btn-success a, .btn a{
 color: #fff;
