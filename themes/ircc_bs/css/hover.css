@@ -2147,7 +2147,8 @@
   left: 0;
   right: 100%;
   bottom: 0;
-  background: #2098D1;
+  /* background: #2098D1; */
+  background: #234645;
   height: 4px;
   -webkit-transition-property: right;
   transition-property: right;
