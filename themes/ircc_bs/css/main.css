@@ -299,6 +299,7 @@ color: #fff;
 .btn a:hover{
 text-decoration: none;
 }
+
   .pagination > li > a{
     color: #234645;
   }
@@ -1446,18 +1447,6 @@ h2.page-title{
     overflow-y: auto;
     border: solid 1px #aeaeae;
     padding-left: 0.5em !important;
-}
-
-.btn-sccess{
-  background-color: #3a6564;
-  border-color: #3a6564;
-}
-
-.btn-success a, .btn a{
-color: #fff;
-}
-.btn-success a:hover, .btn a:hover{
-text-decoration: none;
 }
 
 .faculty-page-middle{
