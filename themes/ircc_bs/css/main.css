@@ -1370,23 +1370,23 @@ select#edit-field-award-year-value:after{
 }
 
 .field-label{
-  width: 130px;
+  width: 14em;
   font-family: 'Ek Mukta', sans-serif;
   font-weight: 700;
 }
 
 .field-value {
-  margin-left: 130px;
+  margin-left: 14em;
 }
 
 
 @media only screen and (min-width: 640px){
   .field-label{
-  width:180px;
+  width:15em;
   }
 
   .field-value  {
-    margin-left: 180px;
+    margin-left: 15em;
   }
 }
 
@@ -1852,7 +1852,8 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 .job-wrap{
   position: relative;
     margin: 15px 0 35px;
-    padding: 15px;
+    padding: 1em;
+    padding-top: 2.5em;
     border: 1px solid #e6e6e6;
     border-radius: 5px;
     vertical-align: middle;
@@ -1881,7 +1882,7 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 }
 
 .job-field-label{
-  width: 130px;
+  width: 14em;
   font-family: 'Ek Mukta', sans-serif;
   font-weight: 700;
 }
@@ -1905,11 +1906,11 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 @media only screen and (min-width: 640px){
 
 .job-field-label{
-width:180px;
+width: 15em;
 }
 
 .job-field {
-  margin-left: 180px;
+  margin-left: 15em;
 }
 }
 /* job display block */
