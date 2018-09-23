@@ -1308,14 +1308,20 @@ select#edit-field-award-year-value:after{
   background-color: #f9f9f9;
   color: #234645!important;
   border: 1px solid #ddd;
-  padding: 3px 12px;
+  padding: 0.1em 1em;
+  margin-bottom: 0.2em;
   border-radius: 4px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-
+#edit-field-ircc-staff-category-target-id .form-group a{
+  padding: 0.1em 1em;
+}
+#edit-field-ircc-staff-category-target-id .form-group a:hover{
+color: #234645!important;
+}
 #edit-field-ircc-staff-category-target-id .form-group:hover{
   background-color: #f0f8ff!important;
 
