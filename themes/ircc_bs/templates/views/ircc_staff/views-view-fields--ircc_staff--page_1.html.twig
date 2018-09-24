@@ -32,6 +32,8 @@
  */
 #}
 {{ attach_library('ircc_bs/ircc-staff') }}
+
+
 {#
 {% for field in fields -%}
   {{ field.separator }}
@@ -61,8 +63,8 @@
   </div>
   <h1>{{ fields.title.content }}</h1>
   <h2>{{ fields.field_ircc_staff_designation.content }}</h2>
-  <p>{{ fields.field_ircc_staff_contact_no.content }}</p>
-  <p>{{ fields.field_ircc_staff_email.content }}</p>
+  <p><i class="fa fa-phone-square"></i>&nbsp;{{ fields.field_ircc_staff_contact_no.content }}</p>
+  <p><i class="fa fa-envelope-square"></i>&nbsp;{{ fields.field_ircc_staff_email.content }}</p>
   <p>{{ fields.body.content }}</p>
 
 
