@@ -32,6 +32,7 @@
  */
 #}
 {{ attach_library('ircc_bs/ircc-staff') }}
+{#
 {% for field in fields -%}
   {{ field.separator }}
   {%- if field.wrapper_element -%}
@@ -45,24 +46,27 @@
     {%- endif %}
   {%- endif %}
   {%- if field.element_type -%}
-    <{{ field.element_type }}{{ field.element_attributes }}>
-      {{ title.content }}
-      {{ field_ircc_staff_image.content }}
-    </{{ field.element_type }}>
+    <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
   {%- else -%}
-
-    {{ title.content }}
-    {{ field_ircc_staff_image.content }}
-
+    {{ field.content }}
   {%- endif %}
   {%- if field.wrapper_element -%}
     </{{ field.wrapper_element }}>
   {%- endif %}
 {%- endfor %}
+#}
+
+  <div class="img-box">
+    {{ content.field_ircc_team_image }}
+  </div>
+  <h1>{{ fields.title.content }}</h1>
+  <h2>{{ fields.field_ircc_staff_designation.content }}</h2>
+  <p>{{ fields.field_ircc_staff_contact_no.content }}</p>
+  <p>{{ fields.field_ircc_staff_email.content }}</p>
+  <p>{{ fields.body.content }}</p>
 
 
-{#
-field_ircc_staff_image
+{# field_ircc_staff_image
 title
 field_ircc_staff_designation
 field_ircc_staff_contact_no
