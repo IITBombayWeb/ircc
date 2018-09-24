@@ -1322,6 +1322,7 @@ select#edit-field-award-year-value:after{
 #edit-field-ircc-staff-category-target-id .form-group a:hover{
 color: #234645!important;
 }
+
 #edit-field-ircc-staff-category-target-id .form-group:hover{
   background-color: #f0f8ff!important;
 
@@ -1335,7 +1336,7 @@ color: #234645!important;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#edit-field-ircc-staff-category-target-id a.bef-link-active{
+#edit-field-ircc-staff-category-target-id a.bef-link-active, #edit-field-ircc-staff-category-target-id a.bef-link-active:hover{
   color: #ffffff!important;
 }
 /* ircc staff end */

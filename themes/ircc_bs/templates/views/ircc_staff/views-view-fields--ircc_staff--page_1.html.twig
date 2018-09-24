@@ -31,15 +31,12 @@
  * @ingroup themeable
  */
 #}
-
-{#
+{{ attach_library('ircc_bs/ircc-staff') }}
 {% for field in fields -%}
   {{ field.separator }}
-
   {%- if field.wrapper_element -%}
     <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
   {%- endif %}
-
   {%- if field.label -%}
     {%- if field.label_element -%}
       <{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
@@ -47,26 +44,25 @@
       {{ field.label }}{{ field.label_suffix }}
     {%- endif %}
   {%- endif %}
-
   {%- if field.element_type -%}
     <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
   {%- else -%}
-    {{ field.content }}
-  {%- endif %}
 
+    {{ title.content }}
+    {{ field_ircc_staff_image.content }}
+
+  {%- endif %}
   {%- if field.wrapper_element -%}
     </{{ field.wrapper_element }}>
   {%- endif %}
-
 {%- endfor %}
- #}
-{% set count = view.result | length %}
 
-<div class="news-title">
-  {{ fields.title.content }}
-</div>
 
-<div class="news-info">
-  <p>{{ fields.body.content }}</p>
-</div>
-<div class="news-read-more">{{ fields.view_node.content }}</div>
+{#
+field_ircc_staff_image
+title
+field_ircc_staff_designation
+field_ircc_staff_contact_no
+field_ircc_staff_email
+body
+#}
