@@ -25,7 +25,7 @@
       {% for row in items %}
         <div class="row pt-md">
           {% for column in row.content %}
-            <div class="col {{ col_xs }} {{ col_sm }} {{ col_md }} {{ col_lg }} {{ options.row_class }}">
+            <div class="col {{ col_xs }} {{ col_sm }} {{ col_md }} {{ col_lg }} {{ options.row_class }} profile">
               {{ column.content }}
             </div>
           {% endfor %}
