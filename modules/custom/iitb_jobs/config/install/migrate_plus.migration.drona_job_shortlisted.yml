@@ -18,12 +18,29 @@ process:
     plugin: default_value
     default_value: job_shortlisted
   title: title
-  body/format:
-    plugin: default_value
-    default_value: full_html
-  body/value: body
-  field_recruitment_sr_no: RecruitmentSrNo
-  
+  # body/format:
+  #   plugin: default_value
+  #   default_value: full_html
+  # body/value: body
+  field_shortlisted_recruitment_sr: RecruitmentSrNo
+  field_shortlisted_project_sr_no: ProjectSrNo
+  field_shortlisted_desg_sr_no: DesgSrNo
+  field_shortlisted_emp_name: EmpName
+  field_shortlisted_address: Address
+  field_shortlisted_srno: Srno
+  field_shortlisted_email: Email
+  field_shortlisted_mode_of_call_l: ModeOfCallLetter
+  field_shortlisted_emp_name: EmpName
+  field_shortlisted_mail_sent_flag: MailSentFlag
+  field_shortlisted_appt_sno: ApptSno
+  field_shortlisted_pan_no: PanNo
+  field_shortlisted_login_name: LoginName
+  field_shortlisted_hard_copy_sr_n: HardCopySrNo
+  field_shortlisted_to_desig_ref:
+    plugin: entity_lookup
+    source: DesignationRef
+    entity_type: node
+    bundle: job_designations
   langcode:
     plugin: default_value
     default_value: en
