@@ -184,6 +184,46 @@ class DronaJobDesignations extends SourcePluginBase {
       } else {
         $row['RSP_Test2Duration']='';
       }
+      if(isset($resultRSP[0]->InterviewDate)) {
+        $row['RSP_InterviewDate']=$resultRSP[0]->InterviewDate;
+      } else {
+        $row['RSP_InterviewDate']='';
+      }
+      if(isset($resultRSP[0]->InterviewTime)) {
+        $row['RSP_InterviewTime']=$resultRSP[0]->InterviewTime;
+      } else {
+        $row['RSP_InterviewTime']='';
+      }
+      if(isset($resultRSP[0]->InterviewReportingTime)) {
+        $row['RSP_InterviewReportingTime']=$resultRSP[0]->InterviewReportingTime;
+      } else {
+        $row['RSP_InterviewReportingTime']='';
+      }
+      if(isset($resultRSP[0]->TestVenue)) {
+        $row['RSP_TestVenue']=$resultRSP[0]->TestVenue;
+      } else {
+        $row['RSP_TestVenue']='';
+      }
+      if(isset($resultRSP[0]->InterviewVenue)) {
+        $row['RSP_InterviewVenue']=$resultRSP[0]->InterviewVenue;
+      } else {
+        $row['RSP_InterviewVenue']='';
+      }
+      if(isset($resultRSP[0]->TA)) {
+        $row['RSP_TA']=$resultRSP[0]->TA;
+      } else {
+        $row['RSP_TA']='';
+      }
+      if(isset($resultRSP[0]->Selection)) {
+        $row['RSP_Selection']=$resultRSP[0]->Selection;
+      } else {
+        $row['RSP_Selection']='';
+      }
+      if(isset($resultRSP[0]->Remarks)) {
+        $row['RSP_Remarks']=$resultRSP[0]->Remarks;
+      } else {
+        $row['RSP_Remarks']='';
+      }
 
       \Drupal\Core\Database\Database::setActiveConnection();
       // append it to the array of rows we can import 
@@ -230,6 +270,25 @@ class DronaJobDesignations extends SourcePluginBase {
       'PD_FunctionalArea' => $this->t('PD_FunctionalArea'),
       'PD_ERPLongDescription' => $this->t('PD_ERPLongDescription'),
       'PD_ERPShortDescription' => $this->t('PD_ERPShortDescription'),
+
+      'RSP_Test1' => $this->t('RSP_Test1'),
+      'RSP_Test1Date' => $this->t('RSP_Test1Date'),
+      'RSP_Test1Time' => $this->t('RSP_Test1Time'),
+      'RSP_Test1ReportingTime' => $this->t('RSP_Test1ReportingTime'),
+      'RSP_Test1Duration' => $this->t('RSP_Test1Duration'),
+      'RSP_Test2' => $this->t('RSP_Test2'),
+      'RSP_Test2Date' => $this->t('RSP_Test2Date'),
+      'RSP_Test2Time' => $this->t('RSP_Test2Time'),
+      'RSP_Test2ReportingTime' => $this->t('RSP_Test2ReportingTime'),
+      'RSP_Test2Duration' => $this->t('RSP_Test2Duration'),
+      'RSP_InterviewDate' => $this->t('RSP_InterviewDate'),
+      'RSP_InterviewTime' => $this->t('RSP_InterviewTime'),
+      'RSP_InterviewReportingTime' => $this->t('RSP_InterviewReportingTime'),
+      'RSP_TestVenue' => $this->t('RSP_TestVenue'),
+      'RSP_InterviewVenue' => $this->t('RSP_InterviewVenue'),
+      'RSP_TA' => $this->t('RSP_TA'),
+      'RSP_Selection' => $this->t('RSP_Selection'),
+      'RSP_Remarks' => $this->t('RSP_Remarks'),
     );
   }
 

@@ -21,7 +21,7 @@ process:
   title: title
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/value: body
   field_job_recruitment_sr_no: RecruitmentSrNo
   field_job_recruitment_type: RecruitmentType
