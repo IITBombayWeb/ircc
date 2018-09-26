@@ -86,22 +86,23 @@ h6.description{
 	color: #88C425;
 }
 
-#edit-field-ircc-staff-category-target-id .radio input[type="radio"]{
-	display: none;
-}
-
-#edit-field-ircc-staff-category-target-id .radio .control-label{
-	background-color: #f9f9f9;
+.form-item-field-ircc-staff-category-target-id label.control-label{
+  background-color: #f9f9f9;
   color: #234645!important;
   border: 1px solid #ddd;
   padding: 0.5em;
   border-radius: 4px;
 }
 
-#edit-field-ircc-staff-category-target-id .radio input[type="radio"]:checked ~ label {
+.form-item-field-ircc-staff-category-target-id label.control-label input[name="field_ircc_staff_category_target_id"]{
+	display: none;
+}
+
+.form-item-field-ircc-staff-category-target-id label.control-label input[checked="checked"]+label.control-label {
 	background-color: #234645!important;
 	color: #ffffff!important;
 }
+
 /*a{
     color:#88C425;
 }*/
