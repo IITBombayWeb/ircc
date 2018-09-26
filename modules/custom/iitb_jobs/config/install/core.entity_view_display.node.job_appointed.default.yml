@@ -1,0 +1,158 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.job_appointed.body
+    - field.field.node.job_appointed.field_appointed_adv_cir_no
+    - field.field.node.job_appointed.field_appointed_adv_job_code
+    - field.field.node.job_appointed.field_appointed_approval_date
+    - field.field.node.job_appointed.field_appointed_approved_by
+    - field.field.node.job_appointed.field_appointed_appt_sno
+    - field.field.node.job_appointed.field_appointed_candidate_name
+    - field.field.node.job_appointed.field_appointed_desig_code
+    - field.field.node.job_appointed.field_appointed_emp_code
+    - field.field.node.job_appointed.field_appointed_entered_by
+    - field.field.node.job_appointed.field_appointed_entered_date
+    - field.field.node.job_appointed.field_appointed_remarks
+    - field.field.node.job_appointed.field_appointed_specialization
+    - field.field.node.job_appointed.field_appointed_status
+    - field.field.node.job_appointed.field_appointed_to_desig_ref
+    - node.type.job_appointed
+  module:
+    - datetime
+    - text
+    - user
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_appointed.default
+targetEntityType: node
+bundle: job_appointed
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 101
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_appointed_adv_cir_no:
+    weight: 112
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_adv_job_code:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_approval_date:
+    weight: 109
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_appointed_approved_by:
+    weight: 110
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_appt_sno:
+    weight: 104
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_candidate_name:
+    weight: 103
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_desig_code:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_emp_code:
+    weight: 105
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_entered_by:
+    weight: 108
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_entered_date:
+    weight: 107
+    label: above
+    settings:
+      format_type: medium
+      timezone_override: ''
+    third_party_settings: {  }
+    type: datetime_default
+    region: content
+  field_appointed_remarks:
+    weight: 111
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: basic_string
+    region: content
+  field_appointed_specialization:
+    weight: 102
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_status:
+    weight: 106
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_appointed_to_desig_ref:
+    weight: 115
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 100
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

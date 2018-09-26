@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rsp_interview_date
+    - node.type.job_designations
+  module:
+    - datetime
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_designations.field_rsp_interview_date
+field_name: field_rsp_interview_date
+entity_type: node
+bundle: job_designations
+label: 'RSP Interview Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime
