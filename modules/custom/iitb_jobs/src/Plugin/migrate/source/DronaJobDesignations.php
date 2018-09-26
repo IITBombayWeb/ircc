@@ -32,7 +32,7 @@ class DronaJobDesignations extends SourcePluginBase {
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo','DesgCode','QualificationExperience','JobProfile','NoOfPosts','ApptPeriod','Salary','Level','Specialization','Norms','NormsRemarks'));
     $query->fields('rpd',array('ProCode','Title','AdvJobCode','ProjectDescription'));
     
-    //$query->condition('rdd.RecruitmentSrNo', "2015052", "=");
+    $query->condition('rdd.RecruitmentSrNo', "2015052", "=");
     //$query->range(0, 10);
     
     $result = $query->execute()->fetchAll();
@@ -125,6 +125,64 @@ class DronaJobDesignations extends SourcePluginBase {
         $row['PD_ERPShortDescription']=iconv(mb_detect_encoding($resultPostdt[0]->ERPShortDescription, mb_detect_order(), true), "UTF-8//IGNORE", $resultPostdt[0]->ERPShortDescription);
       } else {
         $row['PD_ERPShortDescription']='';
+      }
+
+      $queryRSP = $con->select('RecruitmentSelectionProcess', 'rsp');
+      $queryRSP->condition('rsp.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
+      $queryRSP->condition('rsp.ProjectSrNo', $result1->ProjectSrNo, "=");
+      $queryRSP->condition('rsp.DesgSrNo', $result1->DesgSrNo, "=");
+      $queryRSP->fields('rsp',array( 'Test1','Test1Date','Test1Time','Test1ReportingTime','Test1Duration','Test2','Test2Date','Test2Time','Test2ReportingTime','Test2Duration','InterviewDate','InterviewTime','InterviewReportingTime','TestVenue','InterviewVenue','TA','Selection','Remarks'));
+      $resultRSP = $queryRSP->execute()->fetchAll();
+
+      if(isset($resultRSP[0]->Test1)) {
+        $row['RSP_Test1']=$resultRSP[0]->Test1;
+      } else {
+        $row['RSP_Test1']='';
+      }
+      if(isset($resultRSP[0]->Test1Date)) {
+        $row['RSP_Test1Date']=$resultRSP[0]->Test1Date;
+      } else {
+        $row['RSP_Test1Date']='';
+      }
+      if(isset($resultRSP[0]->Test1Time)) {
+        $row['RSP_Test1Time']=$resultRSP[0]->Test1Time;
+      } else {
+        $row['RSP_Test1Time']='';
+      }
+      if(isset($resultRSP[0]->Test1ReportingTime)) {
+        $row['RSP_Test1ReportingTime']=$resultRSP[0]->Test1ReportingTime;
+      } else {
+        $row['RSP_Test1ReportingTime']='';
+      }
+      if(isset($resultRSP[0]->Test1Duration)) {
+        $row['RSP_Test1Duration']=$resultRSP[0]->Test1Duration;
+      } else {
+        $row['RSP_Test1Duration']='';
+      }
+      if(isset($resultRSP[0]->Test2)) {
+        $row['RSP_Test2']=$resultRSP[0]->Test2;
+      } else {
+        $row['RSP_Test2']='';
+      }
+      if(isset($resultRSP[0]->Test2Date)) {
+        $row['RSP_Test2Date']=$resultRSP[0]->Test2Date;
+      } else {
+        $row['RSP_Test2Date']='';
+      }
+      if(isset($resultRSP[0]->Test2Time)) {
+        $row['RSP_Test2Time']=$resultRSP[0]->Test2Time;
+      } else {
+        $row['RSP_Test2Time']='';
+      }
+      if(isset($resultRSP[0]->Test2ReportingTime)) {
+        $row['RSP_Test2ReportingTime']=$resultRSP[0]->Test2ReportingTime;
+      } else {
+        $row['RSP_Test2ReportingTime']='';
+      }
+      if(isset($resultRSP[0]->Test2Duration)) {
+        $row['RSP_Test2Duration']=$resultRSP[0]->Test2Duration;
+      } else {
+        $row['RSP_Test2Duration']='';
       }
 
       \Drupal\Core\Database\Database::setActiveConnection();
