@@ -98,7 +98,7 @@ h6.description{
   border-radius: 4px;
 }
 
-#edit-field-ircc-staff-category-target-id .radio input[type="radio"]:checked + label {
+#edit-field-ircc-staff-category-target-id .radio input[type="radio"]:checked ~ label {
 	background-color: #234645!important;
 	color: #ffffff!important;
 }

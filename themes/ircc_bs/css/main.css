@@ -1339,6 +1339,33 @@ color: #234645!important;
 #edit-field-ircc-staff-category-target-id a.bef-link-active, #edit-field-ircc-staff-category-target-id a.bef-link-active:hover{
   color: #ffffff!important;
 }
+
+
+
+
+
+
+
+
+#edit-field-ircc-staff-category-target-id .radio input[type="radio"]{
+	display: none;
+}
+
+#edit-field-ircc-staff-category-target-id .radio .control-label{
+	background-color: #f9f9f9;
+  color: #234645!important;
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+#edit-field-ircc-staff-category-target-id .radio input[type="radio"]:checked ~ label {
+	background-color: #234645!important;
+	color: #ffffff!important;
+}
+
+
+
 /* ircc staff end */
 
 /*node page*/
