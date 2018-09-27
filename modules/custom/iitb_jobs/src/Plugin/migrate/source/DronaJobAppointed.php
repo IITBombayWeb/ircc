@@ -40,7 +40,8 @@ echo '<pre>';
 // print_r($query);
 // print_r($query->execute());    
     $result = $query->execute()->fetchAll();
-print_r(count($result));
+//print_r(count($result));
+\Drupal::logger('IITB Migration')->warning('<pre><code>' . print_r(count($result), TRUE) . '</code></pre>');
     $rows = []; 
     foreach ($result as $result1) { 
         // using second argument of TRUE here because migrate needs the data to be 
