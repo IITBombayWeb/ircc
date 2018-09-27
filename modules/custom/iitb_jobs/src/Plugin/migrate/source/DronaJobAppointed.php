@@ -38,7 +38,7 @@ class DronaJobAppointed extends SourcePluginBase {
     $query->range(0, 10);
     
     $result = $query->execute()->fetchAll();
-
+print_r($result);
     $rows = []; 
     foreach ($result as $result1) { 
         // using second argument of TRUE here because migrate needs the data to be 

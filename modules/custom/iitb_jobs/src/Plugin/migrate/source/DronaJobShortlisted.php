@@ -32,7 +32,7 @@ class DronaJobShortlisted extends SourcePluginBase {
     $query->fields('rcd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo','EmpName','Address','Srno','Email','ModeOfCallLetter','MailSentFlag','ApptSno','PanNo','LoginName','HardCopySrNo'));
     
     $query->range(0, 10);
-    
+print_r($result);
     $result = $query->execute()->fetchAll();
 
     $rows = []; 
