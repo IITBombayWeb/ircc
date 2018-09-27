@@ -31,7 +31,7 @@ h6.description{
 .profile .img-box:after{
 	content:"";
 	opacity: 0;
-	background-color: rgba(0, 0, 0, 0.75);
+	background-color: rgba(0, 0, 0, 0.25);
 	position: absolute;
 	right: 0;
 	left: 0;
@@ -85,6 +85,24 @@ h6.description{
 	border-color: #fff;
 	color: #88C425;
 }
+
+.form-item-field-ircc-staff-category-target-id label.control-label{
+  background-color: #f9f9f9;
+  color: #234645!important;
+  border: 1px solid #ddd;
+  padding: 0.5em;
+  border-radius: 4px;
+}
+
+.form-item-field-ircc-staff-category-target-id label.control-label input[name="field_ircc_staff_category_target_id"]{
+	display: none;
+}
+
+.form-item-field-ircc-staff-category-target-id label.control-label input[checked="checked"]+label.control-label {
+	background-color: #234645!important;
+	color: #ffffff!important;
+}
+
 /*a{
     color:#88C425;
 }*/
