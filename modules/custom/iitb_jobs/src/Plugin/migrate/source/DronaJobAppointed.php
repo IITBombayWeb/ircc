@@ -28,7 +28,11 @@ class DronaJobAppointed extends SourcePluginBase {
     $con = \Drupal\Core\Database\Database::getConnection('drona');
     
     $query = $con->select('RecruitmentSelectedCandidates', 'rsc');
+    $query->join('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
+    $query->join('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode');
+    $query->join('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
     //$query->condition('rsc.RecruitmentSrNo', "2015052", "=");
+    $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo'));
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
     
     //$query->range(0, 10);
@@ -41,13 +45,6 @@ class DronaJobAppointed extends SourcePluginBase {
         // associative arrays and not stdClass objects. 
         //$row = json_decode(file_get_contents($filename), true); // sets the title, body, etc. 
         //$row['json_filename'] = $filename;
-      
-      $queryRSP = $con->select('RecruitmentSelectionProcess', 'rsp');
-      $queryRSP->condition('rsp.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
-      $queryRSP->condition('rsp.ProjectSrNo', $result1->ProjectSrNo, "=");
-      $queryRSP->condition('rsp.DesgSrNo', $result1->DesgSrNo, "=");
-      $queryRSP->fields('rsp',array( 'Test1','Test1Date','Test1Time','Test1ReportingTime','Test1Duration','Test2','Test2Date','Test2Time','Test2ReportingTime','Test2Duration','InterviewDate','InterviewTime','InterviewReportingTime','TestVenue','InterviewVenue','TA','Selection','Remarks'));
-      $resultRSP = $queryRSP->execute()->fetchAll();
         
       $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$result1->ApptSno;
       $row['DesignationRef']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo;

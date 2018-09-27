@@ -35,7 +35,7 @@ process:
   field_appointed_approval_date: ApprovalDate
   field_appointed_approved_by: ApprovedBy
   field_appointed_remarks: Remarks
-  field_shortlisted_to_desig_ref:
+  field_appointed_to_desig_ref:
     plugin: entity_lookup
     source: DesignationRef
     entity_type: node
