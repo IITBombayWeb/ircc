@@ -28,9 +28,9 @@ class DronaJobAppointed extends SourcePluginBase {
     $con = \Drupal\Core\Database\Database::getConnection('drona');
     
     $query = $con->select('RecruitmentSelectedCandidates', 'rsc');
-    $query->join('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
-    $query->join('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode');
-    $query->join('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
+    $query->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
+    $query->innerJoin('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode');
+    $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
     // $query->condition('rsc.AdvCirNo', 'rd.AdvCirNo', "=");
     // $query->condition('rsc.AdvJobCode', 'rpd.AdvJobCode', "=");
     // $query->condition('rsc.DesigCode', 'rdd.DesgCode', "=");
