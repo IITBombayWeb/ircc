@@ -48,7 +48,7 @@ print_r($result);
         
       $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$result1->ApptSno;
       $row['DesignationRef']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo;
-      
+print_r($row['DesignationRef']);  
       //$row['body']=iconv(mb_detect_encoding($result1->JobProfile, mb_detect_order(), true), "UTF-8//IGNORE", $result1->JobProfile);
 
       $row['AdvCirNo']=$result1->AdvCirNo;
