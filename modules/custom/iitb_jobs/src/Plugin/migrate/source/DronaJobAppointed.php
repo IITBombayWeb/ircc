@@ -35,7 +35,7 @@ class DronaJobAppointed extends SourcePluginBase {
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo'));
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
     
-    //$query->range(0, 10);
+    $query->range(0, 10);
     
     $result = $query->execute()->fetchAll();
 //print_r($result);
