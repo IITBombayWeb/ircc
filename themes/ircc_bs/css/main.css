@@ -801,7 +801,6 @@ text-decoration: none;
     width: 100%;
     }
 
-
   .research-head{
     font-family: 'Merriweather', serif;
     font-size: 1.5rem;
@@ -812,10 +811,7 @@ text-decoration: none;
     margin-bottom: 0px;
     padding-top: 1em;
     padding-bottom: 1em;
-    /* text-shadow: 1px 2px 6px grey; */
   }
-
-
 
   .research-head:after{
     content: "";
@@ -826,8 +822,6 @@ text-decoration: none;
   margin-top: 15px;
   margin: 0px auto 0px;
   }
-
-
 
 .research-highlights{
   border: 1px solid #aeaeae;
@@ -840,8 +834,6 @@ text-decoration: none;
    -moz-transition: all .5s ease-in-out;
   -o-transition: all .5s ease-in-out;
 }
-
-
 
 .rh-title{
   padding: 5pt;
@@ -858,7 +850,6 @@ text-decoration: none;
 .rh-title a:hover{
   text-decoration: underline;
 }
-
 
 .rh-body{
   font-family: "COOP-Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -904,6 +895,7 @@ font-weight: bold;
 top: 0%;
 left: 20%;
 }
+
 .slick-next::before{
   content: "\f105";
   font-family: FontAwesome;
@@ -958,7 +950,7 @@ left: 20%;
   /* research highlights section end */
 
 
-
+  /* news and event section */
 .section-header {
   position: relative;
 }
@@ -1119,6 +1111,7 @@ content: "";
   width: 1pt;
   top: 0em;
 } */
+
 .event-date:after {
   background-color: #6b6a6a;
   content: "";
@@ -1303,16 +1296,63 @@ select#edit-field-award-year-value:after{
 .shs-select{
   width: 18em!important;
 }
-
 /* award page */
+/* facets & sidebar */
 
-  /* facets & sidebar */
+/* ircc staff */
+#edit-field-ircc-staff-category-target-id .form-group{
+  display: block;
+}
 
+#edit-field-ircc-staff-category-target-id .form-group {
+  background-color: #f9f9f9;
+  color: #234645!important;
+  border: 1px solid #ddd;
+  padding: 0.1em 1em;
+  margin-bottom: 0.2em;
+  border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#edit-field-ircc-staff-category-target-id .form-group a{
+  padding: 0.1em 1em;
+}
+#edit-field-ircc-staff-category-target-id .form-group a:hover{
+color: #234645!important;
+}
+
+#edit-field-ircc-staff-category-target-id .form-group:hover{
+  background-color: #f0f8ff!important;
+
+}
+
+#edit-field-ircc-staff-category-target-id div.bef-link-active, #edit-field-ircc-staff-category-target-id div.bef-link-active:hover, #edit-field-ircc-staff-category-target-id div.bef-link-active:focus {
+  background-color: #234645!important;
+  color: #ffffff!important;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+#edit-field-ircc-staff-category-target-id a.bef-link-active, #edit-field-ircc-staff-category-target-id a.bef-link-active:hover{
+  color: #ffffff!important;
+}
+
+
+
+
+
+
+
+
+
+/* ircc staff end */
 
 /*node page*/
 
 .region-content .nav > li > a {
-  background-color: #f0f8ff;
   background-color: #f9f9f9;
   color: #234645!important;
   border: 1px solid #ddd;

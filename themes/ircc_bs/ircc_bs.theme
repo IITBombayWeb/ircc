@@ -22,6 +22,14 @@ function ircc_bs_preprocess_block(&$variables) {
   }
 }
 
+// function ircc_bs_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+//
+//   if ($node = \Drupal::routeMatch()->getParameter('node')) {
+//     $content_type = $node->bundle();
+//     $suggestions[] = 'page__'.$content_type;
+//   }
+// }
+
 // function ircc_bs_preprocess_menu__content_updation(&$variables) {
 
 //   ksm($variables);
