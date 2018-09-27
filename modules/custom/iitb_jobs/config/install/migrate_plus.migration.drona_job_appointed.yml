@@ -1,0 +1,52 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - iitb_jobs
+id: drona_job_appointed
+class: null
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags: null
+migration_group: drona_content_import
+label: 'Drona Job Appointed Import'
+source:
+  plugin: drona_job_appointed
+process:
+  type:
+    plugin: default_value
+    default_value: job_appointed
+  title: title
+  # body/format:
+  #   plugin: default_value
+  #   default_value: full_html
+  # body/value: body
+  field_appointed_adv_cir_no: AdvCirNo
+  field_appointed_adv_job_code: AdvJobCode
+  field_appointed_desig_code: DesigCode
+  field_appointed_specialization: Specialization
+  field_appointed_candidate_name: CandidateName
+  field_appointed_appt_sno: ApptSno
+  field_appointed_emp_code: EmpCode
+  field_appointed_status: Status
+  field_appointed_entered_date: EnteredDate
+  field_appointed_entered_by: EnteredBy
+  field_appointed_approval_date: ApprovalDate
+  field_appointed_approved_by: ApprovedBy
+  field_appointed_remarks: Remarks
+  field_appointed_to_desig_ref:
+    plugin: entity_lookup
+    source: DesignationRef
+    entity_type: node
+    bundle: job_designations
+  langcode:
+    plugin: default_value
+    default_value: en
+  uid:
+    plugin: default_value
+    default_value: 1
+destination:
+  plugin: 'entity:node'
+  bundle: job_appointed
+migration_dependencies: null

@@ -48,7 +48,7 @@ use Drupal\Core\Session\AccountInterface;
 function iitb_jobs_cron() {
 
   $manager = \Drupal::service('plugin.manager.migration');
-  $migration_ids = ['drona_job_circulars','drona_job_designations']; 
+  $migration_ids = ['drona_job_circulars','drona_job_designations','drona_job_shortlisted','drona_job_appointed']; 
 
   foreach ($migration_ids as $migration_id) {
     $limit=0;
@@ -69,16 +69,16 @@ function iitb_jobs_cron() {
     // }
     if (php_sapi_name() == 'cli') {   
       if (isset($_SERVER['TERM'])) {   
-        drupal_set_message("The script was run from a manual invocation on a shell");
+        //drupal_set_message("The script was run from a manual invocation on a shell");
         $executable = new MigrateExecutable($migration, $migrateMessage, $options);
         $executable->import();
       } else {   
-        drupal_set_message("The script was run from the crontab entry");
+        //drupal_set_message("The script was run from the crontab entry");
         $executable = new MigrateExecutable($migration, $migrateMessage, $options);
         $executable->import();
       }   
     } else { 
-      drupal_set_message("The script was run from a webserver, or something else");
+      //drupal_set_message("The script was run from a webserver, or something else");
       $executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
       $executable->batchImport();
     }

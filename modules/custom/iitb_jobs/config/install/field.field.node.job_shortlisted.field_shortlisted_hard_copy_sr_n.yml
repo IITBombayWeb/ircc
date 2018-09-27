@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shortlisted_hard_copy_sr_n
+    - node.type.job_shortlisted
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_shortlisted.field_shortlisted_hard_copy_sr_n
+field_name: field_shortlisted_hard_copy_sr_n
+entity_type: node
+bundle: job_shortlisted
+label: 'Shortlisted Hard Copy Sr No'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
