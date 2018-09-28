@@ -20,33 +20,54 @@ process:
   title: title
   body/format:
     plugin: default_value
-    default_value: basic_html
+    default_value: full_html
   body/value: body
   field_recruitment_sr_no: RecruitmentSrNo
   field_project_sr_no: ProjectSrNo
   field_desg_sr_no: DesgSrNo
   field_desg_code: DesgCode
-  field_qualification_experience: QualificationExperience
+  field_qualification_experience/format:
+    plugin: default_value
+    default_value: full_html
+  field_qualification_experience/value: QualificationExperience
   field_no_of_posts: NoOfPosts
   field_appt_period: ApptPeriod
   field_salary: Salary
   field_level: Level
   field_specialization: Specialization
   field_norms: Norms
-  field_norms_remarks: NormsRemarks
+  field_norms_remarks/format:
+    plugin: default_value
+    default_value: full_html
+  field_norms_remarks/value: NormsRemarks
   field_rpd_pro_code: ProCode
-  field_rpd_title: RPDTitle
+  field_rpd_title/format:
+    plugin: default_value
+    default_value: full_html
+  field_rpd_title/value: RPDTitle
   field_rpd_adv_job_code: AdvJobCode
-  field_rpd_project_description: ProjectDescription
+  field_rpd_project_description/format:
+    plugin: default_value
+    default_value: full_html
+  field_rpd_project_description/value: ProjectDescription
   field_pd_category: 
     plugin: entity_generate
     source: PD_Category
     entity_type: taxonomy_term
     bundle: job_category
-  field_pd_erp_long_description: PD_ERPLongDescription
-  field_pd_erp_short_description: PD_ERPShortDescription
+  field_pd_erp_long_description/format:
+    plugin: default_value
+    default_value: full_html  
+  field_pd_erp_long_description/value: PD_ERPLongDescription
+  field_pd_erp_short_description/format:
+    plugin: default_value
+    default_value: full_html
+  field_pd_erp_short_description/value: PD_ERPShortDescription
   field_pd_faculty: PD_Faculty
-  field_pd_functional_area: PD_FunctionalArea
+  field_pd_functional_area/format:
+    plugin: default_value
+    default_value: full_html
+  field_pd_functional_area/value: PD_FunctionalArea
   field_pd_level: PD_Level
   field_pd_permtemp: PD_Permtemp
   field_pd_postname: 
@@ -62,6 +83,27 @@ process:
     source: RecruitmentSrNo
     entity_type: node
     bundle: job_circulars
+  field_rsp_test_1: RSP_Test1
+  field_rsp_test_1_date: RSP_Test1Date
+  field_rsp_test_1_time: RSP_Test1Time
+  field_rsp_test_1_reporting_time: RSP_Test1ReportingTime
+  field_rsp_test_1_duration: RSP_Test1Duration
+  field_rsp_test_2: RSP_Test2
+  field_rsp_test_2_date: RSP_Test2Date
+  field_rsp_test_2_time: RSP_Test2Time
+  field_rsp_test_2_reporting_time: RSP_Test2ReportingTime
+  field_rsp_test_2_duration: RSP_Test2Duration
+  field_rsp_interview_date: RSP_InterviewDate
+  field_rsp_interview_time: RSP_InterviewTime
+  field_rsp_interview_reporting_ti: RSP_InterviewReportingTime
+  field_rsp_test_venue: RSP_TestVenue
+  field_rsp_interview_venue: RSP_InterviewVenue
+  field_rsp_ta: RSP_TA
+  field_rsp_selection: RSP_Selection
+  field_rsp_remarks/format:
+    plugin: default_value
+    default_value: full_html
+  field_rsp_remarks/value: RSP_Remarks
   langcode:
     plugin: default_value
     default_value: en

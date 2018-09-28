@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appointed_entered_date
+    - node.type.job_appointed
+  module:
+    - datetime
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_appointed.field_appointed_entered_date
+field_name: field_appointed_entered_date
+entity_type: node
+bundle: job_appointed
+label: 'Appointed Entered Date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

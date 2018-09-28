@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_shortlisted_mail_sent_flag
+    - node.type.job_shortlisted
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_shortlisted.field_shortlisted_mail_sent_flag
+field_name: field_shortlisted_mail_sent_flag
+entity_type: node
+bundle: job_shortlisted
+label: 'Shortlisted Mail Sent Flag'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

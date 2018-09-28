@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.job_shortlisted
+  module:
+    - text
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_shortlisted.body
+field_name: body
+entity_type: node
+bundle: job_shortlisted
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

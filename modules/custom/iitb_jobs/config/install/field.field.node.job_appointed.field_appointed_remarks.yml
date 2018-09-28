@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_appointed_remarks
+    - node.type.job_appointed
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_appointed.field_appointed_remarks
+field_name: field_appointed_remarks
+entity_type: node
+bundle: job_appointed
+label: 'Appointed Remarks'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long
