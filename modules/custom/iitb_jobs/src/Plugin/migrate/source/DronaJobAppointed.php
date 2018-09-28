@@ -28,17 +28,22 @@ class DronaJobAppointed extends SourcePluginBase {
     $con = \Drupal\Core\Database\Database::getConnection('drona');
     
     $query = $con->select('RecruitmentSelectedCandidates', 'rsc');
-    $query->join('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
-    $query->join('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode');
-    $query->join('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
-    //$query->condition('rsc.RecruitmentSrNo', "2015052", "=");
+    $query->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
+    $query->innerJoin('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode');
+    $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
+    // $query->condition('rsc.AdvCirNo', 'rd.AdvCirNo', "=");
+    // $query->condition('rsc.AdvJobCode', 'rpd.AdvJobCode', "=");
+    // $query->condition('rsc.DesigCode', 'rdd.DesgCode', "=");
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo'));
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
     
-    //$query->range(0, 10);
-    
+    $query->range(0, 50);
+//echo '<pre>';
+// print_r($query);
+// print_r($query->execute());    
     $result = $query->execute()->fetchAll();
-
+//print_r(count($result));
+\Drupal::logger('IITB Migration')->debug('<pre><code>' . print_r(count($result), TRUE) . '</code></pre>');
     $rows = []; 
     foreach ($result as $result1) { 
         // using second argument of TRUE here because migrate needs the data to be 
@@ -46,9 +51,9 @@ class DronaJobAppointed extends SourcePluginBase {
         //$row = json_decode(file_get_contents($filename), true); // sets the title, body, etc. 
         //$row['json_filename'] = $filename;
         
-      $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$result1->ApptSno;
+      $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$result1->ApptSno.':'.$result1->EmpCode;
       $row['DesignationRef']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo;
-      
+//print_r($row['DesignationRef']);  
       //$row['body']=iconv(mb_detect_encoding($result1->JobProfile, mb_detect_order(), true), "UTF-8//IGNORE", $result1->JobProfile);
 
       $row['AdvCirNo']=$result1->AdvCirNo;

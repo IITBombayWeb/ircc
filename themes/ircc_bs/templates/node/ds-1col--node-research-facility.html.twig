@@ -8,7 +8,6 @@
  * - attributes: content region attributes
  * - ds_content: content region
  */
- {{ attach_library('ircc_bs/cuddly-slider') }}
 #}
 
 <{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix','container') }}>
@@ -45,6 +44,13 @@
           {{ ds_content.field_registration_link }}
           </div>
         </div>
+
+        <div class="row wow fadeInLeft delay-01s">
+          <div class="col-sm-12">
+          {{ ds_content.field_info_iit_bombay }}
+          </div>
+        </div>
+
         <div class="row wow fadeInLeft delay-01s">
           <div class="col-sm-12">
           {{ ds_content.field_information_file }}
@@ -58,25 +64,25 @@
     </div>
   </div>
 
-  <div class="row wow fadeInLeft delay-01s">
+  <div class="wow fadeInLeft delay-01s">
     <div class="col-xs-12 col-md-9 col-lg-9">
         {{ ds_content.field_make_and_model }}
     </div>
   </div>
 
-  <div class="row wow fadeInLeft delay-01s">
+  <div class="wow fadeInLeft delay-01s">
     <div class="col-xs-12 col-md-9 col-lg-9">
         {{ ds_content.field_mode_for_use }}
     </div>
   </div>
 
-  <div class="row wow fadeInLeft delay-01s">
+  <div class="wow fadeInLeft delay-01s">
     <div class="col-xs-12 col-md-9 col-lg-9">
         {{ ds_content.field_specifications }}
     </div>
   </div>
 
-  <div class="row wow fadeInLeft delay-01s">
+  <div class="wow fadeInLeft delay-01s">
     <div class="col-xs-12 col-md-9 col-lg-9">
         {{ ds_content.field_application }}
     </div>

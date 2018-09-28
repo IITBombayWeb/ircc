@@ -31,10 +31,10 @@ class DronaJobShortlisted extends SourcePluginBase {
     //$query->condition('rcd.RecruitmentSrNo', "2015052", "=");
     $query->fields('rcd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo','EmpName','Address','Srno','Email','ModeOfCallLetter','MailSentFlag','ApptSno','PanNo','LoginName','HardCopySrNo'));
     
-    $query->range(0, 10);
-    
-    $result = $query->execute()->fetchAll();
+    //$query->range(0, 10);
 
+    $result = $query->execute()->fetchAll();
+//print_r($result);
     $rows = []; 
     foreach ($result as $result1) { 
         // using second argument of TRUE here because migrate needs the data to be 
@@ -42,9 +42,9 @@ class DronaJobShortlisted extends SourcePluginBase {
         //$row = json_decode(file_get_contents($filename), true); // sets the title, body, etc. 
         //$row['json_filename'] = $filename;
         
-      $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$result1->ApptSno;
+      $row['title']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$result1->EmpName;
       $row['DesignationRef']=$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo;
-      
+//print_r($row['DesignationRef']);      
       //$row['body']=iconv(mb_detect_encoding($result1->JobProfile, mb_detect_order(), true), "UTF-8//IGNORE", $result1->JobProfile);
 
       $row['RecruitmentSrNo']=$result1->RecruitmentSrNo;

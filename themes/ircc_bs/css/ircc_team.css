@@ -15,18 +15,27 @@ h6.description{
 }
 .profile h1{
 	font-weight: normal;
-	font-size: 20px;
+	font-size: 1rem;
 	margin:10px 0 0 0;
 }
 .profile h2{
-	font-size: 14px;
+	font-size: 0.8rem;
 	font-weight: lighter;
 	margin-top: 5px;
+}
+
+.profile p{
+	word-break: break-all;
 }
 .profile .img-box{
 	opacity: 1;
 	display: block;
 	position: relative;
+}
+.profile .img-box img{
+	height: 12em;
+  object-fit: cover;
+	margin: auto;
 }
 .profile .img-box:after{
 	content:"";
@@ -84,6 +93,25 @@ h6.description{
 .img-box a:hover li{
 	border-color: #fff;
 	color: #88C425;
+}
+
+.img-box div.profle-info{
+	position: absolute;
+	z-index: 2;
+	bottom: 50px;
+	text-align: center;
+	width: 100%;
+	padding-left: 0px;
+	height: 0px;
+	margin:0px;
+	opacity: 0;
+}
+.img-box:hover div.profile-info{
+	opacity: 1;
+}
+
+.img-box div.profile-info{
+	color:#fff;
 }
 
 .form-item-field-ircc-staff-category-target-id label.control-label{

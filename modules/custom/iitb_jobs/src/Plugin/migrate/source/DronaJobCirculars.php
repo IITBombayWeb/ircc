@@ -34,7 +34,7 @@ class DronaJobCirculars extends SourcePluginBase {
     $query->fields('rd',array('RecruitmentSrNo','RecruitmentType','PICode','DeptCode','SubmittedDate','EndDate','ApprovalDate','Status','AdvCirNo','TA','AdDateChosen','URL'));
     //$query->fields('rpd',array('ProjectSrNo','ProCode','Title','AdvJobCode','ProjectDescription'));
     
-    $query->condition('rd.RecruitmentSrNo', "2015052", "=");
+    //$query->condition('rd.RecruitmentSrNo', "2015052", "=");
     //$query->range(0, 10);
     
     $result = $query->execute()->fetchAll();
