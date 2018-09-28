@@ -34,7 +34,7 @@
     {% else %}
       <div class="row">
         {% for column in items %}
-          <div class="col {{ col_xs }} {{ col_sm }} {{ col_md }} {{ col_lg }} {{ options.row_class }} profile">
+          <div class="col {{ col_xs }} {{ col_sm }} {{ col_md }} {{ col_lg }} {{ options.row_class }}profile">
             {% for row in column.content %}
               {{ row.content }}
             {% endfor %}
