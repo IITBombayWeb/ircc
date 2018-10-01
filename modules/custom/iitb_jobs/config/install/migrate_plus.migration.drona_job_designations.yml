@@ -104,6 +104,16 @@ process:
     plugin: default_value
     default_value: full_html
   field_rsp_remarks/value: RSP_Remarks
+  field_job_desig_to_shortlist_ref:
+    plugin: sub_process
+    source: shortlisted_list
+    process:
+      field_job_desig_to_shortlist_ref:
+        plugin: entity_lookup
+        source: shortlisted_list_each
+        entity_type: node
+        bundle: job_shortlisted
+      target_id: '@field_job_desig_to_shortlist_ref'
   langcode:
     plugin: default_value
     default_value: en
