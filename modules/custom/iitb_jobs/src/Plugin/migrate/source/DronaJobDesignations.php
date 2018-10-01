@@ -240,16 +240,15 @@ class DronaJobDesignations extends SourcePluginBase {
       $row['shortlisted_list']=$shortlisted_array;
 
       $queryRSC = $con->select('RecruitmentSelectedCandidates', 'rsc');
-      $query->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
-      $query->innerJoin('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode');
-      $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
+      $queryRSC->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
+      $queryRSC->innerJoin('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode');
+      $queryRSC->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
       $queryRSC->condition('rd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
       $queryRSC->condition('rpd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
       $queryRSC->condition('rdd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
       $queryRSC->condition('rpd.ProjectSrNo', $result1->ProjectSrNo, "=");
       $queryRSC->condition('rdd.ProjectSrNo', $result1->ProjectSrNo, "=");
       $queryRSC->condition('rdd.DesgSrNo', $result1->DesgSrNo, "=");
-      $queryRSC->fields('rd',array( 'RecruitmentSrNo'));
       $queryRSC->fields('rsc',array( 'ApptSno','EmpCode','CandidateName'));
       $resultRSC = $queryRSC->execute()->fetchAll();
 
