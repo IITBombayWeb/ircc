@@ -35,6 +35,7 @@ class DronaJobAppointed extends SourcePluginBase {
     $query->condition('rpd.RecruitmentSrNo', 'rdd.RecruitmentSrNo', "=");
     $query->condition('rpd.ProjectSrNo', 'rdd.ProjectSrNo', "=");
     // $query->condition('rsc.DesigCode', 'rdd.DesgCode', "=");
+    $query->fields('rd',array('RecruitmentSrNo'));
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo'));
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
     
