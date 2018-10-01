@@ -37,13 +37,11 @@ class DronaJobAppointed extends SourcePluginBase {
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo'));
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
     
-    $query->range(0, 50);
-//echo '<pre>';
-// print_r($query);
-// print_r($query->execute());    
+    //$query->range(0, 50);
+
     $result = $query->execute()->fetchAll();
-//print_r(count($result));
-\Drupal::logger('IITB Migration')->debug('<pre><code>' . print_r(count($result), TRUE) . '</code></pre>');
+
+    //\Drupal::logger('IITB Migration')->debug('<pre><code>' . print_r(count($result), TRUE) . '</code></pre>');
     $rows = []; 
     foreach ($result as $result1) { 
         // using second argument of TRUE here because migrate needs the data to be 
