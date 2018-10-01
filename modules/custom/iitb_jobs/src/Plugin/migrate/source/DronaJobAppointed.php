@@ -30,7 +30,7 @@ class DronaJobAppointed extends SourcePluginBase {
     $query = $con->select('RecruitmentSelectedCandidates', 'rsc');
     $query->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
     $query->innerJoin('RecruitmentProjectDetails', 'rpd', 'rd.RecruitmentSrNo = rpd.RecruitmentSrNo AND (rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode)');
-    $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rpd.RecruitmentSrNo = rdd.RecruitmentSrNo AND rpd.RecruitmentSrNo = rdd.RecruitmentSrNo AND rsc.DesigCode = rdd.DesgCode');
+    $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rpd.RecruitmentSrNo = rdd.RecruitmentSrNo AND rpd.ProjectSrNo = rdd.ProjectSrNo AND rsc.DesigCode = rdd.DesgCode');
     // $query->condition('rd.RecruitmentSrNo', 'rpd.RecruitmentSrNo', "=");
     // $query->condition('rpd.RecruitmentSrNo', 'rdd.RecruitmentSrNo', "=");
     // $query->condition('rpd.ProjectSrNo', 'rdd.ProjectSrNo', "=");
