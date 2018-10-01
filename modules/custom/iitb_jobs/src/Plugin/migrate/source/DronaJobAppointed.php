@@ -26,13 +26,14 @@ class DronaJobAppointed extends SourcePluginBase {
     //$con = \Drupal::database();
     \Drupal\Core\Database\Database::setActiveConnection('drona');
     $con = \Drupal\Core\Database\Database::getConnection('drona');
-    
+
     $query = $con->select('RecruitmentSelectedCandidates', 'rsc');
     $query->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
-    $query->innerJoin('RecruitmentProjectDetails', 'rpd', 'rd.RecruitmentSrNo = rpd.RecruitmentSrNo and rsc.AdvJobCode = rpd.AdvJobCode');
-    $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rpd.RecruitmentSrNo = rdd.RecruitmentSrNo and rpd.ProjectSrNo = rdd.ProjectSrNo and rsc.DesigCode = rdd.DesgCode');
-    // $query->condition('rsc.AdvCirNo', 'rd.AdvCirNo', "=");
-    // $query->condition('rsc.AdvJobCode', 'rpd.AdvJobCode', "=");
+    $query->innerJoin('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode');
+    $query->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
+    $query->condition('rd.RecruitmentSrNo', 'rpd.RecruitmentSrNo', "=");
+    $query->condition('rpd.RecruitmentSrNo', 'rdd.RecruitmentSrNo', "=");
+    $query->condition('rpd.ProjectSrNo', 'rdd.ProjectSrNo', "=");
     // $query->condition('rsc.DesigCode', 'rdd.DesgCode', "=");
     $query->fields('rdd',array('RecruitmentSrNo','ProjectSrNo','DesgSrNo'));
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
