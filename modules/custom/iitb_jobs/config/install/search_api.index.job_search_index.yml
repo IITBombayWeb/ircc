@@ -9,9 +9,11 @@ dependencies:
     - node
     - search_api
   config:
+    - field.storage.node.field_job_desig_to_appoint_ref
     - field.storage.node.field_job_desig_to_circular_ref
     - field.storage.node.field_job_dept_code_ref
     - field.storage.node.field_job_end_date
+    - field.storage.node.field_job_desig_to_shortlist_ref
     - field.storage.node.field_pd_postname
     - field.storage.node.field_qualification_experience
     - field.storage.node.field_rsp_interview_date
@@ -37,6 +39,22 @@ field_settings:
         - field.storage.node.field_job_dept_code_ref
       module:
         - node
+  field_job_desig_to_appoint_ref:
+    label: 'Job Desig To Appoint Ref'
+    datasource_id: 'entity:node'
+    property_path: field_job_desig_to_appoint_ref
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_appoint_ref
+  field_job_desig_to_shortlist_ref:
+    label: 'Job Desig To Shortlist Ref'
+    datasource_id: 'entity:node'
+    property_path: field_job_desig_to_shortlist_ref
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_shortlist_ref
   field_job_end_date_1:
     label: 'Job Desig To Circular Ref » Content » Job End Date'
     datasource_id: 'entity:node'

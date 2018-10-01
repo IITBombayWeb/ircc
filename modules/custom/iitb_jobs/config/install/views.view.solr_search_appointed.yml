@@ -852,6 +852,48 @@ display:
           fields:
             - field_qualification_experience
           plugin_id: views_autocomplete_filters_search_api_fulltext
+        field_job_desig_to_appoint_ref:
+          id: field_job_desig_to_appoint_ref
+          table: search_api_index_job_search_index
+          field: field_job_desig_to_appoint_ref
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: '0'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_numeric
         type:
           id: type
           table: search_api_index_job_search_index
@@ -899,7 +941,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          order: ASC
+          order: DESC
           exposed: false
           expose:
             label: ''
@@ -916,7 +958,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: 'Shortlisted Candidate'
+      title: 'Appointed Candidate'
       header: {  }
       footer: {  }
       empty: {  }
