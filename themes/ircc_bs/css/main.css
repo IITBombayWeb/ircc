@@ -366,21 +366,23 @@ button:focus {
 
 .navbar-nav-hov_underline .navbar-nav li.active a {
   background: transparent;
-  border-bottom: 4px solid #D30015; }
+  border-bottom: 4px solid #234645;
+}
 
 @media (max-width: 767px) {
   .navbar-nav-hov_underline .navbar-nav li.active a {
-    border-bottom-width: 2px; } }
+    border-bottom-width: 2px; }
+  }
 
 .navbar-nav-hov_underline .navbar-nav li a {
   border-bottom: 4px solid transparent;
-  color: #000; }
+  color: #000;
+}
 @media (max-width: 767px) {
   .nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
     background-color: transparent;
     border-color: inherit;
   }
-
   .navbar-nav-hov_underline .navbar-nav li ul.dropdown-menu{
     width: 100%;
   }
@@ -390,38 +392,49 @@ button:focus {
   }
   .navbar-nav-hov_underline .navbar-nav li ul.dropdown-menu li a:hover, .navbar-nav-hov_underline .navbar-nav li ul.dropdown-menu li a:focus{
     background: transparent;
-    border-bottom: 4px solid #D30015; }
+    border-bottom: 4px solid #234645;
+  }
 }
   .navbar-nav-hov_underline .navbar-nav li a:hover, .navbar-nav-hov_underline .navbar-nav li a:focus {
     background: transparent;
-    border-bottom: 4px solid #D30015; }
+    border-bottom: 4px solid #234645;
+  }
 .navbar-nav-hov_underline .navbar-nav .dropdown-menu {
   font-size: inherit;
   border-radius: 0;
   padding: 0;
   border: 0;
-  min-width: 210px; }
+  min-width: 210px;
+}
   .navbar-nav-hov_underline .navbar-nav .dropdown-menu:before {
     content: '';
     position: absolute;
     top: -5px;
     width: 100%;
     height: 5px;
-    background-color: #D30015; }
+    background-color: #234645;
+  }
   @media (max-width: 767px) {
     .navbar-nav-hov_underline .navbar-nav .dropdown-menu:before {
-      display: none; } }
+      display: none;
+      }
+    }
   .navbar-nav-hov_underline .navbar-nav .dropdown-menu li a {
     padding: 10px 15px;
-    border-bottom: 1px solid #eef0f1; }
+    border-bottom: 1px solid #eef0f1;
+  }
     .navbar-nav-hov_underline .navbar-nav .dropdown-menu li a:hover {
-      color: #D30015; }
+      color: #234645;
+    }
   .navbar-nav-hov_underline .navbar-nav .dropdown-menu li.active a {
-    color: #D30015; }
+    color: #234645;
+  }
 
 @media (max-width: 767px) {
   .navbar-nav {
-    margin-bottom: 3px; } }
+    margin-bottom: 3px;
+    }
+  }
 
 
 
@@ -1254,7 +1267,7 @@ section.block-facet-blockdepartment-fa .facets-widget-checkbox {
 
 /* award page */
 
-select#edit-field-award-year-value{
+select#edit-award-year{
   position: relative;
 display: block;
 overflow: hidden;
@@ -1270,7 +1283,7 @@ text-decoration: none;
 white-space: nowrap;
 }
 
-select#edit-field-award-year-value:after{
+select#edit-award-year:after{
   -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
     content:"\e252"!important;
@@ -1280,29 +1293,32 @@ select#edit-field-award-year-value:after{
     font-family: 'Glyphicons Halflings';
 }
 
-.form-item-field-award-name-ref-target-id{
+.form-item-award-year .select-wrapper .form-control{
+    border: none!important;
+    box-shadow: none!important;
+}
+.form-item-award-year .select-wrapper:after{
+  content: "";
+}
+.form-item-award-year .select-wrapper .form-control a.chosen-single{
+  width: 8em;
+}
+
+.form-item-award-name{
   margin-top: 2em;
 }
-.form-item-field-award-name-ref-target-id .select-wrapper .form-control{
+
+.form-item-award-name .select-wrapper .form-control{
     border: none;
     box-shadow: none;
     padding-left: 0;
     max-width: 20em;
 }
-.form-item-field-award-name-ref-target-id .select-wrapper:after{
+.form-item-award-name .select-wrapper:after{
   content: '';
 }
 
-.form-item-field-award-year-value .select-wrapper .form-control{
-    border: none!important;
-    box-shadow: none!important;
-}
-.form-item-field-award-year-value .select-wrapper:after{
-  content: "";
-}
-.form-item-field-award-year-value .select-wrapper .form-control a.chosen-single{
-  width: 8em;
-}
+
 
 .shs-widget-container {
     display: block;
@@ -1311,6 +1327,15 @@ select#edit-field-award-year-value:after{
 
 .shs-select{
   width: 18em!important;
+}
+
+.form-item-award-type{
+  margin-top: 2em;
+}
+
+.form-item-award-type ul{
+  list-style-type: none;
+  padding-left: 0;
 }
 /* award page */
 /* facets & sidebar */
@@ -1357,14 +1382,8 @@ color: #234645!important;
 }
 
 
-
-
-
-
-
-
-
 /* ircc staff end */
+
 
 /*node page*/
 
@@ -1522,20 +1541,15 @@ table#past-deans-info td{
   left: 7em;
   top: 38%;
 }
-
-
 /*nodepage end*/
 
 
-
-
 /* search page */
-
-
 .view-solr-search-content h3{
   font-size: 1.1rem;
   font-family: 'merriweather',serif;
 }
+
 .search-row{
   padding-bottom: 3px;
   font-size: 1.6rem;
@@ -1544,7 +1558,6 @@ table#past-deans-info td{
 .search-item{
   margin-left: 30px;
 }
-
 
 .item-list-green ul {
   list-style: none;
@@ -1556,9 +1569,11 @@ table#past-deans-info td{
   padding-left: 1em;
   text-indent: -.7em;
 }
+
 .item-list-green ul li p {
 display: inline;
 }
+
 .item-list-search ul a::before {
   content: "• ";
   color:#1ba74d; /* or whatever color you prefer */
@@ -1593,10 +1608,10 @@ nav#block-searchsidebar ul li a:hover"{
  background: transparent;
 }
 
-
  #block-searchsidebar .nav > li > a:hover, #block-searchsidebar .nav > li > a:focus {
   background: transparent;
 }
+
 #block-searchsidebar .nav .hvr-sweep-to-right:before {
   background: #234645!important;
 }
