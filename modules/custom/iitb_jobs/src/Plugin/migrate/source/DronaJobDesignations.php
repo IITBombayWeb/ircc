@@ -241,7 +241,7 @@ class DronaJobDesignations extends SourcePluginBase {
 
       $queryRSC = $con->select('RecruitmentSelectedCandidates', 'rsc');
       $queryRSC->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
-      $queryRSC->innerJoin('RecruitmentProjectDetails', 'rpd', 'rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode');
+      $queryRSC->innerJoin('RecruitmentProjectDetails', 'rpd', '(rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode)');
       $queryRSC->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
       $queryRSC->condition('rd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
       $queryRSC->condition('rpd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
