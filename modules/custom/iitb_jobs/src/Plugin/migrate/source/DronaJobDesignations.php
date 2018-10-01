@@ -235,7 +235,7 @@ class DronaJobDesignations extends SourcePluginBase {
       $shortlisted_array=array();
 
       foreach ($resultRCD as $resultRCD1) { 
-        array_push($designations_array, array('shortlisted_list_each'=>$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$resultRCD1->EmpName));
+        array_push($shortlisted_array, array('shortlisted_list_each'=>$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$resultRCD1->EmpName));
       }
       $row['shortlisted_list']=$shortlisted_array;
 
@@ -255,7 +255,7 @@ class DronaJobDesignations extends SourcePluginBase {
       $appointed_array=array();
 
       foreach ($resultRSC as $resultRSC1) { 
-        array_push($designations_array, array('appointed_list_each'=>$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$resultRSC1->ApptSno.':'.$resultRSC1->EmpCode.':'.$resultRSC1->CandidateName));
+        array_push($appointed_array, array('appointed_list_each'=>$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$resultRSC1->ApptSno.':'.$resultRSC1->EmpCode.':'.$resultRSC1->CandidateName));
       }
       $row['appointed_list']=$appointed_array;
 
