@@ -249,6 +249,7 @@ class DronaJobDesignations extends SourcePluginBase {
       $queryRSC->condition('rpd.ProjectSrNo', $result1->ProjectSrNo, "=");
       $queryRSC->condition('rdd.ProjectSrNo', $result1->ProjectSrNo, "=");
       $queryRSC->condition('rdd.DesgSrNo', $result1->DesgSrNo, "=");
+      $queryRSC->fields('rd',array( 'RecruitmentSrNo'));
       $queryRSC->fields('rsc',array( 'ApptSno','EmpCode','CandidateName'));
       $resultRSC = $queryRSC->execute()->fetchAll();
 
