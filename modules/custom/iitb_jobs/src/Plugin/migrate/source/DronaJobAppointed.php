@@ -39,9 +39,9 @@ class DronaJobAppointed extends SourcePluginBase {
     $query->fields('rsc',array('AdvCirNo','AdvJobCode','DesigCode','Specialization','CandidateName','ApptSno','EmpCode','Status','EnteredDate','EnteredBy','ApprovalDate','ApprovedBy','Remarks'));
     
     //$query->range(0, 50);
-print_r($query->execute());
+//print_r($query->execute());
     $result = $query->execute()->fetchAll();
-
+print_r($result);
     //\Drupal::logger('IITB Migration')->debug('<pre><code>' . print_r(count($result), TRUE) . '</code></pre>');
     $rows = []; 
     foreach ($result as $result1) { 
