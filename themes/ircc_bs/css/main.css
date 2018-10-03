@@ -292,6 +292,10 @@ body .lh_20{
   background-color: #234645;
   border-color: #234645;
 }
+.btn-primary:active:hover, .btn-primary:active:focus{
+  background-color: #234645;
+  border-color: #234645;
+}
 
 .btn a{
 color: #fff;
