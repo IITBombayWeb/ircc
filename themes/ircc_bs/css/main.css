@@ -330,10 +330,7 @@ button:focus {
 /* --------------------------------
  Navigation
 -------------------------------- */
-.navbar-nav {
-  font-family: "Montserrat", sans-serif;
-  font-size: 14px;
-}
+
 .navbar-right .dropdown-menu {
   right: auto;
   left: -1px; }
@@ -376,7 +373,7 @@ button:focus {
 
 .navbar-nav-hov_underline .navbar-nav li a {
   border-bottom: 4px solid transparent;
-  color: #000;
+  color: #234645;
 }
 @media (max-width: 767px) {
   .nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
@@ -391,11 +388,13 @@ button:focus {
     display: block;
   }
   .navbar-nav-hov_underline .navbar-nav li ul.dropdown-menu li a:hover, .navbar-nav-hov_underline .navbar-nav li ul.dropdown-menu li a:focus{
+    color: #234645;
     background: transparent;
     border-bottom: 4px solid #234645;
   }
 }
   .navbar-nav-hov_underline .navbar-nav li a:hover, .navbar-nav-hov_underline .navbar-nav li a:focus {
+    color: #234645;
     background: transparent;
     border-bottom: 4px solid #234645;
   }
@@ -574,8 +573,9 @@ left: 100%;
     background: #333434!important;
   }
   .navbar-nav {
-    font-family: "Montserrat", sans-serif;
-    font-size: 14px;
+    font-size: 0.95rem;
+
+
     /* padding-top: 20px; */
   }
 
@@ -1300,10 +1300,6 @@ select#edit-award-year:after{
 .form-item-award-year .select-wrapper:after{
   content: "";
 }
-.form-item-award-year .select-wrapper .form-control a.chosen-single{
-  width: 8em;
-}
-
 .form-item-award-name{
   margin-top: 2em;
 }
@@ -1318,7 +1314,9 @@ select#edit-award-year:after{
   content: '';
 }
 
-
+.block-views-exposed-filter-blockawards-block-1{
+  border-right: 1px solid #aeaeae;
+}
 
 .shs-widget-container {
     display: block;
@@ -1341,11 +1339,11 @@ select#edit-award-year:after{
 /* facets & sidebar */
 
 /* ircc staff */
-#edit-field-ircc-staff-category-target-id .form-group{
+#edit-staff-category .form-group{
   display: block;
 }
 
-#edit-field-ircc-staff-category-target-id .form-group {
+#edit-staff-category .form-group {
   background-color: #f9f9f9;
   color: #234645!important;
   border: 1px solid #ddd;
@@ -1357,19 +1355,19 @@ select#edit-award-year:after{
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#edit-field-ircc-staff-category-target-id .form-group a{
+#edit-staff-category .form-group a{
   padding: 0.1em 1em;
 }
-#edit-field-ircc-staff-category-target-id .form-group a:hover{
+#edit-staff-category .form-group a:hover{
 color: #234645!important;
 }
 
-#edit-field-ircc-staff-category-target-id .form-group:hover{
+#edit-staff-category .form-group:hover{
   background-color: #f0f8ff!important;
 
 }
 
-#edit-field-ircc-staff-category-target-id div.bef-link-active, #edit-field-ircc-staff-category-target-id div.bef-link-active:hover, #edit-field-ircc-staff-category-target-id div.bef-link-active:focus {
+#edit-staff-category div.bef-link-active, #edit-staff-category div.bef-link-active:hover, #edit-staff-category div.bef-link-active:focus {
   background-color: #234645!important;
   color: #ffffff!important;
   -webkit-transition: all 0.5s;
@@ -1377,7 +1375,7 @@ color: #234645!important;
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#edit-field-ircc-staff-category-target-id a.bef-link-active, #edit-field-ircc-staff-category-target-id a.bef-link-active:hover{
+#edit-staff-category a.bef-link-active, #edit-staff-category a.bef-link-active:hover{
   color: #ffffff!important;
 }
 
