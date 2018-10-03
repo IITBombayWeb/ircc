@@ -288,7 +288,7 @@ body .lh_20{
   border-color: #3a6564;
 
 }
-.btn-primary:hover{
+.btn-primary:hover .btn-primary:focus{
   background-color: #234645;
   border-color: #234645;
 }
