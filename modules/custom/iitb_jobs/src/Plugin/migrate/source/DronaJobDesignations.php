@@ -225,6 +225,40 @@ class DronaJobDesignations extends SourcePluginBase {
         $row['RSP_Remarks']='';
       }
 
+      $queryRCD = $con->select('RecruitmentCandidateDetails', 'rcd');
+      $queryRCD->condition('rcd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
+      $queryRCD->condition('rcd.ProjectSrNo', $result1->ProjectSrNo, "=");
+      $queryRCD->condition('rcd.DesgSrNo', $result1->DesgSrNo, "=");
+      $queryRCD->fields('rcd',array( 'EmpName'));
+      $resultRCD = $queryRCD->execute()->fetchAll();
+
+      $shortlisted_array=array();
+
+      foreach ($resultRCD as $resultRCD1) { 
+        array_push($shortlisted_array, array('shortlisted_list_each'=>$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$resultRCD1->EmpName));
+      }
+      $row['shortlisted_list']=$shortlisted_array;
+
+      $queryRSC = $con->select('RecruitmentSelectedCandidates', 'rsc');
+      $queryRSC->innerJoin('RecruitmentDetails', 'rd', 'rsc.AdvCirNo = rd.AdvCirNo');
+      $queryRSC->innerJoin('RecruitmentProjectDetails', 'rpd', '(rsc.AdvJobCode = rpd.AdvJobCode OR rsc.AdvJobCode = rpd.ProCode)');
+      $queryRSC->innerJoin('RecruitmentDesignationDetails', 'rdd', 'rsc.DesigCode = rdd.DesgCode');
+      $queryRSC->condition('rd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
+      $queryRSC->condition('rpd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
+      $queryRSC->condition('rdd.RecruitmentSrNo', $result1->RecruitmentSrNo, "=");
+      $queryRSC->condition('rpd.ProjectSrNo', $result1->ProjectSrNo, "=");
+      $queryRSC->condition('rdd.ProjectSrNo', $result1->ProjectSrNo, "=");
+      $queryRSC->condition('rdd.DesgSrNo', $result1->DesgSrNo, "=");
+      $queryRSC->fields('rsc',array( 'ApptSno','EmpCode','CandidateName'));
+      $resultRSC = $queryRSC->execute()->fetchAll();
+
+      $appointed_array=array();
+
+      foreach ($resultRSC as $resultRSC1) { 
+        array_push($appointed_array, array('appointed_list_each'=>$result1->RecruitmentSrNo.':'.$result1->ProjectSrNo.':'.$result1->DesgSrNo.':'.$resultRSC1->ApptSno.':'.$resultRSC1->EmpCode.':'.$resultRSC1->CandidateName));
+      }
+      $row['appointed_list']=$appointed_array;
+
       \Drupal\Core\Database\Database::setActiveConnection();
       // append it to the array of rows we can import 
       $rows[] = $row; 
@@ -289,6 +323,9 @@ class DronaJobDesignations extends SourcePluginBase {
       'RSP_TA' => $this->t('RSP_TA'),
       'RSP_Selection' => $this->t('RSP_Selection'),
       'RSP_Remarks' => $this->t('RSP_Remarks'),
+
+      'shortlisted_list' => $this->t('shortlisted_list'),
+      'appointed_list' => $this->t('appointed_list'),
     );
   }
 
