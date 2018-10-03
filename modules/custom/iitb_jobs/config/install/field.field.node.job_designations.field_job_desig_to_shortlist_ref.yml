@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_job_desig_to_shortlist_ref
+    - node.type.job_designations
+    - node.type.job_shortlisted
+  enforced:
+    module:
+      - iitb_jobs
+id: node.job_designations.field_job_desig_to_shortlist_ref
+field_name: field_job_desig_to_shortlist_ref
+entity_type: node
+bundle: job_designations
+label: 'Job Desig To Shortlist Ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      job_shortlisted: job_shortlisted
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

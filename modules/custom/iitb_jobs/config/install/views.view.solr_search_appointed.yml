@@ -2,15 +2,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_job_dept_code_ref
-    - field.storage.node.field_job_end_date
+    - field.storage.node.field_job_adv_cir_no
     - field.storage.node.field_no_of_posts
     - field.storage.node.field_pd_postname
     - field.storage.node.field_recruitment_sr_no
+    - field.storage.node.field_rpd_adv_job_code
     - field.storage.node.field_rpd_pro_code
-    - field.storage.node.field_rpd_title
+    - field.storage.node.field_rsp_interview_date
     - search_api.index.job_search_index
-    - system.menu.search-sidebar
   enforced:
     module:
       - iitb_jobs
@@ -19,10 +18,10 @@ dependencies:
     - datetime
     - node
     - search_api
-    - text
     - views_autocomplete_filters
-id: solr_search_job
-label: 'Solr Search Jobs'
+    - views_bootstrap
+id: solr_search_appointed
+label: 'Solr Search Appointed'
 module: views
 description: ''
 tag: ''
@@ -76,7 +75,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 10
+          items_per_page: 20
           offset: 0
           id: 0
           total_pages: null
@@ -95,27 +94,68 @@ display:
             offset_label: Offset
           quantity: 9
       style:
-        type: default
+        type: views_bootstrap_table
         options:
           grouping: {  }
-          row_class: 'mb-30 job-wrap mt-20'
+          row_class: ''
           default_row_class: true
+          override: 1
+          sticky: 0
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            field_rpd_pro_code: field_rpd_pro_code
+            field_recruitment_sr_no: field_recruitment_sr_no
+            field_pd_postname: field_pd_postname
+            field_no_of_posts: field_no_of_posts
+          info:
+            field_rpd_pro_code:
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            field_recruitment_sr_no:
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            field_pd_postname:
+              sortable: 0
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+            field_no_of_posts:
+              align: ''
+              separator: ''
+              empty_column: 0
+              responsive: ''
+          default: '-1'
+          empty_table: 0
+          responsive: 1
+          bootstrap_styles:
+            hover: hover
+            striped: 0
+            bordered: 0
+            condensed: 0
       row:
         type: fields
         options:
           default_field_elements: false
           inline: {  }
           separator: ''
-          hide_empty: false
+          hide_empty: true
       fields:
-        field_job_dept_code_ref:
-          id: field_job_dept_code_ref
+        field_job_adv_cir_no_2:
+          id: field_job_adv_cir_no_2
           table: search_api_entity_node
-          field: field_job_dept_code_ref
+          field: field_job_adv_cir_no
           relationship: field_job_desig_to_circular_ref
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'Job Adv Cir No'
           exclude: false
           alter:
             alter_text: false
@@ -148,7 +188,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -156,11 +196,11 @@ display:
           hide_empty: false
           empty_zero: false
           hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
+          click_sort_column: value
+          type: string
           settings:
-            link: true
-          group_column: target_id
+            link_to_entity: false
+          group_column: value
           group_columns: {  }
           group_rows: true
           delta_limit: 0
@@ -169,57 +209,14 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
+          field_api_classes: false
           field_rendering: true
-          fallback_handler: search_api_entity
+          fallback_handler: search_api
           fallback_options:
             link_to_item: false
             use_highlighting: false
             multi_type: separator
             multi_separator: ', '
-            display_methods:
-              article:
-                display_method: label
-                view_mode: default
-              awards:
-                display_method: label
-                view_mode: default
-              central_facility_registration:
-                display_method: label
-                view_mode: default
-              department:
-                display_method: label
-                view_mode: default
-              events:
-                display_method: label
-                view_mode: default
-              faculty_profiles:
-                display_method: label
-                view_mode: default
-              job_circulars:
-                display_method: label
-                view_mode: default
-              job_designations:
-                display_method: label
-                view_mode: default
-              media_coverage:
-                display_method: label
-                view_mode: default
-              news:
-                display_method: label
-                view_mode: default
-              page:
-                display_method: label
-                view_mode: default
-              research_facility:
-                display_method: label
-                view_mode: default
-              research_glimpses:
-                display_method: label
-                view_mode: default
-              technology:
-                display_method: label
-                view_mode: default
           entity_type: node
           plugin_id: search_api_field
         field_rpd_pro_code:
@@ -229,7 +226,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'Project Code'
           exclude: false
           alter:
             alter_text: false
@@ -273,7 +270,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: false
+            link_to_entity: true
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -283,7 +280,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
+          field_api_classes: false
           field_rendering: true
           fallback_handler: search_api
           fallback_options:
@@ -293,14 +290,14 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
-        field_rpd_title:
-          id: field_rpd_title
+        field_rpd_adv_job_code:
+          id: field_rpd_adv_job_code
           table: search_api_datasource_job_search_index_entity_node
-          field: field_rpd_title
+          field: field_rpd_adv_job_code
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'RPD Adv Job Code'
           exclude: false
           alter:
             alter_text: false
@@ -333,7 +330,7 @@ display:
           element_class: ''
           element_label_type: ''
           element_label_class: ''
-          element_label_colon: false
+          element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
           element_default_classes: true
@@ -342,8 +339,9 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: text_default
-          settings: {  }
+          type: string
+          settings:
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -353,7 +351,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
+          field_api_classes: false
           field_rendering: true
           fallback_handler: search_api
           fallback_options:
@@ -441,103 +439,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: false
-            text: '{{ field_pd_postname }} <div class="field-value">({{ field_no_of_posts }} posts)</div>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: true
-          field_rendering: true
-          fallback_handler: search_api_entity
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            display_methods:
-              area_of_expertise:
-                display_method: label
-                view_mode: default
-              awards_category:
-                display_method: label
-              ircc_staff_category:
-                display_method: label
-              job_category:
-                display_method: label
-              job_position:
-                display_method: label
-              market_readiness:
-                display_method: label
-              research_glimpse_category:
-                display_method: label
-                view_mode: default
-              subject_classification:
-                display_method: label
-              tags:
-                display_method: label
-              technology_category:
-                display_method: label
-                view_mode: default
-              technology_status:
-                display_method: label
-          plugin_id: search_api_field
-        field_no_of_posts:
-          id: field_no_of_posts
-          table: search_api_datasource_job_search_index_entity_node
-          field: field_no_of_posts
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
+          label: Position
           exclude: false
           alter:
             alter_text: false
@@ -573,7 +475,101 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: false
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_entity
+          fallback_options:
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            display_methods:
+              area_of_expertise:
+                display_method: label
+                view_mode: default
+              awards_category:
+                display_method: label
+              job_category:
+                display_method: label
+              job_position:
+                display_method: label
+              market_readiness:
+                display_method: label
+              research_glimpse_category:
+                display_method: label
+                view_mode: default
+              subject_classification:
+                display_method: label
+              tags:
+                display_method: label
+              technology_category:
+                display_method: label
+                view_mode: default
+              technology_status:
+                display_method: label
+          plugin_id: search_api_field
+        field_no_of_posts:
+          id: field_no_of_posts
+          table: search_api_datasource_job_search_index_entity_node
+          field: field_no_of_posts
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'No. of Posts'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -591,7 +587,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
+          field_api_classes: false
           field_rendering: true
           fallback_handler: search_api
           fallback_options:
@@ -601,14 +597,14 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
-        field_job_end_date:
-          id: field_job_end_date
-          table: search_api_entity_node
-          field: field_job_end_date
-          relationship: field_job_desig_to_circular_ref
+        field_rsp_interview_date:
+          id: field_rsp_interview_date
+          table: search_api_datasource_job_search_index_entity_node
+          field: field_rsp_interview_date
+          relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'Date of interview'
           exclude: false
           alter:
             alter_text: false
@@ -653,7 +649,7 @@ display:
           type: datetime_default
           settings:
             timezone_override: ''
-            format_type: short
+            format_type: html_date
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -663,7 +659,7 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
+          field_api_classes: false
           field_rendering: true
           fallback_handler: search_api
           fallback_options:
@@ -673,26 +669,109 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
-        nothing:
-          id: nothing
+        nid:
+          id: nid
+          table: search_api_datasource_job_search_index_entity_node
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ID
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
+          entity_type: node
+          plugin_id: search_api_field
+        nothing_1:
+          id: nothing_1
           table: views
           field: nothing
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
+          label: 'Appointed Candidates'
           exclude: false
           alter:
             alter_text: true
-            text: 'Apply now'
+            text: 'View list'
             make_link: true
-            path: 'https://www.ircc.iitb.ac.in/IRCC-Webpage/rnd/RecruitmentGenerateCircular.jsp?srno={{ field_recruitment_sr_no }}'
+            path: '/appointed-details?id={{ nid }}'
             absolute: false
-            external: true
+            external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: 'Apply Now'
+            alt: ''
             rel: ''
             link_class: ''
             prefix: ''
@@ -714,8 +793,8 @@ display:
           element_label_type: ''
           element_label_class: ''
           element_label_colon: false
-          element_wrapper_type: div
-          element_wrapper_class: 'btn btn-primary job-apply-link'
+          element_wrapper_type: ''
+          element_wrapper_class: ''
           element_default_classes: true
           empty: ''
           hide_empty: false
@@ -773,6 +852,48 @@ display:
           fields:
             - field_qualification_experience
           plugin_id: views_autocomplete_filters_search_api_fulltext
+        field_job_desig_to_appoint_ref:
+          id: field_job_desig_to_appoint_ref
+          table: search_api_index_job_search_index
+          field: field_job_desig_to_appoint_ref
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>'
+          value:
+            min: ''
+            max: ''
+            value: '0'
+          group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_numeric
         type:
           id: type
           table: search_api_index_job_search_index
@@ -813,10 +934,10 @@ display:
           reduce_duplicates: false
           plugin_id: search_api_options
       sorts:
-        field_job_end_date_1:
-          id: field_job_end_date_1
+        field_rsp_interview_date:
+          id: field_rsp_interview_date
           table: search_api_index_job_search_index
-          field: field_job_end_date_1
+          field: field_rsp_interview_date
           relationship: none
           group_type: group
           admin_label: ''
@@ -825,7 +946,19 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: 'Job Opportunities'
+        field_job_end_date_1_1:
+          id: field_job_end_date_1_1
+          table: search_api_index_job_search_index
+          field: field_job_end_date_1
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+      title: 'Appointed Candidate'
       header: {  }
       footer: {  }
       empty: {  }
@@ -843,6 +976,10 @@ display:
           plugin_id: search_api
       arguments: {  }
       display_extenders: {  }
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -851,13 +988,13 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.node.field_job_dept_code_ref'
-        - 'config:field.storage.node.field_job_end_date'
+        - 'config:field.storage.node.field_job_adv_cir_no'
         - 'config:field.storage.node.field_no_of_posts'
         - 'config:field.storage.node.field_pd_postname'
         - 'config:field.storage.node.field_recruitment_sr_no'
+        - 'config:field.storage.node.field_rpd_adv_job_code'
         - 'config:field.storage.node.field_rpd_pro_code'
-        - 'config:field.storage.node.field_rpd_title'
+        - 'config:field.storage.node.field_rsp_interview_date'
   page_1:
     display_plugin: page
     id: page_1
@@ -865,13 +1002,13 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search/jobs
+      path: search/jobs/appointed
       cache:
         type: none
       defaults:
         cache: false
       menu:
-        type: normal
+        type: none
         title: 'Job Opportunities'
         description: ''
         expanded: false
@@ -887,10 +1024,10 @@ display:
         - url
         - url.query_args
       tags:
-        - 'config:field.storage.node.field_job_dept_code_ref'
-        - 'config:field.storage.node.field_job_end_date'
+        - 'config:field.storage.node.field_job_adv_cir_no'
         - 'config:field.storage.node.field_no_of_posts'
         - 'config:field.storage.node.field_pd_postname'
         - 'config:field.storage.node.field_recruitment_sr_no'
+        - 'config:field.storage.node.field_rpd_adv_job_code'
         - 'config:field.storage.node.field_rpd_pro_code'
-        - 'config:field.storage.node.field_rpd_title'
+        - 'config:field.storage.node.field_rsp_interview_date'

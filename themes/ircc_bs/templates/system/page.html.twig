@@ -96,7 +96,7 @@
 
           {% if page.primary_menu %}
             <div class="row">
-              <div class="col-md-12 navbar-collapse collapse navbar-left" id="primary-menu">
+              <div class="col-md-12 navbar-collapse collapse navbar-left navbar-nav-hov_underline" id="primary-menu">
                   {{ page.primary_menu }}
               </div>
             </div>
@@ -120,7 +120,7 @@
              {{ page.breadcrumb }}
           </div>
         </div>
-      </div>                    
+      </div>
       {% endif %}
 
     {% if is_front %}
@@ -265,7 +265,7 @@
     {% endif %}
 
   {% if not is_front %}
-    <div role="main" class="main-container {{ container }} js-quickedit-main-content">
+    <div role="main" class="{% if page.primary_menu %} main-container-menu {% else %} main-container {% endif %} {{ container }} js-quickedit-main-content">
   {% endif %}
         {# content top #}
       {% if page.content_top and not is_front %}
