@@ -1353,9 +1353,7 @@ select#edit-award-year:after{
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#edit-award-type .form-group a{
-  padding: 0.1em 1em;
-}
+
 #edit-award-type .form-group a:hover{
 color: #234645!important;
 }
