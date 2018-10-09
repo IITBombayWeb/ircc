@@ -18,7 +18,7 @@
 {% block content %}
   {% if site_logo %}
     <a class="logo navbar-btn pull-left" href="http://www.iitb.ac.in/" title="{{ 'IIT Bombay Home'|t }}" rel="home">
-      <img src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+      <img src="{{ site_logo }}" alt="{{ 'IIT Bombay Home'|t }}" />
     </a>
   {% endif %}
   {% if site_slogan %}
@@ -27,13 +27,13 @@
   </a>
   {% endif %}
   {% if site_name %}
-    <a class="navbar-brand name" href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">
+    <a class="navbar-brand name" href="{{ path('<front>') }}" title="{{ 'IRCC Home'|t }}" rel="ircc home">
     {{ site_name }}
     </a>
   {% endif %}
-  
+
    <a class="logo2 navbar-btn pull-right" href="http://www.iitb.ac.in/" title="{{ 'IIT Bombay Home'|t }}" rel="home">
-        <img class="sec-logo" src= "{{ site_logo_2 }}" alt="{{ 'Home'|t }}" />
+        <img class="sec-logo" src= "{{ site_logo_2 }}" alt="{{ 'IIT Bombay Home'|t }}" />
     </a>
 
 {% endblock %}

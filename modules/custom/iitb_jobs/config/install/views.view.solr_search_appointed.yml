@@ -3,7 +3,6 @@ status: true
 dependencies:
   config:
     - field.storage.node.field_job_adv_cir_no
-    - field.storage.node.field_no_of_posts
     - field.storage.node.field_pd_postname
     - field.storage.node.field_recruitment_sr_no
     - field.storage.node.field_rpd_adv_job_code
@@ -49,7 +48,7 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Search
+          submit_button: Filter
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -65,17 +64,19 @@ display:
               autosubmit: false
               autosubmit_exclude_textfield: false
               autosubmit_hide: false
-            search_api_fulltext:
-              bef_format: default
+            field_rsp_interview_date_1:
+              bef_format: bef_datepicker
               more_options:
                 is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
+            field_rsp_interview_date_2:
+              bef_format: bef_datepicker
+              more_options:
+                is_secondary: false
           text_input_required_format: basic_html
       pager:
         type: full
         options:
-          items_per_page: 20
+          items_per_page: 100
           offset: 0
           id: 0
           total_pages: null
@@ -148,6 +149,56 @@ display:
           separator: ''
           hide_empty: true
       fields:
+        counter:
+          id: counter
+          table: views
+          field: counter
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Sr no.'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          counter_start: 1
+          plugin_id: counter
         field_job_adv_cir_no_2:
           id: field_job_adv_cir_no_2
           table: search_api_entity_node
@@ -156,7 +207,7 @@ display:
           group_type: group
           admin_label: ''
           label: 'Job Adv Cir No'
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -227,7 +278,7 @@ display:
           group_type: group
           admin_label: ''
           label: 'Project Code'
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -298,7 +349,7 @@ display:
           group_type: group
           admin_label: ''
           label: 'RPD Adv Job Code'
-          exclude: false
+          exclude: true
           alter:
             alter_text: false
             text: ''
@@ -361,6 +412,104 @@ display:
             multi_separator: ', '
           entity_type: node
           plugin_id: search_api_field
+        nothing:
+          id: nothing
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Circular Details'
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if field_rpd_adv_job_code %}\r\nAdvertisement No.{{ field_job_adv_cir_no_2 }}\r\n{% else %}\r\n{% set cir_year = field_job_adv_cir_no_2[:4] %}\r\n{% set cir_no = field_job_adv_cir_no_2[4:] %}\r\nNo.DRD/Rectt/Project/{{ cir_no }}/{{ cir_year }}\r\n{% endif %}"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+        nothing_2:
+          id: nothing_2
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: JobCode/ProjectCode
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if field_rpd_adv_job_code %}\r\n  {{ field_rpd_adv_job_code }}\r\n{% else %}\r\n   {{ field_rpd_pro_code }}\r\n{% endif %}"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
         field_recruitment_sr_no:
           id: field_recruitment_sr_no
           table: search_api_datasource_job_search_index_entity_node
@@ -526,77 +675,6 @@ display:
               technology_status:
                 display_method: label
           plugin_id: search_api_field
-        field_no_of_posts:
-          id: field_no_of_posts
-          table: search_api_datasource_job_search_index_entity_node
-          field: field_no_of_posts
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'No. of Posts'
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
         field_rsp_interview_date:
           id: field_rsp_interview_date
           table: search_api_datasource_job_search_index_entity_node
@@ -646,10 +724,10 @@ display:
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: value
-          type: datetime_default
+          type: datetime_custom
           settings:
             timezone_override: ''
-            format_type: html_date
+            date_format: d-m-Y
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -776,7 +854,7 @@ display:
             link_class: ''
             prefix: ''
             suffix: ''
-            target: _blank
+            target: ''
             nl2br: false
             max_length: 0
             word_boundary: true
@@ -802,39 +880,31 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       filters:
-        search_api_fulltext:
-          id: search_api_fulltext
+        type:
+          id: type
           table: search_api_index_job_search_index
-          field: search_api_fulltext
+          field: type
           relationship: none
           group_type: group
           admin_label: ''
           operator: or
-          value: ''
+          value:
+            job_designations: job_designations
           group: 1
-          exposed: true
+          exposed: false
           expose:
-            operator_id: search_api_fulltext_op
+            operator_id: ''
             label: ''
             description: ''
             use_operator: false
-            operator: search_api_fulltext_op
-            identifier: search_api_fulltext
+            operator: ''
+            identifier: ''
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            placeholder: ''
-            autocomplete_filter: 1
-            autocomplete_min_chars: '0'
-            autocomplete_items: '10'
-            autocomplete_raw_suggestion: 1
-            autocomplete_raw_dropdown: 1
-            autocomplete_dependent: 0
+            reduce: false
           is_grouped: false
           group_info:
             label: ''
@@ -847,11 +917,8 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields:
-            - field_qualification_experience
-          plugin_id: views_autocomplete_filters_search_api_fulltext
+          reduce_duplicates: false
+          plugin_id: search_api_options
         field_job_desig_to_appoint_ref:
           id: field_job_desig_to_appoint_ref
           table: search_api_index_job_search_index
@@ -894,16 +961,19 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: search_api_numeric
-        type:
-          id: type
+        field_rsp_interview_date:
+          id: field_rsp_interview_date
           table: search_api_index_job_search_index
-          field: type
+          field: field_rsp_interview_date
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
+          operator: '>'
           value:
-            job_designations: job_designations
+            min: ''
+            max: ''
+            value: '-6 months'
+            type: offset
           group: 1
           exposed: false
           expose:
@@ -918,7 +988,9 @@ display:
             multiple: false
             remember_roles:
               authenticated: authenticated
-            reduce: false
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
           is_grouped: false
           group_info:
             label: ''
@@ -931,8 +1003,149 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
+          plugin_id: search_api_date
+        field_rsp_interview_date_1:
+          id: field_rsp_interview_date_1
+          table: search_api_index_job_search_index
+          field: field_rsp_interview_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_rsp_interview_date_1_op
+            label: 'Interview Date from'
+            description: 'Select or Enter date (mm/dd/yyyy)'
+            use_operator: false
+            operator: field_rsp_interview_date_1_op
+            identifier: interview_date_start
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
+        field_rsp_interview_date_2:
+          id: field_rsp_interview_date_2
+          table: search_api_index_job_search_index
+          field: field_rsp_interview_date
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '<='
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_rsp_interview_date_2_op
+            label: till
+            description: 'Select or Enter date(mm/dd/yyyy)'
+            use_operator: false
+            operator: field_rsp_interview_date_2_op
+            identifier: interview_date_end
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            placeholder: ''
+            min_placeholder: ''
+            max_placeholder: ''
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: search_api_date
+        search_api_fulltext:
+          id: search_api_fulltext
+          table: search_api_index_job_search_index
+          field: search_api_fulltext
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: or
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: search_api_fulltext_op
+            label: Search
+            description: ''
+            use_operator: false
+            operator: search_api_fulltext_op
+            identifier: appointed
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              administrator: '0'
+              editor: '0'
+            placeholder: ''
+            autocomplete_filter: 1
+            autocomplete_min_chars: '0'
+            autocomplete_items: '10'
+            autocomplete_raw_suggestion: 1
+            autocomplete_raw_dropdown: 1
+            autocomplete_dependent: 0
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          parse_mode: terms
+          min_length: 3
+          fields:
+            - field_appointed_candidate_name_1
+          plugin_id: views_autocomplete_filters_search_api_fulltext
       sorts:
         field_rsp_interview_date:
           id: field_rsp_interview_date
@@ -942,18 +1155,6 @@ display:
           group_type: group
           admin_label: ''
           order: DESC
-          exposed: false
-          expose:
-            label: ''
-          plugin_id: search_api
-        field_job_end_date_1_1:
-          id: field_job_end_date_1_1
-          table: search_api_index_job_search_index
-          field: field_job_end_date_1
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
           exposed: false
           expose:
             label: ''
@@ -989,7 +1190,6 @@ display:
         - url.query_args
       tags:
         - 'config:field.storage.node.field_job_adv_cir_no'
-        - 'config:field.storage.node.field_no_of_posts'
         - 'config:field.storage.node.field_pd_postname'
         - 'config:field.storage.node.field_recruitment_sr_no'
         - 'config:field.storage.node.field_rpd_adv_job_code'
@@ -1025,7 +1225,6 @@ display:
         - url.query_args
       tags:
         - 'config:field.storage.node.field_job_adv_cir_no'
-        - 'config:field.storage.node.field_no_of_posts'
         - 'config:field.storage.node.field_pd_postname'
         - 'config:field.storage.node.field_recruitment_sr_no'
         - 'config:field.storage.node.field_rpd_adv_job_code'
