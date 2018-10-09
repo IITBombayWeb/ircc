@@ -9,14 +9,18 @@ dependencies:
     - node
     - search_api
   config:
+    - field.storage.node.field_appointed_candidate_name
     - field.storage.node.field_job_desig_to_appoint_ref
     - field.storage.node.field_job_desig_to_circular_ref
+    - field.storage.node.field_job_adv_cir_no
     - field.storage.node.field_job_dept_code_ref
     - field.storage.node.field_job_end_date
+    - field.storage.node.field_job_recruitment_type
     - field.storage.node.field_job_desig_to_shortlist_ref
     - field.storage.node.field_pd_postname
     - field.storage.node.field_qualification_experience
     - field.storage.node.field_rsp_interview_date
+    - field.storage.node.field_shortlisted_emp_name
     - search_api.server.default_solr_server
 third_party_settings:
   search_api_solr:
@@ -28,6 +32,25 @@ name: 'Job Search Index'
 description: ''
 read_only: false
 field_settings:
+  field_appointed_candidate_name_1:
+    label: 'Appointed Candidate Name'
+    datasource_id: 'entity:node'
+    property_path: field_appointed_candidate_name
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.node.field_appointed_candidate_name
+  field_job_adv_cir_no:
+    label: 'Job Desig To Circular Ref » Content » Job Adv Cir No'
+    datasource_id: 'entity:node'
+    property_path: 'field_job_desig_to_circular_ref:entity:field_job_adv_cir_no'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_circular_ref
+        - field.storage.node.field_job_adv_cir_no
+      module:
+        - node
   field_job_dept_code_ref:
     label: 'Job Desig To Circular Ref » Content » Job Dept Code Ref'
     datasource_id: 'entity:node'
@@ -66,6 +89,17 @@ field_settings:
         - field.storage.node.field_job_end_date
       module:
         - node
+  field_job_recruitment_type:
+    label: 'Job Desig To Circular Ref » Content » Job Recruitment Type'
+    datasource_id: 'entity:node'
+    property_path: 'field_job_desig_to_circular_ref:entity:field_job_recruitment_type'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_circular_ref
+        - field.storage.node.field_job_recruitment_type
+      module:
+        - node
   field_pd_postname:
     label: 'PD Postname'
     datasource_id: 'entity:node'
@@ -90,6 +124,14 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_rsp_interview_date
+  field_shortlisted_emp_name_1:
+    label: 'Shortlisted Emp Name'
+    datasource_id: 'entity:node'
+    property_path: field_shortlisted_emp_name
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.node.field_shortlisted_emp_name
   node_grants:
     label: 'Node access information'
     property_path: search_api_node_grants
@@ -186,7 +228,11 @@ processor_settings:
   html_filter:
     all_fields: true
     fields:
+      - field_appointed_candidate_name_1
+      - field_job_adv_cir_no
+      - field_job_recruitment_type
       - field_qualification_experience
+      - field_shortlisted_emp_name_1
       - rendered_item
       - title
       - type
@@ -204,7 +250,11 @@ processor_settings:
   ignore_character:
     all_fields: true
     fields:
+      - field_appointed_candidate_name_1
+      - field_job_adv_cir_no
+      - field_job_recruitment_type
       - field_qualification_experience
+      - field_shortlisted_emp_name_1
       - rendered_item
       - title
       - type
