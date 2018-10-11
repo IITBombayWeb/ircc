@@ -17,10 +17,10 @@ dependencies:
     - field.storage.node.field_job_end_date
     - field.storage.node.field_job_recruitment_type
     - field.storage.node.field_job_desig_to_shortlist_ref
+    - field.storage.node.field_shortlisted_emp_name
     - field.storage.node.field_pd_postname
     - field.storage.node.field_qualification_experience
     - field.storage.node.field_rsp_interview_date
-    - field.storage.node.field_shortlisted_emp_name
     - search_api.server.default_solr_server
 third_party_settings:
   search_api_solr:
@@ -32,6 +32,17 @@ name: 'Job Search Index'
 description: ''
 read_only: false
 field_settings:
+  field_appointed_candidate_name:
+    label: 'Job Desig To Appoint Ref » Content » Appointed Candidate Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_job_desig_to_appoint_ref:entity:field_appointed_candidate_name'
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_appoint_ref
+        - field.storage.node.field_appointed_candidate_name
+      module:
+        - node
   field_appointed_candidate_name_1:
     label: 'Appointed Candidate Name'
     datasource_id: 'entity:node'
@@ -124,6 +135,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_rsp_interview_date
+  field_shortlisted_emp_name:
+    label: 'Job Desig To Shortlist Ref » Content » Shortlisted Emp Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_job_desig_to_shortlist_ref:entity:field_shortlisted_emp_name'
+    type: solr_text_ngram
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_shortlist_ref
+        - field.storage.node.field_shortlisted_emp_name
+      module:
+        - node
   field_shortlisted_emp_name_1:
     label: 'Shortlisted Emp Name'
     datasource_id: 'entity:node'
@@ -228,10 +250,12 @@ processor_settings:
   html_filter:
     all_fields: true
     fields:
+      - field_appointed_candidate_name
       - field_appointed_candidate_name_1
       - field_job_adv_cir_no
       - field_job_recruitment_type
       - field_qualification_experience
+      - field_shortlisted_emp_name
       - field_shortlisted_emp_name_1
       - rendered_item
       - title
@@ -250,10 +274,12 @@ processor_settings:
   ignore_character:
     all_fields: true
     fields:
+      - field_appointed_candidate_name
       - field_appointed_candidate_name_1
       - field_job_adv_cir_no
       - field_job_recruitment_type
       - field_qualification_experience
+      - field_shortlisted_emp_name
       - field_shortlisted_emp_name_1
       - rendered_item
       - title
