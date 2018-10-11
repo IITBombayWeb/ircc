@@ -26,9 +26,7 @@
       default_row_class ? 'views-row',
     ]
   %}
-  <a href="/job-details/{{ row.id.content }}" tabindex="-1">View Details</a>
   <div{{ row.attributes.addClass(row_classes) }}>
     {{ row.content }}
   </div>
-</a>
 {% endfor %}
