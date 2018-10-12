@@ -1994,6 +1994,10 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
  transition: all 0.5s;
 }
 
+.job-wrap a, .job-wrap a:hover{
+  color: #343536;
+}
+
 .job-field-label{
   width: 14em;
   font-family: 'Ek Mukta', sans-serif;
