@@ -1993,7 +1993,9 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   -o-transition: all 0.5s;
  transition: all 0.5s;
 }
-
+.job-wrap .btn{
+    font-weight: 700;
+}
 .job-wrap a, .job-wrap a:hover{
   color: #343536;
 }
@@ -2012,7 +2014,6 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   margin-left: 130px;
 }
 .job-apply-link{
-  font-family: 'Ek Mukta', sans-serif;
     font-weight: 700;
     position: absolute;
     right: 15px;
