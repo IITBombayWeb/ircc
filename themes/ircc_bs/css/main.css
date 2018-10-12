@@ -1998,6 +1998,10 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   color: #343536;
 }
 
+.job-wrap .btn a{
+  color: #fff;
+}
+
 .job-field-label{
   width: 14em;
   font-family: 'Ek Mukta', sans-serif;
