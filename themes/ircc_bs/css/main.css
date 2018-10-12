@@ -1333,7 +1333,7 @@ select#edit-award-year:after{
 }
 
 .form-item-award-year{
-  margin-bottom: 2em;
+  margin-bottom: 1.3em!important;
 }
 
 .form-item-award-type ul{
