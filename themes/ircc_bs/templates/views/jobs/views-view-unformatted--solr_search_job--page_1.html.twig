@@ -18,13 +18,12 @@
  */
 #}
 {% if title %}
-  <h3>{{ title }}</h3>
+  <h4>{{ title }}</h4>
 {% endif %}
 {% for row in rows %}
   {%
     set row_classes = [
       default_row_class ? 'views-row',
-      'job-wrap',
     ]
   %}
   <div{{ row.attributes.addClass(row_classes) }}>
