@@ -1332,8 +1332,8 @@ select#edit-award-year:after{
   width: 18em!important;
 }
 
-.form-item-award-type{
-  margin-top: 2em;
+.form-item-award-year{
+  margin-bottom: 2em;
 }
 
 .form-item-award-type ul{
@@ -2038,6 +2038,10 @@ width: 15em;
 
 th#view-counter-table-column{
   width: 4em;
+}
+
+.form-item-appointed{
+  margin-top: 1.5em;
 }
 /* job display block */
 
