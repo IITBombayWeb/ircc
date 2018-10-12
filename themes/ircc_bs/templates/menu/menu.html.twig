@@ -1,7 +1,7 @@
 {#
 /**
  * @file
- * Default theme implementation to display a menu.
+ * Theme override to display a menu.
  *
  * Available variables:
  * - menu_name: The machine name of the menu.
@@ -11,42 +11,45 @@
  *   - title: The menu link title.
  *   - url: The menu link url, instance of \Drupal\Core\Url
  *   - localized_options: Menu link localized options.
- *
- * @ingroup templates
- *
- * Define a custom macro that will render all menu trees.
+ *   - is_expanded: TRUE if the link has visible children within the current
+ *     menu tree.
+ *   - is_collapsed: TRUE if the link has children within the current menu tree
+ *     that are not currently visible.
+ *   - in_active_trail: TRUE if the link is in the active trail.
  */
 #}
-{% macro menu_links(items, attributes, menu_level, classes) %}
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level) %}
+  {% import _self as menus %}
   {% if items %}
-    <ul{{ attributes.addClass(menu_level == 0 ? classes : 'dropdown-menu') }}>
+    {% if menu_level == 0 %}
+      <ul{{ attributes.addClass('menu') }}>
+    {% else %}
+      <ul class="menu">
+    {% endif %}
     {% for item in items %}
       {%
-        set item_classes = [
-          item.is_expanded and item.below ? 'expanded',
-          item.is_expanded and menu_level == 0 and item.below ? 'dropdown',
-          item.in_active_trail ? 'active',
+        set classes = [
+          'menu-item',
+          item.is_expanded ? 'menu-item--expanded',
+          item.is_collapsed ? 'menu-item--collapsed',
+          item.in_active_trail ? 'menu-item--active-trail',
         ]
       %}
-      {% if menu_level == 0 and item.is_expanded and item.below %}
-        <li{{ item.attributes.addClass(item_classes) }}>
-        <a href="{{ item.url }}" class="dropdown-toggle" data-toggle="dropdown">{{ item.title }} <span class="caret"></span></a>
-      {% else %}
-        <li{{ item.attributes.addClass(item_classes) }}>
+      <li{{ item.attributes.addClass(classes) }}>
         {{ link(item.title, item.url) }}
-      {% endif %}
-      {% if item.below %}
-        {{ _self.menu_links(item.below, attributes.removeClass(classes), menu_level + 1, classes) }}
-      {% endif %}
+        {% if item.below %}
+          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+        {% endif %}
       </li>
     {% endfor %}
     </ul>
   {% endif %}
 {% endmacro %}
-
-{#
-  Invoke the custom macro defined above. If classes were provided, use them.
-  This allows the template to be extended without having to also duplicate the
-  code above. @see http://twig.sensiolabs.org/doc/tags/macro.html
-#}
-{{ _self.menu_links(items, attributes, 0, classes ? classes : ['menu', 'menu--' ~ menu_name|clean_class, 'nav']) }}
