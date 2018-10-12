@@ -76,7 +76,7 @@
 	border-bottom: 1px solid #383737;
 	line-height: 100%;
 	padding: 12px 15px;
-	font-size: 1rem;
+	font-size: 0.9rem;
 	font-weight: bold;
 	text-align: left;
   -webkit-transition: all 0.5s;
@@ -193,8 +193,8 @@
 	}
 	.region-primary-menu li.active a,
 	.region-primary-menu li a.is-active {
-		background: #d32931;
-		color: #fff;
+		background: #234645;
+			color: #ffffff;
 	}
 	.region-primary-menu li a.is-active.has-submenu {
 		background: none;
