@@ -2035,6 +2035,10 @@ width: 15em;
   margin-left: 15em;
 }
 }
+
+th#view-counter-table-column{
+  width: 4em;
+}
 /* job display block */
 
 
