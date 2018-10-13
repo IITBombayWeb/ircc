@@ -33,8 +33,9 @@ regions:
   footer_bar_right: 'Footer bar right'
 
 libraries:
-  - ircc_bs/global-styling
   - ircc_bs/font-awesome
   - ircc_bs/webfonts
   - ircc_bs/additional-library
   - ircc_bs/custom-scrollbar
+  - ircc_bs/smartmenus
+  - ircc_bs/global-styling
