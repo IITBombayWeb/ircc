@@ -1864,6 +1864,7 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   -o-transition: all 0.5s;
  transition: all 0.5s;
 }
+
 .job-wrap .btn{
     font-weight: 700;
 }
@@ -1877,16 +1878,15 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 
 .job-field-label{
   width: 14em;
-  font-family: 'Ek Mukta', sans-serif;
   font-weight: 700;
 }
 
 .job-field {
   margin-left: 130px;
 }
+
 .job-apply-link{
-    font-weight: 700;
-    position: absolute;
+    font-weight: 700;  
     right: 15px;
     top: 5px;
     z-index: 0;
@@ -1897,14 +1897,24 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 }
 
 @media only screen and (min-width: 640px){
+  .job-apply-link{
+    position: absolute;
+  }
+  .job-field-label{
+  width: 15em;
+  }
 
-.job-field-label{
-width: 15em;
+  .job-field {
+    margin-left: 15em;
+  }
+
+
 }
 
-.job-field {
-  margin-left: 15em;
-}
+@media only screen and (max-width: 768px){
+  .job-wrap{
+      background-color: #cee6ef;
+  }
 }
 
 th#view-counter-table-column{
