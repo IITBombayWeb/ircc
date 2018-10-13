@@ -1886,7 +1886,7 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 }
 
 .job-apply-link{
-    font-weight: 700;  
+    font-weight: 700;
     right: 15px;
     top: 5px;
     z-index: 0;
@@ -1914,6 +1914,8 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
 @media only screen and (max-width: 768px){
   .job-wrap{
       background-color: #cee6ef;
+      box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.5), 0 -10px 10px -10px rgba(0, 0, 0, 0.5);
+
   }
 }
 
