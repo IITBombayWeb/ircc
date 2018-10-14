@@ -854,6 +854,9 @@ text-decoration: none;
 .research-highlights a{
   color: #343536;
 }
+.research-highlights a:hover{
+  text-decoration: underline;
+}
 .rh-title{
   padding: 5pt;
   /* font-family: 'Merriweather', serif; */
