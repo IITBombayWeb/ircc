@@ -68,14 +68,24 @@
     </a>
     {{ page_top }}
 
-    <div id="page-container"> 
+    <div id="page-container">
       <div id="content-wrap">
         {{ page }}
       </div>
     </div>
       <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+      <!-- Preloader -->
+      <div id="preloader">
+        <div class="preloader">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <!-- /Preloader -->
     {{ page_bottom }}
     <js-bottom-placeholder token="{{ placeholder_token|raw }}">
- 
+
   </body>
 </html>
