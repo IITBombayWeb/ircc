@@ -138,4 +138,11 @@ jQuery(document).ready(function($){
 	theme_menu();
 });
 
+///////////////////////////
+// Preloader
+$(window).on('load', function() {
+  $("#preloader").delay(600).fadeOut();
+});
+
+
 }(jQuery);

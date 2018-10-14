@@ -1,39 +1,4 @@
 
-#back2Top {
-  width: 40px;
-  line-height: 40px;
-  overflow: hidden;
-  z-index: 999;
-  display: none;
-  cursor: pointer;
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-  position: fixed;
-  bottom: 50px;
-  right: 10px;
-  background-color: #3a6564;
-  border-color: #3a6564;
-  color: #ffffff;
-  text-align: center;
-  font-size: 30px;
-  text-decoration: none;
-  border-radius: 5px;
-  -webkit-transition: all 0.5s;
-   -moz-transition: all 0.5s;
-   -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-#back2Top:hover {
-  color: #ffffff;
-  -webkit-transition: all 0.5s;
-   -moz-transition: all 0.5s;
-   -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-
 /* .node-type-link a:after{
   content: "";
   display: block;
@@ -60,150 +25,6 @@
   visibility: visible;
   transform: scaleX(1);
 } */
-
-
-
-
-
-.menu-base-theme {
-	background: none;
-}
-.menu-base-theme ul {
-	background: none;
-}
-.menu-base-theme li a {
-  color: #ffffff;
-	border-bottom: 1px solid #383737;
-	line-height: 100%;
-	padding: 12px 15px;
-	font-size: 0.9rem;
-	font-weight: bold;
-	text-align: left;
-  -webkit-transition: all 0.5s;
-   -moz-transition: all 0.5s;
-   -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.menu-base-theme li a:hover,
-.menu-base-theme li a:focus,
-.menu-base-theme li a:active,
-.menu-base-theme li a.highlighted {
-  color: #ffffff;
-	background: #234645;
-	line-height: 100%;
-  padding: 12px 15px;
-  -webkit-transition: all 0.5s;
-   -moz-transition: all 0.5s;
-   -o-transition: all 0.5s;
-  transition: all 0.5s;
-}
-.menu-base-theme li a.sub-arrow {
-	color: #999;
-	font-size: 22px;
-	padding: 5px;
-	border-radius: 2px;
-	border: 1px solid #DCDCDC;
-	background: #EFEFEF;
-}
-.menu-base-theme li a span.sub-arrow {
-	line-height: 120%;
-	font-size: 2em;
-}
-
-.region-primary-menu {
-	display: none;
-	width: 100%;
-	background: #212020;
-	margin-bottom: 15px;
-	border-radius: 5px;
-	margin-top: 15px;
-}
-
-@media (min-width: 767px) {
-	.main-menu {
-		background: #000;
-		border-bottom: 1px solid #d32931;
-	}
-	.region-primary-menu {
-		display: block !important;
-		width: auto;
-		margin: 0;
-		background: none;
-		float: left;
-	}
-	.region-primary-menu ul {
-		border: 0;
-	}
-	.region-primary-menu ul ul {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
-    float: left;
-    margin: 2px 0 0;
-    text-align: left;
-    list-style: none;
-    background-color: #fff;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-    border: 1px solid #ccc;
-    border: 1px solid rgba(0, 0, 0, .15);
-    border-radius: 4px;
-    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
-	}
-	.region-primary-menu ul ul li a,
-	.region-primary-menu ul ul li a:hover,
-	.region-primary-menu ul ul li a:focus,
-	.region-primary-menu ul ul li a:active,
-	.region-primary-menu ul ul li a.highlighted {
-		padding: 12px 15px;
-	}
-	.region-primary-menu ul ul li a {
-		color: #234645;
-		font-size: 0.8rem;
-	}
-	.region-primary-menu li {
-		border: 0;
-	}
-	.region-primary-menu li a {
-		background: none;
-		border: 0;
-		color: #234645;
-	}
-	.region-primary-menu li a span.sub-arrow {
-		padding: 0;
-		top: 20px;
-		margin-top: 0;
-		bottom: 2px;
-		right: 4px;
-		margin-left: -5px;
-		left: auto;
-		width: 0;
-		height: 0;
-		border-width: 4px;
-		border-style: solid;
-		border-color: #848484 transparent transparent transparent;
-		font-size: 2em;
-		line-height: 100%;
-	}
-	.region-primary-menu li li span.sub-arrow {
-		top: 12px;
-		border-color: transparent transparent transparent #848484;
-	}
-	.region-primary-menu li.active a,
-	.region-primary-menu li a.is-active {
-		background: #234645;
-			color: #ffffff;
-	}
-	.region-primary-menu li a.is-active.has-submenu {
-		background: none;
-	}
-
-}
-
-
-
 
 
 
@@ -342,3 +163,7 @@ content:"\e250";
 left: 100%;
 } */
 /*main navigation dropdown end*/
+
+
+
+/* -- default nav -- */
