@@ -51,6 +51,15 @@ function ircc_bs_preprocess_breadcrumb(&$variables){
    );
   }
 }
+
+function ircc_bs_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  foreach (\Drupal\Core\Render\Element::children($form) as $key) {
+    $form[$key]['#attributes']['data-twig-suggestion'] = $form['#id'];
+  }
+
+  $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
+}
 // function ircc_bs_theme_suggestions_page_alter(array &$suggestions, array $variables) {
 //
 //   if ($node = \Drupal::routeMatch()->getParameter('node')) {
