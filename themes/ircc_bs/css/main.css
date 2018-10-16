@@ -2449,7 +2449,7 @@ transition: all 0.5s;
   }
 
   img.sec-logo{
-    display: inline;
+    display: none;
   }
 
   .top-head p {
