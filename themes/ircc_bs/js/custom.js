@@ -115,6 +115,12 @@ $(window).resize(function () {
     }
 });
 
+
+jQuery(document).ready(function($){
+	theme_menu();
+});
+
+
 function theme_menu(){
 
 	//Main menu
@@ -134,9 +140,6 @@ function theme_menu(){
 
 }
 
-jQuery(document).ready(function($){
-	theme_menu();
-});
 
 ///////////////////////////
 // Preloader
