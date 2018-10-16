@@ -341,10 +341,10 @@ button:focus {
 
 @media (max-width: 767px) {
 
-  .navbar-toggle{
+  /* .navbar-toggle{
     margin-top: 15px;
     color:#ffffff;
-  }
+  } */
   .navbar-white{
     box-shadow: none;
   }
@@ -571,18 +571,18 @@ button:focus {
     margin: 0.8em 0;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
   }
-  .navbar-toggle {
+  /* .navbar-toggle {
     background: #afafaf;
-  }
+  } */
 
-  .navbar-toggle:hover{
+  /* .navbar-toggle:hover{
     background: #333434!important;
     cursor: pointer;
   }
 
   .navbar-toggle:focus{
     background: #333434!important;
-  }
+  } */
   .navbar-nav {
     font-size: 0.95rem;
 
