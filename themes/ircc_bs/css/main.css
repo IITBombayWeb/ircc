@@ -491,6 +491,7 @@ button:focus {
   	}
   	.region-primary-menu li a.is-active.has-submenu {
   		background: none;
+      color: #234645;
   	}
 
   }
