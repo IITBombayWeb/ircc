@@ -390,6 +390,7 @@ button:focus {
      -o-transition: all 0.5s;
     transition: all 0.5s;
   }
+
   .menu-base-theme li a.sub-arrow {
   	color: #999;
   	font-size: 22px;
@@ -493,6 +494,10 @@ button:focus {
   		background: none;
       color: #234645;
   	}
+    .region-primary-menu li a.is-active.has-submenu:hover{
+      color: #ffffff;
+      background: #234645;
+    }
 
   }
 
