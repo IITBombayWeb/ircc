@@ -71,8 +71,8 @@ display:
         options:
           grouping: {  }
           row_class: ''
-          default_row_class: false
-          override: 1
+          default_row_class: true
+          override: 0
           sticky: 0
           caption: ''
           summary: ''
@@ -84,7 +84,7 @@ display:
             counter:
               sortable: 0
               default_sort_order: asc
-              align: views-align-left
+              align: views-align-center
               separator: ''
               empty_column: 0
               responsive: ''
@@ -99,9 +99,9 @@ display:
           empty_table: 0
           responsive: 1
           bootstrap_styles:
-            hover: hover
+            bordered: bordered
             striped: 0
-            bordered: 0
+            hover: 0
             condensed: 0
       row:
         type: fields
@@ -149,7 +149,7 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: false
+          element_default_classes: true
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -276,11 +276,10 @@ display:
             title: All
           title_enable: false
           title: ''
-          default_argument_type: query_parameter
+          default_argument_type: raw
           default_argument_options:
-            query_param: id
-            fallback: '0'
-            multiple: and
+            index: 1
+            use_alias: false
           default_argument_skip_url: false
           summary_options:
             base_path: ''

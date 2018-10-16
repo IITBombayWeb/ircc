@@ -7,7 +7,9 @@ dependencies:
     - field.field.node.job_designations.field_appt_period
     - field.field.node.job_designations.field_desg_code
     - field.field.node.job_designations.field_desg_sr_no
+    - field.field.node.job_designations.field_job_desig_to_appoint_ref
     - field.field.node.job_designations.field_job_desig_to_circular_ref
+    - field.field.node.job_designations.field_job_desig_to_shortlist_ref
     - field.field.node.job_designations.field_level
     - field.field.node.job_designations.field_no_of_posts
     - field.field.node.job_designations.field_norms
@@ -30,6 +32,24 @@ dependencies:
     - field.field.node.job_designations.field_rpd_pro_code
     - field.field.node.job_designations.field_rpd_project_description
     - field.field.node.job_designations.field_rpd_title
+    - field.field.node.job_designations.field_rsp_interview_date
+    - field.field.node.job_designations.field_rsp_interview_reporting_ti
+    - field.field.node.job_designations.field_rsp_interview_time
+    - field.field.node.job_designations.field_rsp_interview_venue
+    - field.field.node.job_designations.field_rsp_remarks
+    - field.field.node.job_designations.field_rsp_selection
+    - field.field.node.job_designations.field_rsp_ta
+    - field.field.node.job_designations.field_rsp_test_1
+    - field.field.node.job_designations.field_rsp_test_1_date
+    - field.field.node.job_designations.field_rsp_test_1_duration
+    - field.field.node.job_designations.field_rsp_test_1_reporting_time
+    - field.field.node.job_designations.field_rsp_test_1_time
+    - field.field.node.job_designations.field_rsp_test_2
+    - field.field.node.job_designations.field_rsp_test_2_date
+    - field.field.node.job_designations.field_rsp_test_2_duration
+    - field.field.node.job_designations.field_rsp_test_2_reporting_time
+    - field.field.node.job_designations.field_rsp_test_2_time
+    - field.field.node.job_designations.field_rsp_test_venue
     - field.field.node.job_designations.field_salary
     - field.field.node.job_designations.field_specialization
     - node.type.job_designations
@@ -60,35 +80,14 @@ third_party_settings:
     regions:
       ds_content:
         - links
-        - body
-        - field_recruitment_sr_no
-        - field_project_sr_no
-        - field_desg_sr_no
-        - field_desg_code
-        - field_qualification_experience
-        - field_no_of_posts
-        - field_appt_period
-        - field_salary
-        - field_level
-        - field_specialization
-        - field_norms
-        - field_norms_remarks
         - field_rpd_pro_code
-        - field_rpd_adv_job_code
         - field_rpd_title
         - field_rpd_project_description
         - field_pd_postname
-        - field_pd_permtemp
-        - field_pd_project_post
-        - field_pd_faculty
-        - field_pd_salcode
-        - field_pd_short_code
-        - field_pd_category
-        - field_pd_level
-        - field_pd_functional_area
-        - field_pd_erp_long_description
-        - field_pd_erp_short_description
-        - field_job_desig_to_circular_ref
+        - field_no_of_posts
+        - field_salary
+        - field_qualification_experience
+        - body
 id: node.job_designations.full
 targetEntityType: node
 bundle: job_designations
@@ -97,7 +96,7 @@ content:
   body:
     label: above
     type: text_default
-    weight: 1
+    weight: 8
     settings: {  }
     third_party_settings:
       ds:
@@ -108,18 +107,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -129,43 +128,7 @@ content:
             fis-def-at: false
             fi-def-at: false
     region: ds_content
-  field_appt_period:
-    weight: 8
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_desg_code:
+  field_no_of_posts:
     weight: 5
     label: above
     settings:
@@ -179,482 +142,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_desg_sr_no:
-    weight: 4
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_job_desig_to_circular_ref:
-    type: entity_reference_label
-    weight: 29
-    region: ds_content
-    label: above
-    settings:
-      link: true
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-  field_level:
-    weight: 10
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_no_of_posts:
-    weight: 7
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_norms:
-    weight: 12
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: 'div '
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_norms_remarks:
-    weight: 13
-    label: above
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: text_default
-    region: ds_content
-  field_pd_category:
-    weight: 24
-    label: above
-    settings:
-      link: true
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: entity_reference_label
-    region: ds_content
-  field_pd_erp_long_description:
-    weight: 27
-    label: above
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: 'ERP Long Desc'
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: text_default
-    region: ds_content
-  field_pd_erp_short_description:
-    weight: 28
-    label: above
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: 'ERP Short Desc'
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: text_default
-    region: ds_content
-  field_pd_faculty:
-    weight: 21
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_pd_functional_area:
-    weight: 26
-    label: above
-    settings: {  }
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: text_default
-    region: ds_content
-  field_pd_level:
-    weight: 25
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_pd_permtemp:
-    weight: 19
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -666,7 +165,7 @@ content:
     type: string
     region: ds_content
   field_pd_postname:
-    weight: 18
+    weight: 4
     label: above
     settings:
       link: true
@@ -675,22 +174,22 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
+            lb: Post
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -701,152 +200,8 @@ content:
             fi-def-at: false
     type: entity_reference_label
     region: ds_content
-  field_pd_project_post:
-    weight: 20
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_pd_salcode:
-    weight: 22
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_pd_short_code:
-    weight: 23
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_project_sr_no:
-    weight: 3
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
   field_qualification_experience:
-    weight: 6
+    weight: 7
     label: above
     settings: {  }
     third_party_settings:
@@ -858,18 +213,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -880,80 +235,10 @@ content:
             fi-def-at: false
     type: text_default
     region: ds_content
-  field_recruitment_sr_no:
-    weight: 2
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_rpd_adv_job_code:
-    weight: 15
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
   field_rpd_pro_code:
-    weight: 14
+    type: string
+    weight: 1
+    region: ds_content
     label: above
     settings:
       link_to_entity: false
@@ -962,22 +247,22 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
+            lb: 'Project Code '
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
-            fis-el: ''
-            fis-cl: ''
+            fis-el: div
+            fis-cl: col-sm-10
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -986,10 +271,8 @@ content:
             fis: false
             fis-def-at: false
             fi-def-at: false
-    type: string
-    region: ds_content
   field_rpd_project_description:
-    weight: 17
+    weight: 3
     label: above
     settings: {  }
     third_party_settings:
@@ -997,22 +280,22 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
+            lb: 'Project Description '
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -1024,7 +307,7 @@ content:
     type: text_default
     region: ds_content
   field_rpd_title:
-    weight: 16
+    weight: 2
     label: above
     settings: {  }
     third_party_settings:
@@ -1032,22 +315,22 @@ content:
         ft:
           id: expert
           settings:
-            lb: ''
+            lb: 'Project Title '
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -1059,7 +342,7 @@ content:
     type: text_default
     region: ds_content
   field_salary:
-    weight: 9
+    weight: 6
     label: inline
     settings:
       link_to_entity: false
@@ -1072,54 +355,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
-            fi-at: ''
-            suffix: ''
-            lb-col: false
-            ow-def-at: false
-            ow-def-cl: false
-            fis: false
-            fis-def-at: false
-            fi-def-at: false
-    type: string
-    region: ds_content
-  field_specialization:
-    weight: 11
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings:
-      ds:
-        ft:
-          id: expert
-          settings:
-            lb: ''
-            prefix: ''
-            lbw: true
-            lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
-            lbw-at: ''
-            ow: true
-            ow-el: div
-            ow-cl: mb-10
-            ow-at: ''
-            fis-el: ''
-            fis-cl: ''
-            fis-at: ''
-            fi: true
-            fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -1135,4 +382,45 @@ content:
     region: ds_content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_appt_period: true
+  field_desg_code: true
+  field_desg_sr_no: true
+  field_job_desig_to_appoint_ref: true
+  field_job_desig_to_circular_ref: true
+  field_job_desig_to_shortlist_ref: true
+  field_level: true
+  field_norms: true
+  field_norms_remarks: true
+  field_pd_category: true
+  field_pd_erp_long_description: true
+  field_pd_erp_short_description: true
+  field_pd_faculty: true
+  field_pd_functional_area: true
+  field_pd_level: true
+  field_pd_permtemp: true
+  field_pd_project_post: true
+  field_pd_salcode: true
+  field_pd_short_code: true
+  field_project_sr_no: true
+  field_recruitment_sr_no: true
+  field_rpd_adv_job_code: true
+  field_rsp_interview_date: true
+  field_rsp_interview_reporting_ti: true
+  field_rsp_interview_time: true
+  field_rsp_interview_venue: true
+  field_rsp_remarks: true
+  field_rsp_selection: true
+  field_rsp_ta: true
+  field_rsp_test_1: true
+  field_rsp_test_1_date: true
+  field_rsp_test_1_duration: true
+  field_rsp_test_1_reporting_time: true
+  field_rsp_test_1_time: true
+  field_rsp_test_2: true
+  field_rsp_test_2_date: true
+  field_rsp_test_2_duration: true
+  field_rsp_test_2_reporting_time: true
+  field_rsp_test_2_time: true
+  field_rsp_test_venue: true
+  field_specialization: true

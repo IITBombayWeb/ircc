@@ -11,11 +11,13 @@ dependencies:
   config:
     - field.storage.node.field_appointed_candidate_name
     - field.storage.node.field_job_desig_to_appoint_ref
+    - field.storage.node.field_appointed_status
     - field.storage.node.field_job_desig_to_circular_ref
     - field.storage.node.field_job_adv_cir_no
     - field.storage.node.field_job_dept_code_ref
     - field.storage.node.field_job_end_date
     - field.storage.node.field_job_recruitment_type
+    - field.storage.node.field_job_status
     - field.storage.node.field_job_desig_to_shortlist_ref
     - field.storage.node.field_shortlisted_emp_name
     - field.storage.node.field_pd_postname
@@ -51,6 +53,17 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_appointed_candidate_name
+  field_appointed_status:
+    label: 'Job Desig To Appoint Ref » Content » Appointed Status'
+    datasource_id: 'entity:node'
+    property_path: 'field_job_desig_to_appoint_ref:entity:field_appointed_status'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_appoint_ref
+        - field.storage.node.field_appointed_status
+      module:
+        - node
   field_job_adv_cir_no:
     label: 'Job Desig To Circular Ref » Content » Job Adv Cir No'
     datasource_id: 'entity:node'
@@ -111,6 +124,17 @@ field_settings:
         - field.storage.node.field_job_recruitment_type
       module:
         - node
+  field_job_status:
+    label: 'Job Desig To Circular Ref » Content » Job Status'
+    datasource_id: 'entity:node'
+    property_path: 'field_job_desig_to_circular_ref:entity:field_job_status'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_job_desig_to_circular_ref
+        - field.storage.node.field_job_status
+      module:
+        - node
   field_pd_postname:
     label: 'PD Postname'
     datasource_id: 'entity:node'
@@ -161,26 +185,6 @@ field_settings:
     indexed_locked: true
     type_locked: true
     hidden: true
-  rendered_item:
-    label: 'Rendered HTML output'
-    property_path: rendered_item
-    type: solr_text_ngram
-    configuration:
-      roles:
-        anonymous: anonymous
-      view_mode:
-        'entity:node':
-          job_circulars: default
-          job_designations: default
-        'entity:taxonomy_term':
-          area_of_expertise: ''
-          awards_category: ''
-          market_readiness: ''
-          research_glimpse_category: ''
-          subject_classification: ''
-          tags: ''
-          technology_category: ''
-          technology_status: ''
   status:
     label: status
     datasource_id: 'entity:node'
@@ -252,12 +256,13 @@ processor_settings:
     fields:
       - field_appointed_candidate_name
       - field_appointed_candidate_name_1
+      - field_appointed_status
       - field_job_adv_cir_no
       - field_job_recruitment_type
+      - field_job_status
       - field_qualification_experience
       - field_shortlisted_emp_name
       - field_shortlisted_emp_name_1
-      - rendered_item
       - title
       - type
     title: true
@@ -276,12 +281,13 @@ processor_settings:
     fields:
       - field_appointed_candidate_name
       - field_appointed_candidate_name_1
+      - field_appointed_status
       - field_job_adv_cir_no
       - field_job_recruitment_type
+      - field_job_status
       - field_qualification_experience
       - field_shortlisted_emp_name
       - field_shortlisted_emp_name_1
-      - rendered_item
       - title
       - type
     ignorable: '[''¿¡!?,.:;]'
