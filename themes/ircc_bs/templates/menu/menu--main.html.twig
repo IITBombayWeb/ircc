@@ -34,7 +34,7 @@
     {% for item in items %}
       {% if menu_level == 0 and item.is_expanded %}
         <li>
-        <a href="{{ item.url }}" data-target="#" data-toggle="dropdown">{{ item.title }}</a>
+        <a href="{{ item.url }}" data-toggle="dropdown">{{ item.title }}</a>
       {% else %}
         <li{{ item.attributes }}>
         {{ link(item.title, item.url) }}
