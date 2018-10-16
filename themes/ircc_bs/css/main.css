@@ -2333,8 +2333,8 @@ transition: all 0.5s;
     width: 5em;
   }
   .sec-logo {
-    display: inline;
-    max-width: 5em;
+    display: none;
+    /* max-width: 5em; */
   }
   .navbar-brand {
     max-width: 11em;
@@ -2440,8 +2440,8 @@ transition: all 0.5s;
 
   }
   .sec-logo {
-    display: inline;
-    max-width: 4em;
+    display: none;
+    /* max-width: 4em; */
 
   }
   a.logo {
