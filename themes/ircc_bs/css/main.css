@@ -2009,19 +2009,9 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   color: #fff;
 }
 
-.job-field-label{
-  width: 14em;
-  font-weight: 700;
-}
-
-.job-field {
-  margin-left: 130px;
-}
 
 .job-apply-link{
     font-weight: 700;
-    right: 15px;
-    top: 5px;
     z-index: 0;
     text-decoration: none;
     float: none;
@@ -2029,20 +2019,7 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
     color: #fff;
 }
 
-@media only screen and (min-width: 640px){
-  .job-apply-link{
-    position: absolute;
-  }
-  .job-field-label{
-  width: 15em;
-  }
 
-  .job-field {
-    margin-left: 15em;
-  }
-
-
-}
 
 @media only screen and (max-width: 768px){
   .job-wrap{
