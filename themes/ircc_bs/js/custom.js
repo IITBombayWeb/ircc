@@ -79,6 +79,18 @@
       return false;
     });
 
+
+    $("#menu-toggle").click(function(){
+      $(".search-head").hide();
+      return false;
+    });
+
+    $("#search-toggle").click(function(){
+      $(".menu-head").hide();
+      return false;
+    });
+
+
 	})();
 
 
@@ -115,6 +127,12 @@ $(window).resize(function () {
     }
 });
 
+
+jQuery(document).ready(function($){
+	theme_menu();
+});
+
+
 function theme_menu(){
 
 	//Main menu
@@ -134,9 +152,6 @@ function theme_menu(){
 
 }
 
-jQuery(document).ready(function($){
-	theme_menu();
-});
 
 ///////////////////////////
 // Preloader

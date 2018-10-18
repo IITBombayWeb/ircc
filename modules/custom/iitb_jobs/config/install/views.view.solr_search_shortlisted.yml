@@ -152,6 +152,89 @@ display:
           separator: ''
           hide_empty: true
       fields:
+        nid:
+          id: nid
+          table: search_api_datasource_job_search_index_entity_node
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: true
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          field_rendering: true
+          fallback_handler: search_api_numeric
+          fallback_options:
+            set_precision: false
+            precision: 0
+            decimal: .
+            separator: ','
+            format_plural: false
+            format_plural_string: !!binary MQNAY291bnQ=
+            prefix: ''
+            suffix: ''
+            link_to_item: false
+            use_highlighting: false
+            multi_type: separator
+            multi_separator: ', '
+            format_plural_values:
+              - '1'
+              - '@count'
+          entity_type: node
+          plugin_id: search_api_field
         counter:
           id: counter
           table: views
@@ -324,7 +407,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -427,14 +510,14 @@ display:
           alter:
             alter_text: true
             text: "{% if field_rpd_adv_job_code %}\r\nAdvertisement No.{{ field_job_adv_cir_no_2 }}\r\n{% else %}\r\n{% set cir_year = field_job_adv_cir_no_2[:4] %}\r\n{% set cir_no = field_job_adv_cir_no_2[4:] %}\r\nNo.DRD/Rectt/Project/{{ cir_no }}/{{ cir_year }}\r\n{% endif %}"
-            make_link: false
-            path: ''
+            make_link: true
+            path: '/job-details/{{ nid }}'
             absolute: false
             external: false
             replace_spaces: false
             path_case: none
             trim_whitespace: false
-            alt: ''
+            alt: 'View Details'
             rel: ''
             link_class: ''
             prefix: ''
@@ -1135,89 +1218,6 @@ display:
           empty_zero: false
           hide_alter_empty: false
           plugin_id: custom
-        nid:
-          id: nid
-          table: search_api_datasource_job_search_index_entity_node
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ID
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
-          entity_type: node
-          plugin_id: search_api_field
         nothing:
           id: nothing
           table: views
@@ -1231,7 +1231,7 @@ display:
             alter_text: true
             text: 'View list'
             make_link: true
-            path: '/shortlisted-details?id={{ nid }}'
+            path: '/shortlisted-details/{{ nid }}'
             absolute: false
             external: false
             replace_spaces: false
@@ -1405,7 +1405,7 @@ display:
           exposed: true
           expose:
             operator_id: search_api_fulltext_op
-            label: Search
+            label: 'Search by name'
             description: ''
             use_operator: false
             operator: search_api_fulltext_op
@@ -1418,7 +1418,7 @@ display:
               anonymous: '0'
               administrator: '0'
               editor: '0'
-            placeholder: ''
+            placeholder: 'Enter name to search'
             autocomplete_filter: 1
             autocomplete_min_chars: '3'
             autocomplete_items: '10'
@@ -1440,6 +1440,7 @@ display:
           parse_mode: terms
           min_length: 3
           fields:
+            - field_appointed_candidate_name_1
             - field_shortlisted_emp_name
             - field_shortlisted_emp_name_1
           plugin_id: views_autocomplete_filters_search_api_fulltext

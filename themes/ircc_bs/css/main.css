@@ -341,10 +341,10 @@ button:focus {
 
 @media (max-width: 767px) {
 
-  .navbar-toggle{
+  /* .navbar-toggle{
     margin-top: 15px;
     color:#ffffff;
-  }
+  } */
   .navbar-white{
     box-shadow: none;
   }
@@ -390,6 +390,7 @@ button:focus {
      -o-transition: all 0.5s;
     transition: all 0.5s;
   }
+
   .menu-base-theme li a.sub-arrow {
   	color: #999;
   	font-size: 22px;
@@ -491,7 +492,12 @@ button:focus {
   	}
   	.region-primary-menu li a.is-active.has-submenu {
   		background: none;
+      color: #234645;
   	}
+    .region-primary-menu li a.is-active.has-submenu:hover{
+      color: #ffffff;
+      background: #234645;
+    }
 
   }
 
@@ -565,18 +571,18 @@ button:focus {
     margin: 0.8em 0;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
   }
-  .navbar-toggle {
+  /* .navbar-toggle {
     background: #afafaf;
-  }
+  } */
 
-  .navbar-toggle:hover{
+  /* .navbar-toggle:hover{
     background: #333434!important;
     cursor: pointer;
   }
 
   .navbar-toggle:focus{
     background: #333434!important;
-  }
+  } */
   .navbar-nav {
     font-size: 0.95rem;
 
@@ -851,7 +857,12 @@ text-decoration: none;
    -moz-transition: all .5s ease-in-out;
   -o-transition: all .5s ease-in-out;
 }
-
+.research-highlights a{
+  color: #343536;
+}
+.research-highlights a:hover{
+  text-decoration: underline;
+}
 .rh-title{
   padding: 5pt;
   /* font-family: 'Merriweather', serif; */
@@ -860,7 +871,6 @@ text-decoration: none;
 }
 
 .rh-title a{
-  color:  #130c11;
   font-weight: bold;
 }
 
@@ -2005,19 +2015,9 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
   color: #fff;
 }
 
-.job-field-label{
-  width: 14em;
-  font-weight: 700;
-}
-
-.job-field {
-  margin-left: 130px;
-}
 
 .job-apply-link{
     font-weight: 700;
-    right: 15px;
-    top: 5px;
     z-index: 0;
     text-decoration: none;
     float: none;
@@ -2025,20 +2025,7 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
     color: #fff;
 }
 
-@media only screen and (min-width: 640px){
-  .job-apply-link{
-    position: absolute;
-  }
-  .job-field-label{
-  width: 15em;
-  }
 
-  .job-field {
-    margin-left: 15em;
-  }
-
-
-}
 
 @media only screen and (max-width: 768px){
   .job-wrap{
@@ -2346,8 +2333,8 @@ transition: all 0.5s;
     width: 5em;
   }
   .sec-logo {
-    display: inline;
-    max-width: 5em;
+    display: none;
+    /* max-width: 5em; */
   }
   .navbar-brand {
     max-width: 11em;
@@ -2453,8 +2440,8 @@ transition: all 0.5s;
 
   }
   .sec-logo {
-    display: inline;
-    max-width: 4em;
+    display: none;
+    /* max-width: 4em; */
 
   }
   a.logo {
@@ -2462,7 +2449,7 @@ transition: all 0.5s;
   }
 
   img.sec-logo{
-    display: inline;
+    display: none;
   }
 
   .top-head p {

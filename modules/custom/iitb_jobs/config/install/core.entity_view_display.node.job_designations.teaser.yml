@@ -30,6 +30,24 @@ dependencies:
     - field.field.node.job_designations.field_rpd_pro_code
     - field.field.node.job_designations.field_rpd_project_description
     - field.field.node.job_designations.field_rpd_title
+    - field.field.node.job_designations.field_rsp_interview_date
+    - field.field.node.job_designations.field_rsp_interview_reporting_ti
+    - field.field.node.job_designations.field_rsp_interview_time
+    - field.field.node.job_designations.field_rsp_interview_venue
+    - field.field.node.job_designations.field_rsp_remarks
+    - field.field.node.job_designations.field_rsp_selection
+    - field.field.node.job_designations.field_rsp_ta
+    - field.field.node.job_designations.field_rsp_test_1
+    - field.field.node.job_designations.field_rsp_test_1_date
+    - field.field.node.job_designations.field_rsp_test_1_duration
+    - field.field.node.job_designations.field_rsp_test_1_reporting_time
+    - field.field.node.job_designations.field_rsp_test_1_time
+    - field.field.node.job_designations.field_rsp_test_2
+    - field.field.node.job_designations.field_rsp_test_2_date
+    - field.field.node.job_designations.field_rsp_test_2_duration
+    - field.field.node.job_designations.field_rsp_test_2_reporting_time
+    - field.field.node.job_designations.field_rsp_test_2_time
+    - field.field.node.job_designations.field_rsp_test_venue
     - field.field.node.job_designations.field_salary
     - field.field.node.job_designations.field_specialization
     - node.type.job_designations
@@ -82,5 +100,23 @@ hidden:
   field_rpd_pro_code: true
   field_rpd_project_description: true
   field_rpd_title: true
+  field_rsp_interview_date: true
+  field_rsp_interview_reporting_ti: true
+  field_rsp_interview_time: true
+  field_rsp_interview_venue: true
+  field_rsp_remarks: true
+  field_rsp_selection: true
+  field_rsp_ta: true
+  field_rsp_test_1: true
+  field_rsp_test_1_date: true
+  field_rsp_test_1_duration: true
+  field_rsp_test_1_reporting_time: true
+  field_rsp_test_1_time: true
+  field_rsp_test_2: true
+  field_rsp_test_2_date: true
+  field_rsp_test_2_duration: true
+  field_rsp_test_2_reporting_time: true
+  field_rsp_test_2_time: true
+  field_rsp_test_venue: true
   field_salary: true
   field_specialization: true

@@ -2,34 +2,34 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.storage.node.body
     - field.storage.node.field_job_adv_cir_no
     - field.storage.node.field_job_dept_code_ref
     - field.storage.node.field_job_end_date
     - field.storage.node.field_no_of_posts
     - field.storage.node.field_pd_postname
-    - field.storage.node.field_recruitment_sr_no
+    - field.storage.node.field_qualification_experience
     - field.storage.node.field_rpd_adv_job_code
     - field.storage.node.field_rpd_pro_code
+    - field.storage.node.field_rpd_project_description
     - field.storage.node.field_rpd_title
-    - search_api.index.job_search_index
-    - system.menu.search-sidebar
+    - field.storage.node.field_salary
+    - node.type.job_designations
+  module:
+    - datetime
+    - node
+    - text
+    - user
   enforced:
     module:
       - iitb_jobs
-  module:
-    - better_exposed_filters
-    - datetime
-    - node
-    - search_api
-    - text
-    - views_autocomplete_filters
-id: solr_search_job
-label: 'Solr Search Jobs'
+id: job_details
+label: 'Job Details'
 module: views
 description: ''
 tag: ''
-base_table: search_api_index_job_search_index
-base_field: search_api_id
+base_table: node_field_data
+base_field: nid
 core: 8.x
 display:
   default:
@@ -39,54 +39,37 @@ display:
     position: 0
     display_options:
       access:
-        type: none
-        options: {  }
+        type: perm
+        options:
+          perm: 'access content'
       cache:
         type: tag
         options: {  }
       query:
         type: views_query
         options:
-          bypass_access: false
-          skip_access: false
+          disable_sql_rewrite: false
+          distinct: false
+          replica: false
+          query_comment: ''
+          query_tags: {  }
       exposed_form:
-        type: bef
+        type: basic
         options:
-          submit_button: Search
+          submit_button: Apply
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
           expose_sort_order: true
           sort_asc_label: Asc
           sort_desc_label: Desc
-          input_required: false
-          text_input_required: 'Select any filter and click on Apply to see results'
-          bef:
-            general:
-              allow_secondary: false
-              secondary_label: 'Advanced options'
-              autosubmit: false
-              autosubmit_exclude_textfield: false
-              autosubmit_hide: false
-            search_api_fulltext:
-              bef_format: default
-              more_options:
-                is_secondary: false
-                rewrite:
-                  filter_rewrite_values: ''
-          text_input_required_format: basic_html
       pager:
-        type: full
+        type: mini
         options:
           items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
-          tags:
-            previous: ‹‹
-            next: ››
-            first: '« First'
-            last: 'Last »'
           expose:
             items_per_page: false
             items_per_page_label: 'Items per page'
@@ -95,107 +78,41 @@ display:
             items_per_page_options_all_label: '- All -'
             offset: false
             offset_label: Offset
-          quantity: 9
+          tags:
+            previous: ‹‹
+            next: ››
       style:
         type: default
         options:
           grouping: {  }
-          row_class: 'mb-30 job-wrap mt-20'
-          default_row_class: false
+          row_class: container
+          default_row_class: true
       row:
         type: fields
         options:
           default_field_elements: false
-          inline: {  }
+          inline:
+            field_job_adv_cir_no: field_job_adv_cir_no
+            field_rpd_adv_job_code: field_rpd_adv_job_code
+            field_rpd_pro_code: field_rpd_pro_code
+            nothing: nothing
+            nothing_1: nothing_1
+            field_job_dept_code_ref: field_job_dept_code_ref
+            field_rpd_pro_code_1: field_rpd_pro_code_1
+            field_rpd_title: field_rpd_title
+            field_rpd_project_description: field_rpd_project_description
+            field_pd_postname: field_pd_postname
+            field_no_of_posts: field_no_of_posts
+            field_salary: field_salary
+            field_qualification_experience: field_qualification_experience
+            body: body
+            field_job_end_date: field_job_end_date
           separator: ''
-          hide_empty: false
+          hide_empty: true
       fields:
-        nid:
-          id: nid
-          table: search_api_datasource_job_search_index_entity_node
-          field: nid
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: number_integer
-          settings:
-            thousand_separator: ''
-            prefix_suffix: true
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_numeric
-          fallback_options:
-            set_precision: false
-            precision: 0
-            decimal: .
-            separator: ','
-            format_plural: false
-            format_plural_string: !!binary MQNAY291bnQ=
-            prefix: ''
-            suffix: ''
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            format_plural_values:
-              - '1'
-              - '@count'
-          entity_type: node
-          plugin_id: search_api_field
         field_job_adv_cir_no:
           id: field_job_adv_cir_no
-          table: search_api_entity_node
+          table: node__field_job_adv_cir_no
           field: field_job_adv_cir_no
           relationship: field_job_desig_to_circular_ref
           group_type: group
@@ -255,18 +172,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
+          plugin_id: field
         field_rpd_adv_job_code:
           id: field_rpd_adv_job_code
-          table: search_api_datasource_job_search_index_entity_node
+          table: node__field_rpd_adv_job_code
           field: field_rpd_adv_job_code
           relationship: none
           group_type: group
@@ -326,18 +235,10 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
+          plugin_id: field
         field_rpd_pro_code:
           id: field_rpd_pro_code
-          table: search_api_datasource_job_search_index_entity_node
+          table: node__field_rpd_pro_code
           field: field_rpd_pro_code
           relationship: none
           group_type: group
@@ -396,126 +297,20 @@ display:
           delta_first_last: false
           multi_type: separator
           separator: ', '
-          field_api_classes: true
-          field_rendering: false
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
-        nothing_1:
-          id: nothing_1
+          field_api_classes: false
+          plugin_id: field
+        nothing:
+          id: nothing
           table: views
           field: nothing
           relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Circular Details'
-          exclude: true
-          alter:
-            alter_text: true
-            text: "{% if field_rpd_adv_job_code %}\r\nAdvertisement No.{{ field_job_adv_cir_no }}\r\n{% else %}\r\n{% set cir_year = field_job_adv_cir_no[:4] %}\r\n{% set cir_no = field_job_adv_cir_no[4:] %}\r\nNo.DRD/Rectt/Project/{{ cir_no }}/{{ cir_year }}\r\n{% endif %}"
-            make_link: false
-            path: '/job-details?id={{ nid }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: div
-          element_class: job-field
-          element_label_type: div
-          element_label_class: 'job-field-label pull-left'
-          element_label_colon: true
-          element_wrapper_type: div
-          element_wrapper_class: mb-10
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_2:
-          id: nothing_2
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: Project-Code/Job-Code
-          exclude: true
-          alter:
-            alter_text: true
-            text: "{% if field_rpd_adv_job_code %}\r\n  {{ field_rpd_adv_job_code }}\r\n{% else %}\r\n   {{ field_rpd_pro_code }}\r\n{% endif %}"
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: div
-          element_class: job-field
-          element_label_type: div
-          element_label_class: 'job-field-label pull-left'
-          element_label_colon: true
-          element_wrapper_type: div
-          element_wrapper_class: mb-10
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        field_job_dept_code_ref:
-          id: field_job_dept_code_ref
-          table: search_api_entity_node
-          field: field_job_dept_code_ref
-          relationship: field_job_desig_to_circular_ref
           group_type: group
           admin_label: ''
           label: ''
           exclude: true
           alter:
-            alter_text: false
-            text: ''
+            alter_text: true
+            text: "<div class=\"row\">\r\n<div-class=\"col-md-12\">\r\n<h3 class=\"text-center\">{% if field_rpd_adv_job_code %}\r\nAdvertisement No.{{ field_job_adv_cir_no }}\r\n{% else %}\r\n{% set cir_year = field_job_adv_cir_no[:4] %}\r\n{% set cir_no = field_job_adv_cir_no[4:] %}\r\nNo.DRD/Rectt/Project/{{ cir_no }}/{{ cir_year }}\r\n{% endif %}\r\n</h3>\r\n</div>\r\n</div>"
             make_link: false
             path: ''
             absolute: false
@@ -547,7 +342,105 @@ display:
           element_label_colon: false
           element_wrapper_type: ''
           element_wrapper_class: ''
-          element_default_classes: true
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+        nothing_1:
+          id: nothing_1
+          table: views
+          field: nothing
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Circular no.'
+          exclude: false
+          alter:
+            alter_text: true
+            text: "{% if field_rpd_adv_job_code %}\r\nAdvertisement No.{{ field_job_adv_cir_no }}\r\n{% else %}\r\n{% set cir_year = field_job_adv_cir_no[:4] %}\r\n{% set cir_no = field_job_adv_cir_no[4:] %}\r\n{{ cir_no }}/{{ cir_year }}\r\n{% endif %}"
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: custom
+        field_job_dept_code_ref:
+          id: field_job_dept_code_ref
+          table: node__field_job_dept_code_ref
+          field: field_job_dept_code_ref
+          relationship: field_job_desig_to_circular_ref
+          group_type: group
+          admin_label: ''
+          label: 'Academic unit'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -566,82 +459,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api_entity
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            display_methods:
-              article:
-                display_method: label
-                view_mode: default
-              awards:
-                display_method: label
-                view_mode: default
-              department:
-                display_method: label
-                view_mode: default
-              events:
-                display_method: label
-                view_mode: default
-              faculty_profiles:
-                display_method: label
-                view_mode: default
-              ircc_academic_videos:
-                display_method: label
-                view_mode: default
-              ircc_brochures:
-                display_method: label
-                view_mode: default
-              ircc_presentations:
-                display_method: label
-                view_mode: default
-              ircc_staff:
-                display_method: label
-                view_mode: default
-              job_appointed:
-                display_method: label
-                view_mode: default
-              job_circulars:
-                display_method: label
-                view_mode: default
-              job_designations:
-                display_method: label
-                view_mode: default
-              job_shortlisted:
-                display_method: label
-                view_mode: default
-              media_coverage:
-                display_method: label
-                view_mode: default
-              news:
-                display_method: label
-                view_mode: default
-              page:
-                display_method: label
-                view_mode: default
-              research_facility:
-                display_method: label
-                view_mode: default
-              research_glimpses:
-                display_method: label
-                view_mode: default
-              technology:
-                display_method: label
-                view_mode: default
-          entity_type: node
-          plugin_id: search_api_field
-        field_rpd_title:
-          id: field_rpd_title
-          table: search_api_datasource_job_search_index_entity_node
-          field: field_rpd_title
+          plugin_id: field
+        field_rpd_pro_code_1:
+          id: field_rpd_pro_code_1
+          table: node__field_rpd_pro_code
+          field: field_rpd_pro_code
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: 'Project Code'
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -660,8 +487,8 @@ display:
             target: ''
             nl2br: false
             max_length: 0
-            word_boundary: false
-            ellipsis: false
+            word_boundary: true
+            ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
@@ -669,14 +496,77 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_rpd_title:
+          id: field_rpd_title
+          table: node__field_rpd_title
+          field: field_rpd_title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Project Title'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -694,24 +584,78 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
-        field_recruitment_sr_no:
-          id: field_recruitment_sr_no
-          table: search_api_datasource_job_search_index_entity_node
-          field: field_recruitment_sr_no
+          plugin_id: field
+        field_rpd_project_description:
+          id: field_rpd_project_description
+          table: node__field_rpd_project_description
+          field: field_rpd_project_description
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: 'About the project'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: true
+          empty: ''
+          hide_empty: true
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_pd_postname:
+          id: field_pd_postname
+          table: node__field_pd_postname
+          field: field_pd_postname
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Position
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -739,87 +683,16 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
           element_default_classes: false
           empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: value
-          type: string
-          settings:
-            link_to_entity: false
-          group_column: value
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          field_rendering: false
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
-        field_pd_postname:
-          id: field_pd_postname
-          table: search_api_index_job_search_index
-          field: field_pd_postname
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: true
-          alter:
-            alter_text: false
-            text: '{{ field_pd_postname }} <div class="field-value">({{ field_no_of_posts }} posts)</div>'
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
+          hide_empty: true
           empty_zero: false
           hide_alter_empty: true
           click_sort_column: target_id
@@ -836,49 +709,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api_entity
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-            display_methods:
-              area_of_expertise:
-                display_method: label
-                view_mode: default
-              awards_category:
-                display_method: label
-              ircc_staff_category:
-                display_method: label
-              job_category:
-                display_method: label
-              job_position:
-                display_method: label
-              market_readiness:
-                display_method: label
-              research_glimpse_category:
-                display_method: label
-                view_mode: default
-              subject_classification:
-                display_method: label
-              tags:
-                display_method: label
-              technology_category:
-                display_method: label
-                view_mode: default
-              technology_status:
-                display_method: label
-          plugin_id: search_api_field
+          plugin_id: field
         field_no_of_posts:
           id: field_no_of_posts
-          table: search_api_datasource_job_search_index_entity_node
+          table: node__field_no_of_posts
           field: field_no_of_posts
           relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: 'No of post(s)'
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -906,13 +746,13 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
           element_default_classes: false
           empty: ''
           hide_empty: false
@@ -932,24 +772,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
-        field_job_end_date:
-          id: field_job_end_date
-          table: search_api_entity_node
-          field: field_job_end_date
-          relationship: field_job_desig_to_circular_ref
+          plugin_id: field
+        field_salary:
+          id: field_salary
+          table: node__field_salary
+          field: field_salary
+          relationship: none
           group_type: group
           admin_label: ''
-          label: ''
-          exclude: true
+          label: Salary
+          exclude: false
           alter:
             alter_text: false
             text: ''
@@ -977,14 +809,201 @@ display:
             trim: false
             preserve_tags: ''
             html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
           element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: string
+          settings:
+            link_to_entity: false
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_qualification_experience:
+          id: field_qualification_experience
+          table: node__field_qualification_experience
+          field: field_qualification_experience
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Qualification
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        body:
+          id: body
+          table: node__body
+          field: body
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Job Profile'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: text_default
+          settings: {  }
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          plugin_id: field
+        field_job_end_date:
+          id: field_job_end_date
+          table: node__field_job_end_date
+          field: field_job_end_date
+          relationship: field_job_desig_to_circular_ref
+          group_type: group
+          admin_label: ''
+          label: 'Last Date to Apply'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: div
+          element_class: col-sm-10
+          element_label_type: div
+          element_label_class: 'col-sm-2 fw-bold'
+          element_label_colon: false
+          element_wrapper_type: div
+          element_wrapper_class: 'row mb-10'
+          element_default_classes: false
           empty: ''
           hide_empty: false
           empty_zero: false
@@ -1004,24 +1023,16 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          field_rendering: true
-          fallback_handler: search_api
-          fallback_options:
-            link_to_item: false
-            use_highlighting: false
-            multi_type: separator
-            multi_separator: ', '
-          entity_type: node
-          plugin_id: search_api_field
-        nothing:
-          id: nothing
+          plugin_id: field
+        nothing_2:
+          id: nothing_2
           table: views
           field: nothing
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Apply now'
-          exclude: true
+          label: ''
+          exclude: false
           alter:
             alter_text: true
             text: 'Apply now'
@@ -1034,108 +1045,10 @@ display:
             trim_whitespace: false
             alt: 'Apply Now'
             rel: ''
-            link_class: ''
+            link_class: 'btn btn-primary job-apply-link'
             prefix: ''
             suffix: ''
             target: _blank
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: div
-          element_wrapper_class: 'btn btn-primary job-apply-link'
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_3:
-          id: nothing_3
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'View Details'
-          exclude: true
-          alter:
-            alter_text: true
-            text: 'View Details'
-            make_link: true
-            path: '/job-details/{{ nid }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: 'View Details'
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: div
-          element_class: 'btn btn-primary'
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: false
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: false
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: false
-          plugin_id: custom
-        nothing_4:
-          id: nothing_4
-          table: views
-          field: nothing
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: ''
-          exclude: false
-          alter:
-            alter_text: true
-            text: "<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">Circular Details</div>\r\n<div class=\"col-sm-9\">{{ nothing_1 }}</div>\r\n</div>\r\n\r\n<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">Project-Code/Job-Code</div>\r\n<div class=\"col-sm-9\">{{ nothing_2 }}</div>\r\n</div>\r\n\r\n<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">Academic unit</div>\r\n<div class=\"col-sm-9\">{{ field_job_dept_code_ref }}</div>\r\n</div>\r\n\r\n<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">Project-Title</div>\r\n<div class=\"col-sm-9\">{{ field_rpd_title }}</div>\r\n</div>\r\n\r\n<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">Position</div>\r\n<div class=\"col-sm-9\">{{ field_pd_postname }}</div>\r\n</div>\r\n\r\n<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">No. of post</div>\r\n<div class=\"col-sm-9\">{{ field_no_of_posts }}</div>\r\n</div>\r\n\r\n<div class=\"row mb-10\">\r\n<div class=\"col-sm-3 fw-bold\">Last Date</div>\r\n<div class=\"col-sm-9\">{{ field_job_end_date }}</div>\r\n</div>\r\n\r\n<div class=\"btn btn-primary\">\r\n{{ nothing_3 }}\r\n</div>\r\n\r\n<div class=\"btn btn-primary job-apply-link\">\r\n{{ nothing }}\r\n</div>"
-            make_link: true
-            path: '/job-details/{{ nid }}'
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: 'View Details'
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
             nl2br: false
             max_length: 0
             word_boundary: true
@@ -1161,218 +1074,96 @@ display:
           hide_alter_empty: false
           plugin_id: custom
       filters:
+        status:
+          value: '1'
+          table: node_field_data
+          field: status
+          plugin_id: boolean
+          entity_type: node
+          entity_field: status
+          id: status
+          expose:
+            operator: ''
+          group: 1
         type:
           id: type
-          table: search_api_index_job_search_index
+          table: node_field_data
           field: type
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
           value:
             job_designations: job_designations
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            reduce: false
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: search_api_options
-        search_api_fulltext:
-          id: search_api_fulltext
-          table: search_api_index_job_search_index
-          field: search_api_fulltext
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: or
-          value: ''
-          group: 1
-          exposed: true
-          expose:
-            operator_id: search_api_fulltext_op
-            label: ''
-            description: ''
-            use_operator: false
-            operator: search_api_fulltext_op
-            identifier: search_api_fulltext
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-              anonymous: '0'
-              administrator: '0'
-              editor: '0'
-            placeholder: ''
-            autocomplete_filter: 1
-            autocomplete_min_chars: '0'
-            autocomplete_items: '10'
-            autocomplete_raw_suggestion: 1
-            autocomplete_raw_dropdown: 1
-            autocomplete_dependent: 0
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          parse_mode: terms
-          min_length: null
-          fields:
-            - field_qualification_experience
-          plugin_id: views_autocomplete_filters_search_api_fulltext
-        field_job_status:
-          id: field_job_status
-          table: search_api_index_job_search_index
-          field: field_job_status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '='
-          value:
-            min: ''
-            max: ''
-            value: RA
-          group: 1
-          exposed: false
-          expose:
-            operator_id: field_job_status_op
-            label: 'Job Desig To Circular Ref » Content » Job Status'
-            description: null
-            use_operator: false
-            operator: field_job_status_op
-            identifier: field_job_status
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: null
-            min_placeholder: null
-            max_placeholder: null
-          is_grouped: false
-          group_info:
-            label: 'Job Desig To Circular Ref » Content » Job Status'
-            description: null
-            identifier: field_job_status
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items:
-              1: {  }
-              2: {  }
-              3: {  }
-          plugin_id: search_api_string
-        field_job_end_date_1:
-          id: field_job_end_date_1
-          table: search_api_index_job_search_index
-          field: field_job_end_date_1
-          relationship: none
-          group_type: group
-          admin_label: ''
-          operator: '>='
-          value:
-            min: ''
-            max: ''
-            value: today
-            type: offset
-          group: 1
-          exposed: false
-          expose:
-            operator_id: ''
-            label: ''
-            description: ''
-            use_operator: false
-            operator: ''
-            identifier: ''
-            required: false
-            remember: false
-            multiple: false
-            remember_roles:
-              authenticated: authenticated
-            placeholder: ''
-            min_placeholder: ''
-            max_placeholder: ''
-          is_grouped: false
-          group_info:
-            label: ''
-            description: ''
-            identifier: ''
-            optional: true
-            widget: select
-            multiple: false
-            remember: false
-            default_group: All
-            default_group_multiple: {  }
-            group_items: {  }
-          plugin_id: search_api_date
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
       sorts:
-        field_job_adv_cir_no:
-          id: field_job_adv_cir_no
-          table: search_api_index_job_search_index
-          field: field_job_adv_cir_no
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          order: DESC
+          entity_type: node
+          entity_field: created
+          plugin_id: date
           relationship: none
           group_type: group
           admin_label: ''
-          order: ASC
           exposed: false
           expose:
             label: ''
-          plugin_id: search_api
-      title: 'Job Opportunities'
+          granularity: second
+      title: '{{ nothing }}'
       header: {  }
       footer: {  }
       empty: {  }
       relationships:
         field_job_desig_to_circular_ref:
           id: field_job_desig_to_circular_ref
-          table: search_api_datasource_job_search_index_entity_node
+          table: node__field_job_desig_to_circular_ref
           field: field_job_desig_to_circular_ref
           relationship: none
           group_type: group
-          admin_label: 'Job Desig To Circular Ref: Content'
+          admin_label: 'field_job_desig_to_circular_ref: Content'
           required: false
-          skip_access: false
+          plugin_id: standard
+      arguments:
+        nid:
+          id: nid
+          table: node_field_data
+          field: nid
+          relationship: none
+          group_type: group
+          admin_label: ''
+          default_action: default
+          exception:
+            value: all
+            title_enable: false
+            title: All
+          title_enable: false
+          title: ''
+          default_argument_type: raw
+          default_argument_options:
+            index: 1
+            use_alias: false
+          default_argument_skip_url: false
+          summary_options:
+            base_path: ''
+            count: true
+            items_per_page: 25
+            override: false
+          summary:
+            sort_order: asc
+            number_of_records: 0
+            format: default_summary
+          specify_validation: false
+          validate:
+            type: none
+            fail: 'not found'
+          validate_options: {  }
+          break_phrase: false
+          not: false
           entity_type: node
-          plugin_id: search_api
-      arguments: {  }
+          entity_field: nid
+          plugin_id: node_nid
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -1380,16 +1171,21 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
       tags:
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_job_adv_cir_no'
         - 'config:field.storage.node.field_job_dept_code_ref'
         - 'config:field.storage.node.field_job_end_date'
         - 'config:field.storage.node.field_no_of_posts'
         - 'config:field.storage.node.field_pd_postname'
-        - 'config:field.storage.node.field_recruitment_sr_no'
+        - 'config:field.storage.node.field_qualification_experience'
         - 'config:field.storage.node.field_rpd_adv_job_code'
         - 'config:field.storage.node.field_rpd_pro_code'
+        - 'config:field.storage.node.field_rpd_project_description'
         - 'config:field.storage.node.field_rpd_title'
+        - 'config:field.storage.node.field_salary'
   page_1:
     display_plugin: page
     id: page_1
@@ -1397,20 +1193,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: search/jobs
-      cache:
-        type: none
-      defaults:
-        cache: false
-      menu:
-        type: normal
-        title: 'Job Opportunities'
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
-        menu_name: search-sidebar
+      path: job-details/%
     cache_metadata:
       max-age: -1
       contexts:
@@ -1418,13 +1201,18 @@ display:
         - 'languages:language_interface'
         - url
         - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
       tags:
+        - 'config:field.storage.node.body'
         - 'config:field.storage.node.field_job_adv_cir_no'
         - 'config:field.storage.node.field_job_dept_code_ref'
         - 'config:field.storage.node.field_job_end_date'
         - 'config:field.storage.node.field_no_of_posts'
         - 'config:field.storage.node.field_pd_postname'
-        - 'config:field.storage.node.field_recruitment_sr_no'
+        - 'config:field.storage.node.field_qualification_experience'
         - 'config:field.storage.node.field_rpd_adv_job_code'
         - 'config:field.storage.node.field_rpd_pro_code'
+        - 'config:field.storage.node.field_rpd_project_description'
         - 'config:field.storage.node.field_rpd_title'
+        - 'config:field.storage.node.field_salary'
