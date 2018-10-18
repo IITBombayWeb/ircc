@@ -70,7 +70,7 @@
 
               <div class="navbar-header">
                 {% if page.primary_menu %}
-                  <button type="button" class="navbar-toggle" id="menu-toggle" data-toggle="collapse" data-target="#primary-menu">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
                           <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
                           <span class="icon-bar"></span>
                           <span class="icon-bar"></span>
@@ -78,7 +78,7 @@
                   </button>
                 {% endif %}
                 {% if page.navigation_collapsible %}
-                 <button type="button" class="navbar-toggle" id="search-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                    <i class="fa fa-search"></i>
                  </button>
                {% endif %}
@@ -88,7 +88,7 @@
 
               {# Navigation (collapsible) #}
                 {% if page.navigation_collapsible %}
-                  <div id="navbar-collapse" class=" search-head navbar-collapse collapse navbar-right">
+                  <div id="navbar-collapse" class="navbar-collapse collapse navbar-right">
                     {{ page.navigation_collapsible }}
                   </div>
                 {% endif %}
@@ -96,7 +96,7 @@
 
           {% if page.primary_menu %}
             <div class="row">
-              <div class="col-md-12 navbar-collapse collapse navbar-left menu-head" id="primary-menu">
+              <div class="col-md-12 navbar-collapse collapse navbar-left" id="primary-menu">
                   {{ page.primary_menu }}
               </div>
             </div>
