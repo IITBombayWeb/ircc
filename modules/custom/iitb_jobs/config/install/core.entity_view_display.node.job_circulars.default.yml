@@ -71,14 +71,6 @@ content:
     type: text_default
     weight: 101
     settings: {  }
-    third_party_settings: {  }
-    region: ds_content
-  field_job_ad_date_chosen:
-    weight: 116
-    label: above
-    settings:
-      timezone_override: ''
-      format_type: medium
     third_party_settings:
       ds:
         ft:
@@ -88,18 +80,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -108,7 +100,43 @@ content:
             fis: false
             fis-def-at: false
             fi-def-at: false
-    type: datetime_default
+    region: ds_content
+  field_job_ad_date_chosen:
+    weight: 116
+    label: above
+    settings:
+      timezone_override: Asia/Kolkata
+      date_format: d-m-Y
+    third_party_settings:
+      ds:
+        ft:
+          id: expert
+          settings:
+            lb: ''
+            prefix: ''
+            lbw: true
+            lbw-el: div
+            lbw-cl: 'col-sm-2 fw-bold'
+            lbw-at: ''
+            ow: true
+            ow-el: div
+            ow-cl: 'row mb-10'
+            ow-at: ''
+            fis-el: ''
+            fis-cl: ''
+            fis-at: ''
+            fi: true
+            fi-el: div
+            fi-cl: col-sm-10
+            fi-at: ''
+            suffix: ''
+            lb-col: false
+            ow-def-at: false
+            ow-def-cl: false
+            fis: false
+            fis-def-at: false
+            fi-def-at: false
+    type: datetime_custom
     region: ds_content
   field_job_adv_cir_no:
     weight: 113
@@ -124,24 +152,24 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
-            fis: true
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
             ow-def-at: false
             ow-def-cl: false
+            fis: false
             fis-def-at: false
             fi-def-at: false
     type: string
@@ -150,8 +178,8 @@ content:
     weight: 111
     label: above
     settings:
-      timezone_override: ''
-      format_type: medium
+      timezone_override: Asia/Kolkata
+      date_format: d-m-Y
     third_party_settings:
       ds:
         ft:
@@ -161,18 +189,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -181,7 +209,7 @@ content:
             fis: false
             fis-def-at: false
             fi-def-at: false
-    type: datetime_default
+    type: datetime_custom
     region: ds_content
   field_job_dept_code:
     weight: 108
@@ -197,18 +225,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -234,15 +262,15 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis: true
             fis-el: div
-            fis-cl: job-field
+            fis-cl: col-sm-10
             fis-at: ''
             fi-el: div
             fi-cl: job-field
@@ -271,18 +299,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -297,8 +325,8 @@ content:
     weight: 110
     label: above
     settings:
-      timezone_override: ''
-      format_type: short
+      timezone_override: Asia/Kolkata
+      date_format: d-m-Y
     third_party_settings:
       ds:
         ft:
@@ -308,18 +336,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -328,7 +356,7 @@ content:
             fis: false
             fis-def-at: false
             fi-def-at: false
-    type: datetime_default
+    type: datetime_custom
     region: ds_content
   field_job_pi_code:
     weight: 107
@@ -344,18 +372,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -380,18 +408,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -416,18 +444,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -452,18 +480,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -478,8 +506,8 @@ content:
     weight: 109
     label: above
     settings:
-      timezone_override: ''
-      format_type: medium
+      timezone_override: Asia/Kolkata
+      date_format: d-m-Y
     third_party_settings:
       ds:
         ft:
@@ -489,18 +517,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -509,7 +537,7 @@ content:
             fis: false
             fis-def-at: false
             fi-def-at: false
-    type: datetime_default
+    type: datetime_custom
     region: ds_content
   field_job_ta:
     weight: 114
@@ -525,18 +553,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false
@@ -561,18 +589,18 @@ content:
             prefix: ''
             lbw: true
             lbw-el: div
-            lbw-cl: 'job-field-label pull-left'
+            lbw-cl: 'col-sm-2 fw-bold'
             lbw-at: ''
             ow: true
             ow-el: div
-            ow-cl: mb-10
+            ow-cl: 'row mb-10'
             ow-at: ''
             fis-el: ''
             fis-cl: ''
             fis-at: ''
             fi: true
             fi-el: div
-            fi-cl: job-field
+            fi-cl: col-sm-10
             fi-at: ''
             suffix: ''
             lb-col: false

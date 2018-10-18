@@ -6,7 +6,9 @@ dependencies:
     - field.field.node.job_designations.field_appt_period
     - field.field.node.job_designations.field_desg_code
     - field.field.node.job_designations.field_desg_sr_no
+    - field.field.node.job_designations.field_job_desig_to_appoint_ref
     - field.field.node.job_designations.field_job_desig_to_circular_ref
+    - field.field.node.job_designations.field_job_desig_to_shortlist_ref
     - field.field.node.job_designations.field_level
     - field.field.node.job_designations.field_no_of_posts
     - field.field.node.job_designations.field_norms
@@ -29,6 +31,24 @@ dependencies:
     - field.field.node.job_designations.field_rpd_pro_code
     - field.field.node.job_designations.field_rpd_project_description
     - field.field.node.job_designations.field_rpd_title
+    - field.field.node.job_designations.field_rsp_interview_date
+    - field.field.node.job_designations.field_rsp_interview_reporting_ti
+    - field.field.node.job_designations.field_rsp_interview_time
+    - field.field.node.job_designations.field_rsp_interview_venue
+    - field.field.node.job_designations.field_rsp_remarks
+    - field.field.node.job_designations.field_rsp_selection
+    - field.field.node.job_designations.field_rsp_ta
+    - field.field.node.job_designations.field_rsp_test_1
+    - field.field.node.job_designations.field_rsp_test_1_date
+    - field.field.node.job_designations.field_rsp_test_1_duration
+    - field.field.node.job_designations.field_rsp_test_1_reporting_time
+    - field.field.node.job_designations.field_rsp_test_1_time
+    - field.field.node.job_designations.field_rsp_test_2
+    - field.field.node.job_designations.field_rsp_test_2_date
+    - field.field.node.job_designations.field_rsp_test_2_duration
+    - field.field.node.job_designations.field_rsp_test_2_reporting_time
+    - field.field.node.job_designations.field_rsp_test_2_time
+    - field.field.node.job_designations.field_rsp_test_venue
     - field.field.node.job_designations.field_salary
     - field.field.node.job_designations.field_specialization
     - node.type.job_designations
@@ -36,6 +56,7 @@ dependencies:
     module:
       - iitb_jobs
   module:
+    - datetime
     - path
     - text
 id: node.job_designations.default
@@ -82,6 +103,15 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_job_desig_to_appoint_ref:
+    weight: 37
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_job_desig_to_circular_ref:
     type: entity_reference_autocomplete
     weight: 35
@@ -91,6 +121,15 @@ content:
       size: 60
       placeholder: ''
     third_party_settings: {  }
+  field_job_desig_to_shortlist_ref:
+    weight: 36
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_level:
     weight: 15
     settings:
@@ -269,6 +308,144 @@ content:
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_rsp_interview_date:
+    type: datetime_default
+    weight: 38
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rsp_interview_reporting_ti:
+    type: string_textfield
+    weight: 41
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_interview_time:
+    type: string_textfield
+    weight: 43
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_interview_venue:
+    type: text_textfield
+    weight: 44
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_remarks:
+    type: text_textarea
+    weight: 46
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_selection:
+    type: string_textfield
+    weight: 45
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_ta:
+    type: string_textfield
+    weight: 47
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_1:
+    type: text_textfield
+    weight: 48
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_1_date:
+    type: datetime_default
+    weight: 49
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rsp_test_1_duration:
+    type: string_textfield
+    weight: 50
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_1_reporting_time:
+    type: string_textfield
+    weight: 39
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_1_time:
+    type: string_textfield
+    weight: 51
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_2:
+    type: text_textfield
+    weight: 52
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_2_date:
+    type: datetime_default
+    weight: 53
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_rsp_test_2_duration:
+    type: string_textfield
+    weight: 54
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_2_reporting_time:
+    type: string_textfield
+    weight: 42
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_2_time:
+    type: string_textfield
+    weight: 40
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_rsp_test_venue:
+    type: text_textfield
+    weight: 55
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
   field_salary:
     weight: 14
     settings:
