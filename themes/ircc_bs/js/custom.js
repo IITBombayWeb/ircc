@@ -79,6 +79,18 @@
       return false;
     });
 
+
+    $("#menu-toggle").click(function(){
+      $(".search-head").hide();
+      return false;
+    });
+
+    $("#search-toggle").click(function(){
+      $(".menu-head").hide();
+      return false;
+    });
+
+
 	})();
 
 
