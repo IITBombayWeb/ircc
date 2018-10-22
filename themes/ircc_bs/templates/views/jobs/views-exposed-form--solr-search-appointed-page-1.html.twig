@@ -23,5 +23,5 @@
   {{ form.interview_date_start }}
   {{ form.interview_date_end }}
   {{ form.appointed }}
-  
+  {{ form|without('interview_date_start', 'interview_date_end', 'appointed') }}
 </div>
