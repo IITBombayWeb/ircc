@@ -20,7 +20,7 @@
 {% endif %}
 <div class="form--inline form-inline clearfix">
   {# {{ kint(form) }}  #}
-  <div class="row">
+  <div class="row mb-15">
     <div class="col-md-6">
       {{ form.interview_date_start }}
     </div>
@@ -29,6 +29,7 @@
       {{ form.interview_date_end }}
     </div>
   </div>
+
   <div class="row">
     <div class="col-md-6">
       {{ form.appointed }}
@@ -38,4 +39,5 @@
       {{ form|without('interview_date_start', 'interview_date_end', 'appointed') }}
     </div>
   </div>
+
 </div>
