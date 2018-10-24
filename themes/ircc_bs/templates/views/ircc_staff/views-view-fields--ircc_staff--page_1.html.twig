@@ -34,7 +34,7 @@
 {{ attach_library('ircc_bs/ircc-staff') }}
 
 
-
+{# 
 {% for field in fields -%}
   {{ field.separator }}
   {%- if field.wrapper_element -%}
@@ -56,9 +56,9 @@
     </{{ field.wrapper_element }}>
   {%- endif %}
 {%- endfor %}
-
-
-{#   <div class="img-box">
+ #}
+ 
+  <div class="img-box">
     {{ fields.field_ircc_staff_image.content }}
 
   </div>
@@ -68,7 +68,7 @@
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
     <p>{{ fields.body.content }}</p>
- #}
+
 
 
 {# field_ircc_staff_image
