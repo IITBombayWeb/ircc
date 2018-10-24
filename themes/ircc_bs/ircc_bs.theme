@@ -52,22 +52,6 @@ function ircc_bs_preprocess_breadcrumb(&$variables){
   }
 }
 
-// function ircc_bs_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
-//
-//   foreach (\Drupal\Core\Render\Element::children($form) as $key) {
-//     $form[$key]['#attributes']['data-twig-suggestion'] = $form['#id'];
-//   }
-//
-//   $form['actions']['submit']['#attributes']['data-twig-suggestion'] = $form['#id'];
-// }
-//
-// function ircc_bs_theme_suggestions_input_alter(&$suggestions, array $variables) {
-//   $element = $variables['element'];
-//   if (isset($element['#attributes']['data-twig-suggestion'])) {
-//     $suggestion_suffix = str_replace(['-'], '_', $element['#attributes']['data-twig-suggestion']);
-//     $suggestions[] = 'input__' . $element['#type'] . '__' . $suggestion_suffix;
-//   }
-// }
 
 /**
  * Implements hook_theme_suggestions_HOOK() for contact form suggestion.
@@ -120,13 +104,4 @@ function ircc_bs_theme_suggestions_views_exposed_form_alter(array &$suggestions,
 //
 //     $variables['some_term'] = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadTree('some_term', $parent = 0, $max_depth = NULL, $load_entities = FALSE);
 //
-// }
-
-
-
-// function ircc_bs_preprocess_menu__content_updation(&$variables) {
-
-//   ksm($variables);
-//   // We require Modernizr's touch test for button styling.
-//   //$variables['#attached']['library'][] = 'core/modernizr';
 // }
