@@ -19,6 +19,9 @@
     options.alignment,
   ]
 %}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
 <section class="team">
   <div id="{{ id }}" {{ attributes.addClass(classes) }}>
     {% if options.alignment  == 'horizontal' %}
