@@ -26,9 +26,9 @@
   <div id="{{ id }}" {{ attributes.addClass(classes) }}>
     {% if options.alignment  == 'horizontal' %}
       {% for row in items %}
-        <div class="row pt-md">
+        <div class="row pt-md team-wrap">
           {% for column in row.content %}
-            <div class="col {{ col_xs }} {{ col_sm }} {{ col_md }} {{ col_lg }} {{ options.row_class }} profile">
+            <div class="col {{ col_xs }} {{ col_sm }} {{ col_md }} {{ col_lg }} {{ options.row_class }}profile">
               {{ column.content }}
             </div>
           {% endfor %}

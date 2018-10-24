@@ -115,6 +115,12 @@ h6.description{
 	color:#fff;
 }
 
+.team{
+	border: 1px solid #aeaeae;
+	padding: 1em;
+}
+
+
 .form-item-field-ircc-staff-category-target-id label.control-label{
   background-color: #f9f9f9;
   color: #234645!important;
