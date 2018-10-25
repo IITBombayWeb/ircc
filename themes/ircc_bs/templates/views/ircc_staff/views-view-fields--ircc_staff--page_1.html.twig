@@ -57,23 +57,24 @@
   {%- endif %}
 {%- endfor %}
  #}
-  <a href="#" title="Works Involved in" data-toggle="popover" data-trigger="hover" data-placement="bottom">
-  <div class="img-box">
+{#   <a href="#" title="Works Involved in" data-toggle="popover" data-trigger="hover" data-placement="bottom">
+ #}  <div class="img-box">
     {{ fields.field_ircc_staff_image.content }}
 
   </div>
-  </a>
+{#   </a>
+ #} 
   <h1>{{ fields.title.content }}</h1>
   <h2>{{ fields.field_ircc_staff_designation.content }}</h2>
     <p>{% if fields.field_ircc_staff_contact_no.content %}<i class="fa fa-phone"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_contact_no.content }}</p>
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
     <p>{{ fields.body.content }}</p>
-
+{# 
 <div id="popover_content_wrapper" style="display: none">
   <div>{{ fields.body.content }}</div>
 </div>
-
+ #}
 {# field_ircc_staff_image
 title
 field_ircc_staff_designation
