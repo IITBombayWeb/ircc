@@ -166,7 +166,7 @@ $(document).ready(function(){
       $('[data-toggle="popover"]').popover({ 
     html : true,
     content: function() {
-      return $('#popover_content_wrapper').html();
+      return $('#popover_content_wrapper div p').html();
     }
   });  
 });
