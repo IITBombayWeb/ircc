@@ -160,32 +160,15 @@ $(window).on('load', function() {
   $("#preloader").delay(600).fadeOut();
 });
 
+
+
 $(document).ready(function(){
-  $('.danger').popover({ 
+      $('[data-toggle="popover"]').popover({ 
     html : true,
     content: function() {
       return $('#popover_content_wrapper').html();
     }
-  });
-
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();   
+  });  
 });
-
-});
-$(function(){
-    $('[rel="popover"]').popover({
-        container: 'body',
-        html: true,
-        content: function () {
-            var clone = $($(this).data('popover-content')).clone(true).removeClass('hide');
-            return clone;
-        }
-    }).click(function(e) {
-        e.preventDefault();
-    });
-});
-
-
 
 }(jQuery);
