@@ -69,11 +69,11 @@
     <p>{{ fields.field_ircc_staff_category.content }}</p>
   <a class='danger' data-placement='above' title="Popover Title" href='#'>Click</a>
 <div id="popover_content_wrapper" style="display: none">
-  <p>{{ fields.body.content }}</p>
+  {{ fields.body.content }}
 </div>
 
 <button class="popper" data-toggle="popover" data-trigger="hover">Pop me</button> 
-<div class="popper-content hide"><p>{{ fields.body.content }}</p>.</div>
+<div class="popper-content hide">{{ fields.body.content }}</div>
     
 
 
