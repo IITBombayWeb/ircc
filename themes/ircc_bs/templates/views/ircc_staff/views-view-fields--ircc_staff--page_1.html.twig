@@ -67,13 +67,13 @@
     <p>{% if fields.field_ircc_staff_contact_no.content %}<i class="fa fa-phone"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_contact_no.content }}</p>
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
-  <a class='danger' data-placement='above' title="Popover Title" href='#'>Click</a>
+  <a class='danger' data-placement='above' href='#'>Click</a>
 <div id="popover_content_wrapper" style="display: none">
   {{ fields.body.content }}
 </div>
 
 <button class="popper" data-toggle="popover" data-trigger="hover">Pop me</button> 
-<div class="popper-content hide">{{ fields.body.content }}</div>
+<div class="popper-content hide">{{ fields.body.content }} test text</div>
     
 
 
