@@ -57,7 +57,7 @@
   {%- endif %}
 {%- endfor %}
  #}
-  <a href="#" title="Works Involved in" data-toggle="popover" data-trigger="hover" data-content="text">
+  <a href="#" title="Works Involved in" data-toggle="popover" data-trigger="hover" data-placement="bottom" data-popover-content="#myPopover">
   <div class="img-box">
     {{ fields.field_ircc_staff_image.content }}
 
@@ -68,6 +68,10 @@
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
 <div id="popover_content_wrapper" style="display: none">
+  {{ fields.body.content }}
+</div>
+
+<div id="myPopover" class="hide">
   {{ fields.body.content }}
 </div>
 </a>
