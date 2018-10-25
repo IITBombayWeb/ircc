@@ -168,15 +168,10 @@ $(document).ready(function(){
     }
   });
 
-  $('.popper').popover({
-    placement: 'bottom',
-    container: 'body',
-    html: true,
-    content: function () {
-        return $(this).next('.popper-content').html();
-    }
-});
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
 });
 
+});
 
 }(jQuery);
