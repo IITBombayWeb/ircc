@@ -67,7 +67,11 @@
     <p>{% if fields.field_ircc_staff_contact_no.content %}<i class="fa fa-phone"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_contact_no.content }}</p>
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
-    <p>{{ fields.body.content }}</p>
+  <a class='danger' data-placement='above' title="Popover Title" href='#'>Click</a>
+<div id="popover_content_wrapper" style="display: none">
+  <p>{{ fields.body.content }}</p>
+</div>
+    
 
 
 

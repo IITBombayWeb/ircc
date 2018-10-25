@@ -1,4 +1,5 @@
 !function($) {
+  
   var mainHeader = $('#navbar'),
   		secondaryNavigation = $('.cd-secondary-nav'),
   		//this applies only if secondary nav is below intro section
@@ -157,6 +158,15 @@ function theme_menu(){
 // Preloader
 $(window).on('load', function() {
   $("#preloader").delay(600).fadeOut();
+});
+
+$(document).ready(function(){
+  $('.danger').popover({ 
+    html : true,
+    content: function() {
+      return $('#popover_content_wrapper').html();
+    }
+  });
 });
 
 
