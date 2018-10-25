@@ -167,6 +167,15 @@ $(document).ready(function(){
       return $('#popover_content_wrapper').html();
     }
   });
+
+  $('.popper').popover({
+    placement: 'bottom',
+    container: 'body',
+    html: true,
+    content: function () {
+        return $(this).next('.popper-content').html();
+    }
+});
 });
 
 
