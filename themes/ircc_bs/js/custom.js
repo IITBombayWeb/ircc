@@ -166,6 +166,7 @@ $(document).ready(function(){
       $('[data-toggle="popover"]').popover({ 
     html : true,
     content: function() {
+      console.log($(this).attr('id'));
       return $('#popover_content_wrapper div p').html();
     }
   });  
