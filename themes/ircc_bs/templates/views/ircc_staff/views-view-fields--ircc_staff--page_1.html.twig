@@ -71,6 +71,7 @@
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
     <p>{{ fields.body.content }} {{ fields.nid.content }}</p>
+    {{ dump(fields|keys) }}
 
 <div id="popover_content_wrapper_{{ id }}" class="{{ fields.nid.value|clean_class }}" style="display: none">
   <div>{{ fields.body.content }}</div>
