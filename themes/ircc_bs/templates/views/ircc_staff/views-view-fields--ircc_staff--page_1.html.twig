@@ -57,7 +57,7 @@
   {%- endif %}
 {%- endfor %}
  #}
- {% set id = fields.nid.content|render|striptags %}
+ {% set id = fields.nid.content|render|striptags|trim %}
   <a href="#" title="Works Involved in" data-toggle="popover" data-trigger="hover" data-placement="bottom">
   <div class="img-box">
     {{ fields.field_ircc_staff_image.content }}
