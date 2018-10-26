@@ -10,7 +10,6 @@ h6.description{
 	padding-bottom: 5px;
 }
 .profile{
-	margin-top: 25px;
   font-family: 'Quicksand', sans-serif;
 }
 .profile h1{
@@ -117,9 +116,12 @@ h6.description{
 
 .team{
 	border: 1px solid #aeaeae;
-	padding: 1em;
+	padding: 0 1em;
 }
 
+.team-wrap > :first-child{
+	background: #eae7e7;
+}
 
 .form-item-field-ircc-staff-category-target-id label.control-label{
   background-color: #f9f9f9;
