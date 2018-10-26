@@ -57,6 +57,7 @@
   {%- endif %}
 {%- endfor %}
  #}
+ {% set id = fields.nid.content %}
   <a href="#" title="Works Involved in" data-toggle="popover" data-trigger="hover" data-placement="bottom">
   <div class="img-box">
     {{ fields.field_ircc_staff_image.content }}
@@ -71,9 +72,7 @@
     <p>{{ fields.field_ircc_staff_category.content }}</p>
     <p>{{ fields.body.content }} {{ fields.nid.content }}</p>
 
-   {{ dump(fields) }}
-
-<div id="popover_content_wrapper_{{ fields.nid.raw }}" class="{{ fields.nid.value|clean_class }}" style="display: none">
+<div id="popover_content_wrapper_{{ id }}" class="{{ fields.nid.value|clean_class }}" style="display: none">
   <div>{{ fields.body.content }}</div>
 </div>
 
