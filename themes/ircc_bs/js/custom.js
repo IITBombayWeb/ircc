@@ -166,7 +166,9 @@ $(document).ready(function(){
       $('[data-toggle="popover"]').popover({ 
     html : true,
     content: function() {
-      return $('#popover_content_wrapper div p').html();
+      //console.log($(this).attr('id'));
+      var nid=($(this).attr('id')).split('popover_');
+      return $('#popover_content_wrapper_'+nid[1]+' div p').html();
     }
   });  
 });
