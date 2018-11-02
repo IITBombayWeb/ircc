@@ -58,20 +58,22 @@
 {%- endfor %}
  #}
  {% set id = fields.nid.content|render|striptags|trim %}
-  
+
   {% if fields.body.content %}
   <a href="#" title="Works Involved in" id="popover_{{ id }}" data-toggle="popover" data-trigger="hover" data-placement="bottom">
   {% endif %}
   <div class="img-box">
     {{ fields.field_ircc_staff_image.content }}
   </div>
+  
   {% if fields.body.content %}
     </a>
   {% endif %}
  
   <h1>{{ fields.title.content }}</h1>
   <h2>{{ fields.field_ircc_staff_designation.content }}</h2>
-    <p>{% if fields.field_ircc_staff_contact_no.content %}<i class="fa fa-phone"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_contact_no.content }}</p>
+    <p>{% if fields.field_ircc_staff_contact_no.content %}<i class="fa fa-phone"></i>&nbsp;{% endif %}
+      {{ fields.field_ircc_staff_contact_no.content }}</p>
     <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
     <p>{{ fields.field_ircc_staff_category.content }}</p>
 
