@@ -2072,7 +2072,8 @@ section.block-facets [type="checkbox"]:not(:checked):focus + label:before {
     text-decoration: none;
     float: none;
     text-align: center;
-    color: #fff;
+    /*color: #fff;*/
+    color: #f0f0f0;
 }
 
 
@@ -2103,7 +2104,8 @@ th#view-counter-table-column{
 .footer1 {
   background:#234645;
   /* background: #002139; */
-  color: #aeaeae;
+  /*color: #aeaeae;*/
+  color: #ffffff;
   padding-top: 2em;
   font-size:  0.85rem;
 }
@@ -2119,7 +2121,7 @@ th#view-counter-table-column{
 }
 
 .region-footer1 a{
-  color: #aeaeae;
+  color: #ffffff;
 }
 
 .title-widget {
@@ -2156,7 +2158,8 @@ th#view-counter-table-column{
 }
 .widget_nav_menu li a{
   padding:0px;
-  color: #aeaeae;
+  /*color: #aeaeae;*/
+  color: #ffffff;
       -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -2164,7 +2167,8 @@ th#view-counter-table-column{
 }
 
 .widget_nav_menu li a:hover {
-  color:#ffffff;
+  /*color:#ffffff;*/
+  color: #a0ebea;
       -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
@@ -2193,7 +2197,7 @@ th#view-counter-table-column{
     text-align: right;
 }
 .footer-bootom-nav a {
-    color: #fff;
+    color: #ffffff;
     font-size: 14px;
 }
 #block-ircc-bs-footer{
