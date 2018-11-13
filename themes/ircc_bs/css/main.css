@@ -325,6 +325,17 @@ button:focus {
   outline: none;
 }
 
+.file span.file-size{
+  display: none;
+}
+.file>span{
+  color: #234645;
+}
+img.pdfpreview-file{
+    height: 12em;
+    object-fit: cover;
+    margin: auto;
+}
 /*-----------------CARD----------------*/
 
 .card {
