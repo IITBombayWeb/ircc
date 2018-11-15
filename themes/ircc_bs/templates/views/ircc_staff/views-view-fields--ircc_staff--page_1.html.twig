@@ -81,7 +81,7 @@
 </div>
 
 
-{% for field in fields|without('title', 'field_ircc_staff_designation', 'field_ircc_staff_contact_no', 'field_ircc_staff_email', 'field_ircc_staff_category', 'nid', 'body') %}
+{% for field in fields|without('field_ircc_staff_image', 'title', 'field_ircc_staff_designation', 'field_ircc_staff_contact_no', 'field_ircc_staff_email', 'field_ircc_staff_category', 'nid', 'body') %}
     {{ field.separator }}
   {%- if field.wrapper_element -%}
     <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
