@@ -80,7 +80,8 @@
 <div id="popover_content_wrapper_{{ id }}" style="display: none">
   <div>{{ fields.body.content }}</div>
 </div>
-
+ 
+ {{ fields.content|without('title', 'field_ircc_staff_designation', 'field_ircc_staff_contact_no', 'field_ircc_staff_email', 'field_ircc_staff_category.content', 'nid') }}
 
 {# field_ircc_staff_image
 title
