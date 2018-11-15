@@ -119,7 +119,10 @@ h6.description{
 	padding: 0 1em;
 }
 
-.team-wrap > :first-child{
+./*team-wrap > :first-child{
+	background: #eae7e7;
+}*/
+.staff-head{
 	background: #eae7e7;
 }
 
