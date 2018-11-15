@@ -79,7 +79,7 @@
           {{ fields.field_ircc_staff_contact_no.content }}</p>
         <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
         <p>{{ fields.field_ircc_staff_category.content }}</p>
-
+        {{ fields.field_ircc_staff_head.content }}
     {% if fields.field_ircc_staff_head.content == 1 %}
         </div>
     {% endif %}
@@ -89,7 +89,7 @@
 </div>
 
 
-{% for field in fields|without('field_ircc_staff_image', 'title', 'field_ircc_staff_designation', 'field_ircc_staff_contact_no', 'field_ircc_staff_email', 'field_ircc_staff_category', 'nid', 'body') %}
+{% for field in fields|without('field_ircc_staff_image', 'title', 'field_ircc_staff_designation', 'field_ircc_staff_contact_no', 'field_ircc_staff_email', 'field_ircc_staff_category', 'nid', 'body', 'field_ircc_staff_head') %}
     {{ field.separator }}
   {%- if field.wrapper_element -%}
     <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
