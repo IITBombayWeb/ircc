@@ -336,6 +336,22 @@ img.pdfpreview-file{
     object-fit: cover;
     margin: auto;
 }
+.file-icon .text-primary{
+   color: #234645;
+}
+
+.views-field-field-ircc-brochures .file>span:first-child{
+  border-left: none;
+}
+
+.views-field-field-ircc-brochures .file>span{
+    border-bottom: none;
+    border-top: none;
+}
+
+.views-field-field-ircc-brochures .file{
+  border: 1px solid #ccc;
+}
 /*-----------------CARD----------------*/
 
 .card {
