@@ -156,9 +156,10 @@ function theme_menu(){
 
 ///////////////////////////
 // Preloader
-$(window).on('load', function() {
-  $("#preloader").delay(600).fadeOut();
-});
+
+// $(window).on('load', function() {
+//   $("#preloader").delay(200).fadeOut();
+// });
 
 
 
