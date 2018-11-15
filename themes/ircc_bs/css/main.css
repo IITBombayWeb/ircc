@@ -325,33 +325,7 @@ button:focus {
   outline: none;
 }
 
-.file span.file-size{
-  display: none;
-}
-.file>span{
-  color: #234645;
-}
-img.pdfpreview-file{
-    height: 12em;
-    object-fit: cover;
-    margin: auto;
-}
-.file-icon .text-primary{
-   color: #234645;
-}
 
-.views-field-field-ircc-brochures, .views-field-field-ircc-presentations .file>span:first-child{
-  border-left: none;
-}
-
-.views-field-field-ircc-brochures, .views-field-field-ircc-presentations .file>span{
-    border-bottom: none;
-    border-top: none;
-}
-
-.views-field-field-ircc-brochures, .views-field-field-ircc-presentations .file{
-  border: 1px solid #ccc;
-}
 /*-----------------CARD----------------*/
 
 .card {
@@ -1515,12 +1489,50 @@ color: #234645!important;
   color: #ffffff!important;
 }
 
-
 /* ircc staff end */
 
 
-/*node page*/
+/* ircc publication */
 
+.file span.file-size{
+  display: none;
+}
+.file>span{
+  color: #234645;
+}
+img.pdfpreview-file{
+    height: 12em;
+    object-fit: cover;
+    margin: auto;
+}
+.file-icon .text-primary{
+   color: #234645;
+}
+
+.views-field-field-ircc-brochures .file>span:first-child{
+  border-left: none;
+}
+.views-field-field-ircc-presentations .file>span:first-child{
+  border-left: none;
+}
+
+.views-field-field-ircc-brochures .file>span{
+    border-bottom: none;
+    border-top: none;
+}
+.views-field-field-ircc-presentations .file>span{
+    border-bottom: none;
+    border-top: none;
+}
+
+.views-field-field-ircc-brochures, .views-field-field-ircc-presentations .file{
+  border: 1px solid #ccc;
+}
+
+/* ircc publication end */
+
+
+/*node page*/
 .region-content .nav > li > a {
   background-color: #f9f9f9;
   color: #234645!important;
