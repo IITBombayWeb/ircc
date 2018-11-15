@@ -58,8 +58,9 @@
 {%- endfor %}
  #}
  {% set id = fields.nid.content|render|striptags|trim %}
+ {% set head_flag = fields.field_ircc_staff_head.content|render|striptags|trim %}
 
-  {% if fields.field_ircc_staff_head.content == 1 %}
+  {% if head_flag == 1 %}
     <div class="staff-head">
   {% endif %}
 
@@ -80,7 +81,8 @@
         <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
         <p>{{ fields.field_ircc_staff_category.content }}</p>
         {{ fields.field_ircc_staff_head.content }}
-    {% if fields.field_ircc_staff_head.content == 1 %}
+    
+    {% if head_flag == 1 %}
         </div>
     {% endif %}
 
