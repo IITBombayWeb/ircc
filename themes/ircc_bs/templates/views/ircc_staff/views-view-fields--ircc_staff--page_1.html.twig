@@ -59,7 +59,7 @@
  #}
  {% set id = fields.nid.content|render|striptags|trim %}
  {% set head_flag = fields.field_ircc_staff_head.content|render|striptags|trim %}
-  <div class="staff-pd">
+ 
   {% if head_flag == 1 %}
     <div class="staff-head">
   {% endif %}
@@ -74,17 +74,18 @@
       {% if fields.body.content %}
         </a>
       {% endif %}
+       <div class="staff-pd">
       <h1>{{ fields.title.content }}</h1>
       <h2>{{ fields.field_ircc_staff_designation.content }}</h2>
         <p>{% if fields.field_ircc_staff_contact_no.content %}<i class="fa fa-phone"></i>&nbsp;{% endif %}
           {{ fields.field_ircc_staff_contact_no.content }}</p>
         <p>{% if fields.field_ircc_staff_email.content %}<i class="fa fa-envelope"></i>&nbsp;{% endif %}{{ fields.field_ircc_staff_email.content }}</p>
         <p>{{ fields.field_ircc_staff_category.content }}</p>
-    
+       </div>
     {% if head_flag == 1 %}
         </div>
     {% endif %}
-  </div>
+ 
 <div id="popover_content_wrapper_{{ id }}" style="display: none">
   <div>{{ fields.body.content }}</div>
 </div>
