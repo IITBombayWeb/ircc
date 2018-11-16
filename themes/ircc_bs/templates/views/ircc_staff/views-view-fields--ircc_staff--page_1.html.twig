@@ -59,7 +59,7 @@
  #}
  {% set id = fields.nid.content|render|striptags|trim %}
  {% set head_flag = fields.field_ircc_staff_head.content|render|striptags|trim %}
-
+  <div class="staff-pd">
   {% if head_flag == 1 %}
     <div class="staff-head">
   {% endif %}
@@ -84,7 +84,7 @@
     {% if head_flag == 1 %}
         </div>
     {% endif %}
-
+  </div>
 <div id="popover_content_wrapper_{{ id }}" style="display: none">
   <div>{{ fields.body.content }}</div>
 </div>
