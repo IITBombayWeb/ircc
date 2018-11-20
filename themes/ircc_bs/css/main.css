@@ -1491,7 +1491,10 @@ color: #234645!important;
 
 
 .staff-head{
-  background: #eae7e7;
+  background: #d0d0d0;
+}
+.staff-head .img-box{
+  background: #d0d0d0;
 }
 
 .staff-pd{
