@@ -1,0 +1,19 @@
+query_parameters_to_url.admin:
+  path: '/admin/config/search/query-parameters-to-url/settings'
+  defaults:
+    _form: '\Drupal\query_parameters_to_url\Form\QueryParametersToUrlSettingsForm'
+    _title: 'Settings'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
+
+query_parameters_to_url.admin_examples:
+  path: '/admin/config/search/query-parameters-to-url/examples'
+  defaults:
+    _form: '\Drupal\query_parameters_to_url\Form\QueryParametersToUrlExamplesForm'
+    _title: 'Example URLs'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE

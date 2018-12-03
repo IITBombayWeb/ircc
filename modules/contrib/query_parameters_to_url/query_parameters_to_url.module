@@ -1,0 +1,407 @@
+<?php
+
+/**
+ * @file
+ * Query Arguments To URL module.
+ */
+
+use \Drupal\Component\Utility\NestedArray;
+use Symfony\Component\HttpFoundation\Request;
+
+/**
+ * Check whether given path should be rewritten.
+ */
+function query_parameters_to_url_path_should_be_rewritten($path = '', $options = array(), Request $request = NULL) {
+  $original_path = $request->getRequestUri();
+  $path_language = $request->getPreferredLanguage();
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  // If the URL is indicated as external, skip it.
+  if (!empty($options['external'])) {
+    return FALSE;
+  }
+
+  // Ignore administration paths.
+  if ($config->get('query_parameters_to_url_ignore_admin_paths') && \Drupal::service('router.admin_context')->isAdminRoute()) {
+    return FALSE;
+  }
+
+  // Ignore batch URLs.
+  if ($path == 'batch') {
+    return FALSE;
+  }
+
+  // Use the current path as the path to be rewritten.
+  if (empty($path)) {
+    $path = \Drupal::service('path.current')->getPath();
+  }
+
+  // Invoke hooks to see if any module allows or denies a rewrite for the given
+  // path.
+  $additional_paths_hooks_enabled = &drupal_static(__FUNCTION__, $config->get('query_parameters_to_url_hooks_enabled'));
+  if ($additional_paths_hooks_enabled) {
+    $rewrites = Drupal::moduleHandler()->invokeAll('query_parameters_to_url_rewrite_access', array(
+      $path,
+      $options,
+      $original_path,
+      $path_language,
+    ));
+    if (in_array('deny', $rewrites, TRUE)) {
+      return FALSE;
+    }
+    elseif (in_array('allow', $rewrites, TRUE)) {
+      return TRUE;
+    }
+  }
+
+  // Use configured Reg Exp to check if path should be rewritten.
+  $pattern = $config->get('query_parameters_to_url_path_reg_exp');
+  $regexp_allow_result = FALSE;
+  if (!empty($pattern) && preg_match($pattern, $path, $matches)) {
+    $regexp_allow_result = TRUE;
+  }
+
+  return $regexp_allow_result;
+}
+
+/**
+ * Returns an HTTP status code for redirects.
+ */
+function query_parameters_to_url_status_code_options($code = NULL) {
+  $codes = array(
+    300 => t('300 Multiple Choices'),
+    301 => t('301 Moved Permanently'),
+    302 => t('302 Found'),
+    303 => t('303 See Other'),
+    304 => t('304 Not Modified'),
+    305 => t('305 Use Proxy'),
+    307 => t('307 Temporary Redirect'),
+  );
+  return isset($codes[$code]) ? $codes[$code] : $codes;
+}
+
+/**
+ * Checks whether the function is called from inside globalredirect_init().
+ *
+ * Necessary to work with global redirect module, until the patch below is
+ * merged into the project.
+ *
+ * @see https://www.drupal.org/node/2060123
+ */
+function query_parameters_to_url_is_called_from_global_redirect_init() {
+  static $drupal_static_fast;
+  if (!isset($drupal_static_fast)) {
+    $drupal_static_fast['global_redirect_enabled'] = &drupal_static(__FUNCTION__, \Drupal::moduleHandler()->moduleExists('globalredirect'));
+    $drupal_static_fast['called'] = &drupal_static(__FUNCTION__ . '_called');
+  }
+  $global_redirect_enabled = &$drupal_static_fast['global_redirect_enabled'];
+  static $times_called_from_inside_global_redirect = 0;
+
+  // We don't return TRUE for any subsequent calls after the second time
+  // we encounter that the function was called from inside
+  // globalredirect_init(), nor when the module is disabled.
+  // globalredirect_init will call this function once and then redirect,
+  // or twice and then redirect / not redirect. That's why we need to check
+  // it twice.
+  if (!$global_redirect_enabled || ($times_called_from_inside_global_redirect >= 2)) {
+    return FALSE;
+  }
+
+  $called = &$drupal_static_fast['called'];
+  if (!isset($called) || empty($called)) {
+    $called = FALSE;
+    // Save memory in the debug_backtrace() function when possible.
+    $options = (version_compare(PHP_VERSION, '5.3.6', '>=') ? DEBUG_BACKTRACE_IGNORE_ARGS : NULL);
+    $call_stack = debug_backtrace($options);
+    // Check whether the function is called from inside globalredirect_init().
+    foreach ($call_stack as $function) {
+      $called = ($function['function'] == 'globalredirect_init');
+      if ($called) {
+        $times_called_from_inside_global_redirect++;
+        break;
+      }
+    }
+  }
+  else {
+    $times_called_from_inside_global_redirect++;
+  }
+  return $called;
+}
+
+/**
+ * Checks if the function is called from inside menu item edit admin callback.
+ *
+ * Necessary to be able to store rewritten urls in menu items.
+ */
+function query_parameters_to_url_is_called_from_menu_item_edit() {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  $do_check = $config->get('query_parameters_to_url_allow_rewritten_menu_item_save');
+  if (!$do_check) {
+    return FALSE;
+  }
+
+  $called = NULL;
+  if (!isset($called)) {
+    $called = FALSE;
+    // Save memory in the debug_backtrace() function when possible.
+    $options = (version_compare(PHP_VERSION, '5.3.6', '>=') ? DEBUG_BACKTRACE_IGNORE_ARGS : NULL);
+    $call_stack = debug_backtrace($options);
+    // Check whether the function is called from inside menu item edit.
+    foreach ($call_stack as $function) {
+      $functions = array(
+        'menu_edit_item_validate',
+        'i18n_prepare_normal_path',
+      );
+      $called = in_array($function['function'], $functions);
+      if ($called) {
+        break;
+      }
+    }
+  }
+
+  return $called;
+}
+
+/**
+ * Encodes an array of nested query parameters into a clean string.
+ *
+ * Example:
+ *  - an equivalent array of ?a[0][1][2]=3&b[4][5]=6&c=7 will become
+ *  - /p/a/0__1__2__3/b/4__5__6/c/7
+ */
+function query_parameters_to_url_encode_query_parameter_values($value, $parents = '', $depth = 0) {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  $nested_key = $config->get('query_parameters_to_url_query_nested_key_delimiter');
+  $nested_value = $config->get('query_parameters_to_url_query_nested_value_delimiter');
+  $encoded = '';
+
+  if (is_array($value)) {
+    // Recursively goes through the array, prefixing the value with the key
+    // parents.
+    foreach ($value as $key => $element) {
+      $next_parent = $parents . $key . $nested_key;
+      $encoded .= query_parameters_to_url_encode_query_parameter_values($element, $next_parent, $depth + 1);
+    }
+  }
+  elseif (!empty($value)) {
+    $encoded .= $parents;
+    $encoded .= $value;
+    if (!empty($parents)) {
+      $encoded .= $nested_value;
+    }
+  }
+
+  // Trim the last delimiter.
+  if ($depth == 0) {
+    $encoded = rtrim($encoded, $nested_value);
+  }
+
+  return $encoded;
+}
+
+/**
+ * Decodes a query parameter values string into its array form.
+ */
+function query_parameters_to_url_decode_query_parameter_values($query_values) {
+  // Choose which decoding type to use.
+  $parameter_values_is_array = query_parameters_to_url_encoded_query_parameter_values_string_is_array($query_values);
+  if ($parameter_values_is_array) {
+    // Decode the encoded array, because it contains multiple values.
+    $query_parameter_values_array = query_parameters_to_url_decode_encoded_query_parameter($query_values);
+    return $query_parameter_values_array;
+  }
+  else {
+    // Simple value, no decoding required.
+    $query_parameter_values_array = $query_values;
+    return $query_parameter_values_array;
+  }
+}
+
+/**
+ * Decodes an encoded string into an array of query parameters.
+ *
+ * Example:
+ *  - /p/a/0__1__2__3/b/4__5__6/c/7 will become an array equivalent to
+ *  - ?a[0][1][2]=3&b[4][5]=6&c=7
+ */
+function query_parameters_to_url_decode_encoded_query_parameter($encoded) {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  $nested_key = $config->get('query_parameters_to_url_query_nested_key_delimiter');
+  $nested_value = $config->get('query_parameters_to_url_query_nested_value_delimiter');
+  $decoded = array();
+
+  $parameters = explode($nested_value, $encoded);
+  foreach ($parameters as $parameter) {
+    $parameter_parts = explode($nested_key, $parameter);
+    $parameter_value = array_pop($parameter_parts);
+
+    // The conditional is for validation purposes, so it doesn't throw a fatal
+    // error. Scary.
+    if (!empty($parameter_parts)) {
+      NestedArray::setValue($decoded, $parameter_parts, $parameter_value);
+    }
+  }
+
+  return $decoded;
+}
+
+/**
+ * Checks if query parameter value is an array.
+ */
+function query_parameters_to_url_query_parameter_values_is_array($query_value) {
+  if (empty($query_value) || !is_array($query_value)) {
+    return FALSE;
+  }
+
+  // An array of query parameter values.
+  return TRUE;
+}
+
+/**
+ * Checks if an encoded query parameter values string is an array.
+ */
+function query_parameters_to_url_encoded_query_parameter_values_string_is_array($string) {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  // Simple check if delimiters are present.
+  $nested_values_delimiter = $config->get('query_parameters_to_url_query_nested_value_delimiter');
+  $nested_key_delimiter = $config->get('query_parameters_to_url_query_nested_key_delimiter');
+
+  if (strpos($string, $nested_values_delimiter) !== FALSE || strpos($string, $nested_key_delimiter) !== FALSE) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * Replace possibly percent-encoded characters with the actual chars.
+ */
+function query_parameters_to_url_replace_url_encoded_delimiters($url) {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  $nested_values_delimiter = $config->get('query_parameters_to_url_query_nested_value_delimiter');
+  $nested_key_delimiter = $config->get('query_parameters_to_url_query_nested_key_delimiter');
+  $url = str_replace(rawurlencode($nested_values_delimiter), $nested_values_delimiter, $url);
+  $url = str_replace(rawurlencode($nested_key_delimiter), $nested_key_delimiter, $url);
+  return $url;
+}
+
+/**
+ * Computes the percentage of characters saved using an encoded string.
+ */
+function query_parameters_to_url_compute_saved_char_percentage($encoded, $example) {
+  return round(100 - (strlen($encoded) * 100 / strlen($example)), 2);
+}
+
+/**
+ * Parses an URI string into path and query parameters.
+ */
+function query_parameters_to_url_parse_uri($uri) {
+  $parsed_url = parse_url($uri);
+  $path = $parsed_url['path'];
+  $query = array();
+  parse_str(urldecode($parsed_url['query']), $query);
+  $options = array(
+    'query' => $query,
+  );
+  return array($path, $options);
+}
+
+/**
+ * Implements encode_url().
+ */
+function query_parameters_to_url_encode_url(&$path, &$options, $original_path) {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+
+  if ($config->get('query_parameters_to_url_enabled')) {
+    // Check if this is a path we should rewrite.
+    $rewrite = query_parameters_to_url_path_should_be_rewritten($path, $options, Request::create($original_path));
+    // var_dump($options['query']);.
+    if ($rewrite) {
+      // If asked to skip the check, by hook_init(), skip it.
+      $skip_global_redirect_state =
+            isset($options['skip_global_redirect']) &&
+            $options['skip_global_redirect'] == TRUE;
+      // Don't encode the query parameters if called from globalredirect_init().
+      // The hook_outbound_url_alter() will be called twice from inside
+      // globalredirect_init().
+      if (!$skip_global_redirect_state && query_parameters_to_url_is_called_from_global_redirect_init()) {
+        return $path;
+      }
+
+      // Check if link has any query parameters set.
+      if (isset($options['query']) && !empty($options['query'])) {
+        $query_parameters_components = '';
+
+        // The new path parts array, containing the the query parameters, will
+        // be delimited with a special character, so we know where the real URL
+        // components start, and where the encoded query parameters start.
+        $url_and_query_delimiter = $config->get('query_parameters_to_url_url_and_query_delimiter');
+
+        // Make sure to replace <front> with front page url.
+        if ($path == '<front>') {
+          $path = variable_get('site_frontpage', 'node');
+        }
+        // Make sure to trim the rightmost slashes, so double slashes don't
+        // occur in the path.
+        $new_path_no_delimiter = rtrim($path, '/');
+        $new_path = $new_path_no_delimiter . '/' . $url_and_query_delimiter;
+
+        if ($config->get('query_parameters_to_url_rewrite_hooks_enabled')) {
+          // Allow altering the final outbound url, before encoding.
+          $context = array(
+            'direction' => 'outbound',
+            'options' => &$options,
+            'original_path' => $original_path,
+            'new_path_without_parameters' => &$new_path,
+          );
+          \Drupal::moduleHandler()->alter('query_parameters_to_url_rewrite', $path, $context);
+        }
+        // drupal_set_message($path,"error");.
+        foreach ($options['query'] as $key => $values) {
+          // Encode the query parameter values to clean url component.
+          $encoded_query_parameter_values = query_parameters_to_url_encode_query_parameter_values($values);
+
+          // Add the encoded query parameter values to the end of the path, only
+          // if it actually has any values.
+          $is_blank = empty($encoded_query_parameter_values) && !is_numeric($encoded_query_parameter_values);
+          if (!$is_blank) {
+            $query_parameters_components .= '/' . $key . '/' . $encoded_query_parameter_values;
+          }
+          // Unset the query parameter that was encoded in the URL, so it's not
+          // included in the generated link.
+          unset($options['query'][$key]);
+        }
+
+        // If there were any query parameters to encode, replace the original
+        // path with a new path that contains the encoded query parameters.
+        if (!empty($query_parameters_components)) {
+          $path = $new_path . $query_parameters_components;
+        }
+      }
+    }
+  }
+  return $path;
+}
+
+/**
+ * Protects against a redirect loop.
+ */
+function query_parameters_to_url_protect_redirect_loop() {
+  $config = \Drupal::getContainer()->get('config.factory')->getEditable('query_parameters_to_url.settings');
+  $exit_early = FALSE;
+  if ($config->get('query_parameters_to_url_redirect_protection_enabled')) {
+    // Redirect protection in case something goes horribly wrong. Inspired
+    // by redirect module.
+    $session_id = session_id();
+    if (\Drupal::flood()->isAllowed('query_parameters_to_url_init_redirect', 10, 15, $session_id ? $session_id : NULL)) {
+      \Drupal::flood()->register('query_parameters_to_url_init_redirect', 15, $session_id ? $session_id : NULL);
+      $exit_early = FALSE;
+    }
+    else {
+      watchdog(QUERY_PARAMETERS_TO_URL_MODULE_NAME, 'Infinite redirect loop stopped.');
+      drupal_set_message(t('Oops, looks like this request tried to create an infinite loop.'));
+      $exit_early = TRUE;
+    }
+  }
+
+  return $exit_early;
+}
