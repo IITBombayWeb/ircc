@@ -1,0 +1,6 @@
+query_parameters_to_url.admin:
+  title: 'Query Parameters To URL'
+  route_name: query_parameters_to_url.admin
+  description: 'Settings for rewriting query parameters into clean url components.'
+  parent: system.admin_config_search
+  weight: 0

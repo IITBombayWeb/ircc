@@ -1,0 +1,10 @@
+services:
+  query_parameters_to_url.path_processor_query_parameters_to_url:
+    class: Drupal\query_parameters_to_url\PathProcessor\QueryParametersToUrlPathProcessorManager
+    tags:
+      - { name: 'path_processor_inbound' }
+      - { name: path_processor_outbound }
+  query_parameters_to_url.query_parameters_to_url_event_subscriber:
+    class: Drupal\query_parameters_to_url\EventSubscriber\QueryParametersToURLSubscriber
+    tags:
+      - {name: event_subscriber}

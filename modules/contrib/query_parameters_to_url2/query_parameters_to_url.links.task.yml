@@ -1,0 +1,8 @@
+query_parameters_to_url.admin: # The first plugin ID
+  title: 'Settings'
+  route_name: query_parameters_to_url.admin
+  base_route: query_parameters_to_url.admin
+query_parameters_to_url.admin_examples: # The second plugin ID
+  title: 'Example URLs'
+  route_name: query_parameters_to_url.admin_examples
+  base_route: query_parameters_to_url.admin

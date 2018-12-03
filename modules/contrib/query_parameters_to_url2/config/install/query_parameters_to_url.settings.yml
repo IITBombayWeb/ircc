@@ -1,0 +1,12 @@
+query_parameters_to_url_enabled: 1
+query_parameters_to_url_url_and_query_delimiter: 'p'
+query_parameters_to_url_query_nested_key_delimiter: '__'
+query_parameters_to_url_query_nested_value_delimiter: '--'
+query_parameters_to_url_path_reg_exp: ''
+query_parameters_to_url_hooks_enabled: 1
+query_parameters_to_url_rewrite_hooks_enabled: 0
+query_parameters_to_url_redirect_protection_enabled: 1
+query_parameters_to_url_ignore_admin_paths: 1
+query_parameters_to_url_allow_rewritten_menu_item_save: 0
+query_parameters_to_url_redirect_status_code: 302
+cache: 0
