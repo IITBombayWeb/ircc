@@ -1440,8 +1440,11 @@ color: #234645!important;
 #edit-award-type a.bef-link-active, #edit-award-type a.bef-link-active:hover{
   color: #ffffff!important;
 }
-
-
+.view-id-awards .view-content table caption{
+  font-size: 1.08rem;
+  font-weight: 800;
+  border-bottom: 1px solid #777;
+  }
 /* award page */
 /* facets & sidebar */
 
