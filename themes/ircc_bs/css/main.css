@@ -362,10 +362,7 @@ button:focus {
   margin-top:0px;
   font-weight: 700;
 }
-.card-title a {
-  color: #000;
-  text-decoration: none !important;
-}
+
 .card-read-more {
   border-top: 1px solid #D4D4D4;
 }
