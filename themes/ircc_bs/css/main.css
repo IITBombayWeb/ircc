@@ -1507,6 +1507,10 @@ color: #234645!important;
 
 /* ircc publication */
 
+.file {
+  font-size: 100%;
+  }
+
 .file span.file-size{
   display: none;
 }
