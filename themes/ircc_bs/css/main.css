@@ -329,7 +329,8 @@ button:focus {
 /*-----------------CARD----------------*/
 
 .card {
-  display: block; 
+  display: block;
+  overflow-wrap: break-word;
     margin-bottom: 20px;
     line-height: 1.42857143;
     background-color: #fff;
