@@ -330,7 +330,6 @@ button:focus {
 
 .card {
   display: block;
-  overflow-wrap: break-word;
     margin-bottom: 20px;
     line-height: 1.42857143;
     background-color: #fff;
@@ -1499,6 +1498,12 @@ color: #234645!important;
 
 .staff-pd{
   padding: 0.5em;
+}
+
+.view-ircc-staff .views-field-description__value{
+  border: 1px solid #aeaeae;
+  padding: 1em;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
 }
 
 /* ircc staff end */
