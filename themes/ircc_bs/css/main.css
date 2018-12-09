@@ -989,7 +989,7 @@ left: 20%;
 }
 .research-highlights img{
     width: 100% !important;
-    height: 12em!important;
+    height: 13em!important;
     object-fit: cover;
 
     -webkit-transition: all 0.5s;
@@ -2528,7 +2528,7 @@ transition: all 0.5s;
   }
 
   .research-highlights img{
-    max-height: 15em!important;
+    height: 15em!important;
   }
 
 }
