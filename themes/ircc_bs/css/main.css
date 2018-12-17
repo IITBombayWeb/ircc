@@ -2508,7 +2508,9 @@ transition: all 0.5s;
     text-align: initial;
   }
 
-
+  .main-container-menu{
+    padding-top: 2em;
+  }
 }
 
 
