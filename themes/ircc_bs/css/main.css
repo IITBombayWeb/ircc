@@ -1976,17 +1976,24 @@ a.close-form{
 
 
 /* research glimpse page grid */
+.views-field-field-image-glimpse{
+  overflow: hidden;
+}
 .views-field-field-image-glimpse img, .views-field-field-facility-image img{
 width: 100%!important;
-height: auto;
-max-height: 12em;
+height: 10em;
+object-fit: cover;
 transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
      -moz-transition: all .5s ease-in-out;
      -o-transition: all .5s ease-in-out;
 }
 
-
+.glimpse-grid-title{
+  background-color: #eaeaea;
+  padding: 2%;
+  font-size: 0.9rem;
+}
 .glimpse-grid-title a:hover, .facility-grid-title a:hover{
   text-decoration: underline;
 }
