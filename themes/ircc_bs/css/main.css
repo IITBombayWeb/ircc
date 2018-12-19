@@ -1441,6 +1441,11 @@ color: #234645!important;
   font-weight: 800;
   border-bottom: 1px solid #777;
   }
+
+  .view-id-awards .ui-state-active{
+    border: 1px solid #234645/*{borderColorActive}*/;
+    background: #234645/*{bgColorActive}*/ /*{bgImgUrlActive}*/ /*{bgActiveXPos}*/ /*{bgActiveYPos}*/ /*{bgActiveRepeat}*/;
+  }
 /* award page */
 /* facets & sidebar */
 
