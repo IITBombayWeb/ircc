@@ -2628,7 +2628,7 @@ transition: all 0.5s;
   }
 
   #main-wrap{
-    padding-top: 0.5em;
+    padding-top: 3em;
   }
   .navbar-text{
     margin: 1em;
@@ -2643,6 +2643,7 @@ transition: all 0.5s;
 
     .top-nav{
       font-size: 0.95em;
+      padding: 2px;
     }
 
     .top-nav-brand{
@@ -2685,9 +2686,9 @@ transition: all 0.5s;
 @media screen and (max-width: 450px) {
   .navbar-brand {
     max-width: 11em;
-    padding: 1.1em;
+    padding: 11px;
     margin-left: 0px;
-    font-size: 0.75rem;
+    font-size: 0.85rem;
 
   }
   .sec-logo {
@@ -2696,7 +2697,7 @@ transition: all 0.5s;
 
   }
   a.logo {
-    width: 5em;
+    width: 4.5em;
   }
 
   img.sec-logo{
