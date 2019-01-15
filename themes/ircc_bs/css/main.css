@@ -127,6 +127,31 @@ img.grayscale:hover {
   text-align: center; }
 
 
+/* display properties */
+.grid-inline{
+  display: inline-grid;
+}
+
+.block-inline{
+  display: inline-block;
+}
+
+.flex-inline{
+  display: inline-flex;
+}
+
+.table-inline{
+  display: inline-table;
+}
+.inline{
+  display: inline;
+}
+
+
+.hidden{
+  display: none;
+}
+
 body .pt_60 {
   padding-top: 60px; }
 
@@ -560,11 +585,17 @@ button:focus {
   .navbar-fixed-top{
     z-index: 10;
   }
-  #navbar.is-hidden {
+/*  #navbar.is-hidden {
     -webkit-transform: translateY(-100%);
         -ms-transform: translateY(-100%);
             transform: translateY(-100%);
   }
+*/
+  .is-hidden{
+     -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+    }
   .navbar-header {
     float: left;
     text-align: center;
@@ -618,23 +649,9 @@ button:focus {
     margin: 0.8em 0;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
   }
-  /* .navbar-toggle {
-    background: #afafaf;
-  } */
 
-  /* .navbar-toggle:hover{
-    background: #333434!important;
-    cursor: pointer;
-  }
-
-  .navbar-toggle:focus{
-    background: #333434!important;
-  } */
   .navbar-nav {
     font-size: 0.95rem;
-
-
-    /* padding-top: 20px; */
   }
 
 /*  .form-control:focus {
@@ -644,6 +661,60 @@ button:focus {
     box-shadow: inset 0 1px 1px rgba(74, 65, 65, 0.075), 0 0 8px #277dd6;
   }
  */
+
+/* top_nav */
+
+.top-nav *, .top-nav a:hover{
+  color: #ffffff!important;
+}
+
+.top-nav{
+    background-color: #234645;
+    padding: 5px;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 15;
+    -moz-box-shadow: 1px 1px 8px #b1b1b1;
+    -webkit-box-shadow: 1px 1px 8px #b1b1b1;
+    box-shadow: 1px 1px 8px #b1b1b1;
+      -webkit-transition: all 0.5s;
+     -moz-transition: all 0.5s;
+     -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+.top-nav-brand{
+    font-size: 1.1rem;
+    font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
+}
+.top-nav-brand a:hover{
+  text-decoration: none;
+  color: #ffffff;
+}
+
+
+.top-nav p {
+    margin: 0;
+}
+.social-media {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.social-media a {
+    line-height: 100%;
+    font-size: 1.1rem;
+    display: inline-block;
+    padding: 4px 8px;
+    width: 26px;
+}
+
+@media screen and (min-width: 767px){
+.social-media {
+    padding: 0px 0;
+    text-align: right;
+}
+}
+
 
 
   /*header end*/
@@ -674,7 +745,7 @@ button:focus {
 /* top box front page */
 
 #main-wrap {
-     padding-top: 0.5em;
+     padding-top: 3.2em;
     width: 100%;
     height: 100%;
 /*    background: url(../img/event-4.jpg) fixed;
@@ -1981,12 +2052,55 @@ a.close-form{
 
 
 /* research glimpse page grid */
+
+.wrap-stay{
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.wrap-stay img{
+    width: 100%!important;
+    height: 20em;
+    object-fit: cover;
+}
+
+.wrap-stay .hidden-text {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    height: 100%;
+}
+
+.wrap-stay:hover .hidden-text {
+    bottom: 0;
+}
+
+  .wrap-stay .hidden-text {
+     color: #fff;
+     font-size: 0.9rem;
+    padding: 1.5em;
+    text-align: justify;
+    -webkit-transform: none;
+    transform: none;
+  }
+
+.hidden-text .btn-primary{
+  padding: 2px 4px;
+}
+.wrap-stay .hidden-text, .wrap-stay .hidden-text p {
+    -webkit-transition: .3s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+}
+
 .views-field-field-image-glimpse{
   overflow: hidden;
 }
 .views-field-field-image-glimpse img, .views-field-field-facility-image img{
 width: 100%!important;
-height: 10em;
+height: 20em;
 object-fit: cover;
 transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;

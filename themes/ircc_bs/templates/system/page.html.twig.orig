@@ -59,11 +59,13 @@
   {% block navbar %}
     {%
       set navbar_classes = [
+        'navbar',
+        theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
       ]
     %}
 
-    <header {{ navbar_attributes.addClass(navbar_classes) }} role="banner">
+    <header {{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
       {% if show_heading_branding or show_social_icon %}
         <div class="top-nav">
           <div class="container">
@@ -100,7 +102,6 @@
           </div>
         </div>
       {% endif %}
-    <nav class=" navbar navbar-default" id="navbar">
       {% if not navbar_attributes.hasClass(container) %}
         <div class="{{ container }}">
       {% endif %}
@@ -143,7 +144,6 @@
       {% if not navbar_attributes.hasClass(container) %}
         </div>
       {% endif %}
-    </nav>
     </header>
   {% endblock %}
 {% endif %}

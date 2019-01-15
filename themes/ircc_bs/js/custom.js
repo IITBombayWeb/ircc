@@ -1,6 +1,7 @@
 !function($) {
   
   var mainHeader = $('#navbar'),
+      topHeader = $('.top-nav'),
   		secondaryNavigation = $('.cd-secondary-nav'),
   		//this applies only if secondary nav is below intro section
   		belowNavHeroContent = $('.sub-nav-hero'),
@@ -11,7 +12,7 @@
   		previousTop = 0,
   		currentTop = 0,
   		scrollDelta = 2,
-  		scrollOffset = 100;
+  		scrollOffset = 20;
 
   	mainHeader.on('click', '.nav-trigger', function(event){
   		// open primary navigation on mobile
