@@ -2387,7 +2387,7 @@ th#view-counter-table-column{
 }
 .footer-bootom-nav a {
     color: #ffffff;
-    font-size: 14px;
+  /*  font-size: 14px;*/
 }
 #block-ircc-bs-footer{
   display: inline-block;
@@ -2416,6 +2416,7 @@ border-left: none !important;
   display: inline;
   padding: 5px 5px;
   color: #ffffff;
+  font-size: 14px;
       -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
