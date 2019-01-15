@@ -2408,10 +2408,14 @@ ul.menu--account li{
   display: inline-block;
   border-left: 1px dotted #E5E5E5;
 }
+.footer-bottom ul.menu li:first-child {
+border-left: none !important;
+}
 
 .footer-bottom nav li a{
   display: inline;
   padding: 5px 5px;
+  color: #ffffff;
       -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -o-transition: all 0.5s;
