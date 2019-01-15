@@ -2290,6 +2290,10 @@ th#view-counter-table-column{
 *************************************************************/
 
 
+.footer-bottom .contextual-region .contextual .contextual-links{
+  top: -71px;
+}
+
 .footer1 {
   background:#234645;
   /* background: #002139; */
