@@ -466,24 +466,35 @@
 
       <div class="{{ container }}">
           <div class="row footer-bottom">
+            
             {% if page.footer_bar_left %}
               {% block footer_bar_left %}
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                {% if page.footer_bar_left and page.footer_bar_right %}
+                  <div class="col-md-4 col-sm-4 col-xs-12">
+                {% else %}
+                  <div class="col-md-12 col-sm-12 col-xs-12">
+                {% endif %}  
                     <div class="copyright">
                       {{ page.footer_bar_left }}
                     </div>
                 </div>
               {% endblock %}
             {% endif %}
+            
             {% if page.footer_bar_right %}
               {% block footer_bar_right %}
-                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                {% if page.footer_bar_left and page.footer_bar_right %}
+                  <div class="col-md-8 col-sm-8 col-xs-12">
+                 {% else %}
+                  <div class="col-md-12 col-sm-12 col-xs-12"> 
+                {% endif %}
                   <div class="footer-bootom-nav">
                     {{ page.footer_bar_right }}
                   </div>
                 </div>
               {% endblock %}
             {% endif %}
+          
           </div>
       </div>
   </footer>
