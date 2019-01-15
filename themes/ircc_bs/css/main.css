@@ -715,6 +715,9 @@ button:focus {
 }
 }
 
+@media screen and (max-width:767px){
+
+}
 
 
   /*header end*/
@@ -2637,6 +2640,15 @@ transition: all 0.5s;
   .main-container-menu{
     padding-top: 2em;
   }
+
+    .top-nav{
+      font-size: 0.95em;
+    }
+
+    .top-nav-brand{
+      font-size: 0.95em;
+      text-align: center;
+    }
 }
 
 
