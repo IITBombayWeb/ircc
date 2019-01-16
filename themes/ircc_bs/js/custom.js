@@ -54,6 +54,8 @@
 			else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
 				//if scrolling down...
 				mainHeader.addClass('is-hidden');
+        // $(".node-type-link a").css("z-index", "20");
+
 			}
 		}
 	  }
