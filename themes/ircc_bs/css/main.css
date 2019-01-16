@@ -1786,6 +1786,7 @@ h2.page-title{
   color: #615a5a;
   font-family: 'Merriweather',serif;
   text-decoration: underline;
+ /* z-index: 20;*/
 }
 
 table#past-deans-info td{
