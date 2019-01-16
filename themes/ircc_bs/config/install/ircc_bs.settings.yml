@@ -1,0 +1,70 @@
+# Default settings should not be located here. This file is only used to
+# initially install a theme's "settings".
+#
+# Instead, the Drupal Bootstrap base theme uses the @BootstrapSetting
+# annotated plugin discovery process. This ensures that sub-theme settings are
+# inherited from base themes themes properly and to determine when a setting
+# should be saved to config as "overridden".
+#
+# @see \Drupal\bootstrap\Plugin\SettingBase
+# @see \Drupal\bootstrap\Plugin\SettingInterface
+# @see \Drupal\bootstrap\Plugin\SettingManager
+# @see \Drupal\bootstrap\Plugin\Form\SystemThemeSettings
+# @see \Drupal\bootstrap\ThemeSettings
+
+# This file cannot be empty, so install an initial empty array for "schemas".
+# @see https://www.drupal.org/node/2813829
+favicon:
+  mimetype: image/vnd.microsoft.icon
+  path: ''
+  url: ''
+  use_default: 1
+schemas:
+  bootstrap: 8000
+  acadmix: 8000
+features:
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+  node_user_picture: 1
+logo:
+  path: ''
+  url: ''
+  use_default: 1
+region_wells:
+  header: ''
+  header_search: ''
+  navigation_collapsible: ''
+  slider: ''
+  highlighted: ''
+  help: ''
+  top_head: ''
+  top1: ''
+  top2: ''
+  top3: ''
+  top4: ''
+  content_top: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer1: ''
+  footer2: ''
+  footer3: ''
+  footer4: ''
+  footer_bar_left: ''
+  footer_bar_right: ''
+fluid_container: 0
+table_bordered: 1
+table_responsive: '-1'
+cdn_provider_import_data: ''
+table: ''
+navbar_position: fixed-top
+show_social_icon: 1
+#default value for social media
+facebook_url: 'https://www.facebook.com/iitbombay'
+twitter_url: 'https://twitter.com/iitbombay'
+google_plus_url: 'https://plus.google.com/+iitbombay'
+linkedin_url: 'https://www.linkedin.com/edu/school?id=13496&trk=edu-cp-title'
+show_heading_branding: 1
+heading_branding_text: 'Indian Institute of Technology Bombay'
+heading_branding_url: 'http://www.iitb.ac.in/'

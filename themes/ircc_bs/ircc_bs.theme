@@ -6,6 +6,50 @@
  *
  * Place your custom PHP code in this file.
  */
+use Drupal\Core\Template\RenderWrapper;
+use Drupal\Core\Template\Attribute;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\Xss;
+use Drupal\search\Form\SearchBlockForm;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\system\Form\ThemeSettingsForm;
+use Drupal\file\Entity\File;
+use Drupal\Core\Url;
+use Drupal\file\Plugin\Core\Entity\FileInterface;
+use Drupal\Core\Config\ConfigFactoryInterface;
+  
+
+
+
+global $theme_name, $path_to_ircc_bs;
+$theme_name = \Drupal::theme()->getActiveTheme()->getName();
+$path_to_ircc_bs = drupal_get_path('theme', 'ircc_bs');
+
+
+function ircc_bs_preprocess_page(&$variables) {
+  global $base_path, $theme_name;
+  $variables['logo2'] = $base_path.'/' . drupal_get_path('theme','ircc_bs') . '/logo2.png';
+  // Social media global variable.
+  $variables['show_social_icon'] = theme_get_setting('show_social_icon');
+  $variables['facebook_url'] = theme_get_setting('facebook_url');
+  $variables['google_plus_url'] = theme_get_setting('google_plus_url');
+  $variables['twitter_url'] = theme_get_setting('twitter_url');
+  $variables['linkedin_url'] = theme_get_setting('linkedin_url');
+
+  $variables['show_heading_branding'] = theme_get_setting('show_heading_branding');
+  $variables['heading_branding_text'] = theme_get_setting('heading_branding_text');
+  $variables['heading_branding_url'] = theme_get_setting('heading_branding_url');
+
+  //To get the current URL
+  $current_url  = \Drupal::request()->getRequestUri();
+  $current_path = explode("/", $current_url);
+  $variables['current_path'] = $current_path[2];
+
+
+}
+
+
 /**
  * Implements hook_preprocess_HOOK() for block templates.
  */
@@ -37,18 +81,6 @@ function ircc_bs_preprocess_menu(&$variables, $hook) {
       $variables['items'][$key]['attributes']['class'] = 'active';
       }
     }
-  }
-}
-
-/**
- * Implements hook_preprocess_breadcrumb().
- */
-function ircc_bs_preprocess_breadcrumb(&$variables){
-  if(($node = \Drupal::routeMatch()->getParameter('node')) && $variables['breadcrumb']){
-    $variables['breadcrumb'][] = array(
-     'text' => $node->getTitle(),
-     'url' => $node->URL()
-   );
   }
 }
 
@@ -105,3 +137,72 @@ function ircc_bs_theme_suggestions_views_exposed_form_alter(array &$suggestions,
 //     $variables['some_term'] = \Drupal::service('entity_type.manager')->getStorage("taxonomy_term")->loadTree('some_term', $parent = 0, $max_depth = NULL, $load_entities = FALSE);
 //
 // }
+
+
+/**
+ * Implements hook_form_system_theme_settings_alter().
+ */
+function ircc_bs_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+   //Social Icon Link
+      $form['ircc_bs_settings']['social_icon'] = array(
+        '#type' => 'details',
+        '#title' => t('Social Media Link'),
+        '#collapsible' => TRUE,
+        '#collapsed' => FALSE,
+      );
+      $form['ircc_bs_settings']['social_icon']['show_social_icon'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Show Social Icons'),
+        '#default_value' => theme_get_setting('show_social_icon'),
+        '#description'   => t("Show/Hide Social media links"),
+      );
+      $form['ircc_bs_settings']['social_icon']['facebook_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Facebook URL'),
+        '#default_value' => theme_get_setting('facebook_url'),
+      );
+      $form['ircc_bs_settings']['social_icon']['google_plus_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Google plus URL'),
+        '#default_value' => theme_get_setting('google_plus_url'),
+      );
+      $form['ircc_bs_settings']['social_icon']['twitter_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Twitter URL'),
+        '#default_value' => theme_get_setting('twitter_url'),
+      );
+      $form['ircc_bs_settings']['social_icon']['linkedin_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('LinkedIn URL'),
+        '#default_value' => theme_get_setting('linkedin_url'),
+      );
+
+      $form['ircc_bs_settings']['heading_branding'] = array(
+        '#type' => 'details',
+        '#title' => t('Heading Branding'),
+        '#collapsible' => TRUE,
+        '#collapsed' => FALSE,
+      );
+      $form['ircc_bs_settings']['heading_branding']['show_heading_branding'] = array(
+        '#type' => 'checkbox',
+        '#title' => t('Show Heading Branding'),
+        '#default_value' => theme_get_setting('show_heading_branding'),
+        '#description'   => t("Show/Hide Top Nav Branding"),
+      );
+      $form['ircc_bs_settings']['heading_branding']['heading_branding_text'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Heading Branding Text'),
+        '#default_value' => theme_get_setting('heading_branding_text'),
+      );
+      $form['ircc_bs_settings']['heading_branding']['heading_branding_url'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Heading Branding URL'),
+        '#default_value' => theme_get_setting('heading_branding_url'),
+      );
+
+      $form['ircc_bs_info'] = array(
+        '#markup' => '<div class="messages messages--warning">Clear cache after making any changes in theme settings. <a href="../../config/development/performance">Click here to clear cache</a></div>'
+      );
+
+}
