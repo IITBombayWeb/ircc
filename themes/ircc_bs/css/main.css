@@ -776,6 +776,9 @@ button:focus {
   text-align: center;
   color: white;
 }
+.top-head a, .top-head p a{
+    color: white;
+}
 
 
 .top-wrapper{
