@@ -776,9 +776,14 @@ button:focus {
   text-align: center;
   color: white;
 }
-.top-head a, .top-head p a{
+.top-head a{
     color: white;
 }
+
+.top-head a:hover{
+  text-decoration: underline;
+}
+
 
 
 .top-wrapper{
