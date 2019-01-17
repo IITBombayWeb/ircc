@@ -577,10 +577,10 @@ button:focus {
 /*header*/
 
 #navbar {
-  -webkit-transition: all 0.5s;
-     -moz-transition: all 0.5s;
-     -o-transition: all 0.5s;
-    transition: all 0.5s;
+  -webkit-transition: all 0.8s;
+     -moz-transition: all 0.8s;
+     -o-transition: all 0.8s;
+    transition: all 0.8s;
   }
   .navbar-fixed-top{
     z-index: 10;
@@ -601,7 +601,9 @@ button:focus {
     text-align: center;
     width: 100%;
   }
-  .navbar-brand {float:none;}
+  .navbar-brand {
+    float:none;
+  }
 
 
   .navbar-brand {
@@ -666,16 +668,15 @@ button:focus {
 
 /* top_nav */
 
-.top-nav *, .top-nav a:hover{
+.top-nav, .top-nav a:hover{
   color: #ffffff!important;
 }
 
-.top-nav{
+/*.top-nav{
     background-color: #234645;
     padding: 5px;
     font-size: 1.1rem;
     position: relative;
-    z-index: 15;
     -moz-box-shadow: 1px 1px 8px #b1b1b1;
     -webkit-box-shadow: 1px 1px 8px #b1b1b1;
     box-shadow: 1px 1px 8px #b1b1b1;
@@ -683,8 +684,9 @@ button:focus {
      -moz-transition: all 0.5s;
      -o-transition: all 0.5s;
     transition: all 0.5s;
-}
-.top-nav-brand{
+}*/
+.top-nav-brand *{
+    color: #ffffff;
     font-size: 1.1rem;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
 }
@@ -765,7 +767,7 @@ button:focus {
 .top-head{
      background: #234645;
     padding: 1em;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     border-radius: 5px;
 }
 
@@ -829,13 +831,13 @@ button:focus {
 .link-overlay{
   position: absolute;
   bottom: 100%;
+  height:0;
   left: 0;
   right: 0;
   background-color: rgba(0,0,0,0.7);
   color: rgba(255,255,255,0);
   overflow: hidden;
   width: 100%;
-  height:0;
   transition: .5s ease;
   text-align: center;
 }
@@ -849,7 +851,7 @@ button:focus {
     left: 0;
     bottom: 0;
     right: 0;
-    text-align: center;
+    text-align: center;top botop bo
 }
 
 .link-overlay-inner li {
@@ -2391,7 +2393,7 @@ th#view-counter-table-column{
     border-top: 1px solid #666;
 }
 .copyright {
-    color: #fff;
+    color: #ffffff;
     min-height: 30px;
      padding: 0.5em 0;
 }
@@ -2488,6 +2490,19 @@ ul.social-media-links--platforms li:hover{
  -o-transition: all 0.5s;
 transition: all 0.5s;
 
+}
+
+
+
+.footer-bottom *{
+  color: #ffffff;
+}
+
+.footer-bottom .social-media {
+  color: #ffffff;
+  text-align: left;
+  min-height: 30px;
+  padding: 0.5em 0;
 }
 /************************************************************
 *************************Footer******************************
@@ -2592,10 +2607,9 @@ transition: all 0.5s;
   a.logo {
     width: 5em;
   }
-  .sec-logo {
+/*  .sec-logo {
     display: none;
-    /* max-width: 5em; */
-  }
+  }*/
   .navbar-brand {
     max-width: 11em;
   }
@@ -2711,17 +2725,11 @@ transition: all 0.5s;
     font-size: 0.85rem;
 
   }
-  .sec-logo {
+/*  .sec-logo {
     display: none;
-    /* max-width: 4em; */
-
-  }
+  }*/
   a.logo {
     width: 4.5em;
-  }
-
-  img.sec-logo{
-    display: none;
   }
 
   .top-head p {
