@@ -63,9 +63,8 @@
       ]
     %}
 
-    <header {{ navbar_attributes.addClass(navbar_classes) }} role="banner">
-      {% if show_heading_branding or show_social_icon %}
-        <div class="top-nav">
+    {% if show_heading_branding or show_social_icon %}
+        <div class="top-nav top-nav-hidden">
           <div class="container">
             <div class="row">
               {% if show_heading_branding %}              
@@ -99,9 +98,11 @@
             </div>
           </div>
         </div>
-      {% endif %}
-    
-    <nav class=" navbar navbar-default" id="navbar">
+    {% endif %}
+    <header {{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+      
+
+    <nav class="navbar navbar-default">
       {% if not navbar_attributes.hasClass(container) %}
         <div class="{{ container }}">
       {% endif %}
@@ -477,6 +478,24 @@
                 {% endif %}  
                     <div class="copyright">
                       {{ page.footer_bar_left }}
+                      {% if show_social_icon %}
+                        {% if show_social_icon %}
+                            <p class="social-media">
+                              {% if facebook_url %}
+                                <a href="{{ facebook_url }}"  class="facebook" target="_blank"  title="{{ 'Facebook'|t }}" ><i class="fab fa-facebook-f"></i></a>
+                              {% endif %}
+                              {% if google_plus_url %}
+                                <a href="{{ google_plus_url }}"  class="google-plus" target="_blank"  title="{{ 'Google plus'|t }}" ><i class="fab fa-google-plus-g"></i></a>
+                              {% endif %}
+                              {% if twitter_url %}
+                                <a href="{{ twitter_url }}" class="twitter" target="_blank"  title="{{ 'Twitter'|t }}"><i class="fab fa-twitter"></i></a>
+                              {% endif %}
+                              {% if linkedin_url %}
+                                <a href="{{ linkedin_url }}" class="linkedin" target="_blank"  title="{{ 'Linked In'|t }}"><i class="fab fa-linkedin-in"></i></a>
+                              {% endif %}
+                            </p>                                
+                        {% endif %}             
+                      {% endif %}
                     </div>
                 </div>
               {% endblock %}
