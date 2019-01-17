@@ -115,20 +115,31 @@
           <div class="row clearfix">
 
               <div class="navbar-header">
-                {% if page.primary_menu %}
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#primary-menu">
-                          <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                          <span class="icon-bar"></span>
-                  </button>
-                {% endif %}
-                {% if page.navigation_collapsible %}
-                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                   <i class="fa fa-search"></i>
-                 </button>
-               {% endif %}
-                {{ page.navigation }}
+                <div class="row">
+                  <div class="col-sm-12">
+                    {{ page.navigation }}
+                  </div>
+                 </div> 
+
+                <div class="row">
+                  <div class="col-sm-12">
+                    {% if page.navigation_collapsible %}
+                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                       <i class="fa fa-search"></i>
+                     </button>
+                    {% endif %}
+          
+                   {% if page.primary_menu %}
+                      <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#primary-menu">
+                              <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                      </button>
+                      {% endif %}
+                  </div>
+                </div>
+
                 {# .btn-navbar is used as the toggle for collapsed navbar content #}
               </div>
 
@@ -149,11 +160,11 @@
           </div>
 
           {% if page.primary_menu %}
-            <div class="row">
-              <div class="col-md-12 navbar-collapse collapse navbar-left" id="primary-menu">
+            {# <div class="row"> #}
+              <div class="navbar-collapse collapse navbar-left" id="primary-menu">
                   {{ page.primary_menu }}
               </div>
-            </div>
+           {#  </div> #}
           {% endif %}
 
       {% if not navbar_attributes.hasClass(container) %}
