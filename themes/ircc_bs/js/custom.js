@@ -46,20 +46,20 @@
 
   	function checkSimpleNavigation(currentTop) {
 		  //there's no secondary nav or secondary nav is below primary nav
-		  if ( $(window).width() > 767 ){
-			if (previousTop - currentTop > scrollDelta) {
-				//if scrolling up...
-				mainHeader.removeClass('is-hidden');
-        $(".top-nav").removeClass('top-nav-fixed').addClass('top-nav-hidden');
-			}
-			else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-				//if scrolling down...
-				mainHeader.addClass('is-hidden');
-        $(".top-nav").removeClass('top-nav-hidden').addClass('top-nav-fixed');
-        // $(".node-type-link a").css("z-index", "20");
+		  // if ( $(window).width() > 767 ){
+  			if (previousTop - currentTop > scrollDelta) {
+  				//if scrolling up...
+  				mainHeader.removeClass('is-hidden');
+          $(".top-nav").removeClass('top-nav-fixed').addClass('top-nav-hidden');
+  			}
+  			else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
+  				//if scrolling down...
+  				mainHeader.addClass('is-hidden');
+          $(".top-nav").removeClass('top-nav-hidden').addClass('top-nav-fixed');
+          // $(".node-type-link a").css("z-index", "20");
 
-			}
-		}
+  			}
+		  // }
 	  }
 
 	  (function() {
@@ -73,7 +73,7 @@
 		$(".open-form").click(function(){
 			$(".open-form").hide();
 			$(".close-form").css("display","block");
-			$(".search-block-form").show();
+			$(".search-block-form").fadeIn();
 			$(".search-block-form input").focus();
 			return false;
 		});

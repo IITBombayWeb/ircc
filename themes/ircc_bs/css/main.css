@@ -668,7 +668,7 @@ button:focus {
 
 /* top_nav */
 
-.top-nav *, .top-nav a:hover{
+.top-nav, .top-nav a:hover{
   color: #ffffff!important;
 }
 
@@ -685,7 +685,8 @@ button:focus {
      -o-transition: all 0.5s;
     transition: all 0.5s;
 }*/
-.top-nav-brand{
+.top-nav-brand *{
+    color: #ffffff;
     font-size: 1.1rem;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
 }
@@ -2392,7 +2393,7 @@ th#view-counter-table-column{
     border-top: 1px solid #666;
 }
 .copyright {
-    color: #fff;
+    color: #ffffff;
     min-height: 30px;
      padding: 0.5em 0;
 }
@@ -2489,6 +2490,19 @@ ul.social-media-links--platforms li:hover{
  -o-transition: all 0.5s;
 transition: all 0.5s;
 
+}
+
+
+
+.footer-bottom *{
+  color: #ffffff;
+}
+
+.footer-bottom .social-media {
+  color: #ffffff;
+  text-align: left;
+  min-height: 30px;
+  padding: 0.5em 0;
 }
 /************************************************************
 *************************Footer******************************
@@ -2593,10 +2607,9 @@ transition: all 0.5s;
   a.logo {
     width: 5em;
   }
-  .sec-logo {
+/*  .sec-logo {
     display: none;
-    /* max-width: 5em; */
-  }
+  }*/
   .navbar-brand {
     max-width: 11em;
   }
@@ -2712,17 +2725,11 @@ transition: all 0.5s;
     font-size: 0.85rem;
 
   }
-  .sec-logo {
+/*  .sec-logo {
     display: none;
-    /* max-width: 4em; */
-
-  }
+  }*/
   a.logo {
     width: 4.5em;
-  }
-
-  img.sec-logo{
-    display: none;
   }
 
   .top-head p {

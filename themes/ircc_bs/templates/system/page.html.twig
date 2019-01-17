@@ -63,17 +63,23 @@
       ]
     %}
 
-    {% if show_heading_branding or show_social_icon %}
+    {% if show_heading_branding or page.top_head_search %}
         <div class="top-nav top-nav-hidden">
           <div class="container">
             <div class="row">
               {% if show_heading_branding %}              
-                <div class="col-md-6 col-sm-8">
+                <div class="col-md-6 col-sm-8 col-xs-12">
                   <div class="top-nav-brand"><a href="{{ heading_branding_url }}" target="_blank" title="{{ 'IIT Bombay Home'|t }}">{{ heading_branding_text }}</a></div>
                 </div>
-              {% endif %} 
+              {% endif %}
 
-              {% if show_social_icon %}
+              {% if page.top_head_search %}
+                <div class="col-md-6 col-sm-4 col-xs-12 text-right">
+                  {{ page.top_head_search }}
+                </div>
+              {% endif %}
+
+{#            {% if show_social_icon %}
                 {% if show_heading_branding %}
                   <div class="col-md-6 col-sm-4">
                 {% else %}
@@ -94,7 +100,7 @@
                     {% endif %}
                   </p>
                 </div>
-              {% endif %}             
+              {% endif %}   #}           
             </div>
           </div>
         </div>
@@ -129,7 +135,15 @@
               {# Navigation (collapsible) #}
                 {% if page.navigation_collapsible %}
                   <div id="navbar-collapse" class="navbar-collapse collapse navbar-right">
-                    {{ page.navigation_collapsible }}
+                    <div class="navbar-search">
+                      <div class="search-icons">
+                        <a class="open-form"><i class="fa fa-search"></i></a>
+                        <a class="close-form"><i class="fa fa-times"></i></a>
+                      </div>
+                      <div class="search-block-form" id="search">
+                          {{ page.navigation_collapsible }}
+                      </div>
+                    </div>
                   </div>
                 {% endif %}
           </div>
@@ -155,16 +169,16 @@
 {# Main #}
 {% block main %}
       {% if page.breadcrumb %}
-      <div class="{{ container }}">
-       <div class="row clearfix">
-          <div class="col-md-12">
-             {{ page.breadcrumb }}
+        <div class="{{ container }}">
+         <div class="row clearfix">
+            <div class="col-md-12">
+               {{ page.breadcrumb }}
+            </div>
           </div>
         </div>
-      </div>
       {% endif %}
 
-    {% if is_front %}
+      {% if is_front %}
           {% if page.top1 or page.top2 or page.top3 or page.top4 or page.top_head %}
               <section id="main-wrap">
                 <div class="container">
@@ -256,7 +270,7 @@
                   {% endif %}
                 </div> {# container #}
               </section> {# main-wrap #}
-            {% endif %}
+      {% endif %}
 
 
         <!-- Research Begin-->
@@ -306,7 +320,7 @@
     {% endif %}
 
   {% if not is_front %}
-    <div role="main" class="{% if page.primary_menu %} main-container-menu {% else %} main-container {% endif %} {{ container }} js-quickedit-main-content">
+    <div role="main" class="{# {% if page.primary_menu %} main-container-menu {% else %} main-container {% endif %} #} {{ container }} js-quickedit-main-content">
   {% endif %}
         {# content top #}
       {% if page.content_top and not is_front %}
@@ -472,13 +486,17 @@
             {% if page.footer_bar_left %}
               {% block footer_bar_left %}
                 {% if page.footer_bar_left and page.footer_bar_right %}
-                  <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="col-md-2 col-sm-2 col-xs-12">
                 {% else %}
                   <div class="col-md-12 col-sm-12 col-xs-12">
                 {% endif %}  
                     <div class="copyright">
                       {{ page.footer_bar_left }}
-                      {% if show_social_icon %}
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-sm-2 col-xs-12">
+                  {% if show_social_icon %}
                         {% if show_social_icon %}
                             <p class="social-media">
                               {% if facebook_url %}
@@ -495,8 +513,7 @@
                               {% endif %}
                             </p>                                
                         {% endif %}             
-                      {% endif %}
-                    </div>
+                  {% endif %}
                 </div>
               {% endblock %}
             {% endif %}
