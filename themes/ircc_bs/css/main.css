@@ -78,6 +78,12 @@ color: #002139;
   color: #130c11;
 }
 
+.link-white a, .link-white a:hover{
+  color: #ffffff;
+}
+
+
+
 /* align item */
 .pos-y_center {
   position: relative;
