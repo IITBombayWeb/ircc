@@ -82,6 +82,10 @@ color: #002139;
   color: #ffffff;
 }
 
+.link-white:hover{
+  text-decoration: underline;
+}
+
 
 
 /* align item */
@@ -2112,7 +2116,8 @@ a.close-form{
   padding: 2px 4px;
 }
 .wrap-stay .hidden-text, .wrap-stay .hidden-text p {
-    -webkit-transition: .3s;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
     -webkit-transition-timing-function: ease;
     transition-timing-function: ease;
 }
