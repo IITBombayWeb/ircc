@@ -179,6 +179,7 @@
 
 {# Main #}
 {% block main %}
+  <div class="main-container">
       {% if page.breadcrumb %}
         <div class="{{ container }}">
          <div class="row clearfix">
@@ -281,7 +282,7 @@
                   {% endif %}
                 </div> {# container #}
               </section> {# main-wrap #}
-      {% endif %}
+          {% endif %}
 
 
         <!-- Research Begin-->
@@ -300,15 +301,15 @@
 
         <!-- news start -->
         {% if page.news %}
-        <section id="news-outer-wrap">
-          <div class="container">
-            <div class="row clearfix">
-                <div class="col-md-12" id="news-wrap">
-                    {{ page.news }}
-                </div>
+          <section id="news-outer-wrap">
+            <div class="container">
+              <div class="row clearfix">
+                  <div class="col-md-12" id="news-wrap">
+                      {{ page.news }}
+                  </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         {% endif %}
         <!-- news end -->
 
@@ -316,15 +317,15 @@
 
 
         {% if page.events %}
-        <section id = "event-wrap">
-          <div class="container">
-            <div class="row clearfix">
-                <div class="col-md-12">
-                    {{ page.events }}
-                </div>
+          <section id = "event-wrap">
+            <div class="container">
+              <div class="row clearfix">
+                  <div class="col-md-12">
+                      {{ page.events }}
+                  </div>
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
         {% endif %}
 
 
@@ -398,7 +399,8 @@
   {% if not is_front %}
     </div>
   {% endif %}
-{% endblock %}
+  </div>
+{% endblock %} {# end block-main #}
 
 
 {% if page.footer1 or page.footer2 or page.footer3 or page.footer4 or page.footer_bar_left or page.footer_bar_right %}

@@ -223,3 +223,7 @@ body.toolbar-fixed .top-nav-fixed{
   -o-transition: all 0.8s;
    transition: all 0.8s;
 }
+
+/*.main-container{
+  padding-top: 6em;
+}*/
