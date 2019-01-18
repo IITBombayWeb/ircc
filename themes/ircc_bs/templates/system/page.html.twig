@@ -55,7 +55,7 @@
 {# Navbar #}
 
 
-{% if page.navigation or page.navigation_collapsible %}
+
   {% block navbar %}
     {%
       set navbar_classes = [
@@ -77,103 +77,80 @@
                 <div class="col-md-6 col-sm-4 col-xs-12 text-right">
                   {{ page.top_head_search }}
                 </div>
-              {% endif %}
-
-{#            {% if show_social_icon %}
-                {% if show_heading_branding %}
-                  <div class="col-md-6 col-sm-4">
-                {% else %}
-                  <div class="col-md-12 ">
-                {% endif %}
-                  <p class="social-media">
-                    {% if facebook_url %}
-                      <a href="{{ facebook_url }}"  class="facebook" target="_blank"  title="{{ 'Facebook'|t }}" ><i class="fab fa-facebook-f"></i></a>
-                    {% endif %}
-                    {% if google_plus_url %}
-                      <a href="{{ google_plus_url }}"  class="google-plus" target="_blank"  title="{{ 'Google plus'|t }}" ><i class="fab fa-google-plus-g"></i></a>
-                    {% endif %}
-                    {% if twitter_url %}
-                      <a href="{{ twitter_url }}" class="twitter" target="_blank"  title="{{ 'Twitter'|t }}"><i class="fab fa-twitter"></i></a>
-                    {% endif %}
-                    {% if linkedin_url %}
-                      <a href="{{ linkedin_url }}" class="linkedin" target="_blank"  title="{{ 'Linked In'|t }}"><i class="fab fa-linkedin-in"></i></a>
-                    {% endif %}
-                  </p>
-                </div>
-              {% endif %}   #}           
+              {% endif %}          
             </div>
           </div>
         </div>
     {% endif %}
-    <header {{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
-      
+    {% if page.navigation or page.navigation_collapsible %}
+      <header {{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+        <nav class="navbar navbar-default">
+          {% if not navbar_attributes.hasClass(container) %}
+            <div class="{{ container }}">
+          {% endif %}
+              <div class="row clearfix">
 
-    <nav class="navbar navbar-default">
-      {% if not navbar_attributes.hasClass(container) %}
-        <div class="{{ container }}">
-      {% endif %}
-          <div class="row clearfix">
-
-              <div class="navbar-header">
-                <div class="row">
-                  <div class="col-sm-12">
-                    {{ page.navigation }}
-                  </div>
-                 </div> 
-
-                <div class="row">
-                  <div class="col-sm-12">
-                    {% if page.navigation_collapsible %}
-                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                       <i class="fa fa-search"></i>
-                     </button>
-                    {% endif %}
-          
-                   {% if page.primary_menu %}
-                      <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#primary-menu">
-                              <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                              <span class="icon-bar"></span>
-                      </button>
-                      {% endif %}
-                  </div>
-                </div>
-
-                {# .btn-navbar is used as the toggle for collapsed navbar content #}
-              </div>
-
-              {# Navigation (collapsible) #}
-                {% if page.navigation_collapsible %}
-                  <div id="navbar-collapse" class="navbar-collapse collapse navbar-right">
-                    <div class="navbar-search">
-                      <div class="search-icons">
-                        <a class="open-form"><i class="fa fa-search"></i></a>
-                        <a class="close-form"><i class="fa fa-times"></i></a>
+                  <div class="navbar-header">
+                    <div class="row">
+                      <div class="col-sm-12">
+                        {{ page.navigation }}
                       </div>
-                      <div class="search-block-form" id="search">
-                          {{ page.navigation_collapsible }}
+                     </div> 
+
+                    <div class="row">
+                      <div class="col-sm-12">
+                        {% if page.navigation_collapsible %}
+                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                           <i class="fa fa-search"></i>
+                         </button>
+                        {% endif %}
+              
+                       {% if page.primary_menu %}
+                          <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#primary-menu">
+                                  <span class="sr-only">{{ 'Toggle navigation'|t }}</span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                                  <span class="icon-bar"></span>
+                          </button>
+                          {% endif %}
                       </div>
                     </div>
+
+                    {# .btn-navbar is used as the toggle for collapsed navbar content #}
                   </div>
-                {% endif %}
-          </div>
 
-          {% if page.primary_menu %}
-            {# <div class="row"> #}
-              <div class="navbar-collapse collapse navbar-left" id="primary-menu">
-                  {{ page.primary_menu }}
+                  {# Navigation (collapsible) #}
+                    {% if page.navigation_collapsible %}
+                      <div id="navbar-collapse" class="navbar-collapse collapse navbar-right">
+                        <div class="navbar-search">
+                          <div class="search-icons">
+                            <a class="open-form"><i class="fa fa-search"></i></a>
+                            <a class="close-form"><i class="fa fa-times"></i></a>
+                          </div>
+                          <div class="search-block-form" id="search">
+                              {{ page.navigation_collapsible }}
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
               </div>
-           {#  </div> #}
-          {% endif %}
 
-      {% if not navbar_attributes.hasClass(container) %}
-        </div>
-      {% endif %}
-    </nav>
-    </header>
+              {% if page.primary_menu %}
+                {# <div class="row"> #}
+                  <div class="navbar-collapse collapse navbar-left" id="primary-menu">
+                      {{ page.primary_menu }}
+                  </div>
+               {#  </div> #}
+              {% endif %}
+
+          {% if not navbar_attributes.hasClass(container) %}
+            </div>
+          {% endif %}
+        </nav>
+      </header>
+    {% endif %}
   {% endblock %}
-{% endif %}
+
 
 
 
@@ -496,7 +473,7 @@
       <div class="{{ container }}">
           <div class="row footer-bottom">
             
-            {% if page.footer_bar_left %}
+            {% if page.footer_bar_left or show_social_icon %}
               {% block footer_bar_left %}
                 {% if page.footer_bar_left and page.footer_bar_right %}
                   <div class="col-md-2 col-sm-2 col-xs-12">
