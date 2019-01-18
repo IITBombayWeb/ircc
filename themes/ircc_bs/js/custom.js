@@ -51,13 +51,11 @@
   				//if scrolling up...
   				mainHeader.removeClass('is-hidden');
           $(".top-nav").removeClass('top-nav-fixed').addClass('top-nav-hidden');
-          $(".main-container").css("margin-top", "");
   			}
   			else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
   				//if scrolling down...
   				mainHeader.addClass('is-hidden');
           $(".top-nav").removeClass('top-nav-hidden').addClass('top-nav-fixed');
-          $(".main-container").css("margin-top", "6em");
           // $(".node-type-link a").css("z-index", "20");
 
   			}
