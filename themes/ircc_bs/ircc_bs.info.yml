@@ -9,6 +9,7 @@ package: 'custom'
 regions:
   top_head_search: 'Top Head Search'
   navigation: 'Navigation'
+  lang_switcher: 'language Switcher'
   navigation_collapsible: 'Navigation (Collapsible)'
   primary_menu: 'primary_menu'
   highlighted: 'Highlighted'
