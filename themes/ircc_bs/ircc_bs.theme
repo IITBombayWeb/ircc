@@ -40,6 +40,7 @@ function ircc_bs_preprocess_page(&$variables) {
   $variables['show_heading_branding'] = theme_get_setting('show_heading_branding');
   $variables['heading_branding_text'] = theme_get_setting('heading_branding_text');
   $variables['heading_branding_url'] = theme_get_setting('heading_branding_url');
+  $variables['heading_branding_title'] = theme_get_setting('heading_branding_title');
 
   //To get the current URL
   $current_url  = \Drupal::request()->getRequestUri();
@@ -201,6 +202,12 @@ function ircc_bs_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
         '#type' => 'textfield',
         '#title' => t('Heading Branding URL'),
         '#default_value' => theme_get_setting('heading_branding_url'),
+      );
+      $form['ircc_bs_settings']['heading_branding']['heading_branding_title'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Heading Branding Title'),
+        '#description'   => t("Enter the text which will shown on hovering this url"),        
+        '#default_value' => theme_get_setting('heading_branding_title'),
       );
 
       $form['ircc_bs_info'] = array(
