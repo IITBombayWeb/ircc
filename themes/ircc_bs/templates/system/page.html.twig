@@ -69,7 +69,9 @@
             <div class="row">
               {% if show_heading_branding %}              
                 <div class="col-md-6 col-sm-8 col-xs-12">
-                  <div class="top-nav-brand"><a href="{{ heading_branding_url }}" target="_blank" title="{{ 'Home'|t }}">{{ heading_branding_text }}</a></div>
+                  <div class="top-nav-brand">
+                    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" >{{ site_slogan }} {{ site_name }}</a>
+                  </div>
                 </div>
               {% endif %}
 
@@ -84,6 +86,20 @@
     {% endif %}
     {% if page.navigation or page.navigation_collapsible %}
       <header {{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+        <div class="top-head-def">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <a class="top-head-def-brand "href="{{ heading_branding_url }}" target="_blank" title="{{ heading_branding_title }}" >{{ heading_branding_text }}</a>
+              </div>
+              <div class="col-sm-6 text-right">
+                {% if page.lang_switcher %}
+                  {{ page.lang_switcher }}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>        
         <nav class="navbar navbar-default">
           {% if not navbar_attributes.hasClass(container) %}
             <div class="{{ container }}">
