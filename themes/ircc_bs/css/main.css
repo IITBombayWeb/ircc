@@ -852,7 +852,7 @@ button:focus {
   color: rgba(255,255,255,0);
   overflow: hidden;
   width: 100%;
-  transition: .5s ease;
+  transition: .7s ease;
   text-align: center;
 }
 
@@ -865,16 +865,9 @@ button:focus {
     left: 0;
     bottom: 0;
     right: 0;
-    text-align: center;top botop bo
+    text-align: center;
 }
 
-.link-overlay-inner li {
-  list-style-type:none;
-  list-style-position:inside;
-  margin:0 auto;
-  padding:0;
-  vertical-align:middle;
-}
 
 .link-overlay-inner ul {
   display: table;
@@ -885,15 +878,24 @@ button:focus {
   transform: translateY(-50%);
 }
 
+.link-overlay-inner li {
+  list-style-type:none;
+  list-style-position:inside;
+  margin:0 auto;
+  padding:0;
+  vertical-align:middle;
+}
+
+
 .link-overlay a{
   color:#aeaeae;
   padding-top: 5px;
   font-family: 'Open Sans', sans-serif;
   font-size: 0.9rem;
-      -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+      -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 
