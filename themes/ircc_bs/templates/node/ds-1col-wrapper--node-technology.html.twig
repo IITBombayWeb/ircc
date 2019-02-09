@@ -19,13 +19,9 @@
     <div class="col-xs-12 col-md-9 col-lg-9">
      {{ ds_content.body }}
      {{ ds_content.field_pdf_file }}
+     {{ ds_content|without('title', 'body', 'field_pdf_file', 'field_category_ref', 'field_faculty_name_ref', 'field_name_of_inventor', 'field_patent_application_no', 'field_patent_grant_no', '') }}
     </div>
     <div class="col-xs-12 col-md-3 col-lg-3">
-        <div class="row wow fadeInLeft delay-03s">
-          <div class="col-sm-12">
-            {{ ds_content|without('title', 'body', 'field_pdf_file', 'field_category_ref', 'field_faculty_name_ref', 'field_name_of_inventor', 'field_patent_application_no', 'field_patent_grant_no', '') }}
-          </div>
-        </div>
         <div class="row wow fadeInLeft delay-03s">
           <div class="col-sm-12">
             {{ ds_content.field_category_ref }}

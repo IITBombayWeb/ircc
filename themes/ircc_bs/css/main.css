@@ -1032,6 +1032,10 @@ text-decoration: none;
   font-weight: normal;
   text-rendering: optimizeLegibility;
 }
+
+.rh-body p{
+  text-align: unset!important;
+}
 .slick-dots{
   width: 100%;
   bottom: -35px;
@@ -1089,7 +1093,7 @@ left: 20%;
 }
 .research-highlights img{
     width: 100% !important;
-    height: 13em!important;
+    height: auto;
     object-fit: cover;
 
     -webkit-transition: all 0.5s;
@@ -2120,7 +2124,6 @@ a.close-form{
      color: #fff;
      font-size: 0.9rem;
     padding: 1.5em;
-    text-align: justify;
     -webkit-transform: none;
     transform: none;
   }
@@ -2129,10 +2132,10 @@ a.close-form{
   padding: 2px 4px;
 }
 .wrap-stay .hidden-text, .wrap-stay .hidden-text p {
-    transition: 0.5s;
-    -webkit-transition: 0.5s;
+    transition: 0.8s;
+    -webkit-transition: 0.8s;
     -webkit-transition-timing-function: ease;
-    transition-timing-function: ease;
+    transition-timing-functfion: ease;
 }
 
 .views-field-field-image-glimpse{
@@ -2140,9 +2143,9 @@ a.close-form{
 }
 .views-field-field-image-glimpse img, .views-field-field-facility-image img{
 width: 100%!important;
-height: 20em;
+height: auto;
 object-fit: cover;
-transition: all .5s ease-in-out;
+transition: all .8s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
      -moz-transition: all .5s ease-in-out;
      -o-transition: all .5s ease-in-out;
@@ -2723,10 +2726,6 @@ transition: all 0.5s;
     font-size: 1rem;
     padding: 0.5em;
     line-height: 1.5;
-  }
-
-  .research-highlights img{
-    height: 15em!important;
   }
 
 }
