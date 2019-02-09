@@ -2104,7 +2104,7 @@ a.close-form{
 
 .wrap-stay img{
     width: 100%!important;
-    height: 20em;
+    height: auto;
     object-fit: cover;
 }
 
