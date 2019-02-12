@@ -231,11 +231,20 @@ body.toolbar-fixed .top-nav-fixed{
   font-size: 1.1rem;
 }
 
-.top-head-def-brand{
+.top-head-def-brand a{
   font-size: 1.1rem;
   font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
 }
 
+@media only screen and (max-width: 600px){
+  .top-head-def-brand a{
+    font-size: 0.9rem;
+  }
+  .top-head-def-brand{
+    text-align: center;
+  }
+
+}
 
 .top-head-def a:hover{
   text-decoration: none;

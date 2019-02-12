@@ -1355,10 +1355,11 @@ font-size: 0.85rem;
     min-height: 300px;
     padding-bottom: 25px;
   }
-
-.main-container{
-  padding-top: 3.5em;
+@media only screen and (min-width: 768px){
+  .main-container{
+    padding-top: 3.5em;
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+  }
 }
 
 .main-container-menu{
