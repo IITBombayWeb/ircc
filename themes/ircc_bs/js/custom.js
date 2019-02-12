@@ -49,13 +49,19 @@
 		  // if ( $(window).width() > 767 ){
   			if (previousTop - currentTop > scrollDelta) {
   				//if scrolling up...
-  				mainHeader.removeClass('is-hidden');
-          $(".top-nav").removeClass('top-nav-fixed').addClass('top-nav-hidden');
+  				if ( $(window).width() > 767 ){
+            mainHeader.removeClass('is-hidden');
+          
+            topHeader.removeClass('top-nav-fixed').addClass('top-nav-hidden');
+          }
   			}
   			else if( currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
   				//if scrolling down...
-  				mainHeader.addClass('is-hidden');
-          $(".top-nav").removeClass('top-nav-hidden').addClass('top-nav-fixed');
+  				if ( $(window).width() > 767 ){
+          mainHeader.addClass('is-hidden');
+          
+            topHeader.removeClass('top-nav-hidden').addClass('top-nav-fixed');
+          }
           // $(".node-type-link a").css("z-index", "20");
 
   			}
