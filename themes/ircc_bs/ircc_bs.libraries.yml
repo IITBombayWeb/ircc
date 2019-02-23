@@ -7,7 +7,7 @@ global-styling:
       css/main.css: {}
       css/custom.css: {}
   js:
-    js/SmoothScroll.min.js: {}
+    js/scroll.js: {}
     js/wow.js: {}
     js/wow_custom.js: {}
     js/jquery.font-accessibility.min.js: {}
@@ -16,10 +16,11 @@ global-styling:
     - core/jquery
 
 font-awesome:
-  version: 4.7.0
+  version: 5.7.1
   css:
     theme:
-      includes/font-awesome/css/font-awesome.min.css: {}
+      includes/font-awesome/css/all.min.css: {}
+      includes/font-awesome/css/v4-shims.min.css: {}
 
 webfonts:
   version: VERSION

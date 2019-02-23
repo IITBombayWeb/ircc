@@ -287,3 +287,22 @@ body.toolbar-fixed .top-nav-fixed{
 .language-switcher-language-url ul.lang-links li.is-active a:hover{
   color: #ffffff;
 }
+
+
+/*
+.media__icon--litebox::before, .media__icon--litebox::after{
+  content: "\f002";
+}
+.media__icon--litebox{
+font-family: "Font Awesome 5 Free";
+font-weight: 900;
+}
+
+.media__icon--litebox::after{
+  -webkit-transform: none;
+    transform: none;
+}
+
+.media__icon--litebox:hover::before, .media__icon--litebox:hover::after{
+  background-color: transparent;
+}*/
