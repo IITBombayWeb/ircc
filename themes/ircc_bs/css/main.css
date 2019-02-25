@@ -1640,6 +1640,7 @@ color: #234645!important;
 }
 .file>span{
   color: #234645;
+  background: transparent;
 }
 img.pdfpreview-file{
     height: 12em;
