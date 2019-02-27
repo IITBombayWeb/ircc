@@ -1698,6 +1698,20 @@ img.pdfpreview-file{
     padding: 0em 0.5em;
 }
 
+.node .file>span:first-child{
+  border-left: none;
+}
+
+.node .file>span{
+    border-bottom: none;
+    border-top: none;
+}
+
+.node .file-icon{
+    padding: 0em 0.5em;
+}
+
+
 .region-content .nav > li > a {
   background-color: #f9f9f9;
   color: #234645!important;
