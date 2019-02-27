@@ -19,6 +19,10 @@
     <div class="col-xs-12 col-md-9 col-lg-9 wow fadeInLeft delay-02s">
       {{ ds_content.field_facility_image }}
       {{ ds_content.body }}
+      {{ ds_content.field_make_and_model }}
+      {{ ds_content.field_mode_for_use }}
+      {{ ds_content.field_specifications }}
+      {{ ds_content.field_application }}
     </div>
     <div class="col-xs-12 col-md-3 col-lg-3">
         <div class="row wow fadeInLeft delay-01s">
@@ -63,7 +67,8 @@
         </div>
     </div>
   </div>
-
+{# 
+<div class="row">
   <div class="wow fadeInLeft delay-01s">
     <div class="col-xs-12 col-md-9 col-lg-9">
         {{ ds_content.field_make_and_model }}
@@ -87,4 +92,5 @@
         {{ ds_content.field_application }}
     </div>
   </div>
+</div> #}
 </{{ ds_content_wrapper }}>
