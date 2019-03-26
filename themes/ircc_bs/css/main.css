@@ -669,7 +669,7 @@ button:focus {
     font-weight: 400;
     color: #666!important;
     font-size: 12pt;
-    line-height: 1.1;
+    line-height: 2;
     /*margin: 1.2em 0;*/
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
   }
