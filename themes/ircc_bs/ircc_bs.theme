@@ -210,6 +210,36 @@ function ircc_bs_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\Form
         '#default_value' => theme_get_setting('heading_branding_title'),
       );
 
+
+
+    $form['ircc_bs_settings']['faculty_header_bg']  = array(
+        '#type' => 'details',
+        '#title' => t('Faculty page header Background image'),
+        '#description' => t('<p>please upload or enter the url of header background image</p>'),
+        '#collapsible' => TRUE,
+        '#collapsed' => TRUE,
+    );
+
+
+    $form['ircc_bs_settings']['faculty_header_bg']['faculty_header_bg_file'] = array(
+        '#type' => 'textfield',
+        '#title' => t('URL of the header background image'),
+        '#default_value' => theme_get_setting('faculty_header_bg_file'),
+        '#description' => t('Enter a URL of the form (/sites/default/files/your-background.jpg). If the background image is bigger than the header area, it is clipped. If it\'s smaller than the header area, it is tiled to fill the header area. To remove the background image, blank this field and save the settings.'),
+        '#size' => 40,
+        '#maxlength' => 120,
+    );
+
+    $form['ircc_bs_settings']['faculty_header_bg']['faculty_header_bg'] = array(
+      '#type' => 'file',
+      '#title' => t('Upload faculty page header background image'),
+      '#size' => 40,
+      '#attributes' => array('enctype' => 'multipart/form-data'),
+      '#description' => t('If you don\'t have direct access to the server, use this field to upload your header background image. Uploads limited to .png .gif .jpg .jpeg .apng .svg extensions'),
+      '#element_validate' => array('faculty_header_bg_validate'),
+    );
+
+
       $form['ircc_bs_info'] = array(
         '#markup' => '<div class="messages messages--warning">Clear cache after making any changes in theme settings. <a href="../../config/development/performance">Click here to clear cache</a></div>'
       );
