@@ -633,7 +633,7 @@ button:focus {
     padding-right: 3em ;
     font-size: 2rem;
     font-weight: bold;
-    line-height: 2;
+    line-height: 2.5;
     /*color: #1ba74d!important;*/
     color: #234645!important;
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
@@ -652,7 +652,7 @@ button:focus {
   }
 
   a.logo{
-    width: 4.5em;
+    width: 5em;
   }
 
   a.logo2{
@@ -670,7 +670,7 @@ button:focus {
     color: #666!important;
     font-size: 12pt;
     line-height: 1.1;
-    margin: 1.2em 0;
+    /*margin: 1.2em 0;*/
     font-family: 'Oswald', 'Lucida Sans Unicode','Lucida Grande',sans-serif;
   }
 
@@ -2621,9 +2621,9 @@ transition: all 0.5s;
   .sec-logo {
     max-width: 5em;
   }
-  .navbar-brand {
+/*  .navbar-brand {
     padding: 30px;
-  }
+  }*/
 }
 
 @media screen and (max-width: 992px){
@@ -2657,10 +2657,11 @@ transition: all 0.5s;
 /*  .sec-logo {
     display: none;
   }*/
-  .navbar-brand {
+
+/*  .navbar-brand {
     max-width: 11em;
   }
-
+*/
 }
 
 
@@ -2714,7 +2715,7 @@ transition: all 0.5s;
   .navbar-text{
     margin: 1em;
     font-size: 10pt;
-    width: 8em;
+   /* width: 8em;*/
     text-align: initial;
   }
 
@@ -2743,9 +2744,9 @@ transition: all 0.5s;
   }
 
   .navbar-brand {
-    max-width: 10em;
-    font-size: 1rem;
-    padding: 0.5em;
+/*    max-width: 10em;
+    padding: 0.5em;*/
+    font-size: 1.3rem;
     line-height: 1.5;
   }
 
@@ -2762,17 +2763,17 @@ transition: all 0.5s;
 
 @media screen and (max-width: 450px) {
   .navbar-brand {
-    max-width: 11em;
-    padding: 11px;
+   max-width: 11em;
+    padding: 8px;
     margin-left: 0px;
-    font-size: 0.85rem;
+    font-size: 1.1rem;
 
   }
 /*  .sec-logo {
     display: none;
   }*/
   a.logo {
-    width: 4.5em;
+    width: 5em;
   }
 
   .top-head p {
@@ -2786,7 +2787,7 @@ transition: all 0.5s;
 @media screen and (max-width: 300px){
   .navbar-brand{
     max-width: 10em;
-    line-height: 15px;
+    line-height: 21px;
   }
   .navbar .logo {
     margin-right: -10px;
