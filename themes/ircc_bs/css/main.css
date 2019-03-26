@@ -664,7 +664,7 @@ button:focus {
     max-width: 5em;
   }
   .navbar-text {
-    width: 10em;
+    /*width: 10em;*/
     text-align: initial;
     font-weight: 400;
     color: #666!important;
@@ -2631,9 +2631,9 @@ transition: all 0.5s;
   .node-field-label{
     font-size: 14px;
   }
-  .navbar-text {
+  /*.navbar-text {
     width: 8em;
-  }
+  }*/
    .navbar-brand {
     font-size: 1.4rem;
     line-height: 3;
