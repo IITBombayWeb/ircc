@@ -7,10 +7,8 @@ global-styling:
       css/main.css: {}
       css/custom.css: {}
   js:
-    js/scroll.js: {}
     js/wow.js: {}
     js/wow_custom.js: {}
-    js/jquery.font-accessibility.min.js: {}
     js/custom.js: {}
   dependencies:
     - core/jquery
