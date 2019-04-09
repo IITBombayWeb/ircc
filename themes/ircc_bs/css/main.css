@@ -1641,7 +1641,13 @@ color: #234645!important;
 .file>span{
   color: #234645;
   background: transparent;
+  border: none;
 }
+
+.file>span:first-child{
+  border: none;
+}
+
 img.pdfpreview-file{
     height: 12em;
     object-fit: cover;
@@ -1650,6 +1656,8 @@ img.pdfpreview-file{
 .file-icon .text-primary{
    color: #234645;
 }
+
+/*
 
 .views-field-field-ircc-brochures .file>span:first-child{
   border-left: none;
@@ -1666,6 +1674,8 @@ img.pdfpreview-file{
     border-bottom: none;
     border-top: none;
 }
+*/
+
 .block-views-blockircc-brochures-block-1 .views-field-field-ircc-brochures .file-icon, .block-views-blockircc-presentations-block-1 .views-field-field-ircc-presentations .file-icon{
     font-size: 100%;
     padding: 0em 0.5em;
