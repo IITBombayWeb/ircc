@@ -1657,34 +1657,13 @@ img.pdfpreview-file{
    color: #234645;
 }
 
-/*
-
-.views-field-field-ircc-brochures .file>span:first-child{
-  border-left: none;
-}
-.views-field-field-ircc-presentations .file>span:first-child{
-  border-left: none;
-}
-
-.views-field-field-ircc-brochures .file>span{
-    border-bottom: none;
-    border-top: none;
-}
-.views-field-field-ircc-presentations .file>span{
-    border-bottom: none;
-    border-top: none;
-}
-*/
 
 .block-views-blockircc-brochures-block-1 .views-field-field-ircc-brochures .file-icon, .block-views-blockircc-presentations-block-1 .views-field-field-ircc-presentations .file-icon{
     font-size: 100%;
     padding: 0em 0.5em;
     vertical-align: top;
 }
-/*.views-field-field-ircc-brochures, .views-field-field-ircc-presentations .file{
-  border: 1px solid #ccc;
-}
-*/
+
 .table .views-field-field-ircc-brochures span.file-icon, .table .views-field-field-ircc-presentations span.file-icon{
   font-size: 100%;
   padding: 0em .5em;
@@ -1744,7 +1723,6 @@ img.pdfpreview-file{
 }
 
 .region-content .nav > li > a:hover{
-    /* background-color: #d0e9c6!important; */
     background-color: #f0f8ff!important;
 }
 
