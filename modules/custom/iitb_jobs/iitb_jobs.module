@@ -99,7 +99,7 @@ function iitb_jobs_cron() {
         foreach ($result2 as $key2 => $value2) {
           $node2 = \Drupal\node\Entity\Node::load($value2);
           $node2->status = NODE_NOT_PUBLISHED;
-          //$node2->save();
+          $node2->save();
         }
       }
     }
