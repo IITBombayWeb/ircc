@@ -1,11 +1,16 @@
 <?php
+use Drupal\Core\Routing\RouteMatchInterface;
+
+use Drupal\migrate_tools\MigrateExecutable;
+use Drupal\migrate_tools\MigrateBatchExecutable;
+use Drupal\migrate\MigrateMessage;
+
+use Drupal\Core\Session\AccountInterface;
 
 /**
  * @file
  * Contains iitb_jobs.module.
  */
-
-use Drupal\Core\Routing\RouteMatchInterface;
 
 /**
  * Implements hook_help().
@@ -34,20 +39,13 @@ function iitb_jobs_theme() {
   ];
 }
 
-
-use Drupal\migrate_tools\MigrateExecutable;
-use Drupal\migrate_tools\MigrateBatchExecutable;
-use Drupal\migrate\MigrateMessage;
-
-use Drupal\Core\Session\AccountInterface;
-
-
 /**
  * Implements hook_cron().
  */
 function iitb_jobs_cron() {
 
-  $manager = \Drupal::service('plugin.manager.migration');
+  //This code below is not required as we are running migration using drush command in crontab of aegir. Uncomment it if we don't want to use crontab migration in future.
+  /*$manager = \Drupal::service('plugin.manager.migration');
   $migration_ids = ['drona_job_circulars','drona_job_designations','drona_job_shortlisted','drona_job_appointed']; 
 
   foreach ($migration_ids as $migration_id) {
@@ -82,5 +80,29 @@ function iitb_jobs_cron() {
       $executable = new MigrateBatchExecutable($migration, $migrateMessage, $options);
       $executable->batchImport();
     }
+  }*/
+
+  //To unpublish duplicated appointed candidates nodes. (Duplicate nodes are being created because empid is being updated later in Drona db and it disturbes the unique field required by the migration. Also as there is no unique field in Drona db for appointed candidates.)
+  $query = \Drupal::entityQuery('node')->condition('type', 'job_appointed');
+  $query->condition('field_appointed_emp_code', '', '!=');
+  $result = $query->execute();
+  if($result) {
+    foreach ($result as $key => $value) {
+      $node = \Drupal\node\Entity\Node::load($value);
+      $empty_emp_code_title = explode(":",$node->getTitle());
+      $empty_emp_code_title_new = $empty_emp_code_title[0].':'.$empty_emp_code_title[1].':'.$empty_emp_code_title[2].':'.$empty_emp_code_title[3].'::'.$empty_emp_code_title[5];
+      $query2 = \Drupal::entityQuery('node')->condition('type', 'job_appointed');
+      $query2->condition('title', $empty_emp_code_title_new, '=');
+      $query2->notExists('field_appointed_emp_code');
+      $result2 = $query2->execute();
+      if ($result2) {
+        foreach ($result2 as $key2 => $value2) {
+          $node2 = \Drupal\node\Entity\Node::load($value2);
+          $node2->status = NODE_NOT_PUBLISHED;
+          $node2->save();
+        }
+      }
+    }
   }
+  
 }
