@@ -2628,11 +2628,11 @@ transition: all 0.5s;
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
 
   .navbar-brand{
-    font-size: 14pt;
-    padding: 10pt;
+    font-size: 20px;
+    padding: 20px;
     font-weight: normal;
     /* margin-left: 58px; */
     float:left;
@@ -2653,7 +2653,7 @@ transition: all 0.5s;
 }
 
 
-@media screen and (max-width:768px){
+@media screen and (max-width:767px){
   h2.page-title{
   font-size: 1.2rem;
   }
@@ -2751,10 +2751,10 @@ transition: all 0.5s;
 
 @media screen and (max-width: 450px) {
   .navbar-brand {
-   max-width: 11em;
+   max-width: 10em;
     padding: 8px;
     margin-left: 0px;
-    font-size: 1.1rem;
+    font-size: 16px;
 
   }
 /*  .sec-logo {
