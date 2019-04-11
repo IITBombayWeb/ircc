@@ -2751,10 +2751,10 @@ transition: all 0.5s;
 
 @media screen and (max-width: 450px) {
   .navbar-brand {
-   max-width: 11em;
+   max-width: 10em;
     padding: 8px;
     margin-left: 0px;
-    font-size: 1.1rem;
+    font-size: 14px;
 
   }
 /*  .sec-logo {
