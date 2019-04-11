@@ -2630,6 +2630,10 @@ transition: all 0.5s;
 
 @media screen and (max-width: 767px){
 
+  body.navbar-is-fixed-top {
+    margin-top: 0px;
+  }
+
   .navbar-brand{
     font-size: 20px;
     padding: 20px;
@@ -2638,6 +2642,9 @@ transition: all 0.5s;
     float:left;
     text-align: left;
     line-height: 1.2;
+    max-width: 18em;
+    margin-left: 16px;
+
   }
   a.logo {
     width: 5em;
