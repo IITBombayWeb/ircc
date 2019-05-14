@@ -73,6 +73,15 @@
         </div>
 
         <div class="row wow fadeInLeft delay-01s">
+          <div class="col-sm-12 mb_15">
+            <h4 class="dark-grey mb_5 node-field-label">
+              {{ ds_content.field_facility_management_member|field_label }}(w.e.f. {{ ds_content.field_facility_management_date }})
+            </h4>
+              {{ ds_content.field_facility_management_member|field_value }}
+          </div>
+        </div>
+
+        <div class="row wow fadeInLeft delay-01s">
           <div class="col-sm-12">
             {{ ds_content.field_registration_link }}
           </div>
