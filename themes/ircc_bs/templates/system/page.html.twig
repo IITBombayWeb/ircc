@@ -330,7 +330,7 @@
             <div class="container-fluid">
               <div class="row clearfix">
                 <div class="col-sm-12" role="heading">
-                {{ page.highlighted }}
+                  {{ page.highlighted }}
                   {{ page.content_top }}
                 </div>
               </div>
@@ -341,7 +341,7 @@
 
         {# Sidebar First #}
       {% if page.sidebar_first or page.sidebar_second or page.content %}
-        <div class="{{ container }}">
+        
           <div class="row clearfix" id="main-wrapper">
               {% if page.sidebar_first %}
                 {% block sidebar_first %}
@@ -384,7 +384,7 @@
                   {% endblock %}
                 {% endif %}
           </div>
-        </div>
+
       {% endif %}
   {% if not is_front %}
     </div>
