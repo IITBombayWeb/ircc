@@ -1489,15 +1489,15 @@ form#views-exposed-form-awards-block-1 .fieldgroup .form-item{
 
 /* custom checkbox for award page */
 /* Hide the checkbox */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:not(:checked),
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:checked {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:not(:checked),
+form#views-exposed-form-awards-block-1 [type="checkbox"]:checked {
   position: absolute;
   left: -9999px;
 }
 
 /* Prepare the label */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:not(:checked) + label,
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:checked + label {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:not(:checked) + label,
+form#views-exposed-form-awards-block-1 [type="checkbox"]:checked + label {
   position: relative;
   padding-left: 25px;
   cursor: pointer;
@@ -1505,8 +1505,8 @@ form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:
 
 /* Checkboxes aspect */
 /* :before is for the box */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:not(:checked) + label:before,
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:checked + label:before {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:not(:checked) + label:before,
+form#views-exposed-form-awards-block-1 [type="checkbox"]:checked + label:before {
   content: '';
   position: absolute;
   left:0; top: 2px;
@@ -1518,8 +1518,8 @@ form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:
 }
 
 /* Check symbol aspect */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:not(:checked) + label:after,
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:checked + label:after {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:not(:checked) + label:after,
+form#views-exposed-form-awards-block-1 [type="checkbox"]:checked + label:after {
   content: '✔';
   position: absolute;
   top: 4px;
@@ -1529,36 +1529,36 @@ form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:
   transition: all .2s; /* animation incoming :p */
 }
 /* if "not checked" */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:not(:checked) + label:after {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:not(:checked) + label:after {
   opacity: 0; /* invisible */
   transform: scale(0); /* scaled down to 0 */
 }
 /* If "checked" */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:checked + label:after {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:checked + label:after {
   opacity: 1; /* visible */
   transform: scale(1); /* scaled up to normal */
 }
 
 
 /* Disabled aspect */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:disabled:not(:checked) + label:before,
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:disabled:checked + label:before {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:disabled:not(:checked) + label:before,
+form#views-exposed-form-awards-block-1 [type="checkbox"]:disabled:checked + label:before {
   box-shadow: none;
   border-color: #bbb;
   background-color: #ddd;
 }
 /* Disabled checked aspect */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:disabled:checked + label:after {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:disabled:checked + label:after {
   color: #999;
 }
 /* Styling label when disabled? :p */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:disabled + label {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:disabled + label {
   color: #aaa;
 }
 
 /* Focused item */
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:checked:focus + label:before,
-form#views-exposed-form-awards-block-1 .fieldgroup .form-item [type="checkbox"]:not(:checked):focus + label:before {
+form#views-exposed-form-awards-block-1 [type="checkbox"]:checked:focus + label:before,
+form#views-exposed-form-awards-block-1 [type="checkbox"]:not(:checked):focus + label:before {
   border: 1px dotted blue;
 }
 /* custom checkbox for award */
