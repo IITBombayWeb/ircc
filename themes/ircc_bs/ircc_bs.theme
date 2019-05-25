@@ -127,13 +127,16 @@ function ircc_bs_theme_suggestions_views_exposed_form_alter(array &$suggestions,
     $vars['form']['#id']);
 }
 
-function ircc_bs_theme_suggestions_views_accordion_view_alter(array &$suggestions, array $vars) {
-  print_r($vars);
-  $suggestions[] = 'views_accordion_view__' . str_replace(
-    ['views_accordion_view-', '-'],
-    ['', '_'],
-    $vars['view']['#id']);
-  }
+// function ircc_bs_theme_suggestions_views_accordion_view_alter(array &$suggestions, array $vars) {
+//   print_r($vars);
+//   $suggestions[] = 'views_accordion_view__' . str_replace(
+//     ['views_accordion_view-', '-'],
+//     ['', '_'],
+//     $vars['view']['#id']);
+//   }
+
+
+
 // function ircc_bs_theme_suggestions_page_alter(array &$suggestions, array $variables) {
 //
 //   if ($node = \Drupal::routeMatch()->getParameter('node')) {
