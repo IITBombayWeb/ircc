@@ -1477,6 +1477,11 @@ select#edit-award-year:after{
 .form-item-award-year .select-wrapper:after{
   content: "";
 }
+
+form#views-exposed-form-awards-block-1 .fieldgroup ul, form#views-exposed-form-awards-block-1 .form-checkboxes{
+  list-style-type: none;
+}
+
 .form-item-award-name{
   margin-top: 2em;
 }
