@@ -17,22 +17,14 @@
 
   <div class="row">
     <div class="col-xs-12 col-md-9 col-lg-9 wow fadeInLeft delay-01s">
-{#       {{ ds_content.field_facility_image }}
+      {{ ds_content.field_facility_image }}
       {{ ds_content.body }}
       {{ ds_content.field_make_and_model }}
       {{ ds_content.field_mode_for_use }}
       {{ ds_content.field_specifications }}
       {{ ds_content.field_application }}
-      {{ ds_content.field_facility_presentation }}
-      {{ ds_content.field_working_principle }}
-      {{ ds_content.field_technical_specifications }}
-      {{ ds_content.field_special_features }}
-      {{ ds_content.field_instructions_for_users }}
-      {{ ds_content.field_instructions_for_sample }}
-      {{ ds_content.field_instructions_for_reg }}
-      {{ ds_content.field_publications_using_data }}
-      {{ ds_content.field_facility_code }}
- #}
+
+      {#  
       {{ ds_content|without(
       'title', 
       'field_contact_name_ref',
@@ -62,7 +54,7 @@
       'group_central_facility_tabs‎'
       ) 
       }}
-      
+      #}
     </div>
     <div class="col-xs-12 col-md-3 col-lg-3">
         <div class="row wow fadeInLeft delay-01s">
