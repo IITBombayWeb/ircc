@@ -1416,17 +1416,21 @@ section.block-facets .block-title,
   margin-bottom: 0px;
 }
 
-#block-searchsidebar ul.menu--search-sidebar li a{
+#block-searchsidebar ul.nav li a{
   background-color: #e4f3f7;
-  padding: 10px 25px;
+  padding: 10px;
   border-radius: 5px;
   font-weight: bold;
 }
 
-#block-searchsidebar ul.menu--search-sidebar li a:hover{
-  background-color: #d2edf5;
+#block-searchsidebar ul.menu--search-sidebar .nav > li{
+  margin-bottom: 10px;
 }
 
+#block-searchsidebar ul.menu--search-sidebar li a:hover, #block-searchsidebar ul.menu--search-sidebar li a:focus {
+  background-color: #d2edf5;
+  color: #234645;
+}
 
 section.block-facets a.facets-soft-limit-link{
   color: #655e5e;
