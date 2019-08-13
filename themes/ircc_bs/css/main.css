@@ -1390,7 +1390,7 @@ font-size: 0.85rem;
 
 /* facets & sidebar */
 
-section.block-facet-blockdepartment-technologies .facets-widget-checkbox{
+/*section.block-facet-blockdepartment-technologies .facets-widget-checkbox{
   border-bottom: 1px solid #aeaeae;
   padding-bottom: 20px;
 }
@@ -1401,7 +1401,7 @@ section.block-facet-blockdepartment-fa .facets-widget-checkbox {
   section.block-facets {
     border-right: 1px solid #aeaeae;
    padding-bottom: 20px;
-  }
+  }*/
 
   section.block-facets .block-title {
     padding-left: 10px;
