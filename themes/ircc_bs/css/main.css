@@ -1390,27 +1390,51 @@ font-size: 0.85rem;
 
 /* facets & sidebar */
 
-section.block-facet-blockdepartment-technologies .facets-widget-checkbox{
-  border-bottom: 1px solid #aeaeae;
-  padding-bottom: 20px;
+#block-ircc-bs-departmentfacilities .panel-primary, 
+#block-centralfacilityfacet .panel-primary, 
+#block-ircc-bs-departmenttechnologies .panel-primary, 
+#block-ircc-bs-facultytechnologies .panel-primary, 
+#block-searchsidebar .panel-primary,
+#block-contenttypemainsearchfacet .panel-primary{
+  border-color: #ACC3A6;
 }
-section.block-facet-blockdepartment-fa .facets-widget-checkbox {
-  border-bottom: 1px solid #aeaeae;
-  padding-bottom: 20px;
+#block-ircc-bs-departmentfacilities .panel-primary > .panel-heading, 
+#block-centralfacilityfacet .panel-primary > .panel-heading,
+#block-ircc-bs-departmenttechnologies .panel-primary > .panel-heading, 
+#block-ircc-bs-facultytechnologies .panel-primary > .panel-heading, 
+#block-searchsidebar .panel-primary > .panel-heading, 
+#block-contenttypemainsearchfacet .panel-primary > .panel-heading{
+  color: #234645;
+  background-color: #ACC3A6;
+  border-color: #ACC3A6;
 }
-  section.block-facets {
-    border-right: 1px solid #aeaeae;
-   padding-bottom: 20px;
-  }
 
-  section.block-facets .block-title {
-    padding-left: 10px;
-    font-family: 'merriweather',serif;
-    font-size: 1rem;
-    margin-top: 0px;
-  }
+section.block-facets .block-title,
+#block-searchsidebar .block-title{
+  /*padding-left: 10px;*/
+  font-family: 'merriweather',serif;
+  font-size: 1.1rem;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
- section.block-facets a.facets-soft-limit-link{
+#block-searchsidebar ul.nav li a{
+  background-color: #e4f3f7;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#block-searchsidebar ul.nav > li{
+  margin-bottom: 10px;
+}
+
+#block-searchsidebar ul.menu--search-sidebar li a:hover, #block-searchsidebar ul.menu--search-sidebar li a:focus {
+  background-color: #d2edf5;
+  color: #234645;
+}
+
+section.block-facets a.facets-soft-limit-link{
   color: #655e5e;
   font-weight: bold;
   padding-left: 10px;
@@ -1898,7 +1922,7 @@ display: inline;
   font-size: 1rem;
 }
 
-nav#block-searchsidebar{
+/*nav#block-searchsidebar{
   border: 1px solid #aeaeae;
   border-radius: 5px;
   text-align: center;
@@ -1928,7 +1952,7 @@ nav#block-searchsidebar ul li a:hover"{
     border-bottom: 1px solid #aeaeae;
     font-family: 'merriweather',serif;
 }
-
+*/
 @media screen and (max-width: 767px){
   .search-row{
       font-size: 1rem;
