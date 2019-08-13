@@ -1390,10 +1390,16 @@ font-size: 0.85rem;
 
 /* facets & sidebar */
 
-#block-ircc-bs-departmentfacilities .panel-primary, #block-centralfacilityfacet .panel-primary {
+#block-ircc-bs-departmentfacilities .panel-primary, 
+#block-centralfacilityfacet .panel-primary, 
+#block-ircc-bs-departmenttechnologies .panel-primary, 
+#block-ircc-bs-facultytechnologies .panel-primary{
   border-color: #ACC3A6;
 }
-#block-ircc-bs-departmentfacilities .panel-primary > .panel-heading, #block-centralfacilityfacet .panel-primary > .panel-heading{
+#block-ircc-bs-departmentfacilities .panel-primary > .panel-heading, 
+#block-centralfacilityfacet .panel-primary > .panel-heading,
+#block-ircc-bs-departmenttechnologies .panel-primary > .panel-heading, 
+#block-ircc-bs-facultytechnologies .panel-primary > .panel-heading{
   color: #234645;
   background-color: #ACC3A6;
   border-color: #ACC3A6;
