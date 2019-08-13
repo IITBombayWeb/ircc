@@ -72,7 +72,7 @@
 		$("#views-exposed-form-solr-search-content-page-1 input").attr("placeholder", "Enter search terms...");
     $("#views-exposed-form-solr-search-area-of-expertise-block-1 input").attr("placeholder", "Enter search terms...");
     $("#views-exposed-form-solr-search-technolo-page-1 input").attr("placeholder", "Enter search terms...");
-    $("#block-searchsidebar .nav > li > a").addClass('hvr-sweep-to-right');
+    // $("#block-searchsidebar .nav > li > a").addClass('hvr-sweep-to-right');
     $("div.node-type-link a").addClass('hvr-underline-from-left');
     $("#views-exposed-form-solr-search-content-page-1").addClass('animated fadeInDown delay-01s');
 
