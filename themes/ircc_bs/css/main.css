@@ -1281,9 +1281,9 @@ img.pdfpreview-file{
 .field-label-inline {display:inline;}
 .field-label-above {display: block;}
 .title-bottom-border {border-bottom: 1px solid #c4c3cc;}
-h2.page-title{
+h1.page-title{
   color:#5d5454;
-  font-size: 1.6rem;
+  /*font-size: 1.6rem;*/
   margin-bottom: 0px;
 }
 .region-content .slick {background: #f7f6f6;}
@@ -1852,7 +1852,7 @@ ul.social-media-links--platforms li:hover {
     width: 5em;
   }
   /*.sec-logo {display: none;}*/
-  h2.page-title {font-size: 1.2rem;}
+  h1.page-title {font-size: 1.2rem;}
   .region-content {font-size: 0.9rem;}
   .top-head p{
     font-size: 1rem;
@@ -1884,7 +1884,7 @@ ul.social-media-links--platforms li:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  h2.page-title {font-size: 1rem;}
+  h1.page-title {font-size: 1rem;}
   .navbar-text {display: none;}
   .navbar-brand {
     font-size: 1.3rem;
