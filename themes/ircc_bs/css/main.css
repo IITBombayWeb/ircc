@@ -1852,7 +1852,7 @@ ul.social-media-links--platforms li:hover {
     width: 5em;
   }
   /*.sec-logo {display: none;}*/
-  h1.page-title {font-size: 1.2rem;}
+/*  h1.page-title {font-size: 1.2rem;}*/  
   .region-content {font-size: 0.9rem;}
   .top-head p{
     font-size: 1rem;
@@ -1884,7 +1884,7 @@ ul.social-media-links--platforms li:hover {
 }
 
 @media only screen and (max-width: 600px) {
-  h1.page-title {font-size: 1rem;}
+  /*h1.page-title {font-size: 1rem;}*/
   .navbar-text {display: none;}
   .navbar-brand {
     font-size: 1.3rem;
