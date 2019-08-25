@@ -2,14 +2,16 @@
 /*.team{
     padding:75px 0;
 }*/
-h6.description {
+h6.description{
 	font-weight: bold;
 	letter-spacing: 2px;
 	color: #999;
 	border-bottom: 1px solid rgba(0, 0, 0,0.1);
 	padding-bottom: 5px;
 }
-.profile {font-family: 'Quicksand', sans-serif;}
+.profile{
+  font-family: 'Quicksand', sans-serif;
+}
 .profile h1{
 	font-weight: normal;
 	font-size: 1rem;
@@ -20,7 +22,10 @@ h6.description {
 	font-weight: lighter;
 	margin-top: 5px;
 }
-.profile p{word-break: break-all;}
+
+.profile p{
+	word-break: break-all;
+}
 .profile .img-box{
 	opacity: 1;
 	display: block;
@@ -71,9 +76,15 @@ h6.description {
     padding: 5px;
 	display: inline-block;
 }
-.img-box a {color:#fff;}
-.img-box:hover:after {opacity: 1;}
-.img-box:hover ul {opacity: 1;}
+.img-box a{
+	color:#fff;
+}
+.img-box:hover:after{
+	opacity: 1;
+}
+.img-box:hover ul{
+	opacity: 1;
+}
 .img-box ul a{
 	-webkit-transition: all 0.3s ease-in-out 0s;
 	-moz-transition: all 0.3s ease-in-out 0s;
@@ -83,6 +94,7 @@ h6.description {
 	border-color: #fff;
 	color: #88C425;
 }
+
 .img-box div.profle-info{
 	position: absolute;
 	z-index: 2;
@@ -94,13 +106,26 @@ h6.description {
 	margin:0px;
 	opacity: 0;
 }
-.img-box:hover div.profile-info {opacity: 1;}
-.img-box div.profile-info {color:#fff;}
-.team {
+.img-box:hover div.profile-info{
+	opacity: 1;
+}
+
+.img-box div.profile-info{
+	color:#fff;
+}
+
+.team{
 	border: 1px solid #aeaeae;
 	padding: 0 1em;
 }
-.staff-head {background: #eae7e7;}
+
+./*team-wrap > :first-child{
+	background: #eae7e7;
+}*/
+.staff-head{
+	background: #eae7e7;
+}
+
 .form-item-field-ircc-staff-category-target-id label.control-label{
   background-color: #f9f9f9;
   color: #234645!important;
@@ -108,13 +133,16 @@ h6.description {
   padding: 0.5em;
   border-radius: 4px;
 }
+
 .form-item-field-ircc-staff-category-target-id label.control-label input[name="field_ircc_staff_category_target_id"]{
 	display: none;
 }
+
 .form-item-field-ircc-staff-category-target-id label.control-label input[checked="checked"]+label.control-label {
 	background-color: #234645!important;
 	color: #ffffff!important;
 }
+
 .form-item-ircc-staff label.control-label{
   background-color: #f9f9f9;
   color: #234645!important;
@@ -122,10 +150,23 @@ h6.description {
   padding: 0.5em;
   border-radius: 4px;
 }
-.form-item-ircc-staff label.control-label input[name="field_ircc_staff_category_target_id"] {
+
+.form-item-ircc-staff label.control-label input[name="field_ircc_staff_category_target_id"]{
 	display: none;
 }
+
 .form-item-ircc-staff label.control-label input[checked="checked"]+label.control-label {
 	background-color: #234645!important;
 	color: #ffffff!important;
 }
+
+/*a{
+    color:#88C425;
+}*/
+/*a:hover{
+    text-decoration:none;
+    color:#519548;
+}
+i.red{
+    color:#BC0213;
+}*/
