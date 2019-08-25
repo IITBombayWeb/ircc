@@ -396,7 +396,6 @@ a.logo2 {margin-right: 3em;}
 }
 body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .top-nav-fixed {top: 79px;}
 body.toolbar-fixed .top-nav-fixed {top: 39px;}
-#main-wrap {padding-top: 0;}
 .top-nav-fadeout {
   opacity: 0;
   -webkit-transition: all 0.8s;
@@ -577,7 +576,7 @@ body.toolbar-fixed .top-nav-fixed {top: 39px;}
 
 /*=====================top box front page=========================*/
 #main-wrap {
-  /*padding-top: 3.2em;*/
+  padding-top: 0;
   width: 100%;
   height: 100%;
 }
