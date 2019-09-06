@@ -364,6 +364,7 @@ a.logo2 {margin-right: 3em;}
   text-decoration: none;
 /*  color: #ffffff;
 */}
+
 .top-nav p {margin: 0;}
 .top-nav {
   /*background-color: #234645;*/
@@ -395,6 +396,9 @@ a.logo2 {margin-right: 3em;}
   -moz-transition: all 0.8s;
   -o-transition: all 0.8s;
    transition: all 0.8s;
+}
+#views-exposed-form-solr-search-content-page-1 button.btn-primary, #views-exposed-form-solr-search-content-page-1 button.btn-primary:hover{
+  border-color: #ffffff!important;
 }
 body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .top-nav-fixed {top: 79px;}
 body.toolbar-fixed .top-nav-fixed {top: 39px;}
