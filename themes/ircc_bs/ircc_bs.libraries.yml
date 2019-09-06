@@ -6,6 +6,7 @@ global-styling:
       css/hover.css: {}
       css/main.css: {}
       css/custom.css: {}
+      css/colors.css: {}
   js:
     js/wow.js: {}
     js/wow_custom.js: {}
