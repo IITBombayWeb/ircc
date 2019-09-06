@@ -450,8 +450,8 @@ body.toolbar-fixed .top-nav-fixed {top: 39px;}
 }
 .menu-base-theme li a:hover, .menu-base-theme li a:focus, .menu-base-theme li a:active,.menu-base-theme li a.highlighted {
   color: #ffffff;
-  background: #234645;
-  line-height: 100%;
+/*  background: #234645;
+*/  line-height: 100%;
   padding: 12px 20px;
   -webkit-transition: all 0.5s;
    -moz-transition: all 0.5s;

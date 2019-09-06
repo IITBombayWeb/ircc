@@ -198,4 +198,10 @@ section.block-facets [type="checkbox"]:checked + label:after {
   a.close-form {
     color: #234645;
   }
-} 
+}
+
+@media only screen and (max-width: 767px){
+	.menu-base-theme li a:hover, .menu-base-theme li a:focus, .menu-base-theme li a:active,.menu-base-theme li a.highlighted {
+  	background: #234645;
+	}
+}
