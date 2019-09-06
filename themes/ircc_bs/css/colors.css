@@ -13,6 +13,9 @@ a {
   background-color: #234645;
   border-color: #234645;
 }
+.more-link a:hover {
+  color: #234645;
+}
 .pagination > li > a {
   color: #234645;
 }
@@ -34,7 +37,12 @@ a {
 .top-head {
 	background-color: #234645;
 }
-
+.navbar-search .form-item:before {
+	border-bottom: 14px solid #234645;
+}
+.menu-base-theme li a:hover, .menu-base-theme li a:focus, .menu-base-theme li a:active,.menu-base-theme li a.highlighted {
+  background: #234645;
+}
 /*=====================top box front page=========================*/
 
 .top-box-title:after {
@@ -200,8 +208,4 @@ section.block-facets [type="checkbox"]:checked + label:after {
   }
 }
 
-@media only screen and (max-width: 767px){
-	.menu-base-theme li a:hover, .menu-base-theme li a:focus, .menu-base-theme li a:active,.menu-base-theme li a.highlighted {
-  	background: #234645;
-	}
-}
+
