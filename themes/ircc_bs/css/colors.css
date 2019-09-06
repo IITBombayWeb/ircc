@@ -5,6 +5,10 @@ a {
   background-color: #234645;
   border-color: #234645;
 }
+.btn-primary:hover, .btn-primary:focus {
+ background-color: #234645;
+  border-color: #234645;}
+
 .btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover {
   background-color: #234645;
   border-color: #234645;
@@ -165,10 +169,7 @@ section.block-facets [type="checkbox"]:checked + label:after {
 .footer-bottom nav li a:hover{
   color: #ffffff;
 }
-#back2Top {
-	 background-color: #3a6564;
-  border-color: #3a6564;
-}
+
 @media only screen and (min-width: 767px) {
 	.region-primary-menu li a {
 		color: #234645;
