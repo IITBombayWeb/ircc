@@ -1,0 +1,200 @@
+a {
+	color: #234645;
+}
+.btn-primary {
+  background-color: #234645;
+  border-color: #234645;
+}
+.btn-primary:active, .btn-primary:active:focus, .btn-primary:active:hover {
+  background-color: #234645;
+  border-color: #234645;
+}
+.pagination > li > a {
+  color: #234645;
+}
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus{
+  background-color: #234645;
+  border-color: #234645;
+}
+
+.top-nav, .top-head-def {
+	background-color: #234645;
+}
+.top-nav-brand *, .top-nav-brand a:hover, .top-head-def *, .top-head-def a:hover {
+    color: #ffffff;
+}
+
+.navbar-brand {
+	color: #234645!important;
+}
+.top-head {
+	background-color: #234645;
+}
+
+/*=====================top box front page=========================*/
+
+.top-box-title:after {
+	background-color: #2d9f2f;
+}
+.box-container {
+  background: #234645;
+}
+.click-info {
+	background: #234645;
+	 color: #2d9f2f;
+  border: 2px solid #2d9f2f;
+}
+
+/*====================research highlights section start=======================*/
+.research-head:after {
+	background-color: #2d9f2f;
+}
+
+.rh-img {background: #234645;}
+
+/*=====================news and event section start==========================*/
+.news-inner-wrap {
+  background: #234645;
+  background-image: linear-gradient(to bottom, #234645, transparent);
+ }
+ .news-head:after {
+ 	 background-color: #2d9f2f;
+ }
+.news-read-more a {
+	color: #2d9f2f;
+  border: 2px solid #2d9f2f;
+}
+.news-read-more a:hover {
+  background: #2d9f2f;
+}
+
+.events-head:after {
+	background-color: #2d9f2f;
+}
+.event-date {
+	color: #2d9f2f;
+}
+
+/*========================facets & sidebar start==========================*/
+.panel-primary {border-color: #ACC3A6;}
+.panel-primary > .panel-heading {
+  color: #234645;
+  background-color: #ACC3A6;
+  border-color: #ACC3A6;
+}
+/*========================award page start=======================*/
+.view-id-awards .ui-state-active{
+  border: 1px solid #234645;
+  background: #234645;
+}
+
+#block-searchsidebar ul.menu--search-sidebar li a:hover, #block-searchsidebar ul.menu--search-sidebar li a:focus {
+  color: #234645;
+}
+
+#edit-award-type .form-group {
+	color: #234645!important;
+}
+
+#edit-award-type div.bef-link-active, #edit-award-type div.bef-link-active:hover, #edit-award-type div.bef-link-active:focus {
+	background-color: #234645!important;
+}
+
+/*=======================ircc staff===========================*/
+#edit-staff-category .form-group {
+ color: #234645!important;
+}
+
+
+#edit-staff-category div.bef-link-active, #edit-staff-category div.bef-link-active:hover, #edit-staff-category div.bef-link-active:focus {
+  background-color: #234645!important;
+}
+
+/*=====================ircc publication start=====================*/
+.file>span {
+  color: #234645;
+}
+
+/*======================node page=============================*/
+
+.region-content .nav > li > a {
+  color: #234645!important;
+ }
+ .region-content .nav-pills > li.active > a, .region-content .nav-pills > li.active > a:hover, .region-content .nav-pills > li.active > a:focus {
+  	background-color: #234645!important;
+	}
+
+
+/* ======================cstom checkbox start======================*/
+
+section.block-facets [type="checkbox"]:not(:checked) + label:after,
+section.block-facets [type="checkbox"]:checked + label:after {
+	color: #2d9f2f;
+}
+/**************************Footer*************************************/
+.footer1 {
+  background:#234645;
+  color: #ffffff;
+}
+
+.footer1 h2.block-title {
+  color: #ffffff;
+ }
+
+ .region-footer1 a {color: #ffffff;}
+.title-widget {
+  color: #ffffff;
+}
+
+.widget_nav_menu li a {
+  color: #cdcaca;
+ }
+.widget_nav_menu li a:hover {
+  color: #ffffff;
+}
+.copyright {
+  color: #ffffff;
+}
+.footer-bootom-nav {
+  color: #ffffff;
+  }
+  .footer-bootom-nav a {color: #ffffff;}
+.footer-bottom nav li a {
+  color: #cdcaca;
+ }
+.footer-bottom nav li a:hover{
+  color: #ffffff;
+}
+#back2Top {
+	 background-color: #3a6564;
+  border-color: #3a6564;
+}
+@media only screen and (min-width: 767px) {
+	.region-primary-menu li a {
+		color: #234645;
+	}
+	.region-primary-menu ul ul li a {
+		color: #234645;
+	}
+
+	.region-primary-menu li.active a,
+  .region-primary-menu li a.is-active {
+    background: #234645;
+  }
+  .region-primary-menu li a.is-active.has-submenu {
+    color: #234645;
+  }
+  .region-primary-menu li a.is-active.has-submenu:hover {
+    background: #234645;
+  }
+  .navbar-search .form-item {
+    border-top: 3px solid #234645;
+   }
+
+  a.open-form { 
+   color: #234645;
+  }
+  a.close-form {
+    color: #234645;
+  }
+} 
