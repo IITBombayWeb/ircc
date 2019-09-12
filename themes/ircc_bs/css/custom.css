@@ -126,3 +126,50 @@
 .profile-nav > li > a {
   padding: 3px 5px!important;
 }
+
+
+
+/*.scholar_icon img, .scopus_icon img, .orcid_icon img{
+  width: 32px;
+}
+*/
+.scholar_icon{
+    background-image: url(../img/scholar.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+}
+
+.scopus_icon{
+  background-image: url(../img/scopus.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+}
+
+.orcid_icon{
+    background-image: url(../img/orcid.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+}
+
+.scholar_icon:hover, .scopus_icon:hover, .orcid_icon:hover{
+    color: transparent;
+    outline: none;
+}
+
+.scholar_icon:focus, .scopus_icon:focus, .orcid_icon:focus{
+    color: transparent;
+    outline: none;
+}
+.scholar_icon:active:focus, .scopus_icon:active:focus, .orcid_icon:active:focus{
+    color: transparent;
+    outline: none;
+}
