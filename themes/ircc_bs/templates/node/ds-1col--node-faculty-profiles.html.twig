@@ -28,7 +28,6 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-3">
 			 {{ ds_content.field_faculty_photo }}
-				<div class="sp-blank-20"></div>
 				<article class="profile-glimps">
 					<h2 class="entry-title">{{ ds_content.title }}</h2>
 					 <p class="text-foc-md"></p>
@@ -62,7 +61,7 @@
 				
 				<ul class="nav nav-pills profile-nav">
 					{% if related_technologies_view > 0 %}
-						<li class="active"><a data-toggle="pill" href="#technologies"><i class="fa fa-user" aria-hidden="true"></i> Technologies for Licensing</a></li>
+						<li class="active"><a data-toggle="pill" href="#technologies"><i class="fa fa-cog" aria-hidden="true"></i> Technologies for Licensing</a></li>
 					{% endif %}
 					
 					{% if related_glimpses_view > 0 %}
@@ -70,11 +69,11 @@
 					{% endif %}
 
 					{% if related_facilities_view > 0 %}
-						<li><a data-toggle="pill" href="#facilities"> <i class="fa fa-book" aria-hidden="true"></i>Research Facilities</a></li>
+						<li><a data-toggle="pill" href="#facilities"> <i class="fa fa-briefcase" aria-hidden="true"></i>Research Facilities</a></li>
 					{% endif %}
 
 					{% if related_awards_view > 0 %}
-						<li><a data-toggle="pill" href="#awards"> <i class="fa fa-book" aria-hidden="true"></i>Awards and Recognition</a></li>
+						<li><a data-toggle="pill" href="#awards"> <i class="fa fa-trophy" aria-hidden="true"></i>Awards and Recognition</a></li>
 					{% endif %}
 
 				</ul>
