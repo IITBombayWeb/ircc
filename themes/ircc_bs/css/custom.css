@@ -120,5 +120,9 @@
 }
 
 .profile-nav li a i {
-  margin-right: 5px;
+  margin-right: 2px;
 } 
+
+.profile-nav > li > a {
+  padding: 3px 5px;
+}
