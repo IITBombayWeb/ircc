@@ -51,8 +51,8 @@
 				<div class="mt-20">
 				{{ ds_content.field_home_page_url	}}	
 				</div>
-				{% if related_awards_view > 0 %}
-					{{ drupal_view('related_awards', 'block_1') }}
+				{% if ds_content.field_area_of_expertise|render %}
+					{{ ds_content.field_area_of_expertise	}}
 				{% endif %}
 			</div>
 
@@ -72,6 +72,11 @@
 					{% if related_facilities_view > 0 %}
 						<li><a data-toggle="pill" href="#facilities"> <i class="fa fa-book" aria-hidden="true"></i>Research Facilities</a></li>
 					{% endif %}
+
+					{% if related_awards_view > 0 %}
+						<li><a data-toggle="pill" href="#awards"> <i class="fa fa-book" aria-hidden="true"></i>Awards and Recognition</a></li>
+					{% endif %}
+
 				</ul>
 
 				<div class="tab-content">
@@ -85,6 +90,10 @@
 
 					<div class="teaching tab-pane fade stage-content-biog" id="facilities" >
 						{{ drupal_view('related_facilities', 'block_1') }}
+					</div>
+
+					<div class="teaching tab-pane fade stage-content-biog" id="awards" >
+						{{ drupal_view('related_awards', 'block_1') }}
 					</div>
 
 				</div>
