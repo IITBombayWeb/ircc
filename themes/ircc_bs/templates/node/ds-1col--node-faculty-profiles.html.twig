@@ -1,0 +1,111 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+{# <header class="sabbi-page-header faculty-page-header" style="background: url(../../img/research.jpg); background-size: cover; background-color: #e4e6fd;">
+		<div class="page-header-content">
+			<div class="header-title-block">
+		  </div>
+		</div>
+</header> #}
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+{% set related_technologies_view = drupal_view_result('related_technologies', 'block_1')|length %}
+{% set related_glimpses_view = drupal_view_result('related_glimpses', 'block_1')|length %}
+{% set related_facilities_view = drupal_view_result('related_facilities', 'block_1')|length %}
+{% set related_awards_view = drupal_view_result('related_awards', 'block_1')|length %}
+
+
+	<div class="container page-academix site-padding-single">
+		<div class="row">
+			<div class="col-sm-3 col-md-3">
+			 {{ ds_content.field_faculty_photo }}
+				<article class="profile-glimps">
+					<h2 class="entry-title">{{ ds_content.title }}</h2>
+					 <p class="text-foc-md"></p>
+					 <p class="text-foc-md">{{ ds_content.field_designation	}}</p>
+					 <p class="text-foc-md">{{ ds_content.field_department_ref }}</p>
+				</article>
+				<div class="addr_future_memb">
+				{% if ds_content.field_email_id|render %}
+					<footer class="contact-info">
+						<h4 class="entry-title">Contact Information</h4>
+						<p class="__ci_num inline"><span>{{ ds_content.field_email_id }}</span></p>
+				  </footer>
+				{% endif %}
+				</div>
+				<div class="mt-20">
+					{{ ds_content.field_google_scholar_id	}}
+					{{ ds_content.field_scopus_id }}
+					{{ ds_content.field_orcid }}
+				</div>
+				<div class="mt-20">
+				{{ ds_content.field_home_page_url	}}	
+				</div>
+				{% if ds_content.field_area_of_expertise|render %}
+					{{ ds_content.field_area_of_expertise	}}
+				{% endif %}
+			</div>
+
+			<div class="col-sm-9 col-md-9">
+			
+
+				
+				<ul class="nav nav-pills profile-nav">
+					{% if related_technologies_view > 0 %}
+						<li class="active"><a data-toggle="pill" href="#technologies"><i class="fa fa-cog" aria-hidden="true"></i> Technologies for Licensing</a></li>
+					{% endif %}
+					
+					{% if related_glimpses_view > 0 %}
+					<li><a data-toggle="pill" href="#glimpses"><i class="fa fa-tasks" aria-hidden="true"></i>Research Glimpses</a></li>
+					{% endif %}
+
+					{% if related_facilities_view > 0 %}
+						<li><a data-toggle="pill" href="#facilities"> <i class="fa fa-briefcase" aria-hidden="true"></i>Research Facilities</a></li>
+					{% endif %}
+
+					{% if related_awards_view > 0 %}
+						<li><a data-toggle="pill" href="#awards"> <i class="fa fa-trophy" aria-hidden="true"></i>Awards and Recognition</a></li>
+					{% endif %}
+
+				</ul>
+
+				<div class="tab-content">
+					<div class="personal tab-pane fade in active stage-content-biog" id="technologies">
+						{{ drupal_view('related_technologies', 'block_1') }}
+					</div>
+
+					<div class="rnd tab-pane fade stage-content-biog" id="glimpses">
+						{{ drupal_view('related_glimpses', 'block_1') }}
+					</div>
+
+					<div class="teaching tab-pane fade stage-content-biog" id="facilities" >
+						{{ drupal_view('related_facilities', 'block_1') }}
+					</div>
+
+					<div class="teaching tab-pane fade stage-content-biog" id="awards" >
+						{{ drupal_view('related_awards', 'block_1') }}
+					</div>
+
+				</div>
+
+
+		  </div><!-- #main col-sm-8 -->
+
+{# 
+{{ ds_content|without('title', 'field_full_name', 'field_faculty_photo', 'field_room_no', 'field_building_new', 'field_phone_no_new', 'field_mobile_number_new', 'field_email_new', 'field_google_scholar_id', 'field_scopus_id', 'field_orcid', 'field_full_name', 'field_employment_category', 'field_faculty_designation', 'field_faculty_cv', 'field_background', 'field_affiliations', 'field_awards_and_fellowship', 'field_faculty_rd_proj', 'field_courses_taught', 'field_research_area','field_publications_link', 'field_detailed_information_page', 'dynamic-block-fieldnode-faculty-research-areas') }}
+
+ #}
+	   </div> <!-- row -->
+	</div> <!-- container -->
+
+
+</{{ ds_content_wrapper }}>

@@ -1,0 +1,175 @@
+.site-padding-single{
+  padding: 0 15px 55px;
+}
+
+/* Rashmore profile page */
+.pull-up-240 {
+  position: relative;
+  top: -125px;
+  margin-bottom: -125px; }
+
+.sp-blank-20 {
+  margin-top: 30px; }
+
+
+
+/* header */
+.sabbi-page-header {
+  min-height: 265px;
+  /* background-color: rgba(163, 22, 117, 0.12); */
+  background-color: rgba(156, 121, 145, 0.12);
+  position: relative;
+}
+
+  .sabbi-page-header .header-title-block {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+   }
+  .sabbi-page-header .page-title {
+    color: #fff;
+    display: inline-block;
+    background-color: rgba(211, 0, 21, 0.7);
+    margin-bottom: 0;
+    padding: 10px 25px;
+    font-size: 28px;
+    font-size: 1.5rem;
+/*    text-transform: uppercase;
+*/    border-top-left-radius: 4px;
+    border-top-right-radius: 4px; 
+}
+  @media (max-width: 767px) {
+    .sabbi-page-header .page-title {
+      font-size: 22px;
+      font-size: 1rem; 
+    } 
+  }
+
+    .addr_future_memb .entry-title {
+    margin-top: 0; }
+  .addr_future_memb .address-entry {
+    margin-bottom: 23px; }
+    .addr_future_memb .address-entry > p {
+      line-height: 1.4;
+      margin-bottom: 10px; }
+      .addr_future_memb.contact-info{
+        margin-bottom: 20px;
+      }
+  .addr_future_memb .contact-info .__ci_num {
+    margin-bottom: 4px; }
+    .addr_future_memb .contact-info .__ci_num strong {
+      font-weight: 600; }
+    .addr_future_memb .contact-info .__ci_num span {
+      font-style: italic; }
+
+.page-academix .profile-glimps {
+  padding-left: 0; }
+.profile-glimps {
+  padding: 15px 0 25px 15px;
+  margin-top: 15px; }
+.text-foc-md {
+  color: #666666;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0; }
+.profile-nav{
+  padding:0;
+  margin: 30px 0 30px 0;
+  list-style:none;
+  text-align:center;
+}
+.profile-nav li{
+  margin: 0 5px;
+  display:inline;
+}
+.profile-nav li a{
+  display:inline-block;
+  padding:10px 22px;
+  color:#222222;
+  border-radius:4px;
+  background:#f7f7f7;
+  margin-bottom:5px;
+  transition:all 0.3s ease-in-out;
+  -moz-transition:all 0.3s ease-in-out;
+  -webkit-transition:all 0.3s ease-in-out;
+}
+.stage-content-biog {
+  margin-top: 30px;
+  margin-bottom: 10px; }
+.gimps-title {
+  margin-bottom: 15px; }
+
+.appoint-timeline-holder {
+  margin-top: 2em;
+}
+
+
+
+.profile-nav > li.active > a, .profile-nav > li.active > a:hover, .profile-nav > li.active > a:focus{
+  color: #ffffff;
+   -webkit-transition: all 0.5s;
+   -moz-transition: all 0.5s;
+   -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+ .profile-nav > li.active > a, .profile-nav  > li.active > a:hover, .profile-nav  > li.active > a:focus {
+  background-color: #234645;
+  border-color: #234645;
+}
+
+.profile-nav li a i {
+  margin-right: 2px;
+} 
+
+.profile-nav > li > a {
+  padding: 3px 5px!important;
+}
+
+
+
+/*.scholar_icon img, .scopus_icon img, .orcid_icon img{
+  width: 32px;
+}
+*/
+.scholar_icon{
+    background-image: url(../img/scholar.jpeg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+}
+
+.scopus_icon{
+  background-image: url(../img/scopus.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+}
+
+.orcid_icon{
+    background-image: url(../img/orcid.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 32px;
+    height: 32px;
+    color: transparent;
+}
+
+.scholar_icon:hover, .scopus_icon:hover, .orcid_icon:hover{
+    color: transparent;
+    outline: none;
+}
+
+.scholar_icon:focus, .scopus_icon:focus, .orcid_icon:focus{
+    color: transparent;
+    outline: none;
+}
+.scholar_icon:active:focus, .scopus_icon:active:focus, .orcid_icon:active:focus{
+    color: transparent;
+    outline: none;
+}
