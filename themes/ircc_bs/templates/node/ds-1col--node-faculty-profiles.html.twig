@@ -52,7 +52,9 @@
 					 <p class="text-foc-md">{{ ds_content.field_designation	}}</p>
 					 <p class="text-foc-md">{{ ds_content.field_department_ref }}</p>
 				</article>
-{{ drupal_view('related_glimpses', 'block_1', arg_2) }}
+{{ drupal_view('related_glimpses', 'block_1') }}
+{{ drupal_view('related_facilities', 'block_1') }}
+
 {# 				
 				<ul class="nav nav-pills profile-nav">
 					{% if ds_content.field_faculty_cv|render or ds_content.field_background|render or ds_content.field_affiliations|render or field_awards_and_fellowship|render %}
