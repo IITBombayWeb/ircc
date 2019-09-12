@@ -2,7 +2,6 @@
   padding: 0 15px 55px;
 }
 
-/* Rashmore profile page */
 .pull-up-240 {
   position: relative;
   top: -125px;
@@ -46,44 +45,52 @@
     } 
   }
 
-    .addr_future_memb .entry-title {
-    margin-top: 0; }
-  .addr_future_memb .address-entry {
-    margin-bottom: 23px; }
-    .addr_future_memb .address-entry > p {
-      line-height: 1.4;
-      margin-bottom: 10px; }
-      .addr_future_memb.contact-info{
-        margin-bottom: 20px;
-      }
-  .addr_future_memb .contact-info .__ci_num {
-    margin-bottom: 4px; }
-    .addr_future_memb .contact-info .__ci_num strong {
-      font-weight: 600; }
-    .addr_future_memb .contact-info .__ci_num span {
-      font-style: italic; }
-
+.addr_future_memb .entry-title {
+  margin-top: 0; 
+}
+.addr_future_memb .address-entry {
+  margin-bottom: 23px; 
+}
+.addr_future_memb .address-entry > p {
+  line-height: 1.4;
+  margin-bottom: 10px; 
+}
+.addr_future_memb.contact-info {
+  margin-bottom: 20px;
+}
+.addr_future_memb .contact-info .__ci_num {
+  margin-bottom: 4px; 
+}
+.addr_future_memb .contact-info .__ci_num strong {
+  font-weight: 600; 
+}
+.addr_future_memb .contact-info .__ci_num span {
+  font-style: italic; 
+}
 .page-academix .profile-glimps {
-  padding-left: 0; }
+  padding-left: 0; 
+}
 .profile-glimps {
   padding: 15px 0 25px 15px;
-  margin-top: 15px; }
+  margin-top: 15px; 
+}
 .text-foc-md {
   color: #666666;
   font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 0; }
-.profile-nav{
+  margin-bottom: 0; 
+}
+.profile-nav {
   padding:0;
   margin: 30px 0 30px 0;
   list-style:none;
   text-align:center;
 }
-.profile-nav li{
+.profile-nav li {
   margin: 0 5px;
   display:inline;
 }
-.profile-nav li a{
+.profile-nav li a {
   display:inline-block;
   padding:10px 22px;
   color:#222222;
@@ -96,16 +103,14 @@
 }
 .stage-content-biog {
   margin-top: 30px;
-  margin-bottom: 10px; }
+  margin-bottom: 10px; 
+}
 .gimps-title {
-  margin-bottom: 15px; }
-
+  margin-bottom: 15px; 
+}
 .appoint-timeline-holder {
   margin-top: 2em;
 }
-
-
-
 .profile-nav > li.active > a, .profile-nav > li.active > a:hover, .profile-nav > li.active > a:focus{
   color: #ffffff;
    -webkit-transition: all 0.5s;
@@ -113,12 +118,10 @@
    -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-
- .profile-nav > li.active > a, .profile-nav  > li.active > a:hover, .profile-nav  > li.active > a:focus {
+.profile-nav > li.active > a, .profile-nav  > li.active > a:hover, .profile-nav  > li.active > a:focus {
   background-color: #234645;
   border-color: #234645;
 }
-
 .profile-nav li a i {
   margin-right: 2px;
 } 
@@ -126,50 +129,40 @@
 .profile-nav > li > a {
   padding: 3px 5px!important;
 }
-
-
-
-/*.scholar_icon img, .scopus_icon img, .orcid_icon img{
+.scholar_icon {
+  background-image: url(../img/scholar.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
   width: 32px;
-}
-*/
-.scholar_icon{
-    background-image: url(../img/scholar.jpeg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 32px;
-    height: 32px;
-    color: transparent;
+  height: 32px;
+  color: transparent;
 }
 
-.scopus_icon{
+.scopus_icon {
   background-image: url(../img/scopus.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 32px;
-    height: 32px;
-    color: transparent;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  color: transparent;
 }
-
-.orcid_icon{
-    background-image: url(../img/orcid.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 32px;
-    height: 32px;
-    color: transparent;
+.orcid_icon {
+  background-image: url(../img/orcid.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 32px;
+  height: 32px;
+  color: transparent;
 }
-
 .scholar_icon:hover, .scopus_icon:hover, .orcid_icon:hover{
-    color: transparent;
-    outline: none;
+  color: transparent;
+  outline: none;
 }
-
 .scholar_icon:focus, .scopus_icon:focus, .orcid_icon:focus{
-    color: transparent;
-    outline: none;
+  color: transparent;
+  outline: none;
 }
 .scholar_icon:active:focus, .scopus_icon:active:focus, .orcid_icon:active:focus{
-    color: transparent;
-    outline: none;
+  color: transparent;
+  outline: none;
 }
