@@ -29,10 +29,13 @@
 			<div class="col-sm-3 col-md-3">
 			 {{ ds_content.field_faculty_photo }}
 				<div class="sp-blank-20"></div>
+				<article class="profile-glimps">
+					<h2 class="entry-title">{{ ds_content.title }}</h2>
+					 <p class="text-foc-md"></p>
+					 <p class="text-foc-md">{{ ds_content.field_designation	}}</p>
+					 <p class="text-foc-md">{{ ds_content.field_department_ref }}</p>
+				</article>
 				<div class="addr_future_memb">
-					<h4 class="entry-title">Location</h4>
-					<div class="address-entry">						
-					</div>
 				{% if ds_content.field_email_id|render %}
 					<footer class="contact-info">
 						<h4 class="entry-title">Contact Information</h4>
@@ -54,16 +57,7 @@
 			</div>
 
 			<div class="col-sm-9 col-md-9">
-				<article class="profile-glimps">
-					<h2 class="entry-title">{{ ds_content.title }}</h2>
-					 <p class="text-foc-md"></p>
-					 <p class="text-foc-md">{{ ds_content.field_designation	}}</p>
-					 <p class="text-foc-md">{{ ds_content.field_department_ref }}</p>
-				</article>
-
-
-
-
+			
 
 				
 				<ul class="nav nav-pills profile-nav">
