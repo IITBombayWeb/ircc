@@ -1,0 +1,142 @@
+{#
+/**
+ * @file
+ * Display Suite 1 column template.
+ *
+ * Available variables:
+ * - ds_content_wrapper: wrapper around content
+ * - attributes: content region attributes
+ * - ds_content: content region
+ */
+#}
+<header class="sabbi-page-header faculty-page-header" style="background: url(../../img/research.jpg); background-size: cover; background-color: #e4e6fd;">
+		<div class="page-header-content">
+			<div class="header-title-block">
+		  </div>
+		</div>
+</header>
+<{{ ds_content_wrapper }}{{ attributes.addClass('ds-1col', 'clearfix') }}>
+
+  {{ title_suffix.contextual_links }}
+
+	<div class="container page-academix site-padding-single">
+		<div class="row">
+			<div class="col-sm-3 col-md-3 col-sm-offset-1 {% if ds_content.field_faculty_photo|render %}pull-up-240{% endif %}">
+			 {{ ds_content.field_faculty_photo }}
+				<div class="sp-blank-20"></div>
+				<div class="addr_future_memb">
+					<h4 class="entry-title">Location</h4>
+					<div class="address-entry">						
+					</div>
+				{% if ds_content.field_email_id|render %}
+					<footer class="contact-info">
+						<h4 class="entry-title">Contact Information</h4>
+						<p class="__ci_num inline"><span>{{ ds_content.field_email_id }}</span></p>
+				  </footer>
+				{% endif %}
+				</div>
+				<div class="mt-20">
+					{{ ds_content.field_google_scholar_id	}}
+					{{ ds_content.field_scopus_id }}
+					{{ ds_content.field_orcid }}
+				</div>
+				<div class="mt-20">
+				{{ ds_content.field_home_page_url	}}	
+				</div>	
+			</div>
+
+			<div class="col-sm-8">
+				<article class="profile-glimps">
+					<h2 class="entry-title">{{ ds_content.field_faculty_name }}</h2>
+					 <p class="text-foc-md"></p>
+					 <p class="text-foc-md">{{ ds_content.field_designation	}}</p>
+					 <p class="text-foc-md">{{ ds_content.field_department_ref }}</p>
+				</article>
+{{ drupal_view('related_glimpses', 'block_1', arg_2) }}
+{# 				
+				<ul class="nav nav-pills profile-nav">
+					{% if ds_content.field_faculty_cv|render or ds_content.field_background|render or ds_content.field_affiliations|render or field_awards_and_fellowship|render %}
+						<li class="active"><a data-toggle="pill" href="#personal"><i class="fa fa-user" aria-hidden="true"></i> Personal Information</a></li>
+					{% endif %}
+					
+					{% if ds_content.field_faculty_rd_proj|render %}
+					<li><a data-toggle="pill" href="#rnd"><i class="fa fa-tasks" aria-hidden="true"></i> R&D</a></li>
+					{% endif %}
+
+					{% if ds_content.field_courses_taught|render %}
+						<li><a data-toggle="pill" href="#teaching"> <i class="fa fa-book" aria-hidden="true"></i> Teaching</a></li>
+					{% endif %}
+					
+					{% if ds_content.field_research_area|render %}
+						<li><a data-toggle="pill" href="#research-area"><i class="fa fa-check-square-o" aria-hidden="true"></i> Research Areas</a></li>
+					{% endif %}
+
+					{% if ds_content.field_research_interest|render %}
+						<li><a data-toggle="pill" href="#research-interest"><i class="fa fa-check-circle-o" aria-hidden="true"></i> Research Interest(s)</a></li>
+					{% endif %}
+
+				</ul>
+				<div class="tab-content">
+					<div class="personal tab-pane fade in active stage-content-biog" id="personal">
+
+					  <section class="gimps-container">
+							<div class="row">
+								<div class="col-md-8 col-sm-10">
+									{{ ds_content.field_faculty_cv }}
+									{{ ds_content.field_background }}
+								</div>
+							</div>
+					   </section><!-- /.gimps-container -->
+
+						<section class="gimps-container appoint-timeline-holder">
+							<!-- <h4 class="gimps-title">Professional Appointments</h4> -->
+							<div class="row">
+								<div class="col-sm-9">
+									{{ ds_content.field_affiliations }}
+								</div>
+							</div>
+						</section><!-- /.gimps-container .appoint-timeline-holder -->
+
+						<section class="gimps-container">
+							<!-- <h4 class="gimps-title">Awards &amp; Prizes</h4> -->
+							<div class="row">
+								<div class="col-sm-11">
+										{{ ds_content.field_awards_and_fellowship }}
+								</div>
+							</div>
+					  	</section><!-- /.gimps-container -->
+					
+					</div>
+
+					<div class="rnd tab-pane fade stage-content-biog" id="rnd">
+						{{ ds_content.field_faculty_rd_proj }}
+						<div class="mt-20 text-center fw-bold">
+							{{ ds_content.field_publications_link }}
+						</div>
+					</div>
+
+					<div class="teaching tab-pane fade stage-content-biog" id="teaching" >
+						{{ ds_content.field_courses_taught }}
+					</div>
+
+					<div class="research-area tab-pane fade stage-content-biog" id="research-area">
+						{{ ds_content.field_research_area }}
+						{{ ds_content|without('title', 'field_full_name') }}
+					</div>
+					<div class="research-area tab-pane fade stage-content-biog" id="research-interest">
+						{{ ds_content.field_research_interest }}
+					</div>
+				</div>
+ #}
+
+		  </div><!-- #main col-sm-8 -->
+
+{# 
+{{ ds_content|without('title', 'field_full_name', 'field_faculty_photo', 'field_room_no', 'field_building_new', 'field_phone_no_new', 'field_mobile_number_new', 'field_email_new', 'field_google_scholar_id', 'field_scopus_id', 'field_orcid', 'field_full_name', 'field_employment_category', 'field_faculty_designation', 'field_faculty_cv', 'field_background', 'field_affiliations', 'field_awards_and_fellowship', 'field_faculty_rd_proj', 'field_courses_taught', 'field_research_area','field_publications_link', 'field_detailed_information_page', 'dynamic-block-fieldnode-faculty-research-areas') }}
+
+ #}
+	   </div> <!-- row -->
+	</div> <!-- container -->
+
+
+</{{ ds_content_wrapper }}>
