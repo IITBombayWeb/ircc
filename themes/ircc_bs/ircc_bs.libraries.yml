@@ -53,6 +53,8 @@ ircc-staff:
   css:
     theme:
       css/ircc_team.css: {}
+  js:
+    js/ircc_team.js: {}
 
 # smartmenus
 smartmenus:
