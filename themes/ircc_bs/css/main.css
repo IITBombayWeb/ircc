@@ -1526,7 +1526,7 @@ table#past-deans-info td {text-align: center;}
 .item-list-green ul li p {
 display: inline;
 }
-.item-list-search ul a::before {
+/*.item-list-search ul a::before {
   content: "• ";
   color:#1ba74d;
   font-weight: bold;
@@ -1535,7 +1535,7 @@ display: inline;
   content: "• ";
   color:#1ba74d;
   font-weight: bold;
-}
+}*/
 .item-list-search ul li a {font-size: 1rem;}
 .item-list-search h3 {font-size: 1rem;}
 @media only screen and (width: 767px) {
