@@ -218,3 +218,6 @@ i.red{
 #block-irccstaff li.menu-item--expanded:hover {
         background: #ffffff;
 }
+#block-irccstaff li.menu-item.menu-item--expanded > .is-active {
+	color: #234645 !important;
+}
